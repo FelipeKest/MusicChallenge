@@ -12,6 +12,7 @@
 		915E102421BB7A7200158899 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 915E102221BB7A7200158899 /* Main.storyboard */; };
 		915E102621BB7A7300158899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 915E102521BB7A7300158899 /* Assets.xcassets */; };
 		915E102921BB7A7300158899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 915E102721BB7A7300158899 /* LaunchScreen.storyboard */; };
+		91A02DD621BC2542001BC7C6 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A02DD521BC2542001BC7C6 /* DAO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		915E102521BB7A7300158899 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		915E102821BB7A7300158899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		915E102A21BB7A7300158899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91A02DD521BC2542001BC7C6 /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +57,38 @@
 			isa = PBXGroup;
 			children = (
 				915E101E21BB7A7200158899 /* AppDelegate.swift */,
-				915E102021BB7A7200158899 /* ViewController.swift */,
-				915E102221BB7A7200158899 /* Main.storyboard */,
+				91A02DD421BC252D001BC7C6 /* Model */,
+				91AB5B5A21BEC713002862F1 /* View */,
+				91AB5B5B21BEC729002862F1 /* Controller */,
 				915E102521BB7A7300158899 /* Assets.xcassets */,
 				915E102721BB7A7300158899 /* LaunchScreen.storyboard */,
 				915E102A21BB7A7300158899 /* Info.plist */,
 			);
 			path = MusicChallenge;
+			sourceTree = "<group>";
+		};
+		91A02DD421BC252D001BC7C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				91A02DD521BC2542001BC7C6 /* DAO.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		91AB5B5A21BEC713002862F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				915E102221BB7A7200158899 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		91AB5B5B21BEC729002862F1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				915E102021BB7A7200158899 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91A02DD621BC2542001BC7C6 /* DAO.swift in Sources */,
 				915E102121BB7A7200158899 /* ViewController.swift in Sources */,
 				915E101F21BB7A7200158899 /* AppDelegate.swift in Sources */,
 			);
