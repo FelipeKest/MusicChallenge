@@ -13,6 +13,7 @@ let DAO = dao.instance
 
 class dao{
     static let instance = dao()
-   
+    
+    var database: CKDatabase?
     
 }
