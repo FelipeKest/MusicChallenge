@@ -12,8 +12,20 @@
 		915E102421BB7A7200158899 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 915E102221BB7A7200158899 /* Main.storyboard */; };
 		915E102621BB7A7300158899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 915E102521BB7A7300158899 /* Assets.xcassets */; };
 		915E102921BB7A7300158899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 915E102721BB7A7300158899 /* LaunchScreen.storyboard */; };
+		9191067421C0252D0032EE4B /* MusicChallengeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191067321C0252D0032EE4B /* MusicChallengeTest.swift */; };
+		9191067A21C02C9F0032EE4B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9191067921C02C9F0032EE4B /* CloudKit.framework */; };
 		91A02DD621BC2542001BC7C6 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A02DD521BC2542001BC7C6 /* DAO.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9191066D21C0245A0032EE4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 915E101321BB7A7200158899 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 915E101A21BB7A7200158899;
+			remoteInfo = MusicChallenge;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		915E101B21BB7A7200158899 /* MusicChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -23,11 +35,24 @@
 		915E102521BB7A7300158899 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		915E102821BB7A7300158899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		915E102A21BB7A7300158899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9191066821C0245A0032EE4B /* MusicChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9191066C21C0245A0032EE4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9191067321C0252D0032EE4B /* MusicChallengeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicChallengeTest.swift; sourceTree = "<group>"; };
+		9191067721C02C970032EE4B /* MusicChallenge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MusicChallenge.entitlements; sourceTree = "<group>"; };
+		9191067921C02C9F0032EE4B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		91A02DD521BC2542001BC7C6 /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		915E101821BB7A7200158899 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9191067A21C02C9F0032EE4B /* CloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9191066521C0245A0032EE4B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,7 +66,9 @@
 			isa = PBXGroup;
 			children = (
 				915E101D21BB7A7200158899 /* MusicChallenge */,
+				9191066921C0245A0032EE4B /* MusicChallengeTests */,
 				915E101C21BB7A7200158899 /* Products */,
+				9191067821C02C9F0032EE4B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -49,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				915E101B21BB7A7200158899 /* MusicChallenge.app */,
+				9191066821C0245A0032EE4B /* MusicChallengeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,6 +84,7 @@
 		915E101D21BB7A7200158899 /* MusicChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				9191067721C02C970032EE4B /* MusicChallenge.entitlements */,
 				915E101E21BB7A7200158899 /* AppDelegate.swift */,
 				91A02DD421BC252D001BC7C6 /* Model */,
 				91AB5B5A21BEC713002862F1 /* View */,
@@ -65,6 +94,23 @@
 				915E102A21BB7A7300158899 /* Info.plist */,
 			);
 			path = MusicChallenge;
+			sourceTree = "<group>";
+		};
+		9191066921C0245A0032EE4B /* MusicChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				9191066C21C0245A0032EE4B /* Info.plist */,
+				9191067321C0252D0032EE4B /* MusicChallengeTest.swift */,
+			);
+			path = MusicChallengeTests;
+			sourceTree = "<group>";
+		};
+		9191067821C02C9F0032EE4B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9191067921C02C9F0032EE4B /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		91A02DD421BC252D001BC7C6 /* Model */ = {
@@ -111,6 +157,24 @@
 			productReference = 915E101B21BB7A7200158899 /* MusicChallenge.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9191066721C0245A0032EE4B /* MusicChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9191066F21C0245A0032EE4B /* Build configuration list for PBXNativeTarget "MusicChallengeTests" */;
+			buildPhases = (
+				9191066421C0245A0032EE4B /* Sources */,
+				9191066521C0245A0032EE4B /* Frameworks */,
+				9191066621C0245A0032EE4B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9191066E21C0245A0032EE4B /* PBXTargetDependency */,
+			);
+			name = MusicChallengeTests;
+			productName = MusicChallengeTests;
+			productReference = 9191066821C0245A0032EE4B /* MusicChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -123,6 +187,19 @@
 				TargetAttributes = {
 					915E101A21BB7A7200158899 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+					9191066721C0245A0032EE4B = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
+						TestTargetID = 915E101A21BB7A7200158899;
 					};
 				};
 			};
@@ -140,6 +217,7 @@
 			projectRoot = "";
 			targets = (
 				915E101A21BB7A7200158899 /* MusicChallenge */,
+				9191066721C0245A0032EE4B /* MusicChallengeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -152,6 +230,13 @@
 				915E102921BB7A7300158899 /* LaunchScreen.storyboard in Resources */,
 				915E102621BB7A7300158899 /* Assets.xcassets in Resources */,
 				915E102421BB7A7200158899 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9191066621C0245A0032EE4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,7 +253,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9191066421C0245A0032EE4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9191067421C0252D0032EE4B /* MusicChallengeTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9191066E21C0245A0032EE4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 915E101A21BB7A7200158899 /* MusicChallenge */;
+			targetProxy = 9191066D21C0245A0032EE4B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		915E102221BB7A7200158899 /* Main.storyboard */ = {
@@ -310,6 +411,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MusicChallenge/MusicChallenge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93LU37KCD9;
 				INFOPLIST_FILE = MusicChallenge/Info.plist;
@@ -328,6 +430,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MusicChallenge/MusicChallenge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93LU37KCD9;
 				INFOPLIST_FILE = MusicChallenge/Info.plist;
@@ -339,6 +442,49 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9191067021C0245A0032EE4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 93LU37KCD9;
+				INFOPLIST_FILE = MusicChallengeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = FelipeKestelman.MusicChallengeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MusicChallenge.app/MusicChallenge";
+			};
+			name = Debug;
+		};
+		9191067121C0245A0032EE4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 93LU37KCD9;
+				INFOPLIST_FILE = MusicChallengeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = FelipeKestelman.MusicChallengeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MusicChallenge.app/MusicChallenge";
 			};
 			name = Release;
 		};
@@ -359,6 +505,15 @@
 			buildConfigurations = (
 				915E102E21BB7A7300158899 /* Debug */,
 				915E102F21BB7A7300158899 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9191066F21C0245A0032EE4B /* Build configuration list for PBXNativeTarget "MusicChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9191067021C0245A0032EE4B /* Debug */,
+				9191067121C0245A0032EE4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

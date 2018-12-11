@@ -9,11 +9,15 @@
 import Foundation
 import CloudKit
 
-let DAO = dao.instance
+//Para retornar o dao para um singleton descomentar as duas linhas abaixo
+//let DAO = dao.instance
 
 class dao{
-    static let instance = dao()
+    // static let instance = dao()
     
     var database: CKDatabase?
     
+    func createPost()->Int{
+        return 1
+    }
 }
