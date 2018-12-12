@@ -11,10 +11,7 @@ import UIKit
 class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
-    
     @IBOutlet var roadmapTableView: UITableView!
-    
-    @IBOutlet var addEventButton: UIBarButtonItem!
     
     
     
