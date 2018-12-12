@@ -10,6 +10,7 @@
 		67D5BB1A21C15DE50058BCC7 /* RoadmapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BB1921C15DE50058BCC7 /* RoadmapViewController.swift */; };
 		67D5BB1C21C168B10058BCC7 /* SongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BB1B21C168B10058BCC7 /* SongsViewController.swift */; };
 		67D5BB1E21C16C570058BCC7 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BB1D21C16C570058BCC7 /* FeedViewController.swift */; };
+		67D5BB2021C173D40058BCC7 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BB1F21C173D40058BCC7 /* PostViewController.swift */; };
 		915E101F21BB7A7200158899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915E101E21BB7A7200158899 /* AppDelegate.swift */; };
 		915E102121BB7A7200158899 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915E102021BB7A7200158899 /* ViewController.swift */; };
 		915E102421BB7A7200158899 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 915E102221BB7A7200158899 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 		67D5BB1921C15DE50058BCC7 /* RoadmapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadmapViewController.swift; sourceTree = "<group>"; };
 		67D5BB1B21C168B10058BCC7 /* SongsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsViewController.swift; sourceTree = "<group>"; };
 		67D5BB1D21C16C570058BCC7 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		67D5BB1F21C173D40058BCC7 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		915E101B21BB7A7200158899 /* MusicChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		915E101E21BB7A7200158899 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		915E102021BB7A7200158899 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				67D5BB1B21C168B10058BCC7 /* SongsViewController.swift */,
 				67D5BB1921C15DE50058BCC7 /* RoadmapViewController.swift */,
 				67D5BB1D21C16C570058BCC7 /* FeedViewController.swift */,
+				67D5BB1F21C173D40058BCC7 /* PostViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			files = (
 				91A02DD621BC2542001BC7C6 /* DAO.swift in Sources */,
 				67D5BB1A21C15DE50058BCC7 /* RoadmapViewController.swift in Sources */,
+				67D5BB2021C173D40058BCC7 /* PostViewController.swift in Sources */,
 				67D5BB1C21C168B10058BCC7 /* SongsViewController.swift in Sources */,
 				915E102121BB7A7200158899 /* ViewController.swift in Sources */,
 				67D5BB1E21C16C570058BCC7 /* FeedViewController.swift in Sources */,
