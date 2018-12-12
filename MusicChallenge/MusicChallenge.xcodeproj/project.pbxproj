@@ -12,6 +12,10 @@
 		915E102421BB7A7200158899 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 915E102221BB7A7200158899 /* Main.storyboard */; };
 		915E102621BB7A7300158899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 915E102521BB7A7300158899 /* Assets.xcassets */; };
 		915E102921BB7A7300158899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 915E102721BB7A7300158899 /* LaunchScreen.storyboard */; };
+		9160542C21C07C5800B23CD1 /* Musico.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160542B21C07C5800B23CD1 /* Musico.swift */; };
+		9160542E21C07F2800B23CD1 /* Instrumento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160542D21C07F2800B23CD1 /* Instrumento.swift */; };
+		9160543021C07FB800B23CD1 /* Banda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160542F21C07FB800B23CD1 /* Banda.swift */; };
+		9160543221C07FDB00B23CD1 /* Musica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160543121C07FDB00B23CD1 /* Musica.swift */; };
 		9191067421C0252D0032EE4B /* MusicChallengeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191067321C0252D0032EE4B /* MusicChallengeTest.swift */; };
 		9191067A21C02C9F0032EE4B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9191067921C02C9F0032EE4B /* CloudKit.framework */; };
 		91A02DD621BC2542001BC7C6 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A02DD521BC2542001BC7C6 /* DAO.swift */; };
@@ -35,6 +39,10 @@
 		915E102521BB7A7300158899 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		915E102821BB7A7300158899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		915E102A21BB7A7300158899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9160542B21C07C5800B23CD1 /* Musico.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Musico.swift; sourceTree = "<group>"; };
+		9160542D21C07F2800B23CD1 /* Instrumento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instrumento.swift; sourceTree = "<group>"; };
+		9160542F21C07FB800B23CD1 /* Banda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banda.swift; sourceTree = "<group>"; };
+		9160543121C07FDB00B23CD1 /* Musica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Musica.swift; sourceTree = "<group>"; };
 		9191066821C0245A0032EE4B /* MusicChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9191066C21C0245A0032EE4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9191067321C0252D0032EE4B /* MusicChallengeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicChallengeTest.swift; sourceTree = "<group>"; };
@@ -117,6 +125,10 @@
 			isa = PBXGroup;
 			children = (
 				91A02DD521BC2542001BC7C6 /* DAO.swift */,
+				9160542B21C07C5800B23CD1 /* Musico.swift */,
+				9160542D21C07F2800B23CD1 /* Instrumento.swift */,
+				9160542F21C07FB800B23CD1 /* Banda.swift */,
+				9160543121C07FDB00B23CD1 /* Musica.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -247,9 +259,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9160542E21C07F2800B23CD1 /* Instrumento.swift in Sources */,
 				91A02DD621BC2542001BC7C6 /* DAO.swift in Sources */,
+				9160543221C07FDB00B23CD1 /* Musica.swift in Sources */,
 				915E102121BB7A7200158899 /* ViewController.swift in Sources */,
 				915E101F21BB7A7200158899 /* AppDelegate.swift in Sources */,
+				9160543021C07FB800B23CD1 /* Banda.swift in Sources */,
+				9160542C21C07C5800B23CD1 /* Musico.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

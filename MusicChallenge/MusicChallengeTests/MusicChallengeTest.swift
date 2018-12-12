@@ -35,9 +35,9 @@ class MusicChallengeTest: XCTestCase {
     //Aprendendo Unit Test
     //Se quiserem aprender criem outras Classes XCTestCase
     func testNumber1(){
-        let val = dao()
-        let one = 1
-        XCTAssertTrue(val.createPost()==one)
+        let DAO = dao()
+        
+        
     }
 
 }
