@@ -1,5 +1,5 @@
 //
-//  RoadmapViewController.swift
+//  FeedViewController.swift
 //  MusicChallenge
 //
 //  Created by Guilherme Vassallo on 12/12/18.
@@ -8,17 +8,16 @@
 
 import UIKit
 
-class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FeedViewController: UIViewController {
+    
+    @IBOutlet var feedTableView: UITableView!
+    
+    @IBOutlet var profileButton: UIBarButtonItem!
+    
+    @IBOutlet var createPostButton: UIBarButtonItem!
+
     
     
-    
-    @IBOutlet var roadmapTableView: UITableView!
-    
-    @IBOutlet var addEventButton: UIBarButtonItem!
-    
-    
-    
-    //@IBOutlet var monthSelector: ?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,13 +35,5 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Pass the selected object to the new view controller.
     }
     */
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
-    }
 
 }

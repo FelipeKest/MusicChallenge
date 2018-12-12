@@ -16,6 +16,11 @@ class SongsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet var segmentedControl: UISegmentedControl!
     
+    @IBOutlet var addSetlistButton: UIBarButtonItem!
+    
+    @IBOutlet var addSongButton: UIBarButtonItem!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
