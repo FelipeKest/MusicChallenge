@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WLd-bd-95s">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -13,50 +13,57 @@
         <scene sceneID="Ldv-yX-S9S">
             <objects>
                 <tabBarController id="WLd-bd-95s" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="370-61-ody">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" id="370-61-ody">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                        <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.82352941180000006" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="cal-15-Qvf" kind="relationship" relationship="viewControllers" id="m8S-u5-CWx"/>
-                        <segue destination="Cae-iK-IkX" kind="relationship" relationship="viewControllers" id="Xrf-JJ-144"/>
-                        <segue destination="SWS-mX-jbB" kind="relationship" relationship="viewControllers" id="2tg-oE-6Gm"/>
+                        <segue destination="v9r-2A-Kc3" kind="relationship" relationship="viewControllers" id="O17-aO-gfP"/>
+                        <segue destination="aP2-dm-SNi" kind="relationship" relationship="viewControllers" id="6Ie-bY-5zw"/>
+                        <segue destination="iX3-cZ-Pha" kind="relationship" relationship="viewControllers" id="kFT-io-wlc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o6g-zE-r6p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1093" y="-370"/>
         </scene>
-        <!-- Roadmap-->
-        <scene sceneID="4zS-0P-TWK">
+        <!--Roadmap-->
+        <scene sceneID="kII-Fx-qDP">
             <objects>
-                <viewControllerPlaceholder storyboardName=" Roadmap" id="cal-15-Qvf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ACf-Y8-Z0o"/>
+                <viewControllerPlaceholder storyboardName="Roadmap" id="v9r-2A-Kc3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" largeContentSizeImage="roadmap_icon2" systemItem="more" id="BH6-o0-HSb">
+                        <color key="badgeColor" name="controlAccentColor" catalog="System" colorSpace="catalog"/>
+                    </tabBarItem>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DAb-ph-ZXI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2M3-zh-xbx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2404" y="347"/>
+            <point key="canvasLocation" x="-1671" y="229"/>
         </scene>
         <!--Songs-->
-        <scene sceneID="aNI-ez-uDK">
+        <scene sceneID="7tw-XG-IAu">
             <objects>
-                <viewControllerPlaceholder storyboardName="Songs" id="Cae-iK-IkX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="MT6-5W-luK"/>
+                <viewControllerPlaceholder storyboardName="Songs" id="aP2-dm-SNi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="sVC-VR-LoZ"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mXz-v2-V2u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oU1-yL-ZME" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1094" y="346"/>
+            <point key="canvasLocation" x="-1094" y="228"/>
         </scene>
         <!--Feed-->
-        <scene sceneID="eQJ-dc-5S4">
+        <scene sceneID="3rs-Vj-vIi">
             <objects>
-                <viewControllerPlaceholder storyboardName="Feed" id="SWS-mX-jbB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="b8T-XU-Sfs"/>
+                <viewControllerPlaceholder storyboardName="Feed" id="iX3-cZ-Pha" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="4l4-b0-IIr"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cgX-vP-S6y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KV2-Cq-JrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="254" y="346"/>
+            <point key="canvasLocation" x="-452" y="228"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="roadmap_icon2" width="102" height="102"/>
+    </resources>
 </document>
