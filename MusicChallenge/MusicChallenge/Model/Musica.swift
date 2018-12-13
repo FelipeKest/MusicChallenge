@@ -7,12 +7,14 @@
 //
 
 import Foundation
+import CloudKit
 
 class Musica {
     var nome: String
-    var instrumentos: [Instrumento]
+    var instrumentos: [String]
+    var musicaId: CKRecord.ID?
     
-    init(nome: String, instrumentos: [Instrumento]) {
+    init(nome: String, instrumentos: [String]) {
         self.nome = nome
         self.instrumentos = instrumentos
     }

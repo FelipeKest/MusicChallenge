@@ -10,15 +10,18 @@ import Foundation
 import CloudKit
 
 //Para retornar o dao para um singleton descomentar as duas linhas abaixo
-//let DAO = dao.instance
+let DAO = dao.instance
 
 class dao{
-    // static let instance = dao()
-    static var database:CKDatabase?
+    static let instance = dao()
+    var database:CKDatabase?
+    let container = CKContainer(identifier: "iCloud.FelipeKestelman.MusicChallenge")
     
-    static let container = CKContainer(identifier: "iCloud.FelipeKestelman.MusicChallenge")
+    private init(){
+        self.configureCloud()
+    }
     
-    static func configureCloud(){
+    func configureCloud(){
         
         database = container.publicCloudDatabase
         
@@ -31,27 +34,34 @@ class dao{
         }
     }
 
-    func createSong(musica: Musica){
-        let song = CKRecord(recordType: "Musicas")
-        song.setObject(musica.nome as CKRecordValue?, forKey: "Nome")
-        song.setObject(musica.instrumentos as CKRecordValue?, forKey: "Instrumentos")
-        dao.database?.save(song, completionHandler: { (result, error) in
+    
+    func createSong(musica: Musica, completionHandler: @escaping (CKRecord?,Error?)->Void){
+        let songRecord = CKRecord(recordType: "Musica")
+        songRecord.setObject(musica.nome as CKRecordValue?, forKey: "Nome")
+        songRecord.setObject(musica.instrumentos as CKRecordValue?, forKey: "Instrumentos")
+        database?.save(songRecord, completionHandler: { (result, error) in
             if error != nil {
-                print("Song Added")
-                return
+                completionHandler(nil,error)
+            } else {
+                completionHandler(result, nil)
             }
         })
     }
     
-    func queryMusica(musica: Musica){
-        let query = CKQuery(recordType: "Musicas", predicate: NSPredicate(value: true))
-        dao.database?.perform(query, inZoneWith: nil, completionHandler: { (results, _) in
-            guard let songs = results else { return }
-            let sortedSongs = songs.sorted(by: { $0.creationDate! > $1.creationDate!})
-            
-
-        })
-    }
     
+    
+    func queryMusica(musica: Musica)->CKRecord{
+        var musicaRecord: CKRecord?
+        
+        database?.fetch(withRecordID: musica.musicaId!, completionHandler: { (result, error) in
+            if error == nil {
+                musicaRecord = result
+            } else {
+                print(error?.localizedDescription as Any)
+                return
+            }
+        })
+        return musicaRecord!
+    }
     
 }

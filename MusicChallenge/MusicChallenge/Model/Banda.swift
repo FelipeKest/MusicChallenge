@@ -7,13 +7,15 @@
 //
 
 import Foundation
+import CloudKit
 
 class Banda {
-    var membros: [Musico]
     var repertorio: [Musica]
+    let zone: CKRecordZone
     
-    init(membros: [Musico], repertorio: [Musica]) {
-        self.membros = membros
+    init(repertorio: [Musica], zone: CKRecordZone) {
         self.repertorio = repertorio
+        self.zone = zone
     }
+    
 }

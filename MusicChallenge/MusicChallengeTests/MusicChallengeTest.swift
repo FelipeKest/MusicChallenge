@@ -7,7 +7,9 @@
 //
 
 import XCTest
+import CloudKit
 @testable import MusicChallenge
+
 
 class MusicChallengeTest: XCTestCase {
     
@@ -34,10 +36,16 @@ class MusicChallengeTest: XCTestCase {
     
     //Aprendendo Unit Test
     //Se quiserem aprender criem outras Classes XCTestCase
-    func testNumber1(){
-        let DAO = dao()
-        
-        
+    func testJson(){
+        let song = Musica(nome: "BYOB", instrumentos: [Instrumento.Baixo.text, Instrumento.Guitarra.text, Instrumento.Vocalista.text, Instrumento.Bateria.text])
+        var newRecord: CKRecord?
+        print("OUT OF COMPLETION")
+        DAO.createSong(musica: song) { (result, error) in
+            print(result)
+        }
+        print(newRecord?.object(forKey: "Nome") as Any)
+        // let songReturn = DAO.queryMusica(musica: song)
+    //    XCTAssert((newRecord!.value(forKey: "Nome") as! String) == (songReturn.value(forKey: "Nome") as! String))
     }
 
 }

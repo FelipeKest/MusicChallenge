@@ -12,6 +12,17 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        
+        let musica = Musica(nome: "BYOB", instrumentos: [Instrumento.Baixo.text])
+        DAO.createSong(musica: musica) { (record, error) in
+            if error != nil {
+                print(record as Any)
+            } else {
+                print(error?.localizedDescription as Any)
+            }
+        }
+
         // Do any additional setup after loading the view, typically from a nib.
     }
 
