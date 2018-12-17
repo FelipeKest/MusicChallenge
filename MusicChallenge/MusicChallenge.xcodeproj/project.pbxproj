@@ -13,6 +13,9 @@
 		676CEE7A21C83AD700961015 /* OneSetlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676CEE7921C83AD700961015 /* OneSetlistViewController.swift */; };
 		676CEE7C21C83BCD00961015 /* OneSongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676CEE7B21C83BCD00961015 /* OneSongViewController.swift */; };
 		676CEE7E21C83C3500961015 /* WhatSetlistsHaveSongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676CEE7D21C83C3500961015 /* WhatSetlistsHaveSongViewController.swift */; };
+		676CEE8121C843C400961015 /* BandInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676CEE8021C843C400961015 /* BandInfoViewController.swift */; };
+		676CEE8321C843D700961015 /* MusicianProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676CEE8221C843D700961015 /* MusicianProfileViewController.swift */; };
+		676CEE8521C843E300961015 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676CEE8421C843E300961015 /* MyProfileViewController.swift */; };
 		6777852021C77591002DAB83 /* RepertoireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777851F21C77591002DAB83 /* RepertoireViewController.swift */; };
 		6777852521C77829002DAB83 /* SetlistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777852421C77829002DAB83 /* SetlistCollectionViewCell.swift */; };
 		6777852721C77840002DAB83 /* RoadmapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777852621C77840002DAB83 /* RoadmapTableViewCell.swift */; };
@@ -36,6 +39,9 @@
 		676CEE7921C83AD700961015 /* OneSetlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneSetlistViewController.swift; sourceTree = "<group>"; };
 		676CEE7B21C83BCD00961015 /* OneSongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneSongViewController.swift; sourceTree = "<group>"; };
 		676CEE7D21C83C3500961015 /* WhatSetlistsHaveSongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatSetlistsHaveSongViewController.swift; sourceTree = "<group>"; };
+		676CEE8021C843C400961015 /* BandInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BandInfoViewController.swift; sourceTree = "<group>"; };
+		676CEE8221C843D700961015 /* MusicianProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicianProfileViewController.swift; sourceTree = "<group>"; };
+		676CEE8421C843E300961015 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		6777851F21C77591002DAB83 /* RepertoireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepertoireViewController.swift; sourceTree = "<group>"; };
 		6777852421C77829002DAB83 /* SetlistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetlistCollectionViewCell.swift; sourceTree = "<group>"; };
 		6777852621C77840002DAB83 /* RoadmapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadmapTableViewCell.swift; sourceTree = "<group>"; };
@@ -82,6 +88,7 @@
 		676CEE7121C826ED00961015 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				676CEE7F21C843A900961015 /* Info */,
 				67D5BB1D21C16C570058BCC7 /* FeedViewController.swift */,
 				67D5BB1F21C173D40058BCC7 /* PostViewController.swift */,
 			);
@@ -95,6 +102,16 @@
 				676CEE7321C82DE300961015 /* JoinBandViewController.swift */,
 			);
 			path = "Initial Screens";
+			sourceTree = "<group>";
+		};
+		676CEE7F21C843A900961015 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				676CEE8021C843C400961015 /* BandInfoViewController.swift */,
+				676CEE8221C843D700961015 /* MusicianProfileViewController.swift */,
+				676CEE8421C843E300961015 /* MyProfileViewController.swift */,
+			);
+			path = Info;
 			sourceTree = "<group>";
 		};
 		6777852121C7778D002DAB83 /* Setlists */ = {
@@ -174,10 +191,10 @@
 		91AB5B5B21BEC729002862F1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				915E102021BB7A7200158899 /* ViewController.swift */,
 				676CEE7121C826ED00961015 /* Feed */,
 				6777852321C777CB002DAB83 /* Roadmap */,
 				676CEE7021C826C200961015 /* Songs */,
-				915E102021BB7A7200158899 /* ViewController.swift */,
 				676CEE7221C8271F00961015 /* Initial Screens */,
 			);
 			path = Controller;
@@ -256,6 +273,7 @@
 			files = (
 				6777852721C77840002DAB83 /* RoadmapTableViewCell.swift in Sources */,
 				676CEE7621C838EC00961015 /* CreateSongViewController.swift in Sources */,
+				676CEE8321C843D700961015 /* MusicianProfileViewController.swift in Sources */,
 				676CEE7821C8390A00961015 /* ImportFromRepertoireViewController.swift in Sources */,
 				676CEE7E21C83C3500961015 /* WhatSetlistsHaveSongViewController.swift in Sources */,
 				91A02DD621BC2542001BC7C6 /* DAO.swift in Sources */,
@@ -263,10 +281,12 @@
 				6777852921C7B953002DAB83 /* RepertoireTableViewCell.swift in Sources */,
 				67D5BB1A21C15DE50058BCC7 /* RoadmapViewController.swift in Sources */,
 				67D5BB2021C173D40058BCC7 /* PostViewController.swift in Sources */,
+				676CEE8521C843E300961015 /* MyProfileViewController.swift in Sources */,
 				67D5BB1C21C168B10058BCC7 /* SetlistsViewController.swift in Sources */,
 				915E102121BB7A7200158899 /* ViewController.swift in Sources */,
 				676CEE7A21C83AD700961015 /* OneSetlistViewController.swift in Sources */,
 				67D5BB1E21C16C570058BCC7 /* FeedViewController.swift in Sources */,
+				676CEE8121C843C400961015 /* BandInfoViewController.swift in Sources */,
 				915E101F21BB7A7200158899 /* AppDelegate.swift in Sources */,
 				6777852521C77829002DAB83 /* SetlistCollectionViewCell.swift in Sources */,
 				676CEE7C21C83BCD00961015 /* OneSongViewController.swift in Sources */,

@@ -6,6 +6,8 @@
 //  Copyright © 2018 Felipe Kestelman. All rights reserved.
 //
 
+//Célula da tableView do repertório
+
 import UIKit
 
 class RepertoireTableViewCell: UITableViewCell {

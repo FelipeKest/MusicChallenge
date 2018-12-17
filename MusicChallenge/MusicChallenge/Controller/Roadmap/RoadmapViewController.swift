@@ -6,6 +6,8 @@
 //  Copyright © 2018 Felipe Kestelman. All rights reserved.
 //
 
+//ViewController da tela de Roadmap, onde estão os eventos da banda
+
 import UIKit
 
 class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {

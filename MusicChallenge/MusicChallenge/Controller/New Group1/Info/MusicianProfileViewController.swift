@@ -1,26 +1,17 @@
 //
-//  FeedViewController.swift
+//  MusicianProfileViewController.swift
 //  MusicChallenge
 //
-//  Created by Guilherme Vassallo on 12/12/18.
+//  Created by Guilherme Vassallo on 17/12/18.
 //  Copyright © 2018 Felipe Kestelman. All rights reserved.
 //
 
-//ViewController do feed onde os membros interagem entre si
+//ViewController da tela de perfil de um músico da banda
 
 import UIKit
 
-class FeedViewController: UIViewController {
-    
-    @IBOutlet var feedTableView: UITableView!
-    
-    @IBOutlet var profileButton: UIBarButtonItem!
-    
-    @IBOutlet var createPostButton: UIBarButtonItem!
+class MusicianProfileViewController: UIViewController {
 
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

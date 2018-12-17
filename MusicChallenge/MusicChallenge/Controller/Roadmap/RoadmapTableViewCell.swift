@@ -6,6 +6,8 @@
 //  Copyright © 2018 Felipe Kestelman. All rights reserved.
 //
 
+//Célula da tableView do Roadmap
+
 import UIKit
 
 class RoadmapTableViewCell: UITableViewCell {

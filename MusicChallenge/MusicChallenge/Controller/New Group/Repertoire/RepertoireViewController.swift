@@ -6,6 +6,8 @@
 //  Copyright © 2018 Felipe Kestelman. All rights reserved.
 //
 
+//ViewController da tela de repertório
+
 import UIKit
 
 class RepertoireViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {

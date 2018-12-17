@@ -6,6 +6,8 @@
 //  Copyright © 2018 Felipe Kestelman. All rights reserved.
 //
 
+//Célula da collectionView das setlists
+
 import UIKit
 
 class SetlistCollectionViewCell: UICollectionViewCell {
