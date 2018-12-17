@@ -45,7 +45,7 @@
         <!--Songs-->
         <scene sceneID="7tw-XG-IAu">
             <objects>
-                <viewControllerPlaceholder storyboardName="Songs" id="aP2-dm-SNi" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="Songs" storyboardName="Songs" id="aP2-dm-SNi" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="sVC-VR-LoZ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oU1-yL-ZME" userLabel="First Responder" sceneMemberID="firstResponder"/>
