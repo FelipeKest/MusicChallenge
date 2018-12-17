@@ -9,6 +9,11 @@
 import UIKit
 
 class RepertoireTableViewCell: UITableViewCell {
+    
+    @IBOutlet var songName: UILabel!
+    @IBOutlet var songInstruments: [UIImage]!
+    @IBOutlet var additionalInstruments: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -10,15 +10,11 @@ import UIKit
 
 class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
-    
     @IBOutlet var roadmapTableView: UITableView!
-    
     @IBOutlet var addEventButton: UIBarButtonItem!
     
     //@IBOutlet var searchBar: UISearchBar!
-    
-    //@IBOutlet var monthSelector: ?
+    //@IBOutlet var monthSelector: ? (descobrir o tipo disso)
     
     override func viewDidLoad() {
         
@@ -41,8 +37,12 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     */
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

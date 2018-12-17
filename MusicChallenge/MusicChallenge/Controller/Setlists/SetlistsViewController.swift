@@ -11,12 +11,8 @@ import UIKit
 class SetlistsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet var setlistsCollectionView: UICollectionView!
-    
     @IBOutlet var segmentedControl: UISegmentedControl!
-    
-    //@IBOutlet var addSetlistButton: UIBarButtonItem!
-    
-    
+    @IBOutlet var addSetlistButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         

@@ -8,21 +8,19 @@
 
 import UIKit
 
-class RepertoireViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RepertoireViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet var repertoireTableView: UITableView!
-    
     @IBOutlet var segmentedControl: UISegmentedControl!
-    
     @IBOutlet var addSongButton: UIBarButtonItem!
-    
-    //@IBOutlet var songSearchBar: UISearchBar!
-    
+    @IBOutlet var songSearchBar: UISearchBar!
     
     override func viewDidLoad() {
         
         self.repertoireTableView.dataSource = self
         self.repertoireTableView.delegate = self
+        self.songSearchBar.delegate = self
+
         
         super.viewDidLoad()
         
@@ -45,7 +43,10 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        
+        let cellRepertoire = tableView.dequeueReusableCell(withIdentifier: "cellRepertoire", for: indexPath) as! RepertoireTableViewCell
+        
+        
     }
 
 }

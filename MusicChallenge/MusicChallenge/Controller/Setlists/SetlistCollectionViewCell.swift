@@ -10,4 +10,7 @@ import UIKit
 
 class SetlistCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet var setlistName: UILabel!
+    @IBOutlet var numberOfSongs: UILabel!
+    
 }
