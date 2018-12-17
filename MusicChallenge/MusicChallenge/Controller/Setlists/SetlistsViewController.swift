@@ -1,5 +1,5 @@
 //
-//  RoadmapViewController.swift
+//  SongsViewController.swift
 //  MusicChallenge
 //
 //  Created by Guilherme Vassallo on 12/12/18.
@@ -8,19 +8,21 @@
 
 import UIKit
 
-class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SetlistsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    @IBOutlet var setlistsCollectionView: UICollectionView!
+    
+    @IBOutlet var segmentedControl: UISegmentedControl!
+    
+    //@IBOutlet var addSetlistButton: UIBarButtonItem!
     
     
-    
-    @IBOutlet var roadmapTableView: UITableView!
-    
-    @IBOutlet var addEventButton: UIBarButtonItem!
-    
-    
-    
-    //@IBOutlet var monthSelector: ?
     
     override func viewDidLoad() {
+        
+        self.setlistsCollectionView.dataSource = self
+        self.setlistsCollectionView.delegate = self
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -37,11 +39,13 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     */
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         <#code#>
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         <#code#>
     }
 
