@@ -9,7 +9,16 @@
 import Foundation
 import UIKit
 
-enum Instrumento {
+enum InstrumentTypes: Saveable {
+    
+    var id: String?
+    
+    var asDictionary: [String : Any] {
+        var result: [String:Any] = [:]
+        result["id"] = self.id
+        result["tipo"] = self.text
+    }
+    
     case Baixo
     case Guitarra
     case Bateria

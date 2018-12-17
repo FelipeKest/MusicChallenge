@@ -14,14 +14,14 @@ let DAO = dao.instance
 
 class dao{
     static let instance = dao()
-    var database:CKDatabase?
-    let container = CKContainer(identifier: "iCloud.FelipeKestelman.MusicChallenge")
+    private var database:CKDatabase?
+    private let container = CKContainer(identifier: "iCloud.FelipeKestelman.MusicChallenge")
     
     private init(){
         self.configureCloud()
     }
     
-    func configureCloud(){
+    private func configureCloud(){
         
         database = container.publicCloudDatabase
         
@@ -33,7 +33,6 @@ class dao{
             }
         }
     }
-
     
     func createSong(musica: Musica, completionHandler: @escaping (CKRecord?,Error?)->Void){
         let songRecord = CKRecord(recordType: "Musica")
@@ -48,12 +47,23 @@ class dao{
         })
     }
     
+    func createPlaylist(playlist: Playlist, completionHandler: @escaping (CKRecord?,Error?)->Void){
+        let playlistRecord = CKRecord(recordType: "Playlist")
+        playlistRecord.setObject(playlist.name as CKRecordValue?, forKey: "Nome")
+        playlistRecord.setObject(playlist.musicas as  CKRecordValue?, forKey: "Musicas")
+        database?.save(playlistRecord, completionHandler: { (result, error) in
+            if error != nil {
+                completionHandler(nil,error)
+            } else {
+                completionHandler(result, nil)
+            }
+        })
+    }
     
     
     func queryMusica(musica: Musica)->CKRecord{
         var musicaRecord: CKRecord?
-        
-        database?.fetch(withRecordID: musica.musicaId!, completionHandler: { (result, error) in
+        database?.fetch(withRecordID: CKRecord.ID.init(recordName: musica.id!), completionHandler: { (result, error) in
             if error == nil {
                 musicaRecord = result
             } else {

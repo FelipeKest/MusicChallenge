@@ -6,10 +6,22 @@
 //  Copyright © 2018 Felipe Kestelman. All rights reserved.
 //
 
-import Foundation
 import CloudKit
 
-class Musico {
+class Musico:Saveable,Loadable {
+
+    var id: String?
+    
+    var asDictionary: [String : Any] {
+        var result:[String:Any] = [:]
+        // TODO: Implementar
+        result["nome"] = self.nome
+        result["idade"] = self.idade
+        result["instrumentos"] = instrumentos.idsAsString
+        result["bandaID"] = self.bandReference
+        return result
+    }
+    
     var nome: String
     var idade: Int
     var instrumentos: [Instrumento]
@@ -20,6 +32,12 @@ class Musico {
         self.idade = idade
         self.instrumentos = instrumentos
         self.bandReference = bandReference
+    }
+    
+    required convenience init(asDictionary: [String : Any]) {
+        self.nome = asDictionary["nome"] as! String
+        self.idade = asDictionary["idade"] as! Int
+        self.instrumentos = asDictionary["instrumentos"] as! [Instrumento]
     }
     
 }

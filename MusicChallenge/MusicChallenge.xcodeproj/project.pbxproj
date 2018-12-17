@@ -17,8 +17,11 @@
 		9160543221C07FDB00B23CD1 /* Musica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160543121C07FDB00B23CD1 /* Musica.swift */; };
 		9160543421C167D500B23CD1 /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160543321C167D500B23CD1 /* Extenstions.swift */; };
 		9160543621C1686500B23CD1 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160543521C1686500B23CD1 /* Enums.swift */; };
+		9160543821C3149C00B23CD1 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160543721C3149C00B23CD1 /* Playlist.swift */; };
 		9191067421C0252D0032EE4B /* MusicChallengeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191067321C0252D0032EE4B /* MusicChallengeTest.swift */; };
 		9191067A21C02C9F0032EE4B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9191067921C02C9F0032EE4B /* CloudKit.framework */; };
+		9194870821C43B4400DA3290 /* ModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9194870721C43B4400DA3290 /* ModelProtocols.swift */; };
+		9194870C21C43E7D00DA3290 /* CKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9194870B21C43E7D00DA3290 /* CKExtensions.swift */; };
 		91A02DD621BC2542001BC7C6 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A02DD521BC2542001BC7C6 /* DAO.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,11 +48,14 @@
 		9160543121C07FDB00B23CD1 /* Musica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Musica.swift; sourceTree = "<group>"; };
 		9160543321C167D500B23CD1 /* Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
 		9160543521C1686500B23CD1 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		9160543721C3149C00B23CD1 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		9191066821C0245A0032EE4B /* MusicChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9191066C21C0245A0032EE4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9191067321C0252D0032EE4B /* MusicChallengeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicChallengeTest.swift; sourceTree = "<group>"; };
 		9191067721C02C970032EE4B /* MusicChallenge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MusicChallenge.entitlements; sourceTree = "<group>"; };
 		9191067921C02C9F0032EE4B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		9194870721C43B4400DA3290 /* ModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProtocols.swift; sourceTree = "<group>"; };
+		9194870B21C43E7D00DA3290 /* CKExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKExtensions.swift; sourceTree = "<group>"; };
 		91A02DD521BC2542001BC7C6 /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +81,7 @@
 		915E101221BB7A7200158899 = {
 			isa = PBXGroup;
 			children = (
+				9194870921C43E2E00DA3290 /* Persistence */,
 				915E101D21BB7A7200158899 /* MusicChallenge */,
 				9191066921C0245A0032EE4B /* MusicChallengeTests */,
 				915E101C21BB7A7200158899 /* Products */,
@@ -123,15 +130,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		91A02DD421BC252D001BC7C6 /* Model */ = {
+		9194870921C43E2E00DA3290 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				9194870A21C43E5F00DA3290 /* CloudKit */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		9194870A21C43E5F00DA3290 /* CloudKit */ = {
 			isa = PBXGroup;
 			children = (
 				91A02DD521BC2542001BC7C6 /* DAO.swift */,
+				9194870B21C43E7D00DA3290 /* CKExtensions.swift */,
+			);
+			path = CloudKit;
+			sourceTree = "<group>";
+		};
+		91A02DD421BC252D001BC7C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9160543721C3149C00B23CD1 /* Playlist.swift */,
 				9160542B21C07C5800B23CD1 /* Musico.swift */,
-				9160543321C167D500B23CD1 /* Extenstions.swift */,
 				9160543521C1686500B23CD1 /* Enums.swift */,
 				9160542F21C07FB800B23CD1 /* Banda.swift */,
 				9160543121C07FDB00B23CD1 /* Musica.swift */,
+				9160543321C167D500B23CD1 /* Extenstions.swift */,
+				9194870721C43B4400DA3290 /* ModelProtocols.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -263,7 +288,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9160543421C167D500B23CD1 /* Extenstions.swift in Sources */,
+				9194870C21C43E7D00DA3290 /* CKExtensions.swift in Sources */,
 				91A02DD621BC2542001BC7C6 /* DAO.swift in Sources */,
+				9160543821C3149C00B23CD1 /* Playlist.swift in Sources */,
+				9194870821C43B4400DA3290 /* ModelProtocols.swift in Sources */,
 				9160543221C07FDB00B23CD1 /* Musica.swift in Sources */,
 				915E102121BB7A7200158899 /* ViewController.swift in Sources */,
 				915E101F21BB7A7200158899 /* AppDelegate.swift in Sources */,

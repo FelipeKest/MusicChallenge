@@ -7,5 +7,20 @@
 //
 
 import Foundation
-import UIKit
 
+extension Array where Element == Saveable {
+    var idsAsString:[String] {
+        var ids:[String] = []
+        for item in self {
+            // TODO: Estamos ignorando os caras que não foram salvos ainda
+            if let id = item.id {
+                ids.append(id)
+            } else {
+                // salva ele, e aguarda pra tentar
+                
+            }
+        }
+        return ids
+    }
+    
+}

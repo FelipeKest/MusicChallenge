@@ -6,16 +6,21 @@
 //  Copyright © 2018 Felipe Kestelman. All rights reserved.
 //
 
-import Foundation
-import CloudKit
-
-class Banda {
-    var repertorio: [Musica]
-    let zone: CKRecordZone
+class Banda:Saveable {
+    var id:String?
+    var integrantes:[Musico] = []
+    var repertorio: [Musica] = []
+    var setList:[Playlist] = []
     
-    init(repertorio: [Musica], zone: CKRecordZone) {
-        self.repertorio = repertorio
-        self.zone = zone
+    var asDictionary:[String:Any] {
+        var result:[String:Any] = [:]
+        result["integrantes"] = integrantes.idsAsString
+        
+        
+        return result
     }
-    
 }
+
+
+
+
