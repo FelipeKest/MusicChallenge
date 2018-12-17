@@ -1,29 +1,17 @@
 //
-//  PostViewController.swift
+//  WhatSetlistsHaveSongViewController.swift
 //  MusicChallenge
 //
-//  Created by Guilherme Vassallo on 12/12/18.
+//  Created by Guilherme Vassallo on 17/12/18.
 //  Copyright © 2018 Felipe Kestelman. All rights reserved.
 //
 
-//Viewcontroller de um post específico do feed.
+//Viewcontroller referente a tela que define em quais setlists uma certa música está.
+
 
 import UIKit
 
-class PostViewController: UIViewController {
-    
-    @IBOutlet var nameUser: UILabel!
-    
-    @IBOutlet var picUser: UILabel!
-    
-    @IBOutlet var postDate: UILabel!
-    
-    @IBOutlet var postText: UILabel!
-    
-    
-    
-    
-    
+class WhatSetlistsHaveSongViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

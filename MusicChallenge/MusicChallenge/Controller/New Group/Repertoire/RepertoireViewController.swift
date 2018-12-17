@@ -16,13 +16,13 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet var songSearchBar: UISearchBar!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         
         self.repertoireTableView.dataSource = self
         self.repertoireTableView.delegate = self
         self.songSearchBar.delegate = self
-
-        
-        super.viewDidLoad()
+        self.songSearchBar.returnKeyType = UIReturnKeyType.done
+        //reload()
         
         // Do any additional setup after loading the view.
     }

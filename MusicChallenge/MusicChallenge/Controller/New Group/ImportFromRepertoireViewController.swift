@@ -1,29 +1,16 @@
 //
-//  PostViewController.swift
+//  ImportFromSetlistViewController.swift
 //  MusicChallenge
 //
-//  Created by Guilherme Vassallo on 12/12/18.
+//  Created by Guilherme Vassallo on 17/12/18.
 //  Copyright © 2018 Felipe Kestelman. All rights reserved.
 //
 
-//Viewcontroller de um post específico do feed.
+//Viewcontroller da tela de importar músicas do repertório para uma setlist.
 
 import UIKit
 
-class PostViewController: UIViewController {
-    
-    @IBOutlet var nameUser: UILabel!
-    
-    @IBOutlet var picUser: UILabel!
-    
-    @IBOutlet var postDate: UILabel!
-    
-    @IBOutlet var postText: UILabel!
-    
-    
-    
-    
-    
+class ImportFromRepertoireViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -6,11 +6,14 @@
 //  Copyright © 2018 Felipe Kestelman. All rights reserved.
 //
 
+//Viewcontroller da tela de se juntar a uma banda ou criar uma.
+
 import UIKit
 
 class JoinBandViewController: UIViewController {
     
     @IBOutlet var bandCodeTextField: UITextField!
+    @IBOutlet var confirmCodeButton: UIButton!
     @IBOutlet var createBandButton: UIButton!
 
     override func viewDidLoad() {
