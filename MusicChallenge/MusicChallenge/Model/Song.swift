@@ -32,7 +32,7 @@ class Song:GenericProtocolClass {
     }
     
     convenience init() {
-        self.init(name: "Convenience", instruments: [], bandId: "Convenience", id: "Convinience")
+        self.init(name: "Convenience", instruments: [Instrument(type: InstrumentTypes.Bass, id: "")], bandId: "Convenience", id: "Convinience")
     }
     
     

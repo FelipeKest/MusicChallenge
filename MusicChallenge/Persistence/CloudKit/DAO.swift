@@ -29,35 +29,51 @@ class dao{
             
             if status == .noAccount{
                 print("Sem acesso no iCloud")
-                print(error!)
             }
         }
     }
     
     //MARK: Create Functions
-    func createSong(song: Song, completionHandler: @escaping (Song?,Error?)->Void){
-        let songRecord = CKRecord(recordType: "Song")
-        songRecord.setObject(song.name as CKRecordValue?, forKey: "name")
-        songRecord.setObject(song.instruments as CKRecordValue?, forKey: "instruments")
-        database?.save(songRecord, completionHandler: { (result, error) in
+    func createSong(song: Song, on band:Band, completionHandler: @escaping (Song?,Error?)->Void){
+        let songRecord = CKRecord(recordType: "Musica")
+        songRecord.setObject(song.name as __CKRecordObjCValue, forKey: "Nome")
+        songRecord.setObject(song.instruments.instrumentAsString as __CKRecordObjCValue, forKey: "Instrumentos")
+        database?.save(songRecord, completionHandler: {(result, error) in
             if error != nil {
                 completionHandler(nil,error)
+                print(error!.localizedDescription)
+                return
             } else {
+                print("saved record")
                 song.id = result?.recordID.recordName
+                band.repertoire.append(song)
+                song.bandId = band.id!
                 completionHandler(song, nil)
             }
         })
     }
     
-    func createSetlist(Setlist: Setlist, completionHandler: @escaping (CKRecord?,Error?)->Void){
-        let SetlistRecord = CKRecord(recordType: "Setlist")
-        SetlistRecord.setObject(Setlist.name as CKRecordValue?, forKey: "name")
-        SetlistRecord.setObject(Setlist.songs as  CKRecordValue?, forKey: "Songs")
-        database?.save(SetlistRecord, completionHandler: { (result, error) in
+//    func createDummy(song:Song,on band:Band){
+//        let songRecord = CKRecord(recordType: "Musica")
+//        print("chamou")
+//        songRecord.setValue(song.name, forKey: "Nome")
+//        songRecord.setValue(song.instruments, forKey: "Instrumentos")
+//        print("aqui")
+//        database?.save(songRecord, completionHandler: {(result, error) in
+//            guard let record = result else {return}
+//        })
+//    }
+    
+    func createSetlist(setlist: Setlist, completionHandler: @escaping (CKRecord?,Error?)->Void){
+        let setlistRecord = CKRecord(recordType: "Setlist")
+        setlistRecord.setObject(setlist.name as CKRecordValue?, forKey: "name")
+        setlistRecord.setObject(setlist.songs as  CKRecordValue?, forKey: "Songs")
+        database?.save(setlistRecord, completionHandler: { (result, error) in
             if error != nil {
                 completionHandler(nil,error)
             } else {
-                completionHandler(result, nil)
+                
+                 completionHandler(result, nil)
             }
         })
     }

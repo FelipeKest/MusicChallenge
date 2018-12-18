@@ -12,7 +12,24 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+      
+    }
+    @IBAction func printAction(_ sender: Any) {
+        DAO.createSong(song: Song(), on: Band()) { (result, error) in
+            if error != nil {
+                print("Nao foi")
+                print(error?.localizedDescription as Any)
+            } else {
+                DispatchQueue.main.async {
+                    let newView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+                    newView.backgroundColor = UIColor(red: 1, green: 1, blue: 0.2, alpha: 1)
+                    self.view.addSubview(newView)
+                }
+            }
+        }
+    }
+    @IBAction func printe(_ sender: Any) {
+        print("AHHHHHH")
     }
 }
 
