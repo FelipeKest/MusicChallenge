@@ -1,5 +1,5 @@
 //
-//  RepertoireVC.swift
+//  SetlistsVC.swift
 //  MusicChallenge
 //
 //  Created by Lucas de Lima Gouveia on 17/12/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Repertoire: UIViewController {
+class SetlistsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,7 @@ class Repertoire: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 
     /*
     // MARK: - Navigation
