@@ -1,25 +1,23 @@
 //
-//  Playlist.swift
+//  Setlist.swift
 //  MusicChallenge
 //
 //  Created by Felipe Kestelman on 13/12/18.
 //  Copyright © 2018 Felipe Kestelman. All rights reserved.
 //
 
-class Playlist:Saveable {
-    var id: String?
-    
-    var asDictionary: [String : Any] {
-        var result: [String:Any] = [:]
-        result["nome"] = self.name
-        result["musicas"] = musicas.idsAsString
-    }
+class Setlist:GenericProtocolClass {
     
     var name: String
-    var musicas: [Musica]
+    var songs: [Song]
     
-    init(name: String, musicas: [Musica]) {
+    init(name: String, songs: [Song], id: String?) {
         self.name = name
-        self.musicas = musicas
+        self.songs = songs
+        super.init(id: id!)
+    }
+    
+    required init(asDictionary: [String : Any]) {
+        fatalError("init(asDictionary:) has not been implemented")
     }
 }

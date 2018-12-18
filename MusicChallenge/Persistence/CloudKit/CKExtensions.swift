@@ -8,7 +8,6 @@
 
 import CloudKit
 
-
 extension CKRecord {
     var asDictionary:[String:Any] {
         var result:[String:Any] = [:]

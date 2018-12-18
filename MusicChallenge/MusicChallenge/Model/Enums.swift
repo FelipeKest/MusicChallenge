@@ -9,40 +9,32 @@
 import Foundation
 import UIKit
 
-enum InstrumentTypes: Saveable {
+enum InstrumentTypes {
     
-    var id: String?
-    
-    var asDictionary: [String : Any] {
-        var result: [String:Any] = [:]
-        result["id"] = self.id
-        result["tipo"] = self.text
-    }
-    
-    case Baixo
-    case Guitarra
-    case Bateria
-    case Vocalista
-    case Outros
+    case Bass
+    case Guitar
+    case Drums
+    case Singer
+    case Others
     
     //Adicionar Imagens Correspondentes Aqui
     var image: UIImage {
         switch self {
-        case .Baixo: return UIImage(named: "baixo.png")!
-        case .Bateria: return UIImage(named: "bateria.png")!
-        case .Guitarra: return UIImage(named: "guitarra.png")!
-        case .Vocalista: return UIImage(named: "voz.png")!
-        case .Outros: return UIImage(named: "outros.png")!
+        case .Bass: return UIImage(named: "Bass.png")!
+        case .Drums: return UIImage(named: "Drums.png")!
+        case .Guitar: return UIImage(named: "Guitar.png")!
+        case .Singer: return UIImage(named: "voz.png")!
+        case .Others: return UIImage(named: "Others.png")!
         }
     }
     
     var text: String{
         switch self {
-        case .Baixo: return "Baixo"
-        case .Guitarra: return "Guitarra"
-        case .Vocalista: return "Vocalista"
-        case .Bateria: return "Bateria"
-        case .Outros: return "Outros"
+        case .Bass: return "Bass"
+        case .Guitar: return "Guitar"
+        case .Singer: return "Singer"
+        case .Drums: return "Drums"
+        case .Others: return "Others"
         }
     }
 }
