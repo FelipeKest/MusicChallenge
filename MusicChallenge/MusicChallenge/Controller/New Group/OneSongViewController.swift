@@ -11,6 +11,8 @@
 import UIKit
 
 class OneSongViewController: UIViewController {
+    
+    @IBOutlet var songName: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
