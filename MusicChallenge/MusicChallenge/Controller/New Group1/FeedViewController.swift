@@ -13,9 +13,7 @@ import UIKit
 class FeedViewController: UIViewController {
     
     @IBOutlet var feedTableView: UITableView!
-    
     @IBOutlet var profileButton: UIBarButtonItem!
-    
     @IBOutlet var createPostButton: UIBarButtonItem!
 
     
