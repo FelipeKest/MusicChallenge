@@ -32,8 +32,8 @@
 		91A02DD621BC2542001BC7C6 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A02DD521BC2542001BC7C6 /* DAO.swift */; };
 		D02F2D0D21BEE2240090043A /* Roadmap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02F2D0C21BEE2240090043A /* Roadmap.storyboard */; };
 		D02F2D0F21BEE4530090043A /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02F2D0E21BEE4530090043A /* Feed.storyboard */; };
-		D092380521C82A4900D092BE /* RepertoireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D092380321C82A4900D092BE /* RepertoireViewController.swift */; };
-		D092380921C82A7200D092BE /* SetlistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D092380721C82A7200D092BE /* SetlistsViewController.swift */; };
+		D063195B21CAAF7700CF40A9 /* SelectedSetlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D063195A21CAAF7700CF40A9 /* SelectedSetlist.storyboard */; };
+		D063195D21CAB02000CF40A9 /* SelectedSong.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D063195C21CAB02000CF40A9 /* SelectedSong.storyboard */; };
 		D092380D21C837DA00D092BE /* squealer.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D092380B21C837DA00D092BE /* squealer.ttf */; };
 		D092380E21C837DA00D092BE /* squealer embossed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D092380C21C837DA00D092BE /* squealer embossed.ttf */; };
 		D092381721C8498800D092BE /* Songs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D092381621C8498800D092BE /* Songs.storyboard */; };
@@ -70,8 +70,8 @@
 		91A02DD521BC2542001BC7C6 /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		D02F2D0C21BEE2240090043A /* Roadmap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Roadmap.storyboard; sourceTree = "<group>"; };
 		D02F2D0E21BEE4530090043A /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
-		D092380321C82A4900D092BE /* RepertoireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepertoireViewController.swift; sourceTree = "<group>"; };
-		D092380721C82A7200D092BE /* SetlistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetlistsViewController.swift; sourceTree = "<group>"; };
+		D063195A21CAAF7700CF40A9 /* SelectedSetlist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectedSetlist.storyboard; sourceTree = "<group>"; };
+		D063195C21CAB02000CF40A9 /* SelectedSong.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectedSong.storyboard; sourceTree = "<group>"; };
 		D092380B21C837DA00D092BE /* squealer.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = squealer.ttf; sourceTree = "<group>"; };
 		D092380C21C837DA00D092BE /* squealer embossed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "squealer embossed.ttf"; sourceTree = "<group>"; };
 		D092381621C8498800D092BE /* Songs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Songs.storyboard; sourceTree = "<group>"; };
@@ -186,7 +186,6 @@
 				915E101E21BB7A7200158899 /* AppDelegate.swift */,
 				91A02DD421BC252D001BC7C6 /* Model */,
 				91AB5B5A21BEC713002862F1 /* View */,
-				91AB5B5B21BEC729002862F1 /* Controller */,
 				D092380F21C837FB00D092BE /* Fonts */,
 				915E102521BB7A7300158899 /* Assets.xcassets */,
 				915E102721BB7A7300158899 /* LaunchScreen.storyboard */,
@@ -207,11 +206,14 @@
 			isa = PBXGroup;
 			children = (
 				D02F2D0C21BEE2240090043A /* Roadmap.storyboard */,
+				D063195A21CAAF7700CF40A9 /* SelectedSetlist.storyboard */,
+				D063195C21CAB02000CF40A9 /* SelectedSong.storyboard */,
 				D0A9CB5A21C18D7E00E83D9D /* Main.storyboard */,
 				D092381621C8498800D092BE /* Songs.storyboard */,
 				D092381821C84BF000D092BE /* Setlists.storyboard */,
 				D092381A21C84C0900D092BE /* Repertoire.storyboard */,
 				D02F2D0E21BEE4530090043A /* Feed.storyboard */,
+				91AB5B5B21BEC729002862F1 /* Controller */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -219,7 +221,6 @@
 		91AB5B5B21BEC729002862F1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				915E102021BB7A7200158899 /* ViewController.swift */,
 				676CEE7121C826ED00961015 /* Feed */,
 				6777852321C777CB002DAB83 /* Roadmap */,
 				676CEE7021C826C200961015 /* Songs */,
@@ -301,10 +302,12 @@
 				D092380E21C837DA00D092BE /* squealer embossed.ttf in Resources */,
 				D092381B21C84C0900D092BE /* Repertoire.storyboard in Resources */,
 				D092381721C8498800D092BE /* Songs.storyboard in Resources */,
+				D063195D21CAB02000CF40A9 /* SelectedSong.storyboard in Resources */,
 				D092381921C84BF000D092BE /* Setlists.storyboard in Resources */,
 				D0A9CB5B21C18D7E00E83D9D /* Main.storyboard in Resources */,
 				915E102621BB7A7300158899 /* Assets.xcassets in Resources */,
 				D092380D21C837DA00D092BE /* squealer.ttf in Resources */,
+				D063195B21CAAF7700CF40A9 /* SelectedSetlist.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,7 +331,6 @@
 				67D5BB2021C173D40058BCC7 /* PostViewController.swift in Sources */,
 				676CEE8521C843E300961015 /* MyProfileViewController.swift in Sources */,
 				67D5BB1C21C168B10058BCC7 /* SetlistsViewController.swift in Sources */,
-				915E102121BB7A7200158899 /* ViewController.swift in Sources */,
 				676DD52521C98CB600049130 /* SongsViewController.swift in Sources */,
 				676CEE7A21C83AD700961015 /* OneSetlistViewController.swift in Sources */,
 				67D5BB1E21C16C570058BCC7 /* FeedViewController.swift in Sources */,
