@@ -13,18 +13,46 @@ import UIKit
 class RepertoireViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet var repertoireTableView: UITableView!
-    @IBOutlet var segmentedControl: UISegmentedControl!
+    //@IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet var addSongButton: UIBarButtonItem!
     @IBOutlet var songSearchBar: UISearchBar!
+    
+    var songs: [Song] = [
+        
+                        Song.init(name: "Born To Be Wild", instruments: [
+                            Instrument(type: InstrumentTypes.Bass, id: ""),
+                            Instrument(type: InstrumentTypes.Guitar, id: ""),
+                            Instrument(type: InstrumentTypes.Drums, id: ""),
+                            Instrument(type: InstrumentTypes.Singer, id: "")
+                            ],
+                                  bandID: "", id: ""),
+                         
+                        Song.init(name: "MEGALOVANIA", instruments: [
+                            Instrument(type: InstrumentTypes.Others, id: ""),
+                            Instrument(type: InstrumentTypes.Guitar, id: "")],
+                                  bandID: "", id: ""),
+                         
+                        Song.init(name: "Love Of My Life (Acapella)", instruments: [
+                            Instrument(type: InstrumentTypes.Singer, id: ""),
+                            Instrument(type: InstrumentTypes.Singer, id: ""),
+                            Instrument(type: InstrumentTypes.Singer, id: ""),
+                            Instrument(type: InstrumentTypes.Singer, id: ""),
+                            Instrument(type: InstrumentTypes.Singer, id: "")],
+                                  bandID: "", id: ""),
+        
+                        Song.init(name: "The Sound Of Silence", instruments: [
+                            Instrument(type: InstrumentTypes.Bass, id: "")], bandID: "", id: "")
+        
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /*self.repertoireTableView.dataSource = self
+        self.repertoireTableView.dataSource = self
         self.repertoireTableView.delegate = self
-        self.songSearchBar.delegate = self
-        self.songSearchBar.returnKeyType = UIReturnKeyType.done
-        reload()*/
+        //self.songSearchBar.delegate = self
+        //self.songSearchBar.returnKeyType = UIReturnKeyType.done
+        //reload()
         
         // Do any additional setup after loading the view.
     }
@@ -41,14 +69,36 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
      */
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return songs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellRepertoire = tableView.dequeueReusableCell(withIdentifier: "cellRepertoire", for: indexPath) as! RepertoireTableViewCell
         
+        let song = songs[indexPath.row]
+        var iconArray = [cellRepertoire.instrument0, cellRepertoire.instrument1, cellRepertoire.instrument2, cellRepertoire.instrument3]
+        
+        if song.instruments.count > 4{
+            for i in 0...3 {
+                iconArray[i]?.image = song.instruments[i].type.image
+            }
+            
+            cellRepertoire.additionalInstruments.text = "+\(song.instruments.count - 4)"
+        }
+        else{
+            for i in 0...song.instruments.count-1 {
+                iconArray[i]?.image = song.instruments[i].type.image
+            }
+            
+            cellRepertoire.additionalInstruments.text = ""
+        }
+        
+        cellRepertoire.songName.text = song.name
+    
+        
         return cellRepertoire
     }
 
+    
 }
