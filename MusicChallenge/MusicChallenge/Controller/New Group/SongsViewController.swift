@@ -120,11 +120,12 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
     }
     
     
-    private func indexofviewController(viewCOntroller: UIViewController) -> Int {
-        if(arrVC .contains(viewCOntroller)) {
-            return arrVC.index(of: viewCOntroller)!
+    private func indexofviewController(viewController: UIViewController) -> Int {
+        for i in 0..<arrVC.count {
+            if(arrVC[i] == viewController) {
+                return i
+            }
         }
-        
         return -1
     }
     
@@ -133,8 +134,8 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
-        var index = indexofviewController(viewCOntroller: viewController)
-        
+        var index = indexofviewController(viewController: viewController)
+        print("index: ", index)
         if(index != -1) {
             index = index - 1
         }
@@ -150,7 +151,7 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
-        var index = indexofviewController(viewCOntroller: viewController)
+        var index = indexofviewController(viewController: viewController)
         
         if(index != -1) {
             index = index + 1
@@ -206,37 +207,13 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
     
     @objc func onChangeOfSegment(_ sender: CustomSegmentedContrl) {
         
+        let direction = currentPage < sender.selectedSegmentIndex ? UIPageViewController.NavigationDirection.forward : UIPageViewController.NavigationDirection.reverse
         
-        switch sender.selectedSegmentIndex {
-        case 0:
-            pageController.setViewControllers([vc2], direction: UIPageViewController.NavigationDirection.reverse, animated: true, completion: nil)
-            currentPage = 0
-            
-        case 1:
-            if currentPage > 1{
-                pageController.setViewControllers([vc2], direction: UIPageViewController.NavigationDirection.reverse, animated: true, completion: nil)
-                currentPage = 1
-            }else{
-                pageController.setViewControllers([vc1], direction: UIPageViewController.NavigationDirection.forward, animated: true, completion: nil)
-                currentPage = 1
-                
-            }
-            //        case 2:
-            //            if currentPage < 2 {
-            //                pageController.setViewControllers([arrVC[2]], direction: UIPageViewControllerNavigationDirection.forward, animated: true, completion: nil)
-            //                currentPage = 2
-            
-            
-            //            }else{
-            //                pageController.setViewControllers([arrVC[2]], direction: UIPageViewControllerNavigationDirection.reverse, animated: true, completion: nil)
-            //                currentPage = 2
-            //
-        //            }
-        default:
-            break
-        }
+        let newView = arrVC[sender.selectedSegmentIndex]
+        pageController.setViewControllers([newView], direction: direction, animated: true, completion: nil)
         
-        
+        currentPage = sender.selectedSegmentIndex
+
     }
     
     
