@@ -42,14 +42,24 @@
                                     <action selector="saveSetlist:" destination="EIR-sj-W9P" eventType="touchUpInside" id="Szq-BY-Jid"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3q-G1-Mkd">
+                                <rect key="frame" x="94" y="92" width="186" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="UDd-k9-ykR"/>
                     </view>
+                    <connections>
+                        <outlet property="labelText" destination="K3q-G1-Mkd" id="k1B-Ma-DLy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ck-9A-S9B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="697" y="-228"/>
+            <point key="canvasLocation" x="696.79999999999995" y="-228.03598200899552"/>
         </scene>
     </scenes>
 </document>

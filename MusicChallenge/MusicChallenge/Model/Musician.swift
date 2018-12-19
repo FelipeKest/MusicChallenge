@@ -11,13 +11,13 @@ class Musician:GenericProtocolClass {
     var name: String
     var age: Int
     var instruments: [Instrument]
-    var bandReference: String
+    var bandID: String
     
-    init(name: String, age: Int, instruments: [Instrument], bandReference: String,id: String?) {
+    init(name: String, age: Int, instruments: [Instrument], bandID: String,id: String?) {
         self.name = name
         self.age = age
         self.instruments = instruments
-        self.bandReference = bandReference
+        self.bandID = bandID
         super.init(id: id)
     }
     
@@ -25,7 +25,7 @@ class Musician:GenericProtocolClass {
         self.name = asDictionary["name"] as! String
         self.age = asDictionary["age"] as! Int
         self.instruments = asDictionary["instruments"] as! [Instrument]
-        self.bandReference = asDictionary["bandId"] as! String
+        self.bandID = asDictionary["bandID"] as! String
         super.init(asDictionary: asDictionary)
     }
     

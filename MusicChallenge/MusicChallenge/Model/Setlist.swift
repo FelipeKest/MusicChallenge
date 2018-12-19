@@ -10,7 +10,7 @@ class Setlist:GenericProtocolClass {
     
     var name: String
     var songs: [Song]
-//    var bandId: String
+    var bandID: String
     
     override var asDictionary: [String : Any] {
         var result: [String:Any] = [:]
@@ -19,16 +19,17 @@ class Setlist:GenericProtocolClass {
         return result
     }
     
-    init(name: String, songs: [Song], id: String) {
+    init(name: String, songs: [Song], bandID:String, id: String) {
         self.name = name
         self.songs = songs
-//        self.bandId = bandId
+        self.bandID = bandID
         super.init(id: id)
     }
     
     required init(asDictionary: [String : Any]) {
         self.name = asDictionary["name"] as! String
         self.songs = asDictionary["songs"] as! [Song]
+        self.bandID = asDictionary["bandID"] as! String
         super.init(id: asDictionary["id"] as? String)
     }
 }
