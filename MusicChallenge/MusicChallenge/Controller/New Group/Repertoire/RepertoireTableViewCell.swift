@@ -13,8 +13,14 @@ import UIKit
 class RepertoireTableViewCell: UITableViewCell {
     
     @IBOutlet var songName: UILabel!
-    @IBOutlet var songInstruments: [UIImage]!
+    
+    @IBOutlet var instrument0: UIImageView!
+    @IBOutlet var instrument1: UIImageView!
+    @IBOutlet var instrument2: UIImageView!
+    @IBOutlet var instrument3: UIImageView!
+    
     @IBOutlet var additionalInstruments: UILabel!
+    
     
 
     override func awakeFromNib() {
