@@ -22,9 +22,9 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
     lazy var vc1: SetlistsViewController = {
         
         
-        let setListsStoryboard = UIStoryboard(name: "SetlistsViewController", bundle: nil)
+        let setListsStoryboard = UIStoryboard(name: "Setlists", bundle: nil)
         
-        var viewController = setListsStoryboard.instantiateViewController(withIdentifier: "SetlistsViewController") as! SetlistsViewController
+        var viewController = setListsStoryboard.instantiateViewController(withIdentifier: "Setlists") as! SetlistsViewController
         //self.addViewControllerAsChildViewController(childViewController: viewController)
         
         return viewController
@@ -34,9 +34,9 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
     
     lazy var vc2: RepertoireViewController = {
         
-        let repertoireStoryboard = UIStoryboard(name: "RepertoireViewController", bundle: nil)
+        let repertoireStoryboard = UIStoryboard(name: "Repertoire", bundle: nil)
         
-        var viewController = repertoireStoryboard.instantiateViewController(withIdentifier: "RepertoireViewController") as! RepertoireViewController
+        var viewController = repertoireStoryboard.instantiateViewController(withIdentifier: "Repertoire") as! RepertoireViewController
         //self.addViewControllerAsChildViewController(childViewController: viewController)
         
         return viewController

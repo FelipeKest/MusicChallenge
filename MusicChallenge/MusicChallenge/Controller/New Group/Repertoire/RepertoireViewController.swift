@@ -20,11 +20,11 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.repertoireTableView.dataSource = self
+        /*self.repertoireTableView.dataSource = self
         self.repertoireTableView.delegate = self
         self.songSearchBar.delegate = self
         self.songSearchBar.returnKeyType = UIReturnKeyType.done
-        //reload()
+        reload()*/
         
         // Do any additional setup after loading the view.
     }
@@ -41,14 +41,14 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
      */
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellRepertoire = tableView.dequeueReusableCell(withIdentifier: "cellRepertoire", for: indexPath) as! RepertoireTableViewCell
         
-        
+        return cellRepertoire
     }
 
 }

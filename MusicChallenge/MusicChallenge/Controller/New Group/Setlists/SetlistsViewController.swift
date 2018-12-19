@@ -16,11 +16,8 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewDidLoad() {
         
-        self.setlistsCollectionView.dataSource = self
-        self.setlistsCollectionView.delegate = self
-        
-        super.viewDidLoad()
-
+        /*self.setlistsCollectionView.dataSource = self
+        self.setlistsCollectionView.delegate = self*/
         // Do any additional setup after loading the view.
     }
     
@@ -38,11 +35,13 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SetlistCollectionViewCell
+        
+        return cell
     }
 
 }
