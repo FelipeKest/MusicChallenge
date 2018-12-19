@@ -26,7 +26,7 @@ extension Array where Element == Saveable {
 }
 
 extension Array where Element == Instrument {
-    var instrumentAsString:[String]{
+    var instrumentsAsString:[String]{
         var strings:[String] = []
         for instrument in self {
             strings.append(instrument.type.text)

@@ -10,30 +10,31 @@ class Song:GenericProtocolClass {
     
     var name: String
     var instruments: [Instrument]
-    var bandId: String
-    
+//  var bandId: String
+
     override var asDictionary: [String : Any] {
         var result: [String:Any] = [:]
         result["name"] = self.name
-        result["instrument"] = self.instruments
-        result["bandID"] = self.bandId
+        result["instruments"] = self.instruments.instrumentsAsString
+//        result["bandID"] = self.bandId
         return result
     }
     
-    init(name: String, instruments: [Instrument],bandId:String,id:String?) {
+    init(name: String, instruments: [Instrument],id:String?) {
         self.name = name
         self.instruments = instruments
-        self.bandId = bandId
+//        self.bandId = bandId
         super.init(id: id!)
     }
     
     required init(asDictionary: [String : Any]) {
-        fatalError("init(asDictionary:) has not been implemented")
+        self.name = asDictionary["name"] as! String
+        self.instruments = asDictionary["instruments"] as! [Instrument]
+        super.init(id: asDictionary["id"] as? String)
     }
     
     convenience init() {
-        self.init(name: "Convenience", instruments: [Instrument(type: InstrumentTypes.Bass, id: "")], bandId: "Convenience", id: "Convinience")
+        self.init(name: "Convenience", instruments: [Instrument(type: InstrumentTypes.Bass, id: "")], id: "Convinience")
     }
-    
     
 }

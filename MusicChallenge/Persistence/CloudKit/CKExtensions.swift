@@ -28,3 +28,14 @@ extension Saveable {
         return record
     }
 }
+
+extension Array where Element == Saveable {
+    var asCKReferences: [CKRecord.Reference] {
+        var result: [CKRecord.Reference] = []
+        for item in self {
+            let reference = CKRecord.Reference(record: item.asCKRecord, action: .none)
+            result.append(reference)
+        }
+        return result
+    }
+}

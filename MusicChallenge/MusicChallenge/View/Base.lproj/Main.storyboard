@@ -19,11 +19,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdk-U7-DJL">
-                                <rect key="frame" x="156" y="249" width="46" height="30"/>
+                                <rect key="frame" x="161" y="249" width="36" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Song"/>
                                 <connections>
-                                    <action selector="printAction:" destination="EIR-sj-W9P" eventType="touchUpInside" id="cOL-Kt-mgQ"/>
+                                    <action selector="saveSong:" destination="EIR-sj-W9P" eventType="touchUpInside" id="G1b-EX-gPM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="368-qT-Lbk">
@@ -32,6 +32,14 @@
                                 <state key="normal" title="Dummy"/>
                                 <connections>
                                     <action selector="printe:" destination="EIR-sj-W9P" eventType="touchUpInside" id="KNJ-hs-mLu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4G-d7-ieW">
+                                <rect key="frame" x="158" y="362" width="43" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Setlist"/>
+                                <connections>
+                                    <action selector="saveSetlist:" destination="EIR-sj-W9P" eventType="touchUpInside" id="Szq-BY-Jid"/>
                                 </connections>
                             </button>
                         </subviews>

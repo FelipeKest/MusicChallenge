@@ -20,7 +20,7 @@
 		9160543221C07FDB00B23CD1 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160543121C07FDB00B23CD1 /* Song.swift */; };
 		9160543421C167D500B23CD1 /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160543321C167D500B23CD1 /* Extenstions.swift */; };
 		9160543621C1686500B23CD1 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160543521C1686500B23CD1 /* Enums.swift */; };
-		9160543821C3149C00B23CD1 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160543721C3149C00B23CD1 /* Playlist.swift */; };
+		9160543821C3149C00B23CD1 /* Setlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9160543721C3149C00B23CD1 /* Setlist.swift */; };
 		9191067421C0252D0032EE4B /* MusicChallengeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9191067321C0252D0032EE4B /* MusicChallengeTest.swift */; };
 		9191067A21C02C9F0032EE4B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9191067921C02C9F0032EE4B /* CloudKit.framework */; };
 		9194870821C43B4400DA3290 /* ModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9194870721C43B4400DA3290 /* ModelProtocols.swift */; };
@@ -54,7 +54,7 @@
 		9160543121C07FDB00B23CD1 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		9160543321C167D500B23CD1 /* Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
 		9160543521C1686500B23CD1 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
-		9160543721C3149C00B23CD1 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		9160543721C3149C00B23CD1 /* Setlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setlist.swift; sourceTree = "<group>"; };
 		9191066821C0245A0032EE4B /* MusicChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9191066C21C0245A0032EE4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9191067321C0252D0032EE4B /* MusicChallengeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicChallengeTest.swift; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 				9160542F21C07FB800B23CD1 /* Band.swift */,
 				9160542B21C07C5800B23CD1 /* Musician.swift */,
 				9160543121C07FDB00B23CD1 /* Song.swift */,
-				9160543721C3149C00B23CD1 /* Playlist.swift */,
+				9160543721C3149C00B23CD1 /* Setlist.swift */,
 				91157A7521C7FE390002AE83 /* Event.swift */,
 				91157A7321C7EF4E0002AE83 /* Instrument.swift */,
 				91157A4E21C7E1460002AE83 /* GenericProtocolClassCloud.swift */,
@@ -299,7 +299,7 @@
 				9160543421C167D500B23CD1 /* Extenstions.swift in Sources */,
 				9194870C21C43E7D00DA3290 /* CKExtensions.swift in Sources */,
 				91A02DD621BC2542001BC7C6 /* DAO.swift in Sources */,
-				9160543821C3149C00B23CD1 /* Playlist.swift in Sources */,
+				9160543821C3149C00B23CD1 /* Setlist.swift in Sources */,
 				91157A7621C7FE390002AE83 /* Event.swift in Sources */,
 				9194870821C43B4400DA3290 /* ModelProtocols.swift in Sources */,
 				9160543221C07FDB00B23CD1 /* Song.swift in Sources */,
