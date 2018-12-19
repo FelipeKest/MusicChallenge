@@ -23,14 +23,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <searchBar key="tableFooterView" contentMode="redraw" id="PG9-RY-7Z2">
-                                    <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="PG9-RY-7Z2">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="NLZ-Ud-tdI">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellRepertoire" id="NLZ-Ud-tdI" customClass="RepertoireTableViewCell" customModule="MusicChallenge" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NLZ-Ud-tdI" id="edK-Cv-CIC">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -69,6 +69,14 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="additionalInstruments" destination="N1b-qs-kau" id="u85-z6-Roo"/>
+                                            <outlet property="instrument0" destination="WE0-1p-iUQ" id="03z-sI-htg"/>
+                                            <outlet property="instrument1" destination="DL8-d9-UxC" id="RuV-a7-Tmr"/>
+                                            <outlet property="instrument2" destination="vou-wT-6Sx" id="xlz-mx-Z3k"/>
+                                            <outlet property="instrument3" destination="0HS-Sv-8rb" id="AHw-v2-Rbf"/>
+                                            <outlet property="songName" destination="bRH-3g-oRG" id="CEc-Uh-suk"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -76,6 +84,9 @@
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="2xG-a1-czw"/>
                     </view>
+                    <connections>
+                        <outlet property="repertoireTableView" destination="O6D-Wz-0rU" id="2Ix-3l-Rlx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="flk-jW-av2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
