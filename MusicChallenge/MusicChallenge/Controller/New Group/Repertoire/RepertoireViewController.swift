@@ -14,12 +14,12 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet var repertoireTableView: UITableView!
     //@IBOutlet var segmentedControl: UISegmentedControl!
-    @IBOutlet var addSongButton: UIBarButtonItem!
-    @IBOutlet var songSearchBar: UISearchBar!
+    //@IBOutlet var addSongButton: UIBarButtonItem!
+    //@IBOutlet var songSearchBar: UISearchBar!
     
     var songs: [Song] = [
         
-                        Song.init(name: "Born To Be Wild", instruments: [
+                        Song(name: "Born To Be Wild", instruments: [
                             Instrument(type: InstrumentTypes.Bass, id: ""),
                             Instrument(type: InstrumentTypes.Guitar, id: ""),
                             Instrument(type: InstrumentTypes.Drums, id: ""),
@@ -27,12 +27,12 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
                             ],
                                   bandID: "", id: ""),
                          
-                        Song.init(name: "MEGALOVANIA", instruments: [
+                        Song(name: "MEGALOVANIA", instruments: [
                             Instrument(type: InstrumentTypes.Others, id: ""),
                             Instrument(type: InstrumentTypes.Guitar, id: "")],
                                   bandID: "", id: ""),
                          
-                        Song.init(name: "Love Of My Life (Acapella)", instruments: [
+                        Song(name: "Love Of My Life (Acapella)", instruments: [
                             Instrument(type: InstrumentTypes.Singer, id: ""),
                             Instrument(type: InstrumentTypes.Singer, id: ""),
                             Instrument(type: InstrumentTypes.Singer, id: ""),
@@ -40,7 +40,7 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
                             Instrument(type: InstrumentTypes.Singer, id: "")],
                                   bandID: "", id: ""),
         
-                        Song.init(name: "The Sound Of Silence", instruments: [
+                        Song(name: "The Sound Of Silence", instruments: [
                             Instrument(type: InstrumentTypes.Bass, id: "")], bandID: "", id: "")
         
     ]
@@ -50,6 +50,9 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
         
         self.repertoireTableView.dataSource = self
         self.repertoireTableView.delegate = self
+        
+        let tableXib = UINib(nibName: "RepertoireTableViewCell", bundle: nil)
+        repertoireTableView.register(tableXib, forCellReuseIdentifier: "repertoireCell")
         //self.songSearchBar.delegate = self
         //self.songSearchBar.returnKeyType = UIReturnKeyType.done
         //reload()
@@ -72,9 +75,12 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
         return songs.count
     }
     
+    
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cellRepertoire = tableView.dequeueReusableCell(withIdentifier: "cellRepertoire", for: indexPath) as! RepertoireTableViewCell
+        let cellRepertoire = tableView.dequeueReusableCell(withIdentifier: "repertoireCell", for: indexPath) as! RepertoireTableViewCell
         
         let song = songs[indexPath.row]
         var iconArray = [cellRepertoire.instrument0, cellRepertoire.instrument1, cellRepertoire.instrument2, cellRepertoire.instrument3]
@@ -99,6 +105,25 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
         
         return cellRepertoire
     }
-
     
+    
+    
+    
+    
+    
+    /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showSong", sender: self)
+    }*/
+    
+    
+    
+    
+    
+    
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? OneSongViewController{
+            let index = repertoireTableView.indexPathForSelectedRow?.last
+            //destination
+        }
+    }*/
 }

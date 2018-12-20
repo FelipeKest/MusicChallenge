@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6750E8E521CC122900A193AE /* RepertoireTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6750E8E421CC122900A193AE /* RepertoireTableViewCell.xib */; };
 		675A8D8E21CAC50C00C5A377 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A8D8421CAC50A00C5A377 /* Event.swift */; };
 		675A8D8F21CAC50C00C5A377 /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A8D8521CAC50B00C5A377 /* Instrument.swift */; };
 		675A8D9021CAC50C00C5A377 /* GenericProtocolClassCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A8D8621CAC50B00C5A377 /* GenericProtocolClassCloud.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6750E8E421CC122900A193AE /* RepertoireTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepertoireTableViewCell.xib; sourceTree = "<group>"; };
 		675A8D8421CAC50A00C5A377 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		675A8D8521CAC50B00C5A377 /* Instrument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
 		675A8D8621CAC50B00C5A377 /* GenericProtocolClassCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericProtocolClassCloud.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				D092381821C84BF000D092BE /* Setlists.storyboard */,
 				D092381A21C84C0900D092BE /* Repertoire.storyboard */,
 				D02F2D0E21BEE4530090043A /* Feed.storyboard */,
+				6750E8E421CC122900A193AE /* RepertoireTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				D04607CB21CC2706006A4B88 /* NewSetlist.storyboard in Resources */,
 				D02F2D0D21BEE2240090043A /* Roadmap.storyboard in Resources */,
 				D092380E21C837DA00D092BE /* squealer embossed.ttf in Resources */,
+				6750E8E521CC122900A193AE /* RepertoireTableViewCell.xib in Resources */,
 				D092381B21C84C0900D092BE /* Repertoire.storyboard in Resources */,
 				D092381721C8498800D092BE /* Songs.storyboard in Resources */,
 				D092381921C84BF000D092BE /* Setlists.storyboard in Resources */,
