@@ -20,4 +20,27 @@ class Instrument:GenericProtocolClass{
         self.type = asDictionary["type"] as! InstrumentTypes
         super.init(asDictionary: asDictionary)
     }
+    
+    init(typeName: String) {
+        switch typeName {
+        case "Bass":
+            self.type = .Bass
+            super.init(id: "")
+        case "Guitar":
+            self.type = .Guitar
+            super.init(id: "")
+        case "Drums":
+            self.type = .Drums
+            super.init(id: "")
+        case "Singer":
+            self.type = .Singer
+            super.init(id: "")
+        case "Others":
+            self.type = .Others
+            super.init(id: "")
+        default:
+            self.type = .Others
+            super.init(id: "")
+        }
+    }
 }

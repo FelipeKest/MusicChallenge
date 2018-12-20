@@ -29,4 +29,7 @@ class Musician:GenericProtocolClass {
         super.init(asDictionary: asDictionary)
     }
     
+    convenience init (){
+        self.init(name: "Convenience Musician", age: 0, instruments: [], bandID: "Convenience", id: "Convenience")
+    }
 }

@@ -26,20 +26,12 @@
                                     <action selector="saveSong:" destination="EIR-sj-W9P" eventType="touchUpInside" id="G1b-EX-gPM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="368-qT-Lbk">
-                                <rect key="frame" x="128" y="543" width="53" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Dummy"/>
-                                <connections>
-                                    <action selector="printe:" destination="EIR-sj-W9P" eventType="touchUpInside" id="KNJ-hs-mLu"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4G-d7-ieW">
-                                <rect key="frame" x="158" y="362" width="43" height="30"/>
+                                <rect key="frame" x="157" y="362" width="45" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Setlist"/>
+                                <state key="normal" title="Delete"/>
                                 <connections>
-                                    <action selector="saveSetlist:" destination="EIR-sj-W9P" eventType="touchUpInside" id="Szq-BY-Jid"/>
+                                    <action selector="deleteAction:" destination="EIR-sj-W9P" eventType="touchUpInside" id="wdX-Ci-zZw"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3q-G1-Mkd">

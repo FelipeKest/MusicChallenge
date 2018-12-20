@@ -23,7 +23,7 @@ class Band:GenericProtocolClass {
         return result
     }
     
-    init(name:String, members:[Musician], repertoire:[Song] = [], setlists:[Setlist], events: [Event] = [], id: String){
+    init(name:String, members:[Musician], repertoire:[Song] = [], setlists:[Setlist] = [], events: [Event] = [], id: String){
         self.name = name
         self.members = members
         self.repertoire = repertoire
@@ -44,6 +44,7 @@ class Band:GenericProtocolClass {
     convenience init() {
         self.init(name: "Convience", members: [], setlists: [], id: "")
     }
+    
 }
 
 

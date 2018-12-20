@@ -23,7 +23,18 @@ extension Saveable {
     var asCKRecord:CKRecord {
         let record = CKRecord(recordType: String(describing: type(of:self)))
         for item in self.asDictionary {
-            record.setValue(item.value, forKey: item.key)
+            //se o valor do item e saveble
+            if let value = item.value as? GenericProtocolClass {
+                record.setValue(CKRecord.Reference(record: value.asCKRecord, action: .none), forKey: item.key)
+            } else if let value = item.value as? [GenericProtocolClass]{
+                var CKReferenceArray: [CKRecord.Reference] = []
+                for index in value {
+                    CKReferenceArray.append(CKRecord.Reference(record: index.asCKRecord, action: .none))
+                }
+                record.setValue(CKReferenceArray, forKey: item.key)
+            } else {
+                record.setValue(item.value, forKey: item.key)
+            }
         }
         return record
     }
@@ -39,3 +50,12 @@ extension Array where Element == Saveable {
         return result
     }
 }
+//
+//extension Band {
+//    var asBandRecord: CKRecord {
+//        let record = CKRecord(recordType: String(describing: type(of: self)))
+//        record.setValue(self.name, forKey: "name")
+//        record.setValue(self.members.asCKReferences, forKey: "members")
+//        record.setValue(self.m, forKey: <#T##String#>)
+//    }
+//}

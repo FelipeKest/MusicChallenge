@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var labelText: UILabel!
     
     @IBAction func saveSong(_ sender: Any) {
-        DAO.createSong(song: songToAdd, on: bandToAddIn) { (result, error) in
+        DAO.createSong(song: songToAdd,by: Musician(), on: bandToAddIn) { (result, error) in
             if error != nil {
                 print("Nao foi")
                 print(error?.localizedDescription as Any)
@@ -31,20 +31,17 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func saveSetlist(_ sender: Any) {
+    @IBAction func deleteAction(_ sender: Any) {
         DAO.delete(song: songToAdd, from: bandToAddIn) { (songRecordId, error) in
             if error != nil {
                 print(error?.localizedDescription as Any)
             } else {
                 DispatchQueue.main.async {
-                    print("Song deleted")
+                    self.labelText.text = "Deleted"
                 }
             }
         }
     }
     
-    @IBAction func printe(_ sender: Any) {
-        print("AHHHHHH")
-    }
 }
 
