@@ -42,6 +42,8 @@
 		91A02DD621BC2542001BC7C6 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A02DD521BC2542001BC7C6 /* DAO.swift */; };
 		D02F2D0D21BEE2240090043A /* Roadmap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02F2D0C21BEE2240090043A /* Roadmap.storyboard */; };
 		D02F2D0F21BEE4530090043A /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02F2D0E21BEE4530090043A /* Feed.storyboard */; };
+		D04607C921CC26F7006A4B88 /* NewSong.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D04607C821CC26F7006A4B88 /* NewSong.storyboard */; };
+		D04607CB21CC2706006A4B88 /* NewSetlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D04607CA21CC2706006A4B88 /* NewSetlist.storyboard */; };
 		D063195F21CAC35000CF40A9 /* SelectedSong.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D063195E21CAC35000CF40A9 /* SelectedSong.storyboard */; };
 		D063196121CAC36800CF40A9 /* SelectedSetlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D063196021CAC36800CF40A9 /* SelectedSetlist.storyboard */; };
 		D092380D21C837DA00D092BE /* squealer.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D092380B21C837DA00D092BE /* squealer.ttf */; };
@@ -90,6 +92,8 @@
 		91A02DD521BC2542001BC7C6 /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		D02F2D0C21BEE2240090043A /* Roadmap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Roadmap.storyboard; sourceTree = "<group>"; };
 		D02F2D0E21BEE4530090043A /* Feed.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
+		D04607C821CC26F7006A4B88 /* NewSong.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewSong.storyboard; sourceTree = "<group>"; };
+		D04607CA21CC2706006A4B88 /* NewSetlist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewSetlist.storyboard; sourceTree = "<group>"; };
 		D063195E21CAC35000CF40A9 /* SelectedSong.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectedSong.storyboard; sourceTree = "<group>"; };
 		D063196021CAC36800CF40A9 /* SelectedSetlist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectedSetlist.storyboard; sourceTree = "<group>"; };
 		D092380B21C837DA00D092BE /* squealer.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = squealer.ttf; sourceTree = "<group>"; };
@@ -238,6 +242,8 @@
 			children = (
 				D02F2D0C21BEE2240090043A /* Roadmap.storyboard */,
 				D063195E21CAC35000CF40A9 /* SelectedSong.storyboard */,
+				D04607C821CC26F7006A4B88 /* NewSong.storyboard */,
+				D04607CA21CC2706006A4B88 /* NewSetlist.storyboard */,
 				D063196021CAC36800CF40A9 /* SelectedSetlist.storyboard */,
 				D0A9CB5A21C18D7E00E83D9D /* Main.storyboard */,
 				D092381621C8498800D092BE /* Songs.storyboard */,
@@ -328,11 +334,13 @@
 			files = (
 				D02F2D0F21BEE4530090043A /* Feed.storyboard in Resources */,
 				915E102921BB7A7300158899 /* LaunchScreen.storyboard in Resources */,
+				D04607CB21CC2706006A4B88 /* NewSetlist.storyboard in Resources */,
 				D02F2D0D21BEE2240090043A /* Roadmap.storyboard in Resources */,
 				D092380E21C837DA00D092BE /* squealer embossed.ttf in Resources */,
 				D092381B21C84C0900D092BE /* Repertoire.storyboard in Resources */,
 				D092381721C8498800D092BE /* Songs.storyboard in Resources */,
 				D092381921C84BF000D092BE /* Setlists.storyboard in Resources */,
+				D04607C921CC26F7006A4B88 /* NewSong.storyboard in Resources */,
 				D0A9CB5B21C18D7E00E83D9D /* Main.storyboard in Resources */,
 				D063195F21CAC35000CF40A9 /* SelectedSong.storyboard in Resources */,
 				915E102621BB7A7300158899 /* Assets.xcassets in Resources */,

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_BANDPLAN" translatesAutoresizingMaskIntoConstraints="NO" id="xuK-dg-grf">
-                                <rect key="frame" x="67.5" y="205" width="240" height="257"/>
+                                <rect key="frame" x="87" y="164" width="240" height="257"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="R7Y-Dk-i9B"/>
                                     <constraint firstAttribute="height" constant="257" id="UvV-rP-HTe"/>
@@ -29,7 +29,7 @@
                         <color key="backgroundColor" red="0.23137254901960785" green="0.23137254901960785" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="xuK-dg-grf" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="3JV-Jf-Md4"/>
-                            <constraint firstItem="xuK-dg-grf" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="be0-1L-XXP"/>
+                            <constraint firstItem="xuK-dg-grf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="C3S-GV-LRZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
