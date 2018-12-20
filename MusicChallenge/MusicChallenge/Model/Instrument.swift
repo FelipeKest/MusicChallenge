@@ -10,9 +10,11 @@ import Foundation
 
 class Instrument:GenericProtocolClass{
     var type: InstrumentTypes
+    var player: Musician?
     
-    init(type: InstrumentTypes, id: String){
+    init(type: InstrumentTypes, id: String, player: Musician?){
         self.type = type
+        self.player = player
         super.init(id: id)
     }
     

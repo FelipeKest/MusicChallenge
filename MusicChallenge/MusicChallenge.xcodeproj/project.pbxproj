@@ -26,6 +26,7 @@
 		9194870821C43B4400DA3290 /* ModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9194870721C43B4400DA3290 /* ModelProtocols.swift */; };
 		9194870C21C43E7D00DA3290 /* CKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9194870B21C43E7D00DA3290 /* CKExtensions.swift */; };
 		91A02DD621BC2542001BC7C6 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A02DD521BC2542001BC7C6 /* DAO.swift */; };
+		91DCFA6021CC06D800A3B44B /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DCFA5F21CC06D800A3B44B /* SessionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		9194870721C43B4400DA3290 /* ModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProtocols.swift; sourceTree = "<group>"; };
 		9194870B21C43E7D00DA3290 /* CKExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKExtensions.swift; sourceTree = "<group>"; };
 		91A02DD521BC2542001BC7C6 /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
+		91DCFA5F21CC06D800A3B44B /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				9160543721C3149C00B23CD1 /* Setlist.swift */,
 				91157A7521C7FE390002AE83 /* Event.swift */,
 				91157A7321C7EF4E0002AE83 /* Instrument.swift */,
+				91DCFA5F21CC06D800A3B44B /* SessionManager.swift */,
 				91157A4E21C7E1460002AE83 /* GenericProtocolClassCloud.swift */,
 				9160543521C1686500B23CD1 /* Enums.swift */,
 				9160543321C167D500B23CD1 /* Extenstions.swift */,
@@ -304,6 +307,7 @@
 				9194870821C43B4400DA3290 /* ModelProtocols.swift in Sources */,
 				9160543221C07FDB00B23CD1 /* Song.swift in Sources */,
 				915E102121BB7A7200158899 /* ViewController.swift in Sources */,
+				91DCFA6021CC06D800A3B44B /* SessionManager.swift in Sources */,
 				91157A7421C7EF4E0002AE83 /* Instrument.swift in Sources */,
 				915E101F21BB7A7200158899 /* AppDelegate.swift in Sources */,
 				9160543021C07FB800B23CD1 /* Band.swift in Sources */,
