@@ -12,22 +12,60 @@ import UIKit
 
 class OneSetlistViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet var setlistSongsTableView: UITableView!
+    @IBOutlet var setlistName: UILabel!
+    @IBOutlet var songQtd: UILabel!
+    //@IBOutlet var setlistCreator: UILabel!
+    //@IBOutlet var bpm: UILabel!
+    //@IBOutlet var key: UILabel!
+    
+    var setlist: Setlist!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.setlistSongsTableView.delegate = self
+        self.setlistSongsTableView.dataSource = self
+        
+        let tableXib = UINib(nibName: "RepertoireTableViewCell", bundle: nil)
+        setlistSongsTableView.register(tableXib, forCellReuseIdentifier: "repertoireCell")
+        
+        self.setlistName.text = setlist.name
+        self.songQtd.text = "\(setlist.songs.count) músicas"
 
         // Do any additional setup after loading the view.
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return setlist.songs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RepertoireTableViewCell
+        let songsCell = tableView.dequeueReusableCell(withIdentifier: "repertoireCell", for: indexPath) as! RepertoireTableViewCell
         
-        return cell
+        let song = setlist.songs[indexPath.row]
+        var iconArray = [songsCell.instrument0, songsCell.instrument1, songsCell.instrument2, songsCell.instrument3]
+        
+        if song.instruments.count > 4{
+            for i in 0...3 {
+                iconArray[i]?.image = song.instruments[i].type.image
+            }
+            
+            songsCell.additionalInstruments.text = "+\(song.instruments.count - 4)"
+        }
+        else{
+            for i in 0...song.instruments.count-1 {
+                iconArray[i]?.image = song.instruments[i].type.image
+            }
+            
+            songsCell.additionalInstruments.text = ""
+        }
+        
+        songsCell.songName.text = song.name
+        
+        return songsCell
     }
     
 

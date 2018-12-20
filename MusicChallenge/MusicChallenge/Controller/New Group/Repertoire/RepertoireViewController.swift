@@ -14,8 +14,8 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet var repertoireTableView: UITableView!
     //@IBOutlet var segmentedControl: UISegmentedControl!
-    @IBOutlet var addSongButton: UIBarButtonItem!
-    @IBOutlet var songSearchBar: UISearchBar!
+    //@IBOutlet var addSongButton: UIBarButtonItem!
+    //@IBOutlet var songSearchBar: UISearchBar!
     
     var songs: [Song] = [
         
@@ -50,6 +50,9 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
         
         self.repertoireTableView.dataSource = self
         self.repertoireTableView.delegate = self
+        
+        let tableXib = UINib(nibName: "RepertoireTableViewCell", bundle: nil)
+        repertoireTableView.register(tableXib, forCellReuseIdentifier: "repertoireCell")
         //self.songSearchBar.delegate = self
         //self.songSearchBar.returnKeyType = UIReturnKeyType.done
         //reload()
@@ -72,9 +75,12 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
         return songs.count
     }
     
+    
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cellRepertoire = tableView.dequeueReusableCell(withIdentifier: "cellRepertoire", for: indexPath) as! RepertoireTableViewCell
+        let cellRepertoire = tableView.dequeueReusableCell(withIdentifier: "repertoireCell", for: indexPath) as! RepertoireTableViewCell
         
         let song = songs[indexPath.row]
         var iconArray = [cellRepertoire.instrument0, cellRepertoire.instrument1, cellRepertoire.instrument2, cellRepertoire.instrument3]
@@ -99,6 +105,25 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
         
         return cellRepertoire
     }
-
     
+    
+    
+    
+    
+    
+    /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showSong", sender: self)
+    }*/
+    
+    
+    
+    
+    
+    
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? OneSongViewController{
+            let index = repertoireTableView.indexPathForSelectedRow?.last
+            //destination
+        }
+    }*/
 }

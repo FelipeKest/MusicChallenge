@@ -154,5 +154,16 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         return setlistCell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showSetlist", sender: "self")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? OneSetlistViewController {
+            let index = setlistsCollectionView.indexPathsForSelectedItems?.last
+            destination.setlist = setlists[(index?.item)!]
+        }
+    }
 
 }
