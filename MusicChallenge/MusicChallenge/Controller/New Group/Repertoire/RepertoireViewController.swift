@@ -19,7 +19,7 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
     
     var songs: [Song] = [
         
-                        Song.init(name: "Born To Be Wild", instruments: [
+                        Song(name: "Born To Be Wild", instruments: [
                             Instrument(type: InstrumentTypes.Bass, id: ""),
                             Instrument(type: InstrumentTypes.Guitar, id: ""),
                             Instrument(type: InstrumentTypes.Drums, id: ""),
@@ -27,12 +27,12 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
                             ],
                                   bandID: "", id: ""),
                          
-                        Song.init(name: "MEGALOVANIA", instruments: [
+                        Song(name: "MEGALOVANIA", instruments: [
                             Instrument(type: InstrumentTypes.Others, id: ""),
                             Instrument(type: InstrumentTypes.Guitar, id: "")],
                                   bandID: "", id: ""),
                          
-                        Song.init(name: "Love Of My Life (Acapella)", instruments: [
+                        Song(name: "Love Of My Life (Acapella)", instruments: [
                             Instrument(type: InstrumentTypes.Singer, id: ""),
                             Instrument(type: InstrumentTypes.Singer, id: ""),
                             Instrument(type: InstrumentTypes.Singer, id: ""),
@@ -40,7 +40,7 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
                             Instrument(type: InstrumentTypes.Singer, id: "")],
                                   bandID: "", id: ""),
         
-                        Song.init(name: "The Sound Of Silence", instruments: [
+                        Song(name: "The Sound Of Silence", instruments: [
                             Instrument(type: InstrumentTypes.Bass, id: "")], bandID: "", id: "")
         
     ]
