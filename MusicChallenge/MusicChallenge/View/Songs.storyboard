@@ -29,6 +29,9 @@
                                     <navigationItem title="Songs" id="1Hl-JQ-Ls5">
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="d6k-1B-3jm">
                                             <color key="tintColor" red="0.8922216892" green="0.16046175360000001" blue="0.17606648799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="addClick:" destination="BYZ-38-t0r" id="wtd-sx-xi0"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -39,10 +42,32 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Songs" image="songs_icon" landscapeImage="songs_icon" largeContentSizeImage="songs_icon" id="5p0-4z-NOX"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addButton" destination="d6k-1B-3jm" id="Med-bs-N7d"/>
+                        <outlet property="navigationBar" destination="IbP-Ep-IEt" id="Z5H-bt-uja"/>
+                        <segue destination="wmI-eD-gxP" kind="show" identifier="addSetlist" id="sht-Qf-8FW"/>
+                        <segue destination="NkL-ld-QNZ" kind="show" identifier="addSong" id="uTX-wR-M0a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="141.59999999999999" y="133.5832083958021"/>
+        </scene>
+        <!--NewSetlist-->
+        <scene sceneID="P24-ew-xCS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewSetlist" id="wmI-eD-gxP" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dBg-Z7-Q3j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1169" y="116"/>
+        </scene>
+        <!--NewSong-->
+        <scene sceneID="tSA-nF-vxg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewSong" id="NkL-ld-QNZ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ELI-zW-76n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1168" y="272"/>
         </scene>
     </scenes>
     <resources>
