@@ -69,7 +69,7 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
     var segmentedControl: CustomSegmentedContrl!
     
     func ssss() {
-        segmentedControl = CustomSegmentedContrl.init(frame: CGRect.init(x: 0, y: 25, width: self.view.frame.width, height: 45))
+        segmentedControl = CustomSegmentedContrl.init(frame: CGRect.init(x: 0, y: 60, width: self.view.frame.width, height: 45))
         //        segmentedControl
         
         segmentedControl.backgroundColor = UIColor(red: 29/255, green: 29/255, blue: 29/255, alpha: 1)
@@ -217,7 +217,9 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
     }
     
     
-    
+    /*override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }*/
     
     
     
