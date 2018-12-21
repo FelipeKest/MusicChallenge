@@ -12,55 +12,56 @@ let SessionManager = sessionManager.instance
 
 class sessionManager {
     static let instance = sessionManager()
-    private var currentUserID: String = ""
+    public var currentUserID: String?
+    public var currentUser: CKRecord?
     private var currentBandID: String = ""
     
-    func getCurrentUserID(completionHandler: @escaping(String?,Error?)->Void){
-        var id: String = ""
+    
+    func getCurrentUser(completionHandler: @escaping(CKRecord?,Error?)->Void){
         DAO.fetchCurrentUser { (userRecord, error) in
             if error != nil {
                 print(error?.localizedDescription as Any)
+                print("error in session manager")
                 completionHandler(nil,error)
                 return
             } else {
-                id = (userRecord?.recordID.recordName)!
-                completionHandler(id,nil)
+                if let userRecord = userRecord {
+                    self.currentUser = userRecord
+                    completionHandler(userRecord,error)
+                    print("recuperei musico ja criado")
+                } else {
+                    print("erro recuperando userID")
+                }
             }
         }
     }
     
     
-    func getCurrentUserBandID(completionHandler: @escaping(String?,Error?)->Void){
-        var bandID: String = ""
-        DAO.fetchCurrentUserBand { (bandRecord, error) in
-            if error != nil {
-                print(error?.localizedDescription as Any)
-                completionHandler(nil,error)
-                return
-            } else {
-                bandID = (bandRecord?.recordID.recordName)!
-                completionHandler(bandID,error)
-            }
-        }
-    }
+    
+//    func getCurrentUserBandID(userRecord: CKRecord,completionHandler: @escaping(String?,Error?)->Void){
+//        var bandID: String = ""
+//        DAO.fetchBand(for: userRecord, completionHandler: { (result, error) in
+//            if error != nil {
+//                print(error?.localizedDescription as Any)
+//                return
+//            } else {
+//                bandID = result!["id"]!
+//                completionHandler(bandID,nil)
+//            }
+//        })
+//    }
+    
     
     
     private init (){
-        getCurrentUserID { (userID, error) in
-            if error != nil {
-                print(error?.localizedDescription as Any)
-                return
-            } else {
-                self.currentUserID = userID!
-            }
-        }
-        getCurrentUserBandID { (bandID, error) in
-            if error != nil {
-                print(error?.localizedDescription as Any)
-                return
-            } else {
-                self.currentBandID = bandID!
-            }
-        }
+        
+//        getCurrentUserBandID(userRecord: CKRecord(recordType: "Users", recordID: CKRecord.ID(recordName: self.currentUserID))) { (bandID, error) in
+//            if error != nil {
+//                print(error?.localizedDescription as Any)
+//                return
+//            } else {
+//                self.currentBandID = bandID!
+//            }
+//        }
     }
 }

@@ -19,6 +19,10 @@ extension CKRecord {
 }
 
 
+
+//MARK: CKRecords Extension
+
+
 extension Saveable {
     var asCKRecord:CKRecord {
         let record = CKRecord(recordType: String(describing: type(of:self)))
@@ -40,8 +44,10 @@ extension Saveable {
     }
 }
 
-extension Array where Element == Saveable {
-    var asCKReferences: [CKRecord.Reference] {
+//MARK: CKReferences Extension
+
+extension Array where Element == Band {
+    var asCKBandReferences: [CKRecord.Reference] {
         var result: [CKRecord.Reference] = []
         for item in self {
             let reference = CKRecord.Reference(record: item.asCKRecord, action: .none)
@@ -50,6 +56,57 @@ extension Array where Element == Saveable {
         return result
     }
 }
+
+extension Array where Element == Event {
+    var asCKEventsReferences: [CKRecord.Reference] {
+        var result: [CKRecord.Reference] = []
+        for item in self {
+            let reference = CKRecord.Reference(record: item.asCKRecord, action: .none)
+            result.append(reference)
+        }
+        return result
+    }
+}
+
+extension Array where Element == Musician {
+    var asCKMusicianReferences: [CKRecord.Reference] {
+        var result: [CKRecord.Reference] = []
+        for item in self {
+            let reference = CKRecord.Reference(record: item.asCKRecord, action: .none)
+            result.append(reference)
+        }
+        return result
+    }
+}
+
+extension Array where Element == Song {
+    var asCKSongReferences: [CKRecord.Reference] {
+        var result: [CKRecord.Reference] = []
+        for item in self {
+            let reference = CKRecord.Reference(record: item.asCKRecord, action: .none)
+            result.append(reference)
+        }
+        return result
+    }
+}
+
+extension Array where Element == Setlist {
+    var asCKSetlistReferences: [CKRecord.Reference] {
+        var result: [CKRecord.Reference] = []
+        for item in self {
+            let reference = CKRecord.Reference(record: item.asCKRecord, action: .none)
+            result.append(reference)
+        }
+        return result
+    }
+}
+
+
+
+
+
+
+
 //
 //extension Band {
 //    var asBandRecord: CKRecord {

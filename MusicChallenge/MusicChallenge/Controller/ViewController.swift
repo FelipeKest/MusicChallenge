@@ -12,36 +12,36 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
-    let songToAdd = Song()
-    let bandToAddIn = Band()
-
+  
     @IBOutlet weak var labelText: UILabel!
     
     @IBAction func saveSong(_ sender: Any) {
-        DAO.createSong(song: songToAdd,by: Musician(), on: bandToAddIn) { (result, error) in
+        SessionManager.getCurrentUser { (user, error) in
             if error != nil {
-                print("Nao foi")
                 print(error?.localizedDescription as Any)
+                return
             } else {
                 DispatchQueue.main.async {
-                    self.labelText.text = result?.name
+                    self.labelText.text = user?.value(forKey: "name") as? String
                 }
+                print("foi tudo")
+                print(user?.value(forKey: "name")! as? String)
             }
+            print("aqui")
         }
     }
     
     @IBAction func deleteAction(_ sender: Any) {
-        DAO.delete(song: songToAdd, from: bandToAddIn) { (songRecordId, error) in
-            if error != nil {
-                print(error?.localizedDescription as Any)
-            } else {
-                DispatchQueue.main.async {
-                    self.labelText.text = "Deleted"
-                }
-            }
-        }
+//        SessionManager.getCurrentUser { (user, error) in
+//            if error != nil {
+//                print(error?.localizedDescription as Any)
+//                return
+//            } else {
+//                self.labelText.text = user?.value(forKey: "band")
+//            }
+//        }
     }
-    
 }
 
