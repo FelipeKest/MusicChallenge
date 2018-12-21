@@ -13,9 +13,10 @@ import UIKit
 class OneSetlistViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var setlistSongsTableView: UITableView!
-    @IBOutlet var setlistName: UILabel!
+    //@IBOutlet var setlistName: UILabel!
     @IBOutlet var songQtd: UILabel!
-    //@IBOutlet var setlistCreator: UILabel!
+    @IBOutlet var statusBar: UINavigationItem!
+    @IBOutlet var setlistCreator: UILabel!
     //@IBOutlet var bpm: UILabel!
     //@IBOutlet var key: UILabel!
     
@@ -31,8 +32,8 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
         let tableXib = UINib(nibName: "RepertoireTableViewCell", bundle: nil)
         setlistSongsTableView.register(tableXib, forCellReuseIdentifier: "repertoireCell")
         
-        self.setlistName.text = setlist.name
-        self.songQtd.text = "\(setlist.songs.count) músicas"
+        self.statusBar.title = setlist.name
+        self.songQtd.text = "\(setlist.songs.count) Songs"
 
         // Do any additional setup after loading the view.
     }
