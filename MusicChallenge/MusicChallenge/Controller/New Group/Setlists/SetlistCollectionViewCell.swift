@@ -14,5 +14,6 @@ class SetlistCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var setlistName: UILabel!
     @IBOutlet var numberOfSongs: UILabel!
+    @IBOutlet weak var setlistImage: UIImageView!
     
 }

@@ -50,7 +50,7 @@
                                                     <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R73-HY-SWm">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setlistImage" translatesAutoresizingMaskIntoConstraints="NO" id="R73-HY-SWm">
                                                     <rect key="frame" x="28" y="8" width="104" height="104"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -58,6 +58,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="numberOfSongs" destination="fBY-UT-cQt" id="2uZ-H5-wCF"/>
+                                            <outlet property="setlistImage" destination="R73-HY-SWm" id="tC2-XP-Ksy"/>
                                             <outlet property="setlistName" destination="Eky-t5-QQ2" id="gaq-d5-WD8"/>
                                         </connections>
                                     </collectionViewCell>
@@ -96,4 +97,7 @@
             <point key="canvasLocation" x="1068" y="-1007"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="setlistImage" width="1832" height="1832"/>
+    </resources>
 </document>
