@@ -47,6 +47,17 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     
+    @IBAction func deleteButton(_ sender: Any) {
+    }
+    
+    
+    @IBAction func shareButton(_ sender: Any) {
+    }
+    
+    
+    @IBAction func editButton(_ sender: Any) {
+    }
+    
 
     /*
     // MARK: - Navigation

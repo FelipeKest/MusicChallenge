@@ -75,6 +75,21 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
         self.dismiss(animated: true, completion: nil)
     }
     
+    
+    @IBAction func addButton(_ sender: Any) {
+    }
+    
+
+    @IBAction func shareButton(_ sender: Any) {
+    }
+  
+    
+    
+    @IBAction func deleteButton(_ sender: Any) {
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 
