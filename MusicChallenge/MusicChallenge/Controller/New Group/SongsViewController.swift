@@ -14,6 +14,8 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
     @IBOutlet var repertoireTableView: UITableView!
     @IBOutlet var addSetlistButton: UIBarButtonItem!
     @IBOutlet var addSongButton: UIBarButtonItem!
+    @IBOutlet var navigationBar: UINavigationBar!
+    @IBOutlet var addButton: UIBarButtonItem!
     
     private var pageController: UIPageViewController!
     private var arrVC:[UIViewController] = []
@@ -62,6 +64,8 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
         arrVC.append(vc1)
         arrVC.append(vc2)
         //    arrVC.append(vc3)
+        
+        
         
         
     }
@@ -222,6 +226,14 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
     }*/
     
     
+    @IBAction func addClick(_ sender: Any) {
+        if currentPage == 0 {
+            self.performSegue(withIdentifier: "addSetlist", sender: nil)
+        }
+        else {
+                self.performSegue(withIdentifier: "addSong", sender: nil)
+            }
+    }
     
     
 }
