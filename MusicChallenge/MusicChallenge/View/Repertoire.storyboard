@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Repertoire View Controller-->
+        <!--Songs-->
         <scene sceneID="e5G-h5-COz">
             <objects>
                 <viewController storyboardIdentifier="Repertoire" id="nTc-NJ-RVA" customClass="RepertoireViewController" customModule="MusicChallenge" customModuleProvider="target" sceneMemberID="viewController">
@@ -24,20 +24,9 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" id="PG9-RY-7Z2">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="barTintColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                    <scopeButtonTitles>
-                                        <string>Title</string>
-                                        <string>Title</string>
-                                    </scopeButtonTitles>
-                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="repertoireCell" id="NLZ-Ud-tdI" customClass="RepertoireTableViewCell" customModule="MusicChallenge" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="84" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NLZ-Ud-tdI" id="edK-Cv-CIC">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -51,13 +40,16 @@
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="2xG-a1-czw"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Songs" id="UBx-sO-8vh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="MRD-iA-lgW"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="repertoireTableView" destination="O6D-Wz-0rU" id="2Ix-3l-Rlx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="flk-jW-av2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="239.73013493253376"/>
+            <point key="canvasLocation" x="1055.2" y="239.73013493253376"/>
         </scene>
     </scenes>
 </document>

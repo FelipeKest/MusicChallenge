@@ -117,7 +117,9 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
                 ], bandID: "", id: "")
             
             ]
-            , bandID: "", id: "")
+            , bandID: "", id: ""),
+        
+        
     ]
     
     
@@ -164,6 +166,10 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
             let index = setlistsCollectionView.indexPathsForSelectedItems?.last
             destination.setlist = setlists[(index?.item)!]
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
     }
 
 }
