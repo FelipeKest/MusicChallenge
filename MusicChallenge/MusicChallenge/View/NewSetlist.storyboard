@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Create Setlist View Controller-->
         <scene sceneID="YKF-Pf-NRx">
             <objects>
-                <viewController id="sb5-Zz-YMW" sceneMemberID="viewController">
+                <viewController id="sb5-Zz-YMW" customClass="CreateSetlistViewController" customModule="MusicChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BLX-yc-imn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,9 +29,15 @@
                                     <navigationItem title="New Setlist" id="Igf-rL-Rq2">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="geM-vr-Z5K">
                                             <color key="tintColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="cancelButton:" destination="sb5-Zz-YMW" id="FS9-Xz-Nia"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="4Hf-Du-Yhr">
                                             <color key="tintColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="doneButton:" destination="sb5-Zz-YMW" id="TgL-Fj-cq4"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>

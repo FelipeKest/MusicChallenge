@@ -69,7 +69,10 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
         return songsCell
     }
     
-
+    @IBAction func backButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

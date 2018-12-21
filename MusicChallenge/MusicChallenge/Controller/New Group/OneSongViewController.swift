@@ -42,6 +42,11 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
         return songsCell
     }
     
+    @IBAction func backButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
 
     /*
     // MARK: - Navigation

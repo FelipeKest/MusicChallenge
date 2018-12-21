@@ -53,6 +53,7 @@
 		D092381921C84BF000D092BE /* Setlists.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D092381821C84BF000D092BE /* Setlists.storyboard */; };
 		D092381B21C84C0900D092BE /* Repertoire.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D092381A21C84C0900D092BE /* Repertoire.storyboard */; };
 		D0A9CB5B21C18D7E00E83D9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A9CB5A21C18D7E00E83D9D /* Main.storyboard */; };
+		D0EE7DFD21CD6B2C00DDA7C9 /* CreateSetlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE7DFC21CD6B2C00DDA7C9 /* CreateSetlistViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,7 @@
 		D092381821C84BF000D092BE /* Setlists.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setlists.storyboard; sourceTree = "<group>"; };
 		D092381A21C84C0900D092BE /* Repertoire.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Repertoire.storyboard; sourceTree = "<group>"; };
 		D0A9CB5A21C18D7E00E83D9D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D0EE7DFC21CD6B2C00DDA7C9 /* CreateSetlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSetlistViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				67D5BB1B21C168B10058BCC7 /* SetlistsViewController.swift */,
 				676CEE7921C83AD700961015 /* OneSetlistViewController.swift */,
 				6777852421C77829002DAB83 /* SetlistCollectionViewCell.swift */,
+				D0EE7DFC21CD6B2C00DDA7C9 /* CreateSetlistViewController.swift */,
 			);
 			path = Setlists;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				676CEE8321C843D700961015 /* MusicianProfileViewController.swift in Sources */,
 				676CEE7821C8390A00961015 /* ImportFromRepertoireViewController.swift in Sources */,
 				676CEE7E21C83C3500961015 /* WhatSetlistsHaveSongViewController.swift in Sources */,
+				D0EE7DFD21CD6B2C00DDA7C9 /* CreateSetlistViewController.swift in Sources */,
 				91A02DD621BC2542001BC7C6 /* DAO.swift in Sources */,
 				6777852021C77591002DAB83 /* RepertoireViewController.swift in Sources */,
 				6777852921C7B953002DAB83 /* RepertoireTableViewCell.swift in Sources */,

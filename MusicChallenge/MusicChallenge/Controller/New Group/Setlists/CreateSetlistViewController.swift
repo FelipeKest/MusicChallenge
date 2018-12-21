@@ -1,16 +1,14 @@
 //
-//  CreateSongViewController.swift
+//  CreateSetlistViewController.swift
 //  MusicChallenge
 //
-//  Created by Guilherme Vassallo on 17/12/18.
+//  Created by Lucas de Lima Gouveia on 21/12/18.
 //  Copyright © 2018 Felipe Kestelman. All rights reserved.
 //
 
-//Viewcontroller da tela de criar uma música.
-
 import UIKit
 
-class CreateSongViewController: UIViewController {
+class CreateSetlistViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +18,11 @@ class CreateSongViewController: UIViewController {
     
     @IBAction func cancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func doneButton(_ sender: Any) {
+        
     }
     
     /*
