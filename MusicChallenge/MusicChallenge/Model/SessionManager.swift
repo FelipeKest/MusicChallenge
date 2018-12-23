@@ -8,16 +8,20 @@
 
 import CloudKit
 
+protocol LoginManager {
+    func getCurrentUser(completionHandler: @escaping(Musician?,Error?)->Void)
+}
+
 let SessionManager = sessionManager.instance
 
-class sessionManager {
+class sessionManager: LoginManager {
     static let instance = sessionManager()
     public var currentUserID: String?
     public var currentUser: CKRecord?
     private var currentBandID: String = ""
     
     
-    func getCurrentUser(completionHandler: @escaping(CKRecord?,Error?)->Void){
+    func getCurrentUser(completionHandler: @escaping(Musician?,Error?)->Void){
         DAO.fetchCurrentUser { (userRecord, error) in
             if error != nil {
                 print(error?.localizedDescription as Any)
@@ -27,7 +31,8 @@ class sessionManager {
             } else {
                 if let userRecord = userRecord {
                     self.currentUser = userRecord
-                    completionHandler(userRecord,error)
+                    let musicianUser = Musician(asDictionary: userRecord.asDictionary)
+                    completionHandler(musicianUser,error)
                     print("recuperei musico ja criado")
                 } else {
                     print("erro recuperando userID")
