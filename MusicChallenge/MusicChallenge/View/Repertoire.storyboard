@@ -45,11 +45,20 @@
                     </navigationItem>
                     <connections>
                         <outlet property="repertoireTableView" destination="O6D-Wz-0rU" id="2Ix-3l-Rlx"/>
+                        <segue destination="8to-12-d0k" kind="show" identifier="showSong" id="lPq-TM-VAW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="flk-jW-av2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1055.2" y="239.73013493253376"/>
+        </scene>
+        <!--SelectedSong-->
+        <scene sceneID="vSg-fU-339">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SelectedSong" id="8to-12-d0k" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kE0-9e-pgy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1986" y="235"/>
         </scene>
     </scenes>
 </document>

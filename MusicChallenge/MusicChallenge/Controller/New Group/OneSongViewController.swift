@@ -14,16 +14,26 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
     
     
     @IBOutlet var songName: UILabel!
-    @IBOutlet var creatorName: UILabel!
-    @IBOutlet var instrumentsTableView: UITableView!
+    //@IBOutlet var creatorName: UILabel!
+    //@IBOutlet var instrumentsTableView: UITableView!
     
-    //var song: Song = Song(name: <#T##String#>, instruments: <#T##[Instrument]#>, bandID: <#T##String#>, id: <#T##String#>)
-
+    @IBOutlet var instrument1: UIImageView!
+    @IBOutlet var instrument2: UIImageView!
+    @IBOutlet var instrument3: UIImageView!
+    @IBOutlet var instrument4: UIImageView!
+    @IBOutlet var instrument5: UIImageView!
+    @IBOutlet var instrument6: UIImageView!
+    
+    @IBOutlet var key: UILabel!
+    @IBOutlet var bpm: UILabel!
+    
+    var song: Song!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        instrumentsTableView.delegate = self
-        instrumentsTableView.dataSource = self
+        /*instrumentsTableView.delegate = self
+        instrumentsTableView.dataSource = self*/
 
         // Do any additional setup after loading the view.
     }

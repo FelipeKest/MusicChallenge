@@ -38,6 +38,12 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let index = self.setlistSongsTableView.indexPathForSelectedRow{
+            self.setlistSongsTableView.deselectRow(at: index, animated: true)
+        }
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return setlist.songs.count
@@ -45,8 +51,6 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let songsCell = tableView.dequeueReusableCell(withIdentifier: "repertoireCell", for: indexPath) as! RepertoireTableViewCell
-        
-        songsCell.selectionStyle = .none
         
         let song = setlist.songs[indexPath.row]
         var iconArray = [songsCell.instrument0, songsCell.instrument1, songsCell.instrument2, songsCell.instrument3]
@@ -69,6 +73,10 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
         songsCell.songName.text = song.name
         
         return songsCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showSong", sender: self)
     }
     
     @IBAction func backButton(_ sender: Any) {

@@ -60,6 +60,12 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let index = self.repertoireTableView.indexPathForSelectedRow{
+            self.repertoireTableView.deselectRow(at: index, animated: true)
+        }
+    }
+    
     
     /*
      // MARK: - Navigation
@@ -81,8 +87,6 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellRepertoire = tableView.dequeueReusableCell(withIdentifier: "repertoireCell", for: indexPath) as! RepertoireTableViewCell
-        
-        cellRepertoire.selectionStyle = .none
         
         let song = songs[indexPath.row]
         var iconArray = [cellRepertoire.instrument0, cellRepertoire.instrument1, cellRepertoire.instrument2, cellRepertoire.instrument3]
@@ -113,9 +117,9 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
     
     
     
-    /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showSong", sender: self)
-    }*/
+    }
     
     
     
