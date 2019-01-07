@@ -45,6 +45,20 @@ class dao{
         }
     }
     
+//    func inviteTo(band:Band){
+//        let bandID = band.id!
+//        let invitationCode = bandID+"/"+userID
+//        print(invitationCode)
+//    }
+    
+    func add(musician: Musician, band: Band)->CKRecord{
+        let bandRecord = band.asCKRecord
+        let musicianReference = musician.asCKReference
+        var bandMembers = bandRecord.value(forKey: "members") as! [CKRecord.Reference]
+        bandMembers.append(musicianReference)
+        return bandRecord
+    }
+    
     //MARK: Create Functions
     func createMusician(musician: Musician, completionHandler: @escaping (CKRecord?,Error?)->Void){
         let musicianRecord = CKRecord(recordType: "Musician")
@@ -157,7 +171,7 @@ class dao{
                                 completionHandler(record,nil)
                             }
                         })
-                        song.setlistsIn.append(setlist)
+                        song.setlists.append(setlist)
                         setlist.songs.append(song)
                     }
                 }
@@ -209,7 +223,7 @@ class dao{
                 //sem erro
                 band.id = bandRecord.recordID.recordName
                 band.members.append(user)
-                user.bandID = band.id!
+                user.band = band
                 completionHandler(band,nil)
             }
         })
@@ -402,6 +416,7 @@ class dao{
         })
     }
     
+    //MARK: Fetch Functions
     func fetchCurrentUser(completionHandler: @escaping(CKRecord?,Error?)->Void){
         //se nao e a primeira vez logando pode persistir localmente esse id
         CKContainer.default().fetchUserRecordID { (userRecordID, error) in
@@ -422,7 +437,7 @@ class dao{
                         if userRecord == nil {
                             //Usuario nao existe
                             print("Usuario nao Existe")
-                            self.createMusician(musician: Musician(name: "Test2", age: 0, instruments: [], bandID: "", id: userRecordID?.recordName), completionHandler: { (currentUserRecord, error) in
+                            self.createMusician(musician: Musician(name: "Test2", age: 0, instruments: [], band: Band(), id: userRecordID?.recordName), completionHandler: { (currentUserRecord, error) in
                                 if error != nil {
                                     print(error?.localizedDescription as Any)
                                     return

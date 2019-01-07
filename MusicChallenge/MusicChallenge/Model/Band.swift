@@ -42,7 +42,7 @@ class Band:GenericProtocolClass {
     }
     
     convenience init() {
-        self.init(name: "Convience", members: [], setlists: [], id: "")
+        self.init(name: "Convience", members: [], id: "")
     }
     
 }

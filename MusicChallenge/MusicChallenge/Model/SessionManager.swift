@@ -18,7 +18,19 @@ class sessionManager: LoginManager {
     static let instance = sessionManager()
     public var currentUserID: String?
     public var currentUser: CKRecord?
-    private var currentBandID: String = ""
+    public var currentBandID: String?
+    
+    private init (){
+        //        getCurrentUserBandID(userRecord: CKRecord(recordType: "Users", recordID: CKRecord.ID(recordName: self.currentUserID))) { (bandID, error) in
+        //            if error != nil {
+        //                print(error?.localizedDescription as Any)
+        //                return
+        //            } else {
+        //                self.currentBandID = bandID!
+        //            }
+        //        }
+    }
+
     
     
     func getCurrentUser(completionHandler: @escaping(Musician?,Error?)->Void){
@@ -31,6 +43,8 @@ class sessionManager: LoginManager {
             } else {
                 if let userRecord = userRecord {
                     self.currentUser = userRecord
+                    self.currentUserID = userRecord.recordID.recordName
+                    self.currentBandID = userRecord.value(forKey: "bandID") as? String
                     let musicianUser = Musician(asDictionary: userRecord.asDictionary)
                     completionHandler(musicianUser,error)
                     print("recuperei musico ja criado")
@@ -41,6 +55,8 @@ class sessionManager: LoginManager {
         }
     }
     
+    
+}
     
     
 //    func getCurrentUserBandID(userRecord: CKRecord,completionHandler: @escaping(String?,Error?)->Void){
@@ -58,15 +74,4 @@ class sessionManager: LoginManager {
     
     
     
-    private init (){
-        
-//        getCurrentUserBandID(userRecord: CKRecord(recordType: "Users", recordID: CKRecord.ID(recordName: self.currentUserID))) { (bandID, error) in
-//            if error != nil {
-//                print(error?.localizedDescription as Any)
-//                return
-//            } else {
-//                self.currentBandID = bandID!
-//            }
-//        }
-    }
-}
+

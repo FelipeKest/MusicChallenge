@@ -42,6 +42,11 @@ extension Saveable {
         }
         return record
     }
+    var asCKReference:CKRecord.Reference {
+        let record = self.asCKRecord
+        let recordReference = CKRecord.Reference(record: record, action: .none)
+        return recordReference
+    }
 }
 
 //MARK: CKReferences Extension

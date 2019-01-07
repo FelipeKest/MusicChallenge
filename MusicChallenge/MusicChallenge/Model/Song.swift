@@ -10,40 +10,40 @@ class Song:GenericProtocolClass {
     
     var name: String
     var instruments: [Instrument]
-    var creator: String
-    var bandID: String
-    var setlistsIn: [Setlist]
+    var creator: Musician
+    var band: Band
+    var setlists: [Setlist]
 
     override var asDictionary: [String : Any] {
         var result: [String:Any] = [:]
         result["name"] = self.name
         result["instruments"] = self.instruments.instrumentsAsString
         result["creator"] = self.creator
-        result["bandID"] = self.bandID
-        result["setlists"] = self.setlistsIn
+        result["bandID"] = self.band
+        result["setlists"] = self.setlists
         return result
     }
     
-    init(name: String, instruments: [Instrument] = [], creatorID: String, setlists: [Setlist] = [],bandID: String, id: String) {
+    init(name: String, instruments: [Instrument] = [], creator: Musician, setlists: [Setlist] = [],band: Band, id: String) {
         self.name = name
         self.instruments = instruments
-        self.creator = creatorID
-        self.bandID = bandID
-        self.setlistsIn = setlists
+        self.creator = creator
+        self.band = band
+        self.setlists = setlists
         super.init(id: id)
     }
     
     required init(asDictionary: [String : Any]) {
         self.name = asDictionary["name"] as! String
         self.instruments = asDictionary["instruments"] as! [Instrument]
-        self.creator = asDictionary["creatorID"] as! String
-        self.setlistsIn = asDictionary["setlists"] as! [Setlist]
-        self.bandID = asDictionary["bandID"] as! String
+        self.creator = asDictionary["creatorID"] as! Musician
+        self.setlists = asDictionary["setlists"] as! [Setlist]
+        self.band = asDictionary["bandID"] as! Band
         super.init(id: asDictionary["id"] as? String)
     }
     
     convenience init() {
-        self.init(name: "Convenience Song", creatorID: "Convenience Creator", bandID: "Convenience Band", id: "Convenience Id")
+        self.init(name: "Convenience Song", creator: Musician(), band: Band(), id: "Convenience Id")
     }
     
 }

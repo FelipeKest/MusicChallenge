@@ -10,26 +10,26 @@ class Musician:GenericProtocolClass {
 
     var name: String
     var age: Int
-    var instruments: [Instrument]
-    var bandID: String
+    var instruments: [Instrument]?
+    var band: Band?
     
-    init(name: String, age: Int, instruments: [Instrument], bandID: String,id: String?) {
+    init(name: String, age: Int, instruments: [Instrument]?, band: Band,id: String?) {
         self.name = name
         self.age = age
         self.instruments = instruments
-        self.bandID = bandID
+        self.band = band
         super.init(id: id)
     }
     
     required init(asDictionary: [String : Any]) {
         self.name = asDictionary["name"] as! String
         self.age = asDictionary["age"] as! Int
-        self.instruments = asDictionary["instruments"] as! [Instrument]
-        self.bandID = asDictionary["bandID"] as! String
+        self.instruments = asDictionary["instruments"] as? [Instrument]
+        self.band = asDictionary["bandID"] as! Band?
         super.init(asDictionary: asDictionary)
     }
     
     convenience init (){
-        self.init(name: "Convenience Musician", age: 0, instruments: [], bandID: "Convenience", id: "Convenience")
+        self.init(name: "Convenience Musician", age: 0, instruments: [], band: Band(), id: "Convenience")
     }
 }
