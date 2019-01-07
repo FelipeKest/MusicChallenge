@@ -53,6 +53,7 @@
 		D092381921C84BF000D092BE /* Setlists.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D092381821C84BF000D092BE /* Setlists.storyboard */; };
 		D092381B21C84C0900D092BE /* Repertoire.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D092381A21C84C0900D092BE /* Repertoire.storyboard */; };
 		D0A9CB5B21C18D7E00E83D9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A9CB5A21C18D7E00E83D9D /* Main.storyboard */; };
+		D0B4D9F221E3FA3600C427B2 /* DAODummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B4D9F121E3FA3600C427B2 /* DAODummy.swift */; };
 		D0EE7DFD21CD6B2C00DDA7C9 /* CreateSetlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE7DFC21CD6B2C00DDA7C9 /* CreateSetlistViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +106,7 @@
 		D092381821C84BF000D092BE /* Setlists.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setlists.storyboard; sourceTree = "<group>"; };
 		D092381A21C84C0900D092BE /* Repertoire.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Repertoire.storyboard; sourceTree = "<group>"; };
 		D0A9CB5A21C18D7E00E83D9D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D0B4D9F121E3FA3600C427B2 /* DAODummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAODummy.swift; sourceTree = "<group>"; };
 		D0EE7DFC21CD6B2C00DDA7C9 /* CreateSetlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSetlistViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -238,6 +240,7 @@
 				675A8D8B21CAC50B00C5A377 /* Setlist.swift */,
 				675A8D8C21CAC50C00C5A377 /* Song.swift */,
 				91A02DD521BC2542001BC7C6 /* DAO.swift */,
+				D0B4D9F121E3FA3600C427B2 /* DAODummy.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				67D5BB1A21C15DE50058BCC7 /* RoadmapViewController.swift in Sources */,
 				676DD52721C98D5500049130 /* CustomSegmentedContrl.swift in Sources */,
 				67D5BB2021C173D40058BCC7 /* PostViewController.swift in Sources */,
+				D0B4D9F221E3FA3600C427B2 /* DAODummy.swift in Sources */,
 				676CEE8521C843E300961015 /* MyProfileViewController.swift in Sources */,
 				675A8D9221CAC50C00C5A377 /* Extenstions.swift in Sources */,
 				675A8D9121CAC50C00C5A377 /* Musician.swift in Sources */,

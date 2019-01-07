@@ -8,7 +8,8 @@
 
 import UIKit
 
-class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate{
+class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate, CurrentUserObserver{
+    
     
     @IBOutlet var setlistsCollectionView: UICollectionView!
     @IBOutlet var repertoireTableView: UITableView!
@@ -69,6 +70,27 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
         
         
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        dao.currenUserObserver = self
+        
+        
+        
+        
+        let newSetlist = Setlist(name: <#T##String#>, songs: <#T##[Song]#>, bandID: <#T##String#>, id: <#T##String#>)
+        
+        dao.currentUser.band.setlists.append(newSetlist)
+        
+        
+        
+        
+        
+    }
+    
+    func currentUserChanged() {
+        // Atualiza a tela
+    }
+    
     
     var segmentedControl: CustomSegmentedContrl!
     

@@ -52,11 +52,11 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
         var iconArray = [songsCell.instrument0, songsCell.instrument1, songsCell.instrument2, songsCell.instrument3]
         
         if song.instruments.count > 4{
-            for i in 0...3 {
+            for i in 0...2 {
                 iconArray[i]?.image = song.instruments[i].type.image
             }
             
-            songsCell.additionalInstruments.text = "+\(song.instruments.count - 4)"
+            songsCell.additionalInstruments.text = "+\(song.instruments.count - 3)"
         }
         else{
             for i in 0...song.instruments.count-1 {
