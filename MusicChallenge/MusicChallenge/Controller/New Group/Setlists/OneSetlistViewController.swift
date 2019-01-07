@@ -75,6 +75,15 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
         return songsCell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showSong" {
+            let destination = segue.destination as? OneSongViewController
+            let index = setlistSongsTableView.indexPathForSelectedRow?.row
+            destination?.song = setlist.songs[index!]
+        }
+    }
+
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showSong", sender: self)
     }

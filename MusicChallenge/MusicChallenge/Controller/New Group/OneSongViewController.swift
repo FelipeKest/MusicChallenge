@@ -32,6 +32,26 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var iconArray = [instrument1, instrument2, instrument3, instrument4, instrument5, instrument6]
+        
+        if song.instruments.count > 6{
+            for i in 0...5 {
+                iconArray[i]?.image = song.instruments[i].type.image
+            }
+            
+            /*cellRepertoire.additionalInstruments.text = "+\(song.instruments.count - 6)"*/
+        }
+        else{
+            for i in 0...song.instruments.count-1 {
+                iconArray[i]?.image = song.instruments[i].type.image
+            }
+            
+            //additionalInstruments.text = ""
+        }
+        
+        songName.text = song.name
+        //bpm.text
+        
         /*instrumentsTableView.delegate = self
         instrumentsTableView.dataSource = self*/
 

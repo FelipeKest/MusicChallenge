@@ -113,12 +113,18 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showSong" {
+            let destination = segue.destination as? OneSongViewController
+            let index = repertoireTableView.indexPathForSelectedRow?.row
+            destination?.song = songs[index!]
+        }
+    }
     
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showSong", sender: self)
+        self.performSegue(withIdentifier: "showSong", sender: indexPath.row)
     }
     
     
