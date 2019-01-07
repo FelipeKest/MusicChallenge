@@ -18,18 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfU-Eq-Uj0">
-                                <rect key="frame" x="199" y="332" width="135" height="70"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coming Soon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfU-Eq-Uj0">
+                                <rect key="frame" x="21" y="298" width="333" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="58"/>
                                 <color key="textColor" red="0.82352941180000006" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="FfU-Eq-Uj0" firstAttribute="top" secondItem="9Kv-gB-GMq" secondAttribute="top" constant="312" id="fbA-pe-GcN"/>
-                            <constraint firstItem="FfU-Eq-Uj0" firstAttribute="leading" secondItem="9Kv-gB-GMq" secondAttribute="leading" constant="199" id="z71-km-6eS"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9Kv-gB-GMq"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Roadmap" image="roadmap_icon" landscapeImage="roadmap_icon" largeContentSizeImage="roadmap_icon" id="D1O-1e-37E">

@@ -127,11 +127,20 @@
                         <outlet property="setlistSongsTableView" destination="Vgw-MY-BPI" id="Qfi-5N-T6s"/>
                         <outlet property="songQtd" destination="k7o-6r-z1q" id="zTm-I2-b4O"/>
                         <outlet property="statusBar" destination="5Ji-M3-GIL" id="CAD-ne-4Ts"/>
+                        <segue destination="0bv-cW-Nuk" kind="show" identifier="showSong" id="eB7-qP-oiy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bPN-Yx-PnT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-65" y="30"/>
+        </scene>
+        <!--SelectedSong-->
+        <scene sceneID="H8A-tB-ynN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SelectedSong" id="0bv-cW-Nuk" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uVv-Fi-gQs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="953" y="41"/>
         </scene>
     </scenes>
     <resources>
