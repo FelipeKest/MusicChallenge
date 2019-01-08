@@ -83,7 +83,19 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
             let optionMenu = UIAlertController(title: nil, message: "O que deseja fazer?", preferredStyle: .actionSheet)
             
             let takeOffAction = UIAlertAction(title: "Retirar da setlist \(songSetlist?.name ?? "ERRO")", style: .default)
-            let deleteAction = UIAlertAction(title: "Excluir do repertório", style: .default)
+            let deleteAction = UIAlertAction(title: "Excluir do repertório", style: .destructive, handler: {action in
+                
+                let confirmationAlert = UIAlertController(title: nil, message: "Deseja realmente excluir \(self.song.name)?", preferredStyle: .alert)
+                
+                let deleteAction = UIAlertAction(title: "Excluir", style: .destructive)
+                let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
+                
+                confirmationAlert.addAction(deleteAction)
+                confirmationAlert.addAction(cancelAction)
+                
+                self.present(confirmationAlert, animated: true, completion: nil)
+                
+            })
             
             let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
             
@@ -95,21 +107,29 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
             
         }
         else {
-            let deleteMenu = UIAlertController(title: nil, message: "Deseja realmente excluir \(song.name)?", preferredStyle: .alert)
+            let deleteAlert = UIAlertController(title: nil, message: "Deseja realmente excluir \(song.name)?", preferredStyle: .alert)
             
-            let deleteAction = UIAlertAction(title: "Excluir", style: .default)
-            
+            let deleteAction = UIAlertAction(title: "Excluir", style: .destructive)
             let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
             
-            deleteMenu.addAction(deleteAction)
-            deleteMenu.addAction(cancelAction)
+            deleteAlert.addAction(deleteAction)
+            deleteAlert.addAction(cancelAction)
             
-            self.present(deleteMenu, animated: true, completion: nil)
+            self.present(deleteAlert, animated: true, completion: nil)
         }
     }
     
     
     @IBAction func shareButton(_ sender: Any) {
+        
+        if songSetlist != nil {
+            let ac = UIActivityViewController(activityItems: ["Minha banda possui no repertório a música \(song.name)! Estamos utilizando o app de iOS BandPlan para organizar nossa banda. Baixe você também!"], applicationActivities: [])
+            present(ac, animated: true)
+        }
+        else {
+            let ac = UIActivityViewController(activityItems: ["O setlist \(songSetlist?.name ?? "ERRO") da minha banda inclui a música \(song.name)! Estamos utilizando o app de iOS BandPlan para organizar nossa banda. Baixe você também!"], applicationActivities: [])
+            present(ac, animated: true)
+        }
     }
     
     
