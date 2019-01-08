@@ -44,7 +44,7 @@ class sessionManager: LoginManager {
                 if let userRecord = userRecord {
                     self.currentUserID = userRecord.recordID.recordName
                     self.currentBandID = userRecord.value(forKey: "bandID") as? String
-                    let musicianUser = userRecord.asMusician
+                    let musicianUser = Musician(asDictionary: userRecord.asDictionary)
                     self.currentUser = musicianUser
                     completionHandler(musicianUser,error)
                     print("recuperei9å musico ja criado")

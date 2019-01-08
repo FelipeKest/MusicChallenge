@@ -8,6 +8,8 @@
 
 import CloudKit
 
+//MARK: CKRecords Extension
+
 extension CKRecord {
     var asDictionary:[String:Any] {
         var result:[String:Any] = [:]
@@ -17,21 +19,20 @@ extension CKRecord {
         return result
     }
     
-//    var asMusician: Musician {
-//        var musician: Musician
-//        let name = self["name"]! as! String
-//        let age = self["age"]! as! Int
-//        let instruments = self["instruments"]! as? [Instrument]
-////        let band = self["band"]!
-//        let id = self["id"]! as? String
-////        musician = Musician(name: name, age: age, instruments: instruments, band: <#T##Band#>, id: id)
-//        
-//        return musician
-//    }
+    var asMusician: Musician {
+        return Musician(asDictionary: self.asDictionary)
+    }
     
     var asSong: Song {
-        let musician = Song(asDictionary: self.asDictionary)
-        return musician
+        return Song(asDictionary: self.asDictionary)
+        let song: Song
+        let name = self.value(forKey: "name") as! String
+        let instruments = self.value(forKey: "instruments") as! [Instrument]
+        let creatorReference = self.value(forKey: "creator") as? CKRecord.Reference
+        let creatorRecord = CKRecord(recordType: "Song", recordID: (creatorReference?.recordID)!)
+        let id = self.value(forKey: "id") as! String
+        song = Song(name: name, instruments: instruments, creator: creatorRecord.asMusician, id: id)
+        return song
     }
     
     var asSetlist: Setlist {
@@ -39,14 +40,9 @@ extension CKRecord {
         return musician
     }
     
-//    var asBand: Band {
-////        let band: Band
-//        let name = self.value(forKey: "name")
-//        let repertoire = self.value(forKey: "repertoire")
-//        let setlists = self.value(forKey: "setlists")
-//        let members = self.value(forKey: "members")
-//        return band
-//    }
+    var asBand: Band {
+        return Band(asDictionary: self.asDictionary)
+    }
 }
 
 extension Array where Element == CKRecord {
@@ -57,9 +53,24 @@ extension Array where Element == CKRecord {
         }
         return array
     }
+    
+    var asSetlistArray: [Setlist] {
+        var array: [Setlist] = []
+        for setlistRecord in self {
+            array.append(setlistRecord.asSetlist)
+        }
+        return array
+    }
+    
+    var asSongArray: [Song] {
+        var array: [Song] = []
+        for songRecord in self {
+            array.append(songRecord.asSong)
+        }
+        return array
+    }
 }
 
-//MARK: CKRecords Extension
 extension Array where Element == GenericProtocolClass {
     func add(){}
     func remove(){}

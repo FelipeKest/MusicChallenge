@@ -9,6 +9,7 @@
 import Foundation
 
 class GenericProtocolClass: Saveable,Loadable {
+    static var allReferenced:[String:GenericProtocolClass] = [:]
     var id: String?
     
     var asDictionary: [String : Any] {
@@ -21,8 +22,12 @@ class GenericProtocolClass: Saveable,Loadable {
         self.id = asDictionary["id"] as! String?
     }
     
-    init(id: String?){
+    init<T: GenericProtocolClass>(id: String?, _: T? = nil){
         self.id = id
+        if let meID = id {
+            T.allReferenced[meID] = self
+        }
+
     }
 
 }

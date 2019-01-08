@@ -13,12 +13,13 @@ class Musician:GenericProtocolClass {
     var instruments: [Instrument]?
     var band: Band?
     
-    init(name: String, age: Int, instruments: [Instrument]?, band: Band,id: String?) {
+    init(name: String, age: Int, instruments: [Instrument] = [],id: String?) {
         self.name = name
         self.age = age
         self.instruments = instruments
-        self.band = band
+//        self.band = band
         super.init(id: id)
+        
     }
     
     override var asDictionary: [String : Any] {
@@ -26,7 +27,7 @@ class Musician:GenericProtocolClass {
         result["name"] = self.name
         result["age"] = self.age
         result["instruments"] = self.instruments
-        result["band"] = self.band
+        result["band"] = self.band?.asCKReference
         result["id"] = super.id
         return result
     }
@@ -35,11 +36,30 @@ class Musician:GenericProtocolClass {
         self.name = asDictionary["name"] as! String
         self.age = asDictionary["age"] as! Int
         self.instruments = asDictionary["instruments"] as? [Instrument]
-        self.band = asDictionary["bandID"] as! Band?
         super.init(asDictionary: asDictionary)
+        
+        print(asDictionary)
+        // se o currentUser já existe eu ou um membro da banda
+//        guard let bandID = asDictionary["band"] as? [String:Any] else {return} //da um erro
+        guard let realBand = band else {return}
+        DAO.fetchBandFrom(record: realBand.asCKRecord, into: self)
+//        if let band = Band.allReferenced[bandID] as? Band {
+//            self.band = band
+//            print("e a band \(bandID) com name \(band.name)")
+//            // se não, pega a banda
+//        } else {
+//            DAO.queryBand(id: asDictionary["band"] as! String, completionHandler: { (bandRecord, error) in
+//                guard let bandDic = bandRecord?.asDictionary else {return}
+//                self.band = Band(asDictionary: bandDic)
+//                print("e a band \(bandID) com name \(self.band?.name)")
+//            })
+//
+//        }
+
+
     }
     
     convenience init (){
-        self.init(name: "Convenience Musician", age: 0, instruments: [], band: Band(), id: "Convenience")
+        self.init(name: "Convenience Musician", age: 0, instruments: [], id: "Convenience")
     }
 }

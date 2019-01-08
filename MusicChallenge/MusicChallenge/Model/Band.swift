@@ -35,10 +35,17 @@ class Band:GenericProtocolClass {
     required init(asDictionary: [String : Any]) {
         self.name = asDictionary["name"] as! String
         self.members = asDictionary["members"] as! [Musician]
+        super.init(id: asDictionary["id"] as? String)
+        //Vejo se os musicos estao no Musico.allReferenced (ja lidos) coloco eles no members
+        let membersID = asDictionary["members"] as! [String]
+        // se nao
+        DAO.queryAllMusicians(from: self, and: membersID) { (error) in
+        
+        }
         self.repertoire = asDictionary["repertoire"] as! [Song]
         self.setlists = asDictionary["setlists"] as! [Setlist]
         self.events = asDictionary["events"] as! [Event]
-        super.init(id: asDictionary["id"] as? String)
+        
     }
     
     convenience init() {

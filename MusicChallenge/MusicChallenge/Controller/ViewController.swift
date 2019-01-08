@@ -19,29 +19,17 @@ class ViewController: UIViewController{
         SessionManager.getCurrentUser { (musician, error) in
             if error != nil {
                 print(error?.localizedDescription as Any)
-            } else {
-                let bandID = musician?.band?.id
-                let musicianName = musician?.name
-                print("esse e o nome \(String(describing: musician?.band?.name))")
-                DAO.queryBand(id: bandID!, completionHandler: { (bandRecord, bandError) in
-                    if error != nil {
-                        print(bandError?.localizedDescription as Any)
-                    } else {
-                        self.realBand = bandRecord?.asDictionary
-                        self.band = Band(asDictionary: self.realBand!)
-                    }
-                })
             }
         }
     }
     
-  
- 
-    
     @IBOutlet weak var labelText: UILabel!
     
     @IBAction func saveSong(_ sender: Any) {
-           
+        let bandID = SessionManager.currentUser?.band?.id
+        let musicianName = SessionManager.currentUser?.name
+        print(musicianName as Any)
+        print("esse e o nome \(String(describing: bandID))")
     }
     
     
