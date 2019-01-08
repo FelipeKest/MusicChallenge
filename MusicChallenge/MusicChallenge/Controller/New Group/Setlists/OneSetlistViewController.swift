@@ -94,15 +94,38 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
     
     
     @IBAction func addButton(_ sender: Any) {
+        let optionMenu = UIAlertController(title: nil, message: "Como quer adicionar a música?", preferredStyle: .actionSheet)
+        
+        let addFromRepertoireAction = UIAlertAction(title: "Importar do repertório", style: .default)
+        let newSongAction = UIAlertAction(title: "Criar nova música", style: .default)
+        
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
+        
+        optionMenu.addAction(addFromRepertoireAction)
+        optionMenu.addAction(newSongAction)
+        optionMenu.addAction(cancelAction)
+        
+        self.present(optionMenu, animated: true, completion: nil)
     }
     
 
     @IBAction func shareButton(_ sender: Any) {
+        let ac = UIActivityViewController(activityItems: ["O setlist \(setlist.name) da minha banda já está com \(setlist.songs.count) músicas iradas!"], applicationActivities: [])
+        present(ac, animated: true)
     }
   
     
     
     @IBAction func deleteButton(_ sender: Any) {
+        let deleteAlert = UIAlertController(title: nil, message: "Deseja realmente excluir a setlist \(setlist.name)?", preferredStyle: .alert)
+        
+        let deleteAction = UIAlertAction(title: "Excluir", style: .destructive)
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
+        
+        deleteAlert.addAction(deleteAction)
+        deleteAlert.addAction(cancelAction)
+        
+        self.present(deleteAlert, animated: true, completion: nil)
     }
     
     
