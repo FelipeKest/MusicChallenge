@@ -21,7 +21,6 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
     //@IBOutlet var key: UILabel!
     
     var setlist: Setlist!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,6 +79,7 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
             let destination = segue.destination as? OneSongViewController
             let index = setlistSongsTableView.indexPathForSelectedRow?.row
             destination?.song = setlist.songs[index!]
+            destination?.songSetlist = setlist
         }
     }
 

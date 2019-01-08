@@ -28,6 +28,7 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet var bpm: UILabel!
     
     var song: Song!
+    var songSetlist: Setlist?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +79,33 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
     
     
     @IBAction func deleteButton(_ sender: Any) {
+        if songSetlist != nil { //Está vindo de uma setlist
+            let deleteMenu = UIAlertController(title: nil, message: "O que deseja fazer?", preferredStyle: .actionSheet)
+            
+            let takeOffAction = UIAlertAction(title: "Retirar da setlist \(songSetlist?.name ?? "ERRO")", style: .default)
+            let deleteAction = UIAlertAction(title: "Excluir do repertório", style: .default)
+            
+            let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
+            
+            deleteMenu.addAction(takeOffAction)
+            deleteMenu.addAction(deleteAction)
+            deleteMenu.addAction(cancelAction)
+            
+            self.present(deleteMenu, animated: true, completion: nil)
+            
+        }
+        else {
+            let deleteMenu = UIAlertController(title: nil, message: "Deseja realmente excluir \(song.name)?", preferredStyle: .actionSheet)
+            
+            let deleteAction = UIAlertAction(title: "Excluir", style: .default)
+            
+            let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
+            
+            deleteMenu.addAction(deleteAction)
+            deleteMenu.addAction(cancelAction)
+            
+            self.present(deleteMenu, animated: true, completion: nil)
+        }
     }
     
     
