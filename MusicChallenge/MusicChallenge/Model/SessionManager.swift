@@ -17,7 +17,7 @@ let SessionManager = sessionManager.instance
 class sessionManager: LoginManager {
     static let instance = sessionManager()
     public var currentUserID: String?
-    public var currentUser: CKRecord?
+    public var currentUser: Musician?
     public var currentBandID: String?
     
     private init (){
@@ -42,12 +42,12 @@ class sessionManager: LoginManager {
                 return
             } else {
                 if let userRecord = userRecord {
-                    self.currentUser = userRecord
                     self.currentUserID = userRecord.recordID.recordName
                     self.currentBandID = userRecord.value(forKey: "bandID") as? String
-                    let musicianUser = Musician(asDictionary: userRecord.asDictionary)
+                    let musicianUser = userRecord.asMusician
+                    self.currentUser = musicianUser
                     completionHandler(musicianUser,error)
-                    print("recuperei musico ja criado")
+                    print("recuperei9å musico ja criado")
                 } else {
                     print("erro recuperando userID")
                 }

@@ -20,8 +20,10 @@ class ViewController: UIViewController{
             if error != nil {
                 print(error?.localizedDescription as Any)
             } else {
-                self.bandID = musician?.band?.id
-                DAO.queryBand(id: self.bandID!, completionHandler: { (bandRecord, bandError) in
+                let bandID = musician?.band?.id
+                let musicianName = musician?.name
+                print("esse e o nome \(String(describing: musician?.band?.name))")
+                DAO.queryBand(id: bandID!, completionHandler: { (bandRecord, bandError) in
                     if error != nil {
                         print(bandError?.localizedDescription as Any)
                     } else {

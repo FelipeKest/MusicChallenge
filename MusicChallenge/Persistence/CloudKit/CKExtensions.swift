@@ -16,12 +16,54 @@ extension CKRecord {
         }
         return result
     }
+    
+//    var asMusician: Musician {
+//        var musician: Musician
+//        let name = self["name"]! as! String
+//        let age = self["age"]! as! Int
+//        let instruments = self["instruments"]! as? [Instrument]
+////        let band = self["band"]!
+//        let id = self["id"]! as? String
+////        musician = Musician(name: name, age: age, instruments: instruments, band: <#T##Band#>, id: id)
+//        
+//        return musician
+//    }
+    
+    var asSong: Song {
+        let musician = Song(asDictionary: self.asDictionary)
+        return musician
+    }
+    
+    var asSetlist: Setlist {
+        let musician = Setlist(asDictionary: self.asDictionary)
+        return musician
+    }
+    
+//    var asBand: Band {
+////        let band: Band
+//        let name = self.value(forKey: "name")
+//        let repertoire = self.value(forKey: "repertoire")
+//        let setlists = self.value(forKey: "setlists")
+//        let members = self.value(forKey: "members")
+//        return band
+//    }
 }
 
-
+extension Array where Element == CKRecord {
+    var asMusicianArray: [Musician] {
+        var array: [Musician] = []
+        for musicianRecord in self {
+            array.append(musicianRecord.asMusician)
+        }
+        return array
+    }
+}
 
 //MARK: CKRecords Extension
-
+extension Array where Element == GenericProtocolClass {
+    func add(){}
+    func remove(){}
+}
 
 extension Saveable {
     var asCKRecord:CKRecord {

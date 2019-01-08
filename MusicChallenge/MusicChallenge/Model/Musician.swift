@@ -21,6 +21,16 @@ class Musician:GenericProtocolClass {
         super.init(id: id)
     }
     
+    override var asDictionary: [String : Any] {
+        var result: [String:Any] = [:]
+        result["name"] = self.name
+        result["age"] = self.age
+        result["instruments"] = self.instruments
+        result["band"] = self.band
+        result["id"] = super.id
+        return result
+    }
+    
     required init(asDictionary: [String : Any]) {
         self.name = asDictionary["name"] as! String
         self.age = asDictionary["age"] as! Int

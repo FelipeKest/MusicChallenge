@@ -29,7 +29,7 @@ extension Array where Element == Instrument {
     var instrumentsAsString:[String]{
         var strings:[String] = []
         for instrument in self {
-            strings.append(instrument.type.text)
+            strings.append(instrument.text)
         }
         return strings
     }
