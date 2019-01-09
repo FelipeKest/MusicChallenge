@@ -77,9 +77,9 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
         
         
         
-        let newSetlist = Setlist(name: <#T##String#>, songs: <#T##[Song]#>, bandID: <#T##String#>, id: <#T##String#>)
+        //let newSetlist = Setlist(name: <#T##String#>, songs: <#T##[Song]#>, bandID: <#T##String#>, id: <#T##String#>)
         
-        dao.currentUser.band.setlists.append(newSetlist)
+        //dao.currentUser.band.setlists.append(newSetlist)
         
         
         

@@ -21,7 +21,6 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
     //@IBOutlet var key: UILabel!
     
     var setlist: Setlist!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,11 +55,11 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
         var iconArray = [songsCell.instrument0, songsCell.instrument1, songsCell.instrument2, songsCell.instrument3]
         
         if song.instruments.count > 4{
-            for i in 0...2 {
+            for i in 0...3 {
                 iconArray[i]?.image = song.instruments[i].type.image
             }
             
-            songsCell.additionalInstruments.text = "+\(song.instruments.count - 3)"
+            songsCell.additionalInstruments.text = "+\(song.instruments.count - 4)"
         }
         else{
             for i in 0...song.instruments.count-1 {
@@ -80,6 +79,7 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
             let destination = segue.destination as? OneSongViewController
             let index = setlistSongsTableView.indexPathForSelectedRow?.row
             destination?.song = setlist.songs[index!]
+            destination?.songSetlist = setlist
         }
     }
 
@@ -94,15 +94,38 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
     
     
     @IBAction func addButton(_ sender: Any) {
+        let optionMenu = UIAlertController(title: nil, message: "Como quer adicionar a música?", preferredStyle: .actionSheet)
+        
+        let addFromRepertoireAction = UIAlertAction(title: "Importar do repertório", style: .default)
+        let newSongAction = UIAlertAction(title: "Criar nova música", style: .default)
+        
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
+        
+        optionMenu.addAction(addFromRepertoireAction)
+        optionMenu.addAction(newSongAction)
+        optionMenu.addAction(cancelAction)
+        
+        self.present(optionMenu, animated: true, completion: nil)
     }
     
 
     @IBAction func shareButton(_ sender: Any) {
+        let ac = UIActivityViewController(activityItems: ["O setlist \(setlist.name) da minha banda já está com \(setlist.songs.count) músicas iradas!"], applicationActivities: [])
+        present(ac, animated: true)
     }
   
     
     
     @IBAction func deleteButton(_ sender: Any) {
+        let deleteAlert = UIAlertController(title: nil, message: "Deseja realmente excluir a setlist \(setlist.name)?", preferredStyle: .alert)
+        
+        let deleteAction = UIAlertAction(title: "Excluir", style: .destructive)
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
+        
+        deleteAlert.addAction(deleteAction)
+        deleteAlert.addAction(cancelAction)
+        
+        self.present(deleteAlert, animated: true, completion: nil)
     }
     
     

@@ -32,6 +32,13 @@
                                                 <action selector="backButton:" destination="L6h-u0-D2v" id="cNv-d4-W5E"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="OjD-V9-Qvv">
+                                            <color key="tintColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="backButton:" destination="L6h-u0-D2v" id="UeR-q2-Zrf"/>
+                                                <segue destination="eao-IE-1TO" kind="show" identifier="editSetlist" id="VR5-ZU-Fdh"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -133,6 +140,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bPN-Yx-PnT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-65" y="30"/>
+        </scene>
+        <!--EditSetlist-->
+        <scene sceneID="RF3-TJ-td5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EditSetlist" id="eao-IE-1TO" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hjr-nX-qfx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="860" y="-258"/>
         </scene>
         <!--SelectedSong-->
         <scene sceneID="H8A-tB-ynN">
