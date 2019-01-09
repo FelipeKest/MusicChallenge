@@ -25,14 +25,14 @@ extension CKRecord {
     
     var asSong: Song {
         return Song(asDictionary: self.asDictionary)
-        let song: Song
-        let name = self.value(forKey: "name") as! String
-        let instruments = self.value(forKey: "instruments") as! [Instrument]
-        let creatorReference = self.value(forKey: "creator") as? CKRecord.Reference
-        let creatorRecord = CKRecord(recordType: "Song", recordID: (creatorReference?.recordID)!)
-        let id = self.value(forKey: "id") as! String
-        song = Song(name: name, instruments: instruments, creator: creatorRecord.asMusician, id: id)
-        return song
+//        let song: Song
+//        let name = self.value(forKey: "name") as! String
+//        let instruments = self.value(forKey: "instruments") as! [Instrument]
+//        let creatorReference = self.value(forKey: "creator") as? CKRecord.Reference
+//        let creatorRecord = CKRecord(recordType: "Song", recordID: (creatorReference?.recordID)!)
+//        let id = self.value(forKey: "id") as! String
+//        song = Song(name: name, instruments: instruments, creator: creatorRecord.asMusician, id: id)
+//        return song
     }
     
     var asSetlist: Setlist {
@@ -45,6 +45,8 @@ extension CKRecord {
     }
 }
 
+
+//MARK: CKRecord Array Extension
 extension Array where Element == CKRecord {
     var asMusicianArray: [Musician] {
         var array: [Musician] = []
@@ -102,7 +104,7 @@ extension Saveable {
     }
 }
 
-//MARK: CKReferences Extension
+//MARK: Array to CKReferences Extension
 
 extension Array where Element == Band {
     var asCKBandReferences: [CKRecord.Reference] {
@@ -158,6 +160,9 @@ extension Array where Element == Setlist {
         return result
     }
 }
+
+//MARK: CKReference to GenericClass Array
+
 
 
 

@@ -79,31 +79,31 @@ class dao{
     }
 
     
-    func createSetlist(setlist: Setlist, creator: Musician, band: Band, completionHandler: @escaping(Setlist?,Error?)->Void){
-        let setlistRecord = CKRecord(recordType: "Setlist")
-        var bandRecord = CKRecord(recordType: "Band")
-        queryBand(id: band.id!) { (record, error) in
-            if error != nil {
-                print(error?.localizedDescription as Any)
-                completionHandler(nil,error)
-            } else {
-                bandRecord = record!
-            }
-        }
-        setlistRecord.setValuesForKeys(setlist.asDictionary)
-        database?.save(setlistRecord, completionHandler: { record,error in
-            if error != nil {
-                print(error?.localizedDescription as Any)
-                completionHandler(nil,error)
-            } else {
-                //TODO: Pegar e modificar as setlist no campo ["setlist"] do Record da Banda
-                print("saved record")
-                band.setlists.append(setlist)
-                setlist.id = setlistRecord.recordID.recordName
-                completionHandler(setlist,nil)
-            }
-        })
-    }
+//    func createSetlist(setlist: Setlist, creator: Musician, band: Band, completionHandler: @escaping(Setlist?,Error?)->Void){
+//        let setlistRecord = CKRecord(recordType: "Setlist")
+//        var bandRecord = CKRecord(recordType: "Band")
+//        queryBand(id: band.id!) { (record, error) in
+//            if error != nil {
+//                print(error?.localizedDescription as Any)
+//                completionHandler(nil,error)
+//            } else {
+//                bandRecord = record!
+//            }
+//        }
+//        setlistRecord.setValuesForKeys(setlist.asDictionary)
+//        database?.save(setlistRecord, completionHandler: { record,error in
+//            if error != nil {
+//                print(error?.localizedDescription as Any)
+//                completionHandler(nil,error)
+//            } else {
+//                //TODO: Pegar e modificar as setlist no campo ["setlist"] do Record da Banda
+//                print("saved record")
+//                band.setlists.append(setlist)
+//                setlist.id = setlistRecord.recordID.recordName
+//                completionHandler(setlist,nil)
+//            }
+//        })
+//    }
     
     func createSong(song: Song,by musician: Musician, on band:Band, completionHandler: @escaping (Song?,Error?)->Void){
         var songRecord = CKRecord(recordType: "Song")
@@ -322,27 +322,55 @@ class dao{
         return setlists
     }
     
-    func queryAllMusicians(from band:Band, and membersID: [String] = [], completionHandler: @escaping(Error?)->Void){
-        var bandMembers = membersID
-        for i in 0..<membersID.count {
-            if let member = Musician.allReferenced[membersID[i]] as? Musician {
+    
+    func queryAllMusicians(from band:Band, and membersReferences: Any, completionHandler: @escaping(Error?)->Void){
+        //O vetor de members
+        let allMembersID = membersReferences as! [CKRecord.Reference]
+        var bandMembers = allMembersID
+        for i in 0..<allMembersID.count {
+            //Ve se os membros estao no allReferenced
+            //Se sim
+            if let member = Musician.allReferenced[allMembersID[i].recordID.recordName] as? Musician {
+                //adiciona na banda
                 band.members.append(member)
+                print("nome do member \(member.name)")
+                //retira do vetor
                 bandMembers.remove(at: i)
             }
+            //
         }
         if bandMembers.count == 0 {return}
-        
-        let pred = NSPredicate(format: "id == %@", bandMembers)
-        let query = CKQuery(recordType: "Musician", predicate: pred)
-        
+        //os que sobraram
+//        let pred = NSPredicate(format: "id == %@", bandMembers)
+//        let query = CKQuery(recordType: "Musician", predicate: pred)
+        let query = CKQuery(recordType: "Musician", predicate: NSPredicate(value: true))
+        //pega do icloud
         DAO.database?.perform(query, inZoneWith: nil, completionHandler: { (results, error) in
             if error != nil {
+                print("deu erro")
                 print(error?.localizedDescription as Any)
+                completionHandler(error)
             } else {
                 guard let results = results else {return}
                 for musician in results {
-                    let member = musician.asMusician
-                    band.members.append(member)
+                    guard let bandReference = musician["band"] as? CKRecord.Reference else {
+                        print("merda aqui")
+                        return
+                    }
+                    let bandID = bandReference.recordID.recordName
+                    guard let wantedID = band.id else {
+                        print("merda nesse")
+                        print(band.name)
+                        print(band.id)
+                        return
+                    }
+                    print(bandID)
+                    print(wantedID)
+                    if bandID == wantedID {
+                        print("foi porra")
+                        let member = musician.asMusician
+                        band.members.append(member)
+                    }
                 }
                 completionHandler(nil)
             }
@@ -443,7 +471,7 @@ class dao{
                         if userRecord == nil {
                             //Usuario nao existe
                             print("Usuario nao Existe")
-                            self.createMusician(musician: Musician(name: "Test2", age: 0, instruments: [], id: userRecordID?.recordName), completionHandler: { (currentUserRecord, error) in
+                            self.createMusician(musician: Musician(name: "Test2", age: 0, instruments: [],band:Band(), id: userRecordID?.recordName), completionHandler: { (currentUserRecord, error) in
                                 if error != nil {
                                     print(error?.localizedDescription as Any)
                                     return
@@ -464,15 +492,40 @@ class dao{
         }
     }
     
-    func fetchBandFrom(record:Any, into musician: Musician){
-        let recordBand = record as? CKRecord
-        guard let bandRecord = recordBand else {return}
-        let band = Band(asDictionary: bandRecord.asDictionary)
-        DAO.queryBand(id: bandRecord.recordID.recordName) { (record, error) in
-            guard let record = record else {return}
-            musician.band = Band(asDictionary: record.asDictionary)
-        }
+    //Pega informacoes do usuario
+    //CKContainer.default().discoverUserIdentity(withUserRecordID: <#T##CKRecord.ID#>, completionHandler: <#T##(CKUserIdentity?, Error?) -> Void#>)
+
+    
+//    func fetchBandFrom(record:CKRecord, into musician: Musician){
+//        DAO.queryBand(id: record.recordID.recordName) { (bandRecord, error) in
+//            guard let realbandRecord = bandRecord else {
+//                print("Error in fetching record")
+//                return
+//            }
+//            let band: Band
+//
+//
+//            print("printei a banda")
+//            print(musician.band?.name as Any)
+//        }
+//    }
+    
+    func fetchBand(with id:String, completionHandler: @escaping(CKRecord?,Error?)-> Void){
+        let recordID = CKRecord.ID(recordName: id)
+        DAO.database?.fetch(withRecordID: recordID, completionHandler: { (result, error) in
+            if error != nil {
+                completionHandler(nil,error)
+                return
+            }
+            guard let bandRecord = result else {
+                completionHandler(nil,nil)
+                return
+            }
+            completionHandler(bandRecord,error)
+            
+        })
     }
+    
 //    func fetchBand(for userID: String,completionHandler: @escaping(CKRecord?,Error?)-> Void){
 //        DAO.queryBand(id: userRecord["bandID"]!, completionHandler: { (bandRecord, error) in
 //            if error != nil {
@@ -489,24 +542,24 @@ class dao{
     
     //MARK: Delete Functions
     
-    func delete(song: Song, from band: Band, completionHandler: @escaping(CKRecord.ID?,Error?)->Void){
-        DAO.database?.delete(withRecordID: CKRecord.ID(recordName: song.id!), completionHandler: { (result, error) in
-            if error != nil {
-                print(error?.localizedDescription as Any)
-                completionHandler(nil,error)
-                return
-            } else {
-                var index = 0
-                for repertoireSong in band.repertoire {
-                    if repertoireSong.id == song.id {
-                        band.repertoire.remove(at: index)
-                    }
-                    index += 1
-                }
-                completionHandler(result,nil)
-            }
-        })
-    }
+//    func delete(song: Song, from band: Band, completionHandler: @escaping(CKRecord.ID?,Error?)->Void){
+//        DAO.database?.delete(withRecordID: CKRecord.ID(recordName: song.id!), completionHandler: { (result, error) in
+//            if error != nil {
+//                print(error?.localizedDescription as Any)
+//                completionHandler(nil,error)
+//                return
+//            } else {
+//                var index = 0
+//                for repertoireSong in band.repertoire {
+//                    if repertoireSong.id == song.id {
+//                        band.repertoire.remove(at: index)
+//                    }
+//                    index += 1
+//                }
+//                completionHandler(result,nil)
+//            }
+//        })
+//    }
     
     
     func deletePlaylist(playlist: CKRecord, from band: Band,completionHandler: @escaping(CKRecord.ID?,Error?)->Void){

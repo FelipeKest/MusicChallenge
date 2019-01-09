@@ -18,24 +18,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4G-d7-ieW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4G-d7-ieW">
                                 <rect key="frame" x="157" y="362" width="45" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Delete"/>
                                 <connections>
                                     <action selector="deleteAction:" destination="EIR-sj-W9P" eventType="touchUpInside" id="wdX-Ci-zZw"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3q-G1-Mkd">
-                                <rect key="frame" x="94" y="92" width="186" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3q-G1-Mkd">
+                                <rect key="frame" x="94" y="92" width="187" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdk-U7-DJL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdk-U7-DJL">
                                 <rect key="frame" x="166" y="244" width="36" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Song"/>
                                 <connections>
                                     <action selector="saveSong:" destination="EIR-sj-W9P" eventType="touchUpInside" id="G1b-EX-gPM"/>
@@ -43,6 +40,15 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Z4G-d7-ieW" firstAttribute="leading" secondItem="UDd-k9-ykR" secondAttribute="leading" constant="157" id="0Up-jZ-QNT"/>
+                            <constraint firstItem="K3q-G1-Mkd" firstAttribute="centerX" secondItem="mKK-6n-PtT" secondAttribute="centerX" id="3ig-u0-DVq"/>
+                            <constraint firstItem="Z4G-d7-ieW" firstAttribute="top" secondItem="vdk-U7-DJL" secondAttribute="bottom" constant="88" id="U2S-bb-tkc"/>
+                            <constraint firstItem="K3q-G1-Mkd" firstAttribute="top" secondItem="UDd-k9-ykR" secondAttribute="top" constant="72" id="V2Y-OA-Mli"/>
+                            <constraint firstItem="K3q-G1-Mkd" firstAttribute="leading" secondItem="UDd-k9-ykR" secondAttribute="leading" constant="94" id="fbC-hh-int"/>
+                            <constraint firstItem="vdk-U7-DJL" firstAttribute="trailing" secondItem="Z4G-d7-ieW" secondAttribute="trailing" id="i4p-f1-DFE"/>
+                            <constraint firstItem="UDd-k9-ykR" firstAttribute="bottom" secondItem="Z4G-d7-ieW" secondAttribute="bottom" constant="275" id="tbK-RA-9jI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="UDd-k9-ykR"/>
                     </view>
                     <connections>

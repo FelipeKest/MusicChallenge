@@ -22,7 +22,7 @@ class Setlist:GenericProtocolClass {
         return result
     }
     
-    init(name: String, songs: [Song],creator:Musician, bandID:String, id: String) {
+    init(name: String, songs: [Song],creator:Musician, id: String) {
         self.name = name
         self.songs = songs
         self.creator = creator
