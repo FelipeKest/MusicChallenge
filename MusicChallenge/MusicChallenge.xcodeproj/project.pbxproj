@@ -7,11 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6704A16A21E65DB2007115D3 /* EditSong.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6704A16921E65DB2007115D3 /* EditSong.storyboard */; };
-		6704A16C21E65DC1007115D3 /* EditSetlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6704A16B21E65DC1007115D3 /* EditSetlist.storyboard */; };
 		6704A16E21E65E8B007115D3 /* EditSongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6704A16D21E65E8B007115D3 /* EditSongViewController.swift */; };
 		6704A17021E65EA1007115D3 /* EditSetlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6704A16F21E65EA1007115D3 /* EditSetlistViewController.swift */; };
-		6750E8E521CC122900A193AE /* RepertoireTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6750E8E421CC122900A193AE /* RepertoireTableViewCell.xib */; };
+		6704A19D21E67DD4007115D3 /* Roadmap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6704A18421E67DD3007115D3 /* Roadmap.storyboard */; };
+		6704A19E21E67DD4007115D3 /* Band.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6704A18521E67DD3007115D3 /* Band.storyboard */; };
+		6704A19F21E67DD4007115D3 /* RepertoireTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6704A18821E67DD3007115D3 /* RepertoireTableViewCell.xib */; };
+		6704A1A021E67DD4007115D3 /* Repertoire.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6704A18921E67DD3007115D3 /* Repertoire.storyboard */; };
+		6704A1A121E67DD4007115D3 /* Songs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6704A18A21E67DD3007115D3 /* Songs.storyboard */; };
+		6704A1A221E67DD4007115D3 /* SelectedSong.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6704A18B21E67DD3007115D3 /* SelectedSong.storyboard */; };
+		6704A1A321E67DD4007115D3 /* NewSong.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6704A18C21E67DD3007115D3 /* NewSong.storyboard */; };
+		6704A1A421E67DD4007115D3 /* SelectedSetlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6704A18E21E67DD3007115D3 /* SelectedSetlist.storyboard */; };
+		6704A1A521E67DD4007115D3 /* Setlists.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6704A18F21E67DD3007115D3 /* Setlists.storyboard */; };
+		6704A1A621E67DD4007115D3 /* NewSetlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6704A19021E67DD3007115D3 /* NewSetlist.storyboard */; };
+		6704A1A721E67DD4007115D3 /* EditSetlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6704A19121E67DD4007115D3 /* EditSetlist.storyboard */; };
+		6704A1A821E67DD4007115D3 /* RepertoireVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6704A19321E67DD4007115D3 /* RepertoireVC.xib */; };
+		6704A1A921E67DD4007115D3 /* SetlistsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6704A19421E67DD4007115D3 /* SetlistsVC.xib */; };
+		6704A1AA21E67DD4007115D3 /* CheckingInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6704A19621E67DD4007115D3 /* CheckingInfo.storyboard */; };
+		6704A1AB21E67DD4007115D3 /* FetchingInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6704A19721E67DD4007115D3 /* FetchingInfo.storyboard */; };
+		6704A1AC21E67DD4007115D3 /* Songs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6704A19921E67DD4007115D3 /* Songs.storyboard */; };
+		6704A1AD21E67DD4007115D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6704A19B21E67DD4007115D3 /* Main.storyboard */; };
+		6704A1AE21E67DD4007115D3 /* EditSong.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6704A19C21E67DD4007115D3 /* EditSong.storyboard */; };
 		675A8D8E21CAC50C00C5A377 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A8D8421CAC50A00C5A377 /* Event.swift */; };
 		675A8D8F21CAC50C00C5A377 /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A8D8521CAC50B00C5A377 /* Instrument.swift */; };
 		675A8D9021CAC50C00C5A377 /* GenericProtocolClassCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A8D8621CAC50B00C5A377 /* GenericProtocolClassCloud.swift */; };
@@ -45,30 +60,33 @@
 		915E102621BB7A7300158899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 915E102521BB7A7300158899 /* Assets.xcassets */; };
 		915E102921BB7A7300158899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 915E102721BB7A7300158899 /* LaunchScreen.storyboard */; };
 		91A02DD621BC2542001BC7C6 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A02DD521BC2542001BC7C6 /* DAO.swift */; };
-		D02F2D0D21BEE2240090043A /* Roadmap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02F2D0C21BEE2240090043A /* Roadmap.storyboard */; };
-		D02F2D0F21BEE4530090043A /* Band.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02F2D0E21BEE4530090043A /* Band.storyboard */; };
-		D04607C921CC26F7006A4B88 /* NewSong.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D04607C821CC26F7006A4B88 /* NewSong.storyboard */; };
-		D04607CB21CC2706006A4B88 /* NewSetlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D04607CA21CC2706006A4B88 /* NewSetlist.storyboard */; };
-		D054FB6F21E65BD4004D3132 /* FetchingInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D054FB6E21E65BD4004D3132 /* FetchingInfo.storyboard */; };
-		D054FB7621E6763A004D3132 /* CheckingInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D054FB7521E6763A004D3132 /* CheckingInfo.storyboard */; };
-		D063195F21CAC35000CF40A9 /* SelectedSong.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D063195E21CAC35000CF40A9 /* SelectedSong.storyboard */; };
-		D063196121CAC36800CF40A9 /* SelectedSetlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D063196021CAC36800CF40A9 /* SelectedSetlist.storyboard */; };
 		D092380D21C837DA00D092BE /* squealer.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D092380B21C837DA00D092BE /* squealer.ttf */; };
 		D092380E21C837DA00D092BE /* squealer embossed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D092380C21C837DA00D092BE /* squealer embossed.ttf */; };
-		D092381721C8498800D092BE /* Songs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D092381621C8498800D092BE /* Songs.storyboard */; };
-		D092381921C84BF000D092BE /* Setlists.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D092381821C84BF000D092BE /* Setlists.storyboard */; };
-		D092381B21C84C0900D092BE /* Repertoire.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D092381A21C84C0900D092BE /* Repertoire.storyboard */; };
-		D0A9CB5B21C18D7E00E83D9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A9CB5A21C18D7E00E83D9D /* Main.storyboard */; };
 		D0B4D9F221E3FA3600C427B2 /* DAODummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B4D9F121E3FA3600C427B2 /* DAODummy.swift */; };
 		D0EE7DFD21CD6B2C00DDA7C9 /* CreateSetlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE7DFC21CD6B2C00DDA7C9 /* CreateSetlistViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6704A16921E65DB2007115D3 /* EditSong.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditSong.storyboard; sourceTree = "<group>"; };
-		6704A16B21E65DC1007115D3 /* EditSetlist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditSetlist.storyboard; sourceTree = "<group>"; };
 		6704A16D21E65E8B007115D3 /* EditSongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSongViewController.swift; sourceTree = "<group>"; };
 		6704A16F21E65EA1007115D3 /* EditSetlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSetlistViewController.swift; sourceTree = "<group>"; };
-		6750E8E421CC122900A193AE /* RepertoireTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepertoireTableViewCell.xib; sourceTree = "<group>"; };
+		6704A18421E67DD3007115D3 /* Roadmap.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Roadmap.storyboard; sourceTree = "<group>"; };
+		6704A18521E67DD3007115D3 /* Band.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Band.storyboard; sourceTree = "<group>"; };
+		6704A18821E67DD3007115D3 /* RepertoireTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepertoireTableViewCell.xib; sourceTree = "<group>"; };
+		6704A18921E67DD3007115D3 /* Repertoire.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Repertoire.storyboard; sourceTree = "<group>"; };
+		6704A18A21E67DD3007115D3 /* Songs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Songs.storyboard; sourceTree = "<group>"; };
+		6704A18B21E67DD3007115D3 /* SelectedSong.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SelectedSong.storyboard; sourceTree = "<group>"; };
+		6704A18C21E67DD3007115D3 /* NewSong.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewSong.storyboard; sourceTree = "<group>"; };
+		6704A18E21E67DD3007115D3 /* SelectedSetlist.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SelectedSetlist.storyboard; sourceTree = "<group>"; };
+		6704A18F21E67DD3007115D3 /* Setlists.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Setlists.storyboard; sourceTree = "<group>"; };
+		6704A19021E67DD3007115D3 /* NewSetlist.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewSetlist.storyboard; sourceTree = "<group>"; };
+		6704A19121E67DD4007115D3 /* EditSetlist.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditSetlist.storyboard; sourceTree = "<group>"; };
+		6704A19321E67DD4007115D3 /* RepertoireVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepertoireVC.xib; sourceTree = "<group>"; };
+		6704A19421E67DD4007115D3 /* SetlistsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetlistsVC.xib; sourceTree = "<group>"; };
+		6704A19621E67DD4007115D3 /* CheckingInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CheckingInfo.storyboard; sourceTree = "<group>"; };
+		6704A19721E67DD4007115D3 /* FetchingInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FetchingInfo.storyboard; sourceTree = "<group>"; };
+		6704A19A21E67DD4007115D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Songs.storyboard; sourceTree = "<group>"; };
+		6704A19B21E67DD4007115D3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		6704A19C21E67DD4007115D3 /* EditSong.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditSong.storyboard; sourceTree = "<group>"; };
 		675A8D8421CAC50A00C5A377 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		675A8D8521CAC50B00C5A377 /* Instrument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
 		675A8D8621CAC50B00C5A377 /* GenericProtocolClassCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericProtocolClassCloud.swift; sourceTree = "<group>"; };
@@ -104,20 +122,8 @@
 		915E102821BB7A7300158899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		915E102A21BB7A7300158899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91A02DD521BC2542001BC7C6 /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
-		D02F2D0C21BEE2240090043A /* Roadmap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Roadmap.storyboard; sourceTree = "<group>"; };
-		D02F2D0E21BEE4530090043A /* Band.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Band.storyboard; sourceTree = "<group>"; };
-		D04607C821CC26F7006A4B88 /* NewSong.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewSong.storyboard; sourceTree = "<group>"; };
-		D04607CA21CC2706006A4B88 /* NewSetlist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewSetlist.storyboard; sourceTree = "<group>"; };
-		D054FB6E21E65BD4004D3132 /* FetchingInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FetchingInfo.storyboard; sourceTree = "<group>"; };
-		D054FB7521E6763A004D3132 /* CheckingInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckingInfo.storyboard; sourceTree = "<group>"; };
-		D063195E21CAC35000CF40A9 /* SelectedSong.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectedSong.storyboard; sourceTree = "<group>"; };
-		D063196021CAC36800CF40A9 /* SelectedSetlist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectedSetlist.storyboard; sourceTree = "<group>"; };
 		D092380B21C837DA00D092BE /* squealer.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = squealer.ttf; sourceTree = "<group>"; };
 		D092380C21C837DA00D092BE /* squealer embossed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "squealer embossed.ttf"; sourceTree = "<group>"; };
-		D092381621C8498800D092BE /* Songs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Songs.storyboard; sourceTree = "<group>"; };
-		D092381821C84BF000D092BE /* Setlists.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setlists.storyboard; sourceTree = "<group>"; };
-		D092381A21C84C0900D092BE /* Repertoire.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Repertoire.storyboard; sourceTree = "<group>"; };
-		D0A9CB5A21C18D7E00E83D9D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D0B4D9F121E3FA3600C427B2 /* DAODummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAODummy.swift; sourceTree = "<group>"; };
 		D0EE7DFC21CD6B2C00DDA7C9 /* CreateSetlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSetlistViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +139,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6704A18321E67DD3007115D3 /* Roadmap */ = {
+			isa = PBXGroup;
+			children = (
+				6704A18421E67DD3007115D3 /* Roadmap.storyboard */,
+			);
+			name = Roadmap;
+			path = "../../../../../../Desktop/Pasta Sem Título/Roadmap";
+			sourceTree = "<group>";
+		};
+		6704A18621E67DD3007115D3 /* Songs */ = {
+			isa = PBXGroup;
+			children = (
+				6704A18721E67DD3007115D3 /* Repertoire */,
+				6704A18A21E67DD3007115D3 /* Songs.storyboard */,
+				6704A18B21E67DD3007115D3 /* SelectedSong.storyboard */,
+				6704A18C21E67DD3007115D3 /* NewSong.storyboard */,
+				6704A18D21E67DD3007115D3 /* Setlists */,
+			);
+			name = Songs;
+			path = "../../../../../../Desktop/Pasta Sem Título/Songs";
+			sourceTree = "<group>";
+		};
+		6704A18721E67DD3007115D3 /* Repertoire */ = {
+			isa = PBXGroup;
+			children = (
+				6704A18821E67DD3007115D3 /* RepertoireTableViewCell.xib */,
+				6704A18921E67DD3007115D3 /* Repertoire.storyboard */,
+			);
+			path = Repertoire;
+			sourceTree = "<group>";
+		};
+		6704A18D21E67DD3007115D3 /* Setlists */ = {
+			isa = PBXGroup;
+			children = (
+				6704A18E21E67DD3007115D3 /* SelectedSetlist.storyboard */,
+				6704A18F21E67DD3007115D3 /* Setlists.storyboard */,
+				6704A19021E67DD3007115D3 /* NewSetlist.storyboard */,
+			);
+			path = Setlists;
+			sourceTree = "<group>";
+		};
+		6704A19221E67DD4007115D3 /*  SimpleVC */ = {
+			isa = PBXGroup;
+			children = (
+				6704A19321E67DD4007115D3 /* RepertoireVC.xib */,
+				6704A19421E67DD4007115D3 /* SetlistsVC.xib */,
+			);
+			name = " SimpleVC";
+			path = "../../../../../../Desktop/Pasta Sem Título/ SimpleVC";
+			sourceTree = "<group>";
+		};
+		6704A19521E67DD4007115D3 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6704A19621E67DD4007115D3 /* CheckingInfo.storyboard */,
+				6704A19721E67DD4007115D3 /* FetchingInfo.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6704A19821E67DD4007115D3 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				6704A19921E67DD4007115D3 /* Songs.storyboard */,
+			);
+			name = Base.lproj;
+			path = "../../../../../../Desktop/Pasta Sem Título/Base.lproj";
+			sourceTree = "<group>";
+		};
 		676CEE7021C826C200961015 /* Songs */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,18 +337,15 @@
 		91AB5B5A21BEC713002862F1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D02F2D0C21BEE2240090043A /* Roadmap.storyboard */,
-				D063195E21CAC35000CF40A9 /* SelectedSong.storyboard */,
-				D04607C821CC26F7006A4B88 /* NewSong.storyboard */,
-				6704A16921E65DB2007115D3 /* EditSong.storyboard */,
-				D04607CA21CC2706006A4B88 /* NewSetlist.storyboard */,
-				6704A16B21E65DC1007115D3 /* EditSetlist.storyboard */,
-				D063196021CAC36800CF40A9 /* SelectedSetlist.storyboard */,
-				D054FB7221E67575004D3132 /* Roadmap */,
-				D054FB7121E67545004D3132 /* Songs */,
-				D054FB7021E67535004D3132 /* Login */,
-				D0A9CB5A21C18D7E00E83D9D /* Main.storyboard */,
-				D02F2D0E21BEE4530090043A /* Band.storyboard */,
+				6704A19221E67DD4007115D3 /*  SimpleVC */,
+				6704A18521E67DD3007115D3 /* Band.storyboard */,
+				6704A19821E67DD4007115D3 /* Base.lproj */,
+				6704A19121E67DD4007115D3 /* EditSetlist.storyboard */,
+				6704A19C21E67DD4007115D3 /* EditSong.storyboard */,
+				6704A19521E67DD4007115D3 /* Login */,
+				6704A19B21E67DD4007115D3 /* Main.storyboard */,
+				6704A18321E67DD3007115D3 /* Roadmap */,
+				6704A18621E67DD3007115D3 /* Songs */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -287,54 +359,6 @@
 				676CEE7221C8271F00961015 /* Initial Screens */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		D054FB7021E67535004D3132 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				D054FB6E21E65BD4004D3132 /* FetchingInfo.storyboard */,
-				D054FB7521E6763A004D3132 /* CheckingInfo.storyboard */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		D054FB7121E67545004D3132 /* Songs */ = {
-			isa = PBXGroup;
-			children = (
-				D054FB7421E67594004D3132 /* Setlists */,
-				D054FB7321E6758B004D3132 /* Repertoire */,
-				D063195E21CAC35000CF40A9 /* SelectedSong.storyboard */,
-				D04607C821CC26F7006A4B88 /* NewSong.storyboard */,
-				D092381621C8498800D092BE /* Songs.storyboard */,
-			);
-			path = Songs;
-			sourceTree = "<group>";
-		};
-		D054FB7221E67575004D3132 /* Roadmap */ = {
-			isa = PBXGroup;
-			children = (
-				D02F2D0C21BEE2240090043A /* Roadmap.storyboard */,
-			);
-			path = Roadmap;
-			sourceTree = "<group>";
-		};
-		D054FB7321E6758B004D3132 /* Repertoire */ = {
-			isa = PBXGroup;
-			children = (
-				D092381A21C84C0900D092BE /* Repertoire.storyboard */,
-				6750E8E421CC122900A193AE /* RepertoireTableViewCell.xib */,
-			);
-			path = Repertoire;
-			sourceTree = "<group>";
-		};
-		D054FB7421E67594004D3132 /* Setlists */ = {
-			isa = PBXGroup;
-			children = (
-				D092381821C84BF000D092BE /* Setlists.storyboard */,
-				D063196021CAC36800CF40A9 /* SelectedSetlist.storyboard */,
-				D04607CA21CC2706006A4B88 /* NewSetlist.storyboard */,
-			);
-			path = Setlists;
 			sourceTree = "<group>";
 		};
 		D092380F21C837FB00D092BE /* Fonts */ = {
@@ -404,24 +428,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D054FB6F21E65BD4004D3132 /* FetchingInfo.storyboard in Resources */,
-				D02F2D0F21BEE4530090043A /* Band.storyboard in Resources */,
+				6704A1AD21E67DD4007115D3 /* Main.storyboard in Resources */,
+				6704A1A121E67DD4007115D3 /* Songs.storyboard in Resources */,
+				6704A1A321E67DD4007115D3 /* NewSong.storyboard in Resources */,
+				6704A1A621E67DD4007115D3 /* NewSetlist.storyboard in Resources */,
 				915E102921BB7A7300158899 /* LaunchScreen.storyboard in Resources */,
-				D04607CB21CC2706006A4B88 /* NewSetlist.storyboard in Resources */,
-				D02F2D0D21BEE2240090043A /* Roadmap.storyboard in Resources */,
+				6704A19E21E67DD4007115D3 /* Band.storyboard in Resources */,
+				6704A19D21E67DD4007115D3 /* Roadmap.storyboard in Resources */,
+				6704A19F21E67DD4007115D3 /* RepertoireTableViewCell.xib in Resources */,
 				D092380E21C837DA00D092BE /* squealer embossed.ttf in Resources */,
-				6750E8E521CC122900A193AE /* RepertoireTableViewCell.xib in Resources */,
-				D092381B21C84C0900D092BE /* Repertoire.storyboard in Resources */,
-				6704A16A21E65DB2007115D3 /* EditSong.storyboard in Resources */,
-				D092381721C8498800D092BE /* Songs.storyboard in Resources */,
-				D092381921C84BF000D092BE /* Setlists.storyboard in Resources */,
-				D04607C921CC26F7006A4B88 /* NewSong.storyboard in Resources */,
-				D0A9CB5B21C18D7E00E83D9D /* Main.storyboard in Resources */,
-				D054FB7621E6763A004D3132 /* CheckingInfo.storyboard in Resources */,
-				D063195F21CAC35000CF40A9 /* SelectedSong.storyboard in Resources */,
+				6704A1AA21E67DD4007115D3 /* CheckingInfo.storyboard in Resources */,
+				6704A1A921E67DD4007115D3 /* SetlistsVC.xib in Resources */,
+				6704A1A021E67DD4007115D3 /* Repertoire.storyboard in Resources */,
 				915E102621BB7A7300158899 /* Assets.xcassets in Resources */,
-				D063196121CAC36800CF40A9 /* SelectedSetlist.storyboard in Resources */,
-				6704A16C21E65DC1007115D3 /* EditSetlist.storyboard in Resources */,
+				6704A1AE21E67DD4007115D3 /* EditSong.storyboard in Resources */,
+				6704A1A721E67DD4007115D3 /* EditSetlist.storyboard in Resources */,
+				6704A1AC21E67DD4007115D3 /* Songs.storyboard in Resources */,
+				6704A1A821E67DD4007115D3 /* RepertoireVC.xib in Resources */,
+				6704A1A221E67DD4007115D3 /* SelectedSong.storyboard in Resources */,
+				6704A1A521E67DD4007115D3 /* Setlists.storyboard in Resources */,
+				6704A1AB21E67DD4007115D3 /* FetchingInfo.storyboard in Resources */,
+				6704A1A421E67DD4007115D3 /* SelectedSetlist.storyboard in Resources */,
 				D092380D21C837DA00D092BE /* squealer.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,6 +501,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		6704A19921E67DD4007115D3 /* Songs.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6704A19A21E67DD4007115D3 /* Base */,
+			);
+			name = Songs.storyboard;
+			sourceTree = "<group>";
+		};
 		915E102721BB7A7300158899 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -606,7 +641,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CRD27F4QAW;
+				DEVELOPMENT_TEAM = MQCZXY3BDQ;
 				INFOPLIST_FILE = MusicChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -624,7 +659,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CRD27F4QAW;
+				DEVELOPMENT_TEAM = MQCZXY3BDQ;
 				INFOPLIST_FILE = MusicChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
