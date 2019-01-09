@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c5R-Nv-Ikh">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="J3C-ye-hxX">
+            <objects>
+                <viewController id="c5R-Nv-Ikh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1qv-9m-qu4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_BANDPLAN" translatesAutoresizingMaskIntoConstraints="NO" id="gGS-1d-0yk">
+                                <rect key="frame" x="91" y="79" width="193" height="187"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gGS-1d-0yk" secondAttribute="height" multiplier="32:31" id="g4L-BE-Lfi"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para começar digite o código da sua banda:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihZ-0Y-Vu7">
+                                <rect key="frame" x="22" y="294" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ou crie uma nova banda:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBv-rx-fLm">
+                                <rect key="frame" x="94" y="464" width="187" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="if2-Hf-cVT">
+                                <rect key="frame" x="141" y="501" width="92" height="46"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Criar">
+                                    <color key="titleColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A74-J6-Ohv">
+                                <rect key="frame" x="141" y="394" width="92" height="46"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="qJo-xj-Lqd"/>
+                                </constraints>
+                                <state key="normal" title="Entrar">
+                                    <color key="titleColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4CK-he-RFI">
+                                <rect key="frame" x="87" y="340" width="201" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gGS-1d-0yk" firstAttribute="centerX" secondItem="4CK-he-RFI" secondAttribute="centerX" id="5cb-7n-JSl"/>
+                            <constraint firstItem="ihZ-0Y-Vu7" firstAttribute="leading" secondItem="zOx-V6-2V7" secondAttribute="leading" constant="22" id="8Al-I9-hyx"/>
+                            <constraint firstItem="gGS-1d-0yk" firstAttribute="centerX" secondItem="1qv-9m-qu4" secondAttribute="centerX" id="Icv-jW-QBv"/>
+                            <constraint firstItem="gGS-1d-0yk" firstAttribute="top" secondItem="zOx-V6-2V7" secondAttribute="top" constant="59" id="K5T-QH-xY1"/>
+                            <constraint firstItem="A74-J6-Ohv" firstAttribute="leading" secondItem="if2-Hf-cVT" secondAttribute="leading" id="P6e-i6-d2S"/>
+                            <constraint firstItem="xBv-rx-fLm" firstAttribute="top" secondItem="A74-J6-Ohv" secondAttribute="bottom" constant="24" id="P7q-jQ-x3J"/>
+                            <constraint firstItem="4CK-he-RFI" firstAttribute="top" secondItem="ihZ-0Y-Vu7" secondAttribute="bottom" constant="25" id="REh-vt-lBL"/>
+                            <constraint firstItem="gGS-1d-0yk" firstAttribute="leading" secondItem="zOx-V6-2V7" secondAttribute="leading" constant="91" id="TFo-WK-w5C"/>
+                            <constraint firstItem="gGS-1d-0yk" firstAttribute="centerX" secondItem="if2-Hf-cVT" secondAttribute="centerX" id="UQ1-Wm-c0P"/>
+                            <constraint firstItem="gGS-1d-0yk" firstAttribute="centerX" secondItem="xBv-rx-fLm" secondAttribute="centerX" id="WYZ-fU-Mvo"/>
+                            <constraint firstItem="A74-J6-Ohv" firstAttribute="top" secondItem="4CK-he-RFI" secondAttribute="bottom" constant="24" id="dF0-oV-yyE"/>
+                            <constraint firstItem="A74-J6-Ohv" firstAttribute="leading" secondItem="zOx-V6-2V7" secondAttribute="leading" constant="141" id="f4a-4M-LYa"/>
+                            <constraint firstItem="if2-Hf-cVT" firstAttribute="top" secondItem="xBv-rx-fLm" secondAttribute="bottom" constant="16" id="iWA-iG-cwJ"/>
+                            <constraint firstItem="ihZ-0Y-Vu7" firstAttribute="top" secondItem="gGS-1d-0yk" secondAttribute="bottom" constant="28" id="ilq-t1-LAB"/>
+                            <constraint firstItem="zOx-V6-2V7" firstAttribute="bottom" secondItem="if2-Hf-cVT" secondAttribute="bottom" constant="120" id="k7Z-pk-rBt"/>
+                            <constraint firstAttribute="bottom" secondItem="A74-J6-Ohv" secondAttribute="bottom" constant="227" id="pBb-P8-VgM"/>
+                            <constraint firstItem="gGS-1d-0yk" firstAttribute="centerX" secondItem="A74-J6-Ohv" secondAttribute="centerX" id="rtv-hp-kgK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zOx-V6-2V7"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bgf-D9-hmC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="103" y="125"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="wDg-tD-q0a">
+            <objects>
+                <viewControllerPlaceholder id="8KF-AD-6U4" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GoE-Wt-cv3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="797" y="-24"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="4GM-5b-i2X">
+            <objects>
+                <viewControllerPlaceholder id="NqP-Rg-0Qn" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vqg-Xb-ida" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="857" y="321"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LOGO_BANDPLAN" width="512" height="512"/>
+    </resources>
+</document>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vjk-3I-81v">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="1xO-cm-mWc">
+            <objects>
+                <viewController id="Vjk-3I-81v" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gPg-Pb-JJR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ap7-52-6hd">
+                                <rect key="frame" x="177" y="397" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Obtendo informações do iCloud" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czR-hm-N4y">
+                                <rect key="frame" x="65" y="323" width="244" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_BANDPLAN" translatesAutoresizingMaskIntoConstraints="NO" id="Bvu-pQ-nVe">
+                                <rect key="frame" x="91" y="117" width="193" height="187"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Bvu-pQ-nVe" secondAttribute="height" multiplier="32:31" id="jyN-OU-3dT"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Bvu-pQ-nVe" firstAttribute="leading" secondItem="Taj-ee-dcP" secondAttribute="leading" constant="91" id="23l-xt-GMU"/>
+                            <constraint firstItem="czR-hm-N4y" firstAttribute="top" secondItem="Bvu-pQ-nVe" secondAttribute="bottom" constant="20" id="2YY-11-aun"/>
+                            <constraint firstItem="Bvu-pQ-nVe" firstAttribute="top" secondItem="Taj-ee-dcP" secondAttribute="top" constant="97" id="8d9-u3-3In"/>
+                            <constraint firstItem="Bvu-pQ-nVe" firstAttribute="centerX" secondItem="gPg-Pb-JJR" secondAttribute="centerX" id="CEN-Xd-wz5"/>
+                            <constraint firstItem="Taj-ee-dcP" firstAttribute="bottom" secondItem="ap7-52-6hd" secondAttribute="bottom" constant="250" id="Iw4-Ke-5Td"/>
+                            <constraint firstItem="Bvu-pQ-nVe" firstAttribute="centerX" secondItem="czR-hm-N4y" secondAttribute="centerX" id="ZsB-iT-dcZ"/>
+                            <constraint firstItem="ap7-52-6hd" firstAttribute="leading" secondItem="Taj-ee-dcP" secondAttribute="leading" constant="177" id="a1m-By-p7P"/>
+                            <constraint firstItem="czR-hm-N4y" firstAttribute="centerX" secondItem="ap7-52-6hd" secondAttribute="centerX" id="p6t-XF-r1M"/>
+                            <constraint firstItem="czR-hm-N4y" firstAttribute="leading" secondItem="Taj-ee-dcP" secondAttribute="leading" constant="65" id="tZA-se-xAu"/>
+                            <constraint firstItem="czR-hm-N4y" firstAttribute="centerY" secondItem="gPg-Pb-JJR" secondAttribute="centerY" id="vVB-O9-LA0"/>
+                            <constraint firstItem="ap7-52-6hd" firstAttribute="top" secondItem="czR-hm-N4y" secondAttribute="bottom" constant="53" id="xpI-qN-LIv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Taj-ee-dcP"/>
+                    </view>
+                    <connections>
+                        <segue destination="EEP-Lc-Blv" kind="show" id="vaV-FX-rzw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ShC-E9-XPk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="38" y="125"/>
+        </scene>
+        <!--CheckingInfo-->
+        <scene sceneID="PwF-AZ-zdx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CheckingInfo" id="EEP-Lc-Blv" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1h1-GQ-2rK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="829" y="127"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LOGO_BANDPLAN" width="512" height="512"/>
+    </resources>
+</document>
