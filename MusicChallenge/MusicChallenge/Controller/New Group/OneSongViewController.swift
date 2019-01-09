@@ -73,6 +73,13 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
         return songsCell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editSong" {
+            let destination = segue.destination as? EditSongViewController
+            destination?.song = song
+        }
+    }
+    
     @IBAction func backButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -118,6 +125,7 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
             self.present(deleteAlert, animated: true, completion: nil)
         }
     }
+    
     
     
     @IBAction func shareButton(_ sender: Any) {

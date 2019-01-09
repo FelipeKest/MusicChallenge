@@ -10,13 +10,25 @@ import UIKit
 
 class EditSongViewController: UIViewController {
 
+    @IBOutlet var songNameField: UITextField!
+    @IBOutlet var keyField: UITextField!
+    @IBOutlet var bpmField: UITextField!
+    @IBOutlet var editSongTableView: UITableView!
+    
+    var song: Song!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        songNameField.text = song.name
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func cancelButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
