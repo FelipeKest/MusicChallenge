@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="6Du-Fo-2gc">
+            <objects>
+                <viewController id="ICC-ab-pdG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uxz-f6-fVZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="SKF-By-8wF">
+                                <rect key="frame" x="177" y="417" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Verificando dados do iCloud" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQ5-Rt-oDa">
+                                <rect key="frame" x="79" y="323" width="216" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_BANDPLAN" translatesAutoresizingMaskIntoConstraints="NO" id="004-KG-S7c">
+                                <rect key="frame" x="91" y="113" width="193" height="186"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="004-KG-S7c" secondAttribute="height" multiplier="193:186" id="aLc-Vd-Raf"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="004-KG-S7c" firstAttribute="top" secondItem="o7Z-wT-Ocx" secondAttribute="top" constant="93" id="9YT-0t-yWf"/>
+                            <constraint firstItem="zQ5-Rt-oDa" firstAttribute="leading" secondItem="o7Z-wT-Ocx" secondAttribute="leading" constant="79" id="EKu-69-wLV"/>
+                            <constraint firstItem="SKF-By-8wF" firstAttribute="top" secondItem="zQ5-Rt-oDa" secondAttribute="bottom" constant="73" id="Q8u-rV-vWf"/>
+                            <constraint firstItem="zQ5-Rt-oDa" firstAttribute="top" secondItem="004-KG-S7c" secondAttribute="bottom" constant="24" id="WMr-fG-mAG"/>
+                            <constraint firstItem="004-KG-S7c" firstAttribute="centerX" secondItem="zQ5-Rt-oDa" secondAttribute="centerX" id="fCZ-8R-DAI"/>
+                            <constraint firstItem="zQ5-Rt-oDa" firstAttribute="centerX" secondItem="SKF-By-8wF" secondAttribute="centerX" id="hji-SF-seg"/>
+                            <constraint firstItem="zQ5-Rt-oDa" firstAttribute="centerY" secondItem="Uxz-f6-fVZ" secondAttribute="centerY" id="iOB-y0-Iya"/>
+                            <constraint firstItem="o7Z-wT-Ocx" firstAttribute="bottom" secondItem="SKF-By-8wF" secondAttribute="bottom" constant="230" id="jKs-PI-0DS"/>
+                            <constraint firstItem="zQ5-Rt-oDa" firstAttribute="centerX" secondItem="Uxz-f6-fVZ" secondAttribute="centerX" id="oXw-Bj-GdV"/>
+                            <constraint firstItem="SKF-By-8wF" firstAttribute="leading" secondItem="o7Z-wT-Ocx" secondAttribute="leading" constant="177" id="yIg-t5-UB0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="o7Z-wT-Ocx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BlC-9u-HVK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1193" y="79"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LOGO_BANDPLAN" width="512" height="512"/>
+    </resources>
+</document>
