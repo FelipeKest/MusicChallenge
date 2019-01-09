@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Checking Info View Controller-->
         <scene sceneID="1xO-cm-mWc">
             <objects>
-                <viewController id="Vjk-3I-81v" sceneMemberID="viewController">
+                <viewController id="Vjk-3I-81v" customClass="CheckingInfoViewController" customModule="MusicChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gPg-Pb-JJR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

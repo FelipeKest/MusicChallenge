@@ -22,6 +22,8 @@
 		675A8D9521CAC50C00C5A377 /* Setlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A8D8B21CAC50B00C5A377 /* Setlist.swift */; };
 		675A8D9621CAC50C00C5A377 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A8D8C21CAC50C00C5A377 /* Song.swift */; };
 		675A8D9721CAC50C00C5A377 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A8D8D21CAC50C00C5A377 /* Enums.swift */; };
+		676386B721E68CC7008DF13F /* FetchingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676386B621E68CC7008DF13F /* FetchingInfoViewController.swift */; };
+		676386B921E68CF0008DF13F /* CheckingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676386B821E68CF0008DF13F /* CheckingInfoViewController.swift */; };
 		676CEE7421C82DE300961015 /* JoinBandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676CEE7321C82DE300961015 /* JoinBandViewController.swift */; };
 		676CEE7621C838EC00961015 /* CreateSongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676CEE7521C838EC00961015 /* CreateSongViewController.swift */; };
 		676CEE7821C8390A00961015 /* ImportFromRepertoireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676CEE7721C8390A00961015 /* ImportFromRepertoireViewController.swift */; };
@@ -80,6 +82,8 @@
 		675A8D8B21CAC50B00C5A377 /* Setlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setlist.swift; sourceTree = "<group>"; };
 		675A8D8C21CAC50C00C5A377 /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		675A8D8D21CAC50C00C5A377 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		676386B621E68CC7008DF13F /* FetchingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchingInfoViewController.swift; sourceTree = "<group>"; };
+		676386B821E68CF0008DF13F /* CheckingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckingInfoViewController.swift; sourceTree = "<group>"; };
 		676CEE7321C82DE300961015 /* JoinBandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinBandViewController.swift; sourceTree = "<group>"; };
 		676CEE7521C838EC00961015 /* CreateSongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSongViewController.swift; sourceTree = "<group>"; };
 		676CEE7721C8390A00961015 /* ImportFromRepertoireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportFromRepertoireViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				676CEE7321C82DE300961015 /* JoinBandViewController.swift */,
+				676386B621E68CC7008DF13F /* FetchingInfoViewController.swift */,
+				676386B821E68CF0008DF13F /* CheckingInfoViewController.swift */,
 			);
 			path = "Initial Screens";
 			sourceTree = "<group>";
@@ -400,7 +406,9 @@
 				D0EE7DFD21CD6B2C00DDA7C9 /* CreateSetlistViewController.swift in Sources */,
 				91A02DD621BC2542001BC7C6 /* DAO.swift in Sources */,
 				6704A17021E65EA1007115D3 /* EditSetlistViewController.swift in Sources */,
+				676386B721E68CC7008DF13F /* FetchingInfoViewController.swift in Sources */,
 				6777852021C77591002DAB83 /* RepertoireViewController.swift in Sources */,
+				676386B921E68CF0008DF13F /* CheckingInfoViewController.swift in Sources */,
 				6777852921C7B953002DAB83 /* RepertoireTableViewCell.swift in Sources */,
 				67D5BB1A21C15DE50058BCC7 /* RoadmapViewController.swift in Sources */,
 				676DD52721C98D5500049130 /* CustomSegmentedContrl.swift in Sources */,
