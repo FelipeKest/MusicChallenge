@@ -135,11 +135,20 @@
                         <outlet property="instrument6" destination="xxz-eO-d1M" id="Rb8-Qx-BXg"/>
                         <outlet property="key" destination="x1b-qT-jTj" id="8WG-me-euR"/>
                         <outlet property="songName" destination="EwF-Oy-Jim" id="UOH-sC-gRc"/>
+                        <segue destination="10t-X8-mXB" kind="show" identifier="editSong" id="Mxy-Mo-JfA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tel-Zo-a4Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-66.400000000000006" y="41.829085457271368"/>
+        </scene>
+        <!--EditSong-->
+        <scene sceneID="6ii-st-IXl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EditSong" id="10t-X8-mXB" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JkC-vz-cYw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="901" y="41"/>
         </scene>
     </scenes>
 </document>
