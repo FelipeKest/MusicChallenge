@@ -18,6 +18,9 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
     //@IBOutlet var searchBar: UISearchBar!
     //@IBOutlet var monthSelector: ? (descobrir o tipo disso)
     
+    
+    //var events: [Event] = [Event(name: "Rock in Rio 2197", place: "Terra 2", date: , setlist: nil, bandID: "asafasf", id: "1215578")]
+    
     override func viewDidLoad() {
         
         self.roadmapTableView.dataSource = self
@@ -48,9 +51,9 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RepertoireTableViewCell
+        let eventCell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! RepertoireTableViewCell
         
-        return cell
+        return eventCell
     }
 
 }
