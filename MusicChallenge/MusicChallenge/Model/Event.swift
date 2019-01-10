@@ -29,7 +29,7 @@ class Event:GenericProtocolClass {
         self.name = asDictionary["name"] as! String
         self.location = asDictionary["location"] as! String
         self.date = asDictionary["date"] as! Date
-        self.associatedSetlist = asDictionary["associatedSetlist"] as! Setlist
+        self.associatedSetlist = asDictionary["associatedSetlist"] as? Setlist
         self.bandID = asDictionary["bandID"] as! String
         super.init(id: asDictionary["id"] as? String)
     }

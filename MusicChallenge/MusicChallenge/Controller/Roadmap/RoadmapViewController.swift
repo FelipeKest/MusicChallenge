@@ -19,7 +19,7 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
     //@IBOutlet var monthSelector: ? (descobrir o tipo disso)
     
     
-    var events: [Event] = [Event(name: "Rock in Rio 2197", place: "Terra 2", date: Date(), bandID: "asafasf", id: "1215578")]
+    var events: [Event] = [Event(name: "Rock in Rio 2197", place: "Terra 2", date: String("10-10-2197").toDate(dateFormat: "dd-MM-yyyy"), bandID: "asafasf", id: "1215578")]
     
     override func viewDidLoad() {
         
@@ -59,7 +59,7 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
         let eventCell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! RoadmapTableViewCell
         
         eventCell.eventName.text = events[indexPath.row].name
-        eventCell.horario.text = events[indexPath.row].date.description
+        eventCell.horario.text = events[indexPath.row].date.toString(dateFormat: "dd-MM-yyyy")
         
         return eventCell
     }
