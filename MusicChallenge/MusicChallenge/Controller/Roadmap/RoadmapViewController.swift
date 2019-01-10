@@ -19,15 +19,21 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
     //@IBOutlet var monthSelector: ? (descobrir o tipo disso)
     
     
-    var events: [Event] = [Event(name: "Rock in Rio 2197", place: "Terra 2", date: String("10-10-2197").toDate(dateFormat: "dd-MM-yyyy"), bandID: "asafasf", id: "1215578"), Event(name: "Ensaio p/ o Lopalazooba", place: "Casa do Jordel", date: String("05-07-1873").toDate(dateFormat: "dd-MM-yyyy"), setlist: Setlist(name: "Paulera", songs: [], bandID: "1231214", id: "124124124"), bandID: "asafasf", id: "1215578")]
+    var events: [Event] = [Event(name: "Rock in Rio 2197", place: "Terra 2", date: String("10-10-2197").toDate(dateFormat: "dd-MM-yyyy"), bandID: "asafasf", id: "1215578"),
+                           
+                           Event(name: "Ensaio p/ o Lopalazooba", place: "Casa do Jordel", date: String("05-07-1873").toDate(dateFormat: "dd-MM-yyyy"), setlist:
+                                Setlist(name: "Paulera", songs: [
+                                    Song(name: "Rock do Pinico", instruments:[
+                                            Instrument(type: InstrumentTypes.Guitar, id: "1313518")],
+                                bandID: "12312312", id: "12312415")], bandID: "1231214", id: "124124124"), bandID: "asafasf", id: "1215578")]
+    
     
     override func viewDidLoad() {
-        
+        super.viewDidLoad()
+
         self.roadmapTableView.dataSource = self
         self.roadmapTableView.delegate = self
         
-        super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
@@ -77,9 +83,12 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == "showEvent" {
+            let destination = segue.destination as? EventViewController
+            let index = roadmapTableView.indexPathForSelectedRow?.row
+            destination?.event = events[index!]
+        }
     }
-    
     
     
 }
