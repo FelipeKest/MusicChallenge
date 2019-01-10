@@ -17,6 +17,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet var eventSetlistName: UILabel!
     @IBOutlet var setlistSongQtd: UILabel!
     @IBOutlet var eventSetlistTableView: UITableView!
+    @IBOutlet var goToSetlist: UIButton!
     
     var event: Event!
     
@@ -33,9 +34,19 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         eventDate.text = event.date.toString(dateFormat: "dd-MM-yyyy")
         eventLocation.text = event.location
         
-        //fazer condicional para quando não tiver setlist nos dois casos abaixo
-        eventSetlistName.text = "Setlist: \(event.associatedSetlist?.name ?? "nenhuma")"
-        setlistSongQtd.text = "\(event.associatedSetlist?.songs.count ?? 0) músicas"
+        if event.associatedSetlist != nil {
+            eventSetlistName.text = "Setlist: \(event.associatedSetlist?.name ?? "nenhuma")"
+            
+            setlistSongQtd.text = "\(event.associatedSetlist?.songs.count ?? 0) músicas"
+        }
+        else {
+            eventSetlistTableView.alpha = 0
+            goToSetlist.alpha = 0
+            
+            eventSetlistName.text = "Sem setlist atrelada."
+            
+            setlistSongQtd.text = "Acesse 'editar' para adicionar uma!"
+        }
         
         //createdBy.text =
         
