@@ -43,6 +43,8 @@
 		67D5BB1C21C168B10058BCC7 /* SetlistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BB1B21C168B10058BCC7 /* SetlistsViewController.swift */; };
 		67D5BB1E21C16C570058BCC7 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BB1D21C16C570058BCC7 /* FeedViewController.swift */; };
 		67D5BB2021C173D40058BCC7 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BB1F21C173D40058BCC7 /* PostViewController.swift */; };
+		67F9DA7B21E7B3EF001D9134 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F9DA7A21E7B3EF001D9134 /* Event.storyboard */; };
+		67F9DA7D21E7B54D001D9134 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F9DA7C21E7B54D001D9134 /* EventViewController.swift */; };
 		915E101F21BB7A7200158899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915E101E21BB7A7200158899 /* AppDelegate.swift */; };
 		915E102621BB7A7300158899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 915E102521BB7A7300158899 /* Assets.xcassets */; };
 		915E102921BB7A7300158899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 915E102721BB7A7300158899 /* LaunchScreen.storyboard */; };
@@ -103,6 +105,8 @@
 		67D5BB1B21C168B10058BCC7 /* SetlistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetlistsViewController.swift; sourceTree = "<group>"; };
 		67D5BB1D21C16C570058BCC7 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		67D5BB1F21C173D40058BCC7 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		67F9DA7A21E7B3EF001D9134 /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
+		67F9DA7C21E7B54D001D9134 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		915E101B21BB7A7200158899 /* MusicChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		915E101E21BB7A7200158899 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		915E102521BB7A7300158899 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 			children = (
 				67D5BB1921C15DE50058BCC7 /* RoadmapViewController.swift */,
 				6777852621C77840002DAB83 /* RoadmapTableViewCell.swift */,
+				67F9DA7C21E7B54D001D9134 /* EventViewController.swift */,
 			);
 			path = Roadmap;
 			sourceTree = "<group>";
@@ -271,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				D02F2D0C21BEE2240090043A /* Roadmap.storyboard */,
+				67F9DA7A21E7B3EF001D9134 /* Event.storyboard */,
 				D063195E21CAC35000CF40A9 /* SelectedSong.storyboard */,
 				D04607C821CC26F7006A4B88 /* NewSong.storyboard */,
 				6704A16921E65DB2007115D3 /* EditSong.storyboard */,
@@ -373,6 +379,7 @@
 				D04607CB21CC2706006A4B88 /* NewSetlist.storyboard in Resources */,
 				D02F2D0D21BEE2240090043A /* Roadmap.storyboard in Resources */,
 				D092380E21C837DA00D092BE /* squealer embossed.ttf in Resources */,
+				67F9DA7B21E7B3EF001D9134 /* Event.storyboard in Resources */,
 				6750E8E521CC122900A193AE /* RepertoireTableViewCell.xib in Resources */,
 				D092381B21C84C0900D092BE /* Repertoire.storyboard in Resources */,
 				6704A16A21E65DB2007115D3 /* EditSong.storyboard in Resources */,
@@ -403,6 +410,7 @@
 				676CEE8321C843D700961015 /* MusicianProfileViewController.swift in Sources */,
 				676CEE7821C8390A00961015 /* ImportFromRepertoireViewController.swift in Sources */,
 				676CEE7E21C83C3500961015 /* WhatSetlistsHaveSongViewController.swift in Sources */,
+				67F9DA7D21E7B54D001D9134 /* EventViewController.swift in Sources */,
 				D0EE7DFD21CD6B2C00DDA7C9 /* CreateSetlistViewController.swift in Sources */,
 				91A02DD621BC2542001BC7C6 /* DAO.swift in Sources */,
 				6704A17021E65EA1007115D3 /* EditSetlistViewController.swift in Sources */,

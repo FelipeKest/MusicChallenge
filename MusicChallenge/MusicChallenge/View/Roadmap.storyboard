@@ -108,11 +108,20 @@
                     <connections>
                         <outlet property="addEventButton" destination="oQu-fr-uKQ" id="YAX-e0-C1x"/>
                         <outlet property="roadmapTableView" destination="wnK-gT-DJ2" id="XwY-Vu-MSa"/>
+                        <segue destination="f5U-LY-sXJ" kind="show" identifier="showEvent" id="fe1-gh-R3b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IW8-nQ-OCm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-944.79999999999995" y="-1913.793103448276"/>
+        </scene>
+        <!--Event-->
+        <scene sceneID="KCz-Rm-1R7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Event" id="f5U-LY-sXJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uJf-AI-PaX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="467" y="-1914"/>
         </scene>
     </scenes>
     <resources>
