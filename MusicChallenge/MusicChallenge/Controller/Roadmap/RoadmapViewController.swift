@@ -19,7 +19,7 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
     //@IBOutlet var monthSelector: ? (descobrir o tipo disso)
     
     
-    var events: [Event] = [Event(name: "Rock in Rio 2197", place: "Terra 2", date: String("10-10-2197").toDate(dateFormat: "dd-MM-yyyy"), bandID: "asafasf", id: "1215578")]
+    var events: [Event] = [Event(name: "Rock in Rio 2197", place: "Terra 2", date: String("10-10-2197").toDate(dateFormat: "dd-MM-yyyy"), bandID: "asafasf", id: "1215578"), Event(name: "Ensaio p/ o Lopalazooba", place: "Casa do Jordel", date: String("05-07-1873").toDate(dateFormat: "dd-MM-yyyy"), setlist: Setlist(name: "Paulera", songs: [], bandID: "1231214", id: "124124124"), bandID: "asafasf", id: "1215578")]
     
     override func viewDidLoad() {
         
@@ -60,6 +60,16 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         eventCell.eventName.text = events[indexPath.row].name
         eventCell.horario.text = events[indexPath.row].date.toString(dateFormat: "dd-MM-yyyy")
+        eventCell.location.text = events[indexPath.row].location
+        
+        
+        if events[indexPath.row].associatedSetlist != nil { //evento tem setlist associada
+            eventCell.setlist.text = "Setlist: \(events[indexPath.row].associatedSetlist?.name ?? "no_set_found")"
+        }
+        else { //não tem setlist associada
+            eventCell.setlist.text = "Sem setlist!"
+            eventCell.setlist.textColor = UIColor.lightGray
+        }
         
         return eventCell
     }
