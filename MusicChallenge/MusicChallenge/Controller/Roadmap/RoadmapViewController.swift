@@ -19,7 +19,7 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
     //@IBOutlet var monthSelector: ? (descobrir o tipo disso)
     
     
-    //var events: [Event] = [Event(name: "Rock in Rio 2197", place: "Terra 2", date: , setlist: nil, bandID: "asafasf", id: "1215578")]
+    var events: [Event] = [Event(name: "Rock in Rio 2197", place: "Terra 2", date: Date(), bandID: "asafasf", id: "1215578")]
     
     override func viewDidLoad() {
         
@@ -42,16 +42,24 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     */
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 130
     }
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return events.count
     }
     
+    
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let eventCell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! RepertoireTableViewCell
+        let eventCell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! RoadmapTableViewCell
+        
+        eventCell.eventName.text = events[indexPath.row].name
+        eventCell.horario.text = events[indexPath.row].date.description
         
         return eventCell
     }

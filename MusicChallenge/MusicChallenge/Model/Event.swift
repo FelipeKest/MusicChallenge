@@ -12,11 +12,11 @@ class Event:GenericProtocolClass {
     var name: String
     var location: String
     var date: Date
-    var associatedSetlist: Setlist
+    var associatedSetlist: Setlist?
     var bandID: String
     
     
-    init(name:String,place:String,date: Date,setlist:Setlist,bandID: String,id: String?) {
+    init(name:String,place:String,date: Date,setlist:Setlist? = nil,bandID: String,id: String?) {
         self.name = name
         self.location = place
         self.date = date
