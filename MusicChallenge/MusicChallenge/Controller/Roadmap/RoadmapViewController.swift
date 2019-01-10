@@ -31,16 +31,12 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        if let index = self.roadmapTableView.indexPathForSelectedRow{
+            self.roadmapTableView.deselectRow(at: index, animated: true)
+        }
     }
-    */
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
@@ -73,5 +69,17 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         return eventCell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showEvent", sender: self)
+    }
+    
+    // MARK: - Navigation
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
+    
+    
+    
 }
