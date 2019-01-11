@@ -18,7 +18,7 @@ class sessionManager: LoginManager {
     static let instance = sessionManager()
     public var currentUserID: String?
     public var currentUser: Musician?
-    public var currentBandID: String?
+//    public var currentBandID: String?
     
     private init (){
         //        getCurrentUserBandID(userRecord: CKRecord(recordType: "Users", recordID: CKRecord.ID(recordName: self.currentUserID))) { (bandID, error) in
@@ -43,7 +43,7 @@ class sessionManager: LoginManager {
             } else {
                 if let userRecord = userRecord {
                     self.currentUserID = userRecord.recordID.recordName
-                    self.currentBandID = userRecord.value(forKey: "bandID") as? String
+//                    self.currentBandID = userRecord.value(forKey: "bandID") as? String
                     let musicianUser = userRecord.asMusician// Musician(asDictionary: userRecord.asDictionary)
                     self.currentUser = musicianUser
                     completionHandler(musicianUser,error)

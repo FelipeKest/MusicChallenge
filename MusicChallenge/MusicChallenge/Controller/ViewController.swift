@@ -26,16 +26,24 @@ class ViewController: UIViewController{
     @IBOutlet weak var labelText: UILabel!
     
     @IBAction func saveSong(_ sender: Any) {
-        guard let musician = SessionManager.currentUser else {return}
-        let bandID = SessionManager.currentUser?.band?.id
-        DAO.fetchBand(with: "B3C027CE-F382-587E-9899-7F23867A42F5") { (bandRecord, error) in
-            if error != nil {
-                print(error?.localizedDescription as Any)
+        let bandID = "B3C027CE-F382-587E-9899-7F23867A42F5"
+        guard let currentUser = SessionManager.currentUser else {return}
+        DAO.add(musician: currentUser, bandID: bandID) { (error) in
+            if let error = error {
+                print(error.localizedDescription)
                 return
             }
-            print(bandRecord?.recordID.recordName)
-            guard let realBand = bandRecord?.asBand else {return}
-            print(realBand)
+            DAO.fetchBand(with: bandID) { (bandRecord, error) in
+                if error != nil {
+                    print(error?.localizedDescription as Any)
+                    return
+                }
+                guard let realBandRecord = bandRecord else {return}
+                let realBand = Band(asDictionary: realBandRecord.asDictionary)
+                print(realBand.name)
+                //            print(realBand.id as Any)bad
+            }
+            
         }
     }
     

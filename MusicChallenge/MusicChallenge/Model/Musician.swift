@@ -5,21 +5,24 @@
 //  Created by Felipe Kestelman on 11/12/18.
 //  Copyright © 2018 Felipe Kestelman. All rights reserved.
 //
-import CloudKit
 
 class Musician:GenericProtocolClass {
 
     var name: String
     var age: Int
     var instruments: [Instrument]?
+    var recordName: String?
     var band: Band?
     
-    init(name: String, age: Int, instruments: [Instrument] = [],band: Band,id: String?) {
+    static var allReferenced:[String:GenericProtocolClass] = [:]
+    
+    init(name: String, age: Int, instruments: [Instrument] = [],band: Band,id: String) {
         self.name = name
         self.age = age
         self.instruments = instruments
         self.band = band
         super.init(id: id)
+        Musician.allReferenced[id] = self
     }
     
     override var asDictionary: [String : Any] {
@@ -36,12 +39,22 @@ class Musician:GenericProtocolClass {
         self.name = asDictionary["name"] as! String
         self.age = asDictionary["age"] as! Int
         self.instruments = asDictionary["instruments"] as? [Instrument]
-        super.init(asDictionary: asDictionary)
-        guard let selfBandReference = asDictionary["band"] as? CKRecord.Reference else {return}
-        print("banda do musico =  \(selfBandReference)")
+        super.init(id: asDictionary["id"] as? String)
+        guard let musicianRecordName = asDictionary["musicianRecordName"] as? String else {return}
+        Musician.allReferenced[musicianRecordName] = self
+        
+        if let selfBandReference = asDictionary["band"] { //CKReference
+//            DAO.fetchBand(with: selfBandReference.recordID.recordName) { (bandRecord, error) in
+//                if error != nil {
+//                    print(error?.localizedDescription as Any)
+//                    return
+//                }
+//                self.band = bandRecord?.asBand
+//            }
+        }
         // se o currentUser já existe eu ou um membro da banda
 //        guard let bandID = asDictionary["band"] as? [String:Any] else {return} //da um erro
-        let selfBandRecord = CKRecord(recordType: "Band", recordID: selfBandReference.recordID)
+//        let selfBandRecord = CKRecord(recordType: "Band", recordID: selfBandReference.recordID)
 
         
 //        DAO.fetchBandFrom(record: selfBandRecord, into: self)
@@ -59,7 +72,6 @@ class Musician:GenericProtocolClass {
 //            })
 //
 //        }
-
 
     }
     

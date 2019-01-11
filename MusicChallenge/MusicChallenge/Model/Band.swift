@@ -12,9 +12,11 @@ class Band:GenericProtocolClass {
     var repertoire: [Song] = []
     var setlists:[Setlist] = []
     var events:[Event] = []
+    static var allReferenced:[String:GenericProtocolClass] = [:]
     
     override var asDictionary:[String:Any] {
         var result:[String:Any] = [:]
+        result["id"] = self.id
         result["name"] = self.name
         result["members"] = self.members
         result["repertoire"] = self.repertoire
@@ -30,13 +32,16 @@ class Band:GenericProtocolClass {
         self.setlists = setlists
         self.events = events
         super.init(id: id)
+        Band.allReferenced[id] = self
     }
     
     required init(asDictionary: [String : Any]) {
+        //Colocar o membro no id aqui
         self.name = asDictionary["name"] as! String
-        self.members = asDictionary["members"] as! [Musician]
         super.init(id: asDictionary["id"] as? String)
         //Vejo se os musicos estao no Musico.allReferenced (ja lidos) coloco eles no members
+        guard let id = asDictionary["id"] as? String else {return}
+        Band.allReferenced[id] = self
         if let membersID = asDictionary["members"] { //CKReference
         // se nao
             DAO.queryAllMusicians(from: self, and: membersID) { (error) in
