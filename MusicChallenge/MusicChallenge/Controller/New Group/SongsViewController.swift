@@ -72,7 +72,7 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        dao.currenUserObserver = self
+        DAO.currentUserObserver = self
         
         
         

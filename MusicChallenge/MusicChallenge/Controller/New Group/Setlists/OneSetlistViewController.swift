@@ -56,14 +56,14 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
         
         if song.instruments.count > 4{
             for i in 0...3 {
-                iconArray[i]?.image = song.instruments[i].type.image
+                iconArray[i]?.image = song.instruments[i].image
             }
             
             songsCell.additionalInstruments.text = "+\(song.instruments.count - 4)"
         }
         else{
             for i in 0...song.instruments.count-1 {
-                iconArray[i]?.image = song.instruments[i].type.image
+                iconArray[i]?.image = song.instruments[i].image
             }
             
             songsCell.additionalInstruments.text = ""

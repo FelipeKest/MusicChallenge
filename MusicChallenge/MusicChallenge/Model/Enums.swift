@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-enum InstrumentTypes {
+enum Instrument{
     
     case Bass
     case Guitar
@@ -23,7 +23,7 @@ enum InstrumentTypes {
         case .Bass: return UIImage(named: "Bass.png")!
         case .Drums: return UIImage(named: "Drums.png")!
         case .Guitar: return UIImage(named: "Guitar.png")!
-        case .Singer: return UIImage(named: "Vocals.png")!
+        case .Singer: return UIImage(named: "voz.png")!
         case .Others: return UIImage(named: "Others.png")!
         }
     }

@@ -19,107 +19,92 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
         Setlist(name: "Rock Diversas", songs: [
             
             Song(name: "Born To Be Wild", instruments: [
-                Instrument(type: InstrumentTypes.Bass, id: ""),
-                Instrument(type: InstrumentTypes.Guitar, id: ""),
-                Instrument(type: InstrumentTypes.Drums, id: ""),
-                Instrument(type: InstrumentTypes.Singer, id: "")
-                ],
-                      bandID: "", id: ""),
+                Instrument.Bass,
+                Instrument.Guitar,
+                Instrument.Drums,
+                Instrument.Singer
+                ]),
             
             Song(name: "MEGALOVANIA", instruments: [
-                Instrument(type: InstrumentTypes.Others, id: ""),
-                Instrument(type: InstrumentTypes.Guitar, id: "")
-                ],
-                      bandID: "", id: ""),
+                Instrument.Others,
+                Instrument.Guitar
+                ]),
             
             Song(name: "Love Of My Life (Acapella)", instruments: [
-                Instrument(type: InstrumentTypes.Singer, id: ""),
-                Instrument(type: InstrumentTypes.Singer, id: ""),
-                Instrument(type: InstrumentTypes.Singer, id: ""),
-                Instrument(type: InstrumentTypes.Singer, id: ""),
-                Instrument(type: InstrumentTypes.Singer, id: "")
-                ],
-                      bandID: "", id: ""),
+                Instrument.Singer,
+                Instrument.Singer,
+                Instrument.Singer,
+                Instrument.Singer,
+                Instrument.Singer
+                ]),
             
             Song(name: "The Sound Of Silence", instruments: [
-                Instrument(type: InstrumentTypes.Bass, id: "")
-                ], bandID: "", id: "")
-            
+                Instrument.Bass
+                ])
             ]
-            , bandID: "", id: ""),
+        ),
         
         Setlist(name: "SÓ AS TOP", songs: [
             
             Song(name: "MEGALOVANIA", instruments: [
-                Instrument(type: InstrumentTypes.Bass, id: ""),
-                Instrument(type: InstrumentTypes.Guitar, id: ""),
-                Instrument(type: InstrumentTypes.Drums, id: ""),
-                Instrument(type: InstrumentTypes.Singer, id: "")
-                ],
-                      bandID: "", id: ""),
+                Instrument.Bass,
+                Instrument.Guitar,
+                Instrument.Drums,
+                Instrument.Singer
+                ]),
             
             Song(name: "MEGALOVANIA DRUM COVER", instruments: [
-                Instrument(type: InstrumentTypes.Drums, id: ""),
-                Instrument(type: InstrumentTypes.Drums, id: "")
-                ],
-                      bandID: "", id: ""),
+                Instrument.Drums,
+                Instrument.Drums
+                ]),
             
             Song(name: "MEGALOVANIA ACAPELLA", instruments: [
-                Instrument(type: InstrumentTypes.Singer, id: ""),
-                Instrument(type: InstrumentTypes.Singer, id: "")
-                ],
-                      bandID: "", id: ""),
+                Instrument.Singer,
+                Instrument.Singer
+                ]),
             
             Song(name: "MEGALOVANIA PT.2", instruments: [
-                Instrument(type: InstrumentTypes.Bass, id: ""),
-                Instrument(type: InstrumentTypes.Guitar, id: ""),
-                Instrument(type: InstrumentTypes.Others, id: ""),
-                Instrument(type: InstrumentTypes.Others, id: "")
-                ], bandID: "", id: "")
-            
-            ]
-            , bandID: "", id: ""),
+                Instrument.Bass,
+                Instrument.Guitar,
+                Instrument.Others,
+                Instrument.Others
+                ])
+            ]),
         
         Setlist(name: "Jazzlike", songs: [
             
             Song(name: "Watermelon Man", instruments: [
-                Instrument(type: InstrumentTypes.Bass, id: ""),
-                Instrument(type: InstrumentTypes.Guitar, id: ""),
-                Instrument(type: InstrumentTypes.Drums, id: ""),
-                Instrument(type: InstrumentTypes.Guitar, id: "")
-                ],
-                 bandID: "", id: ""),
+                Instrument.Bass,
+                Instrument.Guitar,
+                Instrument.Drums,
+                Instrument.Guitar
+                ]),
             
             Song(name: "Gran Turismo 3 Theme", instruments: [
-                Instrument(type: InstrumentTypes.Bass, id: ""),
-                Instrument(type: InstrumentTypes.Others, id: ""),
-                Instrument(type: InstrumentTypes.Guitar, id: "")
-                ],
-                 bandID: "", id: ""),
+                Instrument.Bass,
+                Instrument.Others,
+                Instrument.Guitar
+                ]),
             
             Song(name: "Epic Sax Guy", instruments: [
-                Instrument(type: InstrumentTypes.Others, id: "")
-                ],
-                 bandID: "", id: ""),
+                Instrument.Others
+                ]),
             
             Song(name: "21st Century Schizoid Man", instruments: [
-                Instrument(type: InstrumentTypes.Bass, id: ""),
-                Instrument(type: InstrumentTypes.Guitar, id: ""),
-                Instrument(type: InstrumentTypes.Others, id: ""),
-                Instrument(type: InstrumentTypes.Guitar, id: "")
-                ], bandID: "", id: ""),
+                Instrument.Bass,
+                Instrument.Guitar,
+                Instrument.Others,
+                Instrument.Guitar
+                ]),
             
             Song(name: "Get Back", instruments: [
-                Instrument(type: InstrumentTypes.Bass, id: ""),
-                Instrument(type: InstrumentTypes.Guitar, id: ""),
-                Instrument(type: InstrumentTypes.Drums, id: ""),
-                Instrument(type: InstrumentTypes.Singer, id: "")
-                ], bandID: "", id: "")
-            
+                Instrument.Bass,
+                Instrument.Guitar,
+                Instrument.Drums,
+                Instrument.Singer
+                ])
             ]
-            , bandID: "", id: ""),
-        
-        
+        )
     ]
     
     

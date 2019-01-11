@@ -20,28 +20,30 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
     var songs: [Song] = [
         
                         Song(name: "Born To Be Wild", instruments: [
-                            Instrument(type: InstrumentTypes.Bass, id: ""),
-                            Instrument(type: InstrumentTypes.Guitar, id: ""),
-                            Instrument(type: InstrumentTypes.Drums, id: ""),
-                            Instrument(type: InstrumentTypes.Singer, id: "")
+                            Instrument.Bass,
+                            Instrument.Guitar,
+                            Instrument.Drums,
+                            Instrument.Singer
                             ],
-                                  bandID: "", id: ""),
+                             creator: Musician(), id: ""),
                          
                         Song(name: "MEGALOVANIA", instruments: [
-                            Instrument(type: InstrumentTypes.Others, id: ""),
-                            Instrument(type: InstrumentTypes.Guitar, id: "")],
-                                  bandID: "", id: ""),
+                            Instrument.Others,
+                            Instrument.Guitar],
+                             creator: Musician(), id: ""),
                          
                         Song(name: "Love Of My Life (Acapella)", instruments: [
-                            Instrument(type: InstrumentTypes.Singer, id: ""),
-                            Instrument(type: InstrumentTypes.Singer, id: ""),
-                            Instrument(type: InstrumentTypes.Singer, id: ""),
-                            Instrument(type: InstrumentTypes.Singer, id: ""),
-                            Instrument(type: InstrumentTypes.Singer, id: "")],
-                                  bandID: "", id: ""),
+                            Instrument.Singer,
+                            Instrument.Singer,
+                            Instrument.Singer,
+                            Instrument.Singer,
+                            Instrument.Singer],
+                             creator: Musician(), id: ""),
         
                         Song(name: "The Sound Of Silence", instruments: [
-                            Instrument(type: InstrumentTypes.Bass, id: "")], bandID: "", id: "")
+                            Instrument.Bass],
+                             creator: Musician(),
+                             id: "")
         
     ]
     
@@ -93,14 +95,14 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
         
         if song.instruments.count > 4{
             for i in 0...3 {
-                iconArray[i]?.image = song.instruments[i].type.image
+                iconArray[i]?.image = song.instruments[i].image
             }
             
             cellRepertoire.additionalInstruments.text = "+\(song.instruments.count - 4)"
         }
         else{
             for i in 0...song.instruments.count-1 {
-                iconArray[i]?.image = song.instruments[i].type.image
+                iconArray[i]?.image = song.instruments[i].image
             }
             
             cellRepertoire.additionalInstruments.text = ""
