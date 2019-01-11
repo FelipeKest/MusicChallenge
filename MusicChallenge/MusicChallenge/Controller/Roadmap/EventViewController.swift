@@ -53,6 +53,12 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let index = self.eventSetlistTableView.indexPathForSelectedRow{
+            self.eventSetlistTableView.deselectRow(at: index, animated: true)
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return (event.associatedSetlist?.songs.count) ?? 0
@@ -86,11 +92,20 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return songsCell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "showSong", sender: indexPath.row)
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSetlist" {
             let destination = segue.destination as? OneSetlistViewController
             destination?.setlist = event.associatedSetlist
+        }
+        if segue.identifier == "showSong" {
+            let destination = segue.destination as? OneSongViewController
+            let index = eventSetlistTableView.indexPathForSelectedRow?.row
+            destination?.song = event.associatedSetlist?.songs[index!]
         }
     }
     

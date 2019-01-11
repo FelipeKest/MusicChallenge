@@ -156,6 +156,7 @@
                         <outlet property="setlistSongQtd" destination="KBc-qx-Hhb" id="OJl-Ho-UNM"/>
                         <segue destination="pvz-k9-owk" kind="show" identifier="showSetlist" id="BSD-JI-unI"/>
                         <segue destination="c9e-F0-RYv" kind="show" identifier="editEvent" id="qjY-Zs-coy"/>
+                        <segue destination="7q6-H9-URP" kind="show" identifier="showSong" id="3Ux-76-sgW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5KD-BI-5FN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -168,7 +169,7 @@
                 <viewControllerPlaceholder storyboardName="EditEvent" id="c9e-F0-RYv" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZYt-NO-Yxy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="731" y="-130"/>
+            <point key="canvasLocation" x="-67" y="514"/>
         </scene>
         <!--SelectedSetlist-->
         <scene sceneID="mhI-Yi-Wnk">
@@ -176,7 +177,15 @@
                 <viewControllerPlaceholder storyboardName="SelectedSetlist" id="pvz-k9-owk" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yT4-uQ-aNP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="759" y="183"/>
+            <point key="canvasLocation" x="631" y="-125"/>
+        </scene>
+        <!--SelectedSong-->
+        <scene sceneID="dXg-Jb-noc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SelectedSong" id="7q6-H9-URP" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dDz-Us-tJY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="622" y="188"/>
         </scene>
     </scenes>
 </document>
