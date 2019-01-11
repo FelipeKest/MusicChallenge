@@ -13,7 +13,6 @@ import UIKit
 class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var roadmapTableView: UITableView!
-    @IBOutlet var addEventButton: UIBarButtonItem!
     
     //@IBOutlet var searchBar: UISearchBar!
     //@IBOutlet var monthSelector: ? (descobrir o tipo disso)
@@ -90,5 +89,8 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    @IBAction func addEvent(_ sender: Any) {
+        performSegue(withIdentifier: "newEvent", sender: self)
+    }
     
 }

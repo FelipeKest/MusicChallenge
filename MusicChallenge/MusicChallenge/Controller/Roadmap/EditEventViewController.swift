@@ -10,9 +10,23 @@ import UIKit
 
 class EditEventViewController: UIViewController {
 
+    @IBOutlet var locationField: UITextField!
+    @IBOutlet var nameField: UITextField!
+    @IBOutlet var datePicker: UIDatePicker!
+    @IBOutlet var setlistLabel: UILabel!
+    @IBOutlet var setlistName: UILabel!
+    @IBOutlet var setlistSongQtd: UILabel!
+    @IBOutlet var changeButton: UIButton!
+    @IBOutlet var removeButton: UIButton!
+    @IBOutlet var addSetlistButton: UIButton!
+    @IBOutlet var setlistImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        datePicker.setValue(UIColor.white, forKey: "textColor")
+        
+        
         // Do any additional setup after loading the view.
     }
     
@@ -27,4 +41,7 @@ class EditEventViewController: UIViewController {
     }
     */
 
+    @IBAction func cancelButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }

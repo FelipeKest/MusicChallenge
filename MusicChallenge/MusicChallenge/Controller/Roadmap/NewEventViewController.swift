@@ -26,5 +26,8 @@ class NewEventViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func cancelButton(sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }

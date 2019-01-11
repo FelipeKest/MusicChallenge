@@ -24,6 +24,7 @@
 		675A8D9721CAC50C00C5A377 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A8D8D21CAC50C00C5A377 /* Enums.swift */; };
 		676386B721E68CC7008DF13F /* FetchingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676386B621E68CC7008DF13F /* FetchingInfoViewController.swift */; };
 		676386B921E68CF0008DF13F /* CheckingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676386B821E68CF0008DF13F /* CheckingInfoViewController.swift */; };
+		676BB33621E93B0700AAAA77 /* NewEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F4079721E92B1D009F85C3 /* NewEvent.storyboard */; };
 		676CEE7421C82DE300961015 /* JoinBandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676CEE7321C82DE300961015 /* JoinBandViewController.swift */; };
 		676CEE7621C838EC00961015 /* CreateSongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676CEE7521C838EC00961015 /* CreateSongViewController.swift */; };
 		676CEE7821C8390A00961015 /* ImportFromRepertoireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676CEE7721C8390A00961015 /* ImportFromRepertoireViewController.swift */; };
@@ -395,6 +396,7 @@
 				D092381B21C84C0900D092BE /* Repertoire.storyboard in Resources */,
 				6704A16A21E65DB2007115D3 /* EditSong.storyboard in Resources */,
 				D054FB7821E684F5004D3132 /* FetchingInfo.storyboard in Resources */,
+				676BB33621E93B0700AAAA77 /* NewEvent.storyboard in Resources */,
 				D092381721C8498800D092BE /* Songs.storyboard in Resources */,
 				D092381921C84BF000D092BE /* Setlists.storyboard in Resources */,
 				D04607C921CC26F7006A4B88 /* NewSong.storyboard in Resources */,

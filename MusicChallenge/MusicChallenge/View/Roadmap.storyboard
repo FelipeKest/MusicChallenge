@@ -93,6 +93,9 @@
                                     <navigationItem title="Roadmap" id="BLY-a7-HJf">
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="oQu-fr-uKQ">
                                             <color key="tintColor" red="0.8922216892" green="0.16046175360000001" blue="0.17606648799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="addEvent:" destination="j4p-zS-NFX" id="EKk-b4-7b4"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -106,14 +109,22 @@
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addEventButton" destination="oQu-fr-uKQ" id="YAX-e0-C1x"/>
                         <outlet property="roadmapTableView" destination="wnK-gT-DJ2" id="XwY-Vu-MSa"/>
                         <segue destination="f5U-LY-sXJ" kind="show" identifier="showEvent" id="fe1-gh-R3b"/>
+                        <segue destination="mcf-ST-Kll" kind="show" identifier="newEvent" id="K66-6D-C7s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IW8-nQ-OCm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-944.79999999999995" y="-1913.793103448276"/>
+        </scene>
+        <!--NewEvent-->
+        <scene sceneID="9f4-8u-h8X">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewEvent" id="mcf-ST-Kll" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DUb-i8-sTF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-119" y="-2158"/>
         </scene>
         <!--Event-->
         <scene sceneID="KCz-Rm-1R7">
@@ -121,7 +132,7 @@
                 <viewControllerPlaceholder storyboardName="Event" id="f5U-LY-sXJ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJf-AI-PaX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="467" y="-1914"/>
+            <point key="canvasLocation" x="-141" y="-1914"/>
         </scene>
     </scenes>
     <resources>
