@@ -99,12 +99,17 @@
                                 <rect key="frame" x="39" y="360" width="375" height="98"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lpW-I5-6aw">
+                                <rect key="frame" x="39" y="420" width="375" height="98"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ja1-Ed-yK3"/>
                     </view>
                     <connections>
-                        <outlet property="pickerView" destination="Yc6-Mw-KQu" id="Jwm-hL-rPR"/>
+                        <outlet property="pickerViewGender" destination="Yc6-Mw-KQu" id="LqN-HL-RMn"/>
+                        <outlet property="pickerViewInstruments" destination="lpW-I5-6aw" id="hqK-br-khd"/>
                         <outlet property="txtAge" destination="zDF-OD-Wj0" id="LuN-wg-FJy"/>
                         <outlet property="txtEmail" destination="CMk-Df-oUC" id="lMG-Vg-Twq"/>
                         <outlet property="txtName" destination="sGE-zk-FEw" id="tIY-Ua-5Y8"/>

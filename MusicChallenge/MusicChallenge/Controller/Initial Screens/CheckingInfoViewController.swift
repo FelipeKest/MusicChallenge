@@ -9,22 +9,38 @@
 import UIKit
 
 class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 0
+    }
+    
 
     
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtAge: UITextField!
-    @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var pickerViewGender: UIPickerView!
+    @IBOutlet weak var pickerViewInstruments: UIPickerView!
+    
     
     var gender = ["Feminino", "Masculino"]
-
+    //var instruments = ["Electric Guitar", "Acoustic Guitar", "Bass", "Drums","Keyboard/Piano",  ]
+    var instruments: [Instrument] =
+        [Instrument(type: InstrumentTypes.Bass, id: "Bass"),
+         Instrument(type: InstrumentTypes.Drums, id: "Drums"),
+         Instrument(type: InstrumentTypes.Guitar, id: "Guitar"),
+         Instrument(type: InstrumentTypes.Singer, id: "Voice"),
+         Instrument(type: InstrumentTypes.Others, id: "Others")]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.pickerView.delegate = self
-        self.pickerView.dataSource = self
+        self.pickerViewGender.delegate = self
+        self.pickerViewGender.dataSource = self
+        self.pickerViewInstruments.delegate = self
+        self.pickerViewInstruments.dataSource = self
 
         // Do any additional setup after loading the view.
     }
@@ -33,12 +49,21 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
         return 1
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerViewGender(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return self.gender.count
     }
     
+    func pickerViewInstruments(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.instruments.count
+    }
+    
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return self.gender[row]
+    }
+    
+    func pickerViewInstruments(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.instruments[row].type.text
     }
 
     
@@ -46,10 +71,12 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
         let name = txtName.text
         let email = txtEmail.text
         let age = txtAge.text
-        let row = self.pickerView.selectedRow(inComponent: 0)
+        let gender = self.pickerViewGender.selectedRow(inComponent: 0)
+        let instrument = pickerViewInstruments.selectedRow(inComponent: 0)
         
-        print(row)
-        print(self.gender[row])
+        print(gender)
+        print(self.gender[gender])
+        
         
         
     }

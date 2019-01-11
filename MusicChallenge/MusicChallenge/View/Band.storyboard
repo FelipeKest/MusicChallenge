@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Feed-->
+        <!--Band-->
         <scene sceneID="3qC-S4-Onu">
             <objects>
                 <viewController id="2QT-us-nC5" customClass="BandInfoViewController" customModule="MusicChallenge" customModuleProvider="target" sceneMemberID="viewController">
@@ -97,7 +97,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="DaY-D2-fur">
                                 <rect key="frame" x="34" y="260" width="307" height="124"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <mutableString key="text">Bio: Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Bio: Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -114,7 +114,7 @@
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="hYg-xa-DJw"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Feed" image="feed_icon" landscapeImage="feed_icon" largeContentSizeImage="feed_icon" id="zf3-x7-LFs"/>
+                    <tabBarItem key="tabBarItem" title="Band" id="8SH-Bl-Puf"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iFM-Ec-eP7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -131,7 +131,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="feed_icon" width="31" height="31"/>
         <image name="musical-instruments" width="1439" height="1367"/>
         <image name="user_rock" width="595" height="583"/>
     </resources>
