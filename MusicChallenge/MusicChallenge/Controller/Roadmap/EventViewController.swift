@@ -91,6 +91,35 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         dismiss(animated: true, completion: nil)
     }
     
+    
+    @IBAction func shareButton(_ sender: Any) {
+        if event.associatedSetlist != nil {
+            let ac = UIActivityViewController(activityItems: ["Minha Banda estará no evento \(event.name) que acontece no dia \(event.date.toString(dateFormat: "dd-MM-yyyy")) em \(event.location)! Estamos preparando uma setlist incrível para o evento que contém \(event.associatedSetlist?.songs.count ?? 0) músicas!!! Esperamos vocês lá! Baixem o app BandPlan!"], applicationActivities: [])
+            present(ac, animated: true)
+        }
+        else {
+            let ac = UIActivityViewController(activityItems: ["Minha Banda estará no evento \(event.location), que acontece no dia \(event.date.toString(dateFormat: "dd-MM-yyyy")) em \(event.location)! Esperamos vocês lá! Baixem o app BandPlan!"], applicationActivities: [])
+            present(ac, animated: true)
+        }
+    }
+    
+    
+    @IBAction func deleteButton(_ sender: Any) {
+        let deleteAlert = UIAlertController(title: nil, message: "Deseja realmente excluir o evento \(event.name)?", preferredStyle: .alert)
+        
+        let deleteAction = UIAlertAction(title: "Excluir", style: .destructive)
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
+        
+        deleteAlert.addAction(deleteAction)
+        deleteAlert.addAction(cancelAction)
+        
+        self.present(deleteAlert, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func editButton(_ sender: Any) {
+        
+    }
     /*
     // MARK: - Navigation
 
