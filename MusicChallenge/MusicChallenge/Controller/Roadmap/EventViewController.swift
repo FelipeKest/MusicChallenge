@@ -87,6 +87,16 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showSetlist" {
+            let destination = segue.destination as? OneSetlistViewController
+            destination?.setlist = event.associatedSetlist
+        }
+    }
+    
+    
+    
+    
     @IBAction func backButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -118,8 +128,13 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     @IBAction func editButton(_ sender: Any) {
-        
+        performSegue(withIdentifier: "editEvent", sender: self)
     }
+    
+    @IBAction func goToSetlist(_ sender: Any) {
+        performSegue(withIdentifier: "showSetlist", sender: self)
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -114,6 +114,9 @@
                                 <state key="normal" title="Ir para setlist">
                                     <color key="titleColor" red="0.8922216892" green="0.16046175360000001" blue="0.17606648799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="goToSetlist:" destination="JDy-2d-NsV" eventType="touchUpInside" id="bvQ-KG-MZE"/>
+                                </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d7V-SV-fE4">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -151,11 +154,29 @@
                         <outlet property="eventSetlistTableView" destination="P5J-5y-O0E" id="xkV-Ll-bhu"/>
                         <outlet property="goToSetlist" destination="xKf-Lw-lhw" id="6mP-v3-ZLV"/>
                         <outlet property="setlistSongQtd" destination="KBc-qx-Hhb" id="OJl-Ho-UNM"/>
+                        <segue destination="pvz-k9-owk" kind="show" identifier="showSetlist" id="BSD-JI-unI"/>
+                        <segue destination="c9e-F0-RYv" kind="show" identifier="editEvent" id="qjY-Zs-coy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5KD-BI-5FN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-66.400000000000006" y="29.23538230884558"/>
+        </scene>
+        <!--EditEvent-->
+        <scene sceneID="5D8-AL-bkw">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EditEvent" id="c9e-F0-RYv" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZYt-NO-Yxy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="731" y="-130"/>
+        </scene>
+        <!--SelectedSetlist-->
+        <scene sceneID="mhI-Yi-Wnk">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SelectedSetlist" id="pvz-k9-owk" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yT4-uQ-aNP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="759" y="183"/>
         </scene>
     </scenes>
 </document>
