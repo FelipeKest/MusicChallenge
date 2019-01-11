@@ -45,6 +45,8 @@
 		67D5BB2021C173D40058BCC7 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BB1F21C173D40058BCC7 /* PostViewController.swift */; };
 		67F9DA7B21E7B3EF001D9134 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F9DA7A21E7B3EF001D9134 /* Event.storyboard */; };
 		67F9DA7D21E7B54D001D9134 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F9DA7C21E7B54D001D9134 /* EventViewController.swift */; };
+		67F9DA7F21E900FD001D9134 /* EditEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F9DA7E21E900FD001D9134 /* EditEvent.storyboard */; };
+		67F9DA8121E90165001D9134 /* EditEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F9DA8021E90165001D9134 /* EditEventViewController.swift */; };
 		915E101F21BB7A7200158899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915E101E21BB7A7200158899 /* AppDelegate.swift */; };
 		915E102621BB7A7300158899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 915E102521BB7A7300158899 /* Assets.xcassets */; };
 		915E102921BB7A7300158899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 915E102721BB7A7300158899 /* LaunchScreen.storyboard */; };
@@ -107,6 +109,8 @@
 		67D5BB1F21C173D40058BCC7 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		67F9DA7A21E7B3EF001D9134 /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
 		67F9DA7C21E7B54D001D9134 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		67F9DA7E21E900FD001D9134 /* EditEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditEvent.storyboard; sourceTree = "<group>"; };
+		67F9DA8021E90165001D9134 /* EditEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventViewController.swift; sourceTree = "<group>"; };
 		915E101B21BB7A7200158899 /* MusicChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		915E101E21BB7A7200158899 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		915E102521BB7A7300158899 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -218,6 +222,7 @@
 				67D5BB1921C15DE50058BCC7 /* RoadmapViewController.swift */,
 				6777852621C77840002DAB83 /* RoadmapTableViewCell.swift */,
 				67F9DA7C21E7B54D001D9134 /* EventViewController.swift */,
+				67F9DA8021E90165001D9134 /* EditEventViewController.swift */,
 			);
 			path = Roadmap;
 			sourceTree = "<group>";
@@ -277,6 +282,7 @@
 			children = (
 				D02F2D0C21BEE2240090043A /* Roadmap.storyboard */,
 				67F9DA7A21E7B3EF001D9134 /* Event.storyboard */,
+				67F9DA7E21E900FD001D9134 /* EditEvent.storyboard */,
 				D063195E21CAC35000CF40A9 /* SelectedSong.storyboard */,
 				D04607C821CC26F7006A4B88 /* NewSong.storyboard */,
 				6704A16921E65DB2007115D3 /* EditSong.storyboard */,
@@ -387,6 +393,7 @@
 				D092381721C8498800D092BE /* Songs.storyboard in Resources */,
 				D092381921C84BF000D092BE /* Setlists.storyboard in Resources */,
 				D04607C921CC26F7006A4B88 /* NewSong.storyboard in Resources */,
+				67F9DA7F21E900FD001D9134 /* EditEvent.storyboard in Resources */,
 				D0A9CB5B21C18D7E00E83D9D /* Main.storyboard in Resources */,
 				D063195F21CAC35000CF40A9 /* SelectedSong.storyboard in Resources */,
 				915E102621BB7A7300158899 /* Assets.xcassets in Resources */,
@@ -432,6 +439,7 @@
 				675A8D8F21CAC50C00C5A377 /* Instrument.swift in Sources */,
 				6704A16E21E65E8B007115D3 /* EditSongViewController.swift in Sources */,
 				676CEE7A21C83AD700961015 /* OneSetlistViewController.swift in Sources */,
+				67F9DA8121E90165001D9134 /* EditEventViewController.swift in Sources */,
 				67D5BB1E21C16C570058BCC7 /* FeedViewController.swift in Sources */,
 				676CEE8121C843C400961015 /* BandInfoViewController.swift in Sources */,
 				915E101F21BB7A7200158899 /* AppDelegate.swift in Sources */,
