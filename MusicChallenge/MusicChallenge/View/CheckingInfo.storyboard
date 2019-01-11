@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Checking Info View Controller-->
         <scene sceneID="hyq-Dx-T7T">
             <objects>
-                <viewController id="6sS-cB-ZBP" sceneMemberID="viewController">
+                <viewController id="6sS-cB-ZBP" customClass="CheckingInfoViewController" customModule="MusicChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5VX-vA-Fia">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,6 +63,7 @@
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Concluir"/>
                                 <connections>
+                                    <action selector="register:" destination="6sS-cB-ZBP" eventType="touchUpInside" id="ClW-ss-IUe"/>
                                     <segue destination="aRz-JP-7HH" kind="show" id="WhZ-Mu-b8x"/>
                                 </connections>
                             </button>
@@ -80,10 +81,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yc6-Mw-KQu">
-                                <rect key="frame" x="39" y="301" width="375" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zDF-OD-Wj0">
                                 <rect key="frame" x="133" y="348" width="201" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -91,10 +88,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instrumento(s):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naL-Or-GbF">
+                                <rect key="frame" x="40" y="459" width="118" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yc6-Mw-KQu">
+                                <rect key="frame" x="39" y="360" width="375" height="98"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ja1-Ed-yK3"/>
                     </view>
+                    <connections>
+                        <outlet property="pickerView" destination="Yc6-Mw-KQu" id="Jwm-hL-rPR"/>
+                        <outlet property="txtAge" destination="zDF-OD-Wj0" id="LuN-wg-FJy"/>
+                        <outlet property="txtEmail" destination="CMk-Df-oUC" id="lMG-Vg-Twq"/>
+                        <outlet property="txtName" destination="sGE-zk-FEw" id="tIY-Ua-5Y8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ONa-hc-o0Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

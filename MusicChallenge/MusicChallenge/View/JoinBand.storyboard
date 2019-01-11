@@ -42,6 +42,9 @@
                                 <state key="normal" title="Criar">
                                     <color key="titleColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="NqP-Rg-0Qn" kind="show" id="tlJ-v0-ODG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A74-J6-Ohv">
                                 <rect key="frame" x="141" y="394" width="92" height="46"/>
@@ -52,6 +55,9 @@
                                 <state key="normal" title="Entrar">
                                     <color key="titleColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="8KF-AD-6U4" kind="show" id="p7b-r6-E0G"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4CK-he-RFI">
                                 <rect key="frame" x="87" y="340" width="201" height="30"/>
@@ -87,18 +93,18 @@
             </objects>
             <point key="canvasLocation" x="103" y="125"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--Band-->
         <scene sceneID="wDg-tD-q0a">
             <objects>
-                <viewControllerPlaceholder id="8KF-AD-6U4" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Band" id="8KF-AD-6U4" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GoE-Wt-cv3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="797" y="-24"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--EditBand-->
         <scene sceneID="4GM-5b-i2X">
             <objects>
-                <viewControllerPlaceholder id="NqP-Rg-0Qn" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="EditBand" id="NqP-Rg-0Qn" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vqg-Xb-ida" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="857" y="321"/>
