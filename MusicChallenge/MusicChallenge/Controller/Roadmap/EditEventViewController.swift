@@ -21,10 +21,32 @@ class EditEventViewController: UIViewController {
     @IBOutlet var addSetlistButton: UIButton!
     @IBOutlet var setlistImage: UIImageView!
     
+    var event: Event!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         datePicker.setValue(UIColor.white, forKey: "textColor")
+        
+        locationField.text = event.location
+        nameField.text = event.name
+        datePicker.date = event.date
+        
+        if event.associatedSetlist == nil {
+            setlistLabel.text = "Sem setlist atrelada!"
+            addSetlistButton.titleLabel?.text = "Adicionar setlist"
+            setlistSongQtd.isHidden = true
+            changeButton.isHidden = true
+            removeButton.isHidden = true
+            setlistImage.isHidden = true
+            setlistName.isHidden = true
+        }
+        else {
+            setlistLabel.text = "Setlist:"
+            addSetlistButton.isHidden = true
+            setlistSongQtd.text = "\(event.associatedSetlist?.songs.count ?? 0) músicas"
+            setlistName.text = event.associatedSetlist?.name
+        }
         
         
         // Do any additional setup after loading the view.
