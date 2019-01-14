@@ -45,6 +45,7 @@
 		67D5BB1E21C16C570058BCC7 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BB1D21C16C570058BCC7 /* FeedViewController.swift */; };
 		67D5BB2021C173D40058BCC7 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BB1F21C173D40058BCC7 /* PostViewController.swift */; };
 		67F4079B21E92B53009F85C3 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F4079A21E92B53009F85C3 /* NewEventViewController.swift */; };
+		67F4269921ED11CA002E2BB9 /* SetlistCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67F4269821ED11CA002E2BB9 /* SetlistCollectionViewCell.xib */; };
 		67F9DA7B21E7B3EF001D9134 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F9DA7A21E7B3EF001D9134 /* Event.storyboard */; };
 		67F9DA7D21E7B54D001D9134 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F9DA7C21E7B54D001D9134 /* EventViewController.swift */; };
 		67F9DA7F21E900FD001D9134 /* EditEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F9DA7E21E900FD001D9134 /* EditEvent.storyboard */; };
@@ -113,6 +114,7 @@
 		67D5BB1F21C173D40058BCC7 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		67F4079721E92B1D009F85C3 /* NewEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewEvent.storyboard; sourceTree = "<group>"; };
 		67F4079A21E92B53009F85C3 /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
+		67F4269821ED11CA002E2BB9 /* SetlistCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetlistCollectionViewCell.xib; sourceTree = "<group>"; };
 		67F9DA7A21E7B3EF001D9134 /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
 		67F9DA7C21E7B54D001D9134 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		67F9DA7E21E900FD001D9134 /* EditEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditEvent.storyboard; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 				D092381A21C84C0900D092BE /* Repertoire.storyboard */,
 				D02F2D0E21BEE4530090043A /* Band.storyboard */,
 				6750E8E421CC122900A193AE /* RepertoireTableViewCell.xib */,
+				67F4269821ED11CA002E2BB9 /* SetlistCollectionViewCell.xib */,
 				D054FB7721E684F5004D3132 /* FetchingInfo.storyboard */,
 				D054FB7921E68587004D3132 /* CheckingInfo.storyboard */,
 				D054FB7B21E68733004D3132 /* JoinBand.storyboard */,
@@ -417,6 +420,7 @@
 				6704A16C21E65DC1007115D3 /* EditSetlist.storyboard in Resources */,
 				D092380D21C837DA00D092BE /* squealer.ttf in Resources */,
 				D054FB7C21E68733004D3132 /* JoinBand.storyboard in Resources */,
+				67F4269921ED11CA002E2BB9 /* SetlistCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
