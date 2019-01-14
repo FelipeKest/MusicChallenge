@@ -16,6 +16,7 @@ class RoadmapTableViewCell: UITableViewCell {
     @IBOutlet var location: UILabel!
     @IBOutlet var horario: UILabel!
     @IBOutlet var setlist: UILabel!
+    @IBOutlet var eventTypeImage: UIImageView!
     //@IBOutlet var numberOfSetlistSongs: UILabel!
 
     override func awakeFromNib() {

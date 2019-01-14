@@ -39,4 +39,24 @@ enum InstrumentTypes {
     }
 }
 
+enum EventTypes {
+    case Rehearsal
+    case Show
+    
+    var image: UIImage {
+        switch self {
+        case .Rehearsal: return UIImage(named: "storage1.png")!
+        case .Show: return UIImage(named: "stage1.png")!
+        }
+    }
+    
+    var text: String{
+        switch self {
+        case .Rehearsal: return "Ensaio"
+        case .Show: return "Show"
+        }
+        
+    }
+}
+
 

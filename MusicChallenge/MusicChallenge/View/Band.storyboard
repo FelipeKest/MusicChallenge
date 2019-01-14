@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R60-1e-IR6">
-                                <rect key="frame" x="0.0" y="20" width="375" height="586"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="musical-instruments" translatesAutoresizingMaskIntoConstraints="NO" id="pqe-hT-fsN">
                                         <rect key="frame" x="0.0" y="8" width="375" height="186"/>
@@ -32,47 +32,24 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="58" id="jsn-eH-hlp"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="35"/>
+                                        <color key="textColor" red="0.80000000000000004" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAX-Z1-ern">
+                                        <rect key="frame" x="34" y="560" width="307" height="20"/>
+                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formada em:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8r-u4-Ajb">
-                                        <rect key="frame" x="37" y="394" width="108" height="21"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gênero: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5O-1c-KDB">
-                                        <rect key="frame" x="37" y="431" width="69" height="21"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Membros:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gF5-zc-dV1">
-                                        <rect key="frame" x="146" y="463" width="83" height="21"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xeY-VW-W8r">
-                                        <rect key="frame" x="337" y="166" width="30" height="28"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="28" id="4Si-iY-tpK"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="25"/>
-                                        <state key="normal" title="...">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="titleShadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="DaY-D2-fur">
                                         <rect key="frame" x="34" y="255" width="307" height="124"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="124" id="sB6-ng-i5L"/>
                                         </constraints>
-                                        <string key="text">Bio: Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation </string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7dj-60-l70">
@@ -86,33 +63,45 @@
                                             <segue destination="QRO-kI-UDD" kind="show" id="biD-f3-prH"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWa-uz-hBJ">
-                                        <rect key="frame" x="299" y="431" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Tb-Rw-J0l">
-                                        <rect key="frame" x="299" y="394" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAX-Z1-ern">
-                                        <rect key="frame" x="34" y="557" width="307" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z12-Q9-r3Y">
-                                        <rect key="frame" x="34" y="528" width="307" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="34" y="532" width="307" height="20"/>
+                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNC-7p-5yU">
-                                        <rect key="frame" x="34" y="499" width="307" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="34" y="504" width="307" height="20"/>
+                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formada em:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8r-u4-Ajb">
+                                        <rect key="frame" x="37" y="394" width="112.5" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                        <color key="textColor" red="0.80000000000000004" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gênero: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5O-1c-KDB">
+                                        <rect key="frame" x="37" y="433.5" width="70" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                        <color key="textColor" red="0.80000000000000004" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Membros:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gF5-zc-dV1">
+                                        <rect key="frame" x="145.5" y="465.5" width="84.5" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                        <color key="textColor" red="0.80000000000000004" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWa-uz-hBJ">
+                                        <rect key="frame" x="301" y="436.5" width="40" height="20"/>
+                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Tb-Rw-J0l">
+                                        <rect key="frame" x="301" y="397" width="40" height="20"/>
+                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -130,7 +119,6 @@
                                     <constraint firstItem="4Tb-Rw-J0l" firstAttribute="trailing" secondItem="YWa-uz-hBJ" secondAttribute="trailing" id="Kur-EP-M3h"/>
                                     <constraint firstItem="o8r-u4-Ajb" firstAttribute="baseline" secondItem="4Tb-Rw-J0l" secondAttribute="baseline" id="LAE-cR-EE3"/>
                                     <constraint firstItem="DaY-D2-fur" firstAttribute="top" secondItem="pqe-hT-fsN" secondAttribute="bottom" constant="61" id="MqH-hn-uRV"/>
-                                    <constraint firstItem="RK8-Zp-EoM" firstAttribute="top" secondItem="xeY-VW-W8r" secondAttribute="bottom" constant="8" symbolic="YES" id="RHf-bd-PZH"/>
                                     <constraint firstItem="RK8-Zp-EoM" firstAttribute="leading" secondItem="R60-1e-IR6" secondAttribute="leading" constant="34" id="Sdh-ay-vcS"/>
                                     <constraint firstItem="pqe-hT-fsN" firstAttribute="leading" secondItem="R60-1e-IR6" secondAttribute="leading" id="Sst-EV-lb3"/>
                                     <constraint firstItem="z12-Q9-r3Y" firstAttribute="trailing" secondItem="VAX-Z1-ern" secondAttribute="trailing" id="TO0-gK-b3x"/>
@@ -143,7 +131,6 @@
                                     <constraint firstItem="pqe-hT-fsN" firstAttribute="centerX" secondItem="R60-1e-IR6" secondAttribute="centerX" id="dNA-Ra-ZYA"/>
                                     <constraint firstItem="DaY-D2-fur" firstAttribute="leading" secondItem="bNC-7p-5yU" secondAttribute="leading" id="dta-r7-uG7"/>
                                     <constraint firstItem="RK8-Zp-EoM" firstAttribute="leading" secondItem="DaY-D2-fur" secondAttribute="leading" id="f1k-LU-BfW"/>
-                                    <constraint firstItem="xeY-VW-W8r" firstAttribute="trailing" secondItem="R60-1e-IR6" secondAttribute="trailingMargin" id="fWV-7c-VRd"/>
                                     <constraint firstItem="z12-Q9-r3Y" firstAttribute="leading" secondItem="VAX-Z1-ern" secondAttribute="leading" id="hit-wv-lJY"/>
                                     <constraint firstItem="YWa-uz-hBJ" firstAttribute="trailing" secondItem="bNC-7p-5yU" secondAttribute="trailing" id="ihP-pn-0eF"/>
                                     <constraint firstItem="DaY-D2-fur" firstAttribute="trailing" secondItem="4Tb-Rw-J0l" secondAttribute="trailing" id="kcL-kL-6Gw"/>
@@ -158,9 +145,12 @@
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="R60-1e-IR6" firstAttribute="leading" secondItem="hYg-xa-DJw" secondAttribute="leading" id="66p-Px-Ajf"/>
+                            <constraint firstItem="R60-1e-IR6" firstAttribute="bottom" secondItem="hYg-xa-DJw" secondAttribute="bottom" id="7Hr-Qs-Wye"/>
+                            <constraint firstItem="R60-1e-IR6" firstAttribute="leading" secondItem="hYg-xa-DJw" secondAttribute="leading" id="GZu-Dc-P03"/>
                             <constraint firstItem="R60-1e-IR6" firstAttribute="trailing" secondItem="hYg-xa-DJw" secondAttribute="trailing" id="IOc-hw-2BW"/>
+                            <constraint firstItem="R60-1e-IR6" firstAttribute="top" secondItem="hYg-xa-DJw" secondAttribute="top" id="KZH-4c-5Xf"/>
                             <constraint firstItem="R60-1e-IR6" firstAttribute="top" secondItem="hYg-xa-DJw" secondAttribute="top" id="MHe-Tf-jVx"/>
-                            <constraint firstItem="hYg-xa-DJw" firstAttribute="bottom" secondItem="R60-1e-IR6" secondAttribute="bottom" constant="12" id="y6i-zM-0rl"/>
+                            <constraint firstItem="R60-1e-IR6" firstAttribute="trailing" secondItem="hYg-xa-DJw" secondAttribute="trailing" id="xmj-cX-Zwj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hYg-xa-DJw"/>
                     </view>
