@@ -35,4 +35,9 @@ class Setlist:GenericProtocolClass {
         self.creator = asDictionary["creator"] as! Musician
         super.init(id: asDictionary["id"] as? String)
     }
+    
+    required init(from decoder: Decoder) throws {
+        fatalError("init(from:) has not been implemented")
+    }
 }
+

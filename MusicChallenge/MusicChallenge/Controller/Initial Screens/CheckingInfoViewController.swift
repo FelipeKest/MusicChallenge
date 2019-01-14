@@ -16,7 +16,7 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var txtAge: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
     
-    var gender = ["Feminino", "Masculino"]
+    var instruments = [Instrument.Bass.text,Instrument.Drums.text,Instrument.Guitar.text,Instrument.Others.text,Instrument.Singer.text]
 
     
     
@@ -34,11 +34,11 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.gender.count
+        return self.instruments.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return self.gender[row]
+        return self.instruments[row]
     }
 
     
@@ -49,7 +49,7 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
         let row = self.pickerView.selectedRow(inComponent: 0)
         
         print(row)
-        print(self.gender[row])
+        print(self.instruments[row])
         
         
     }

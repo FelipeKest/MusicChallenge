@@ -34,6 +34,7 @@
 		915E101F21BB7A7200158899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915E101E21BB7A7200158899 /* AppDelegate.swift */; };
 		915E102621BB7A7300158899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 915E102521BB7A7300158899 /* Assets.xcassets */; };
 		915E102921BB7A7300158899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 915E102721BB7A7300158899 /* LaunchScreen.storyboard */; };
+		917DBFB221ECEE04002433DE /* BrianTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917DBFB121ECEE04002433DE /* BrianTest.swift */; };
 		91A9283521E926A700EDF529 /* CKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A9283321E926A700EDF529 /* CKExtensions.swift */; };
 		91A9283621E926A700EDF529 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A9283421E926A700EDF529 /* DAO.swift */; };
 		91A9284221E926E800EDF529 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A9283721E926E700EDF529 /* Event.swift */; };
@@ -47,6 +48,7 @@
 		91A9284A21E926E800EDF529 /* ModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A9283F21E926E800EDF529 /* ModelProtocols.swift */; };
 		91A9284B21E926E800EDF529 /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A9284021E926E800EDF529 /* Extenstions.swift */; };
 		91A9284C21E926E800EDF529 /* Musician.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A9284121E926E800EDF529 /* Musician.swift */; };
+		91A9285021E9427500EDF529 /* CodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A9284F21E9427500EDF529 /* CodableExtensions.swift */; };
 		D02F2D0D21BEE2240090043A /* Roadmap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02F2D0C21BEE2240090043A /* Roadmap.storyboard */; };
 		D02F2D0F21BEE4530090043A /* Band.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02F2D0E21BEE4530090043A /* Band.storyboard */; };
 		D04607C921CC26F7006A4B88 /* NewSong.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D04607C821CC26F7006A4B88 /* NewSong.storyboard */; };
@@ -98,6 +100,7 @@
 		915E102521BB7A7300158899 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		915E102821BB7A7300158899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		915E102A21BB7A7300158899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		917DBFB121ECEE04002433DE /* BrianTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrianTest.swift; sourceTree = "<group>"; };
 		91A9283321E926A700EDF529 /* CKExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKExtensions.swift; sourceTree = "<group>"; };
 		91A9283421E926A700EDF529 /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		91A9283721E926E700EDF529 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -111,6 +114,7 @@
 		91A9283F21E926E800EDF529 /* ModelProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelProtocols.swift; sourceTree = "<group>"; };
 		91A9284021E926E800EDF529 /* Extenstions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
 		91A9284121E926E800EDF529 /* Musician.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Musician.swift; sourceTree = "<group>"; };
+		91A9284F21E9427500EDF529 /* CodableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableExtensions.swift; sourceTree = "<group>"; };
 		D02F2D0C21BEE2240090043A /* Roadmap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Roadmap.storyboard; sourceTree = "<group>"; };
 		D02F2D0E21BEE4530090043A /* Band.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Band.storyboard; sourceTree = "<group>"; };
 		D04607C821CC26F7006A4B88 /* NewSong.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewSong.storyboard; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				676DD52621C98D5500049130 /* CustomSegmentedContrl.swift */,
+				917DBFB121ECEE04002433DE /* BrianTest.swift */,
 				676DD52421C98CB600049130 /* SongsViewController.swift */,
 				6704A16D21E65E8B007115D3 /* EditSongViewController.swift */,
 				676CEE7521C838EC00961015 /* CreateSongViewController.swift */,
@@ -283,6 +288,7 @@
 			children = (
 				91A9283321E926A700EDF529 /* CKExtensions.swift */,
 				91A9283421E926A700EDF529 /* DAO.swift */,
+				91A9284F21E9427500EDF529 /* CodableExtensions.swift */,
 			);
 			path = CloudKit;
 			sourceTree = "<group>";
@@ -432,6 +438,7 @@
 				D0EE7DFD21CD6B2C00DDA7C9 /* CreateSetlistViewController.swift in Sources */,
 				6704A17021E65EA1007115D3 /* EditSetlistViewController.swift in Sources */,
 				91A9284521E926E800EDF529 /* Setlist.swift in Sources */,
+				91A9285021E9427500EDF529 /* CodableExtensions.swift in Sources */,
 				D0659B2E21E9133D00099B8C /* CheckingInfoViewController.swift in Sources */,
 				6777852021C77591002DAB83 /* RepertoireViewController.swift in Sources */,
 				6777852921C7B953002DAB83 /* RepertoireTableViewCell.swift in Sources */,
@@ -445,6 +452,7 @@
 				91A9284A21E926E800EDF529 /* ModelProtocols.swift in Sources */,
 				91A9283521E926A700EDF529 /* CKExtensions.swift in Sources */,
 				67D5BB1C21C168B10058BCC7 /* SetlistsViewController.swift in Sources */,
+				917DBFB221ECEE04002433DE /* BrianTest.swift in Sources */,
 				676DD52521C98CB600049130 /* SongsViewController.swift in Sources */,
 				6704A16E21E65E8B007115D3 /* EditSongViewController.swift in Sources */,
 				91A9284721E926E800EDF529 /* GenericProtocolClassCloud.swift in Sources */,

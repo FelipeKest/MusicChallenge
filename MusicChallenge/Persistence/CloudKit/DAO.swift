@@ -16,9 +16,15 @@ protocol CurrentUserObserver {
     func currentUserChanged()
 }
 
-class dao{
+protocol UserStatusDelegate {
+    var userHasLogged: Bool? {get set}
+}
+
+class dao: UserStatusDelegate{
+    var userHasLogged: Bool?
+    
     static let instance = dao()
-    public var currentUserObserver: CurrentUserObserver?
+    public var currentUserObserver: CurrentUserObserver?    
     private var database:CKDatabase?
     private let container = CKContainer(identifier: "iCloud.FelipeKestelman.MusicChallenge")
     
@@ -504,21 +510,24 @@ class dao{
                         if userRecord == nil {
                             //Usuario nao existe
                             print("Usuario nao Existe")
-                            self.createMusician(musician: Musician(name: "Guilherme", age: 25, instruments:[],band:Band(), id: userRecordName), completionHandler: { (currentUserRecord, error) in
-                                if error != nil {
-                                    print(error?.localizedDescription as Any)
-                                    return
-                                } else {
-                                    print("criando musico pela primeira vez")
-                                    guard let currentUser = currentUserRecord?.asMusician else {return}
-                                    SessionManager.currentUser = currentUser
-                                    completionHandler(currentUserRecord,nil)
-                                }})
+//                            self.createMusician(musician: Musician(name: "Guilherme", age: 25, instruments:[],band:Band(), id: userRecordName), completionHandler: { (currentUserRecord, error) in
+//                                if error != nil {
+//                                    print(error?.localizedDescription as Any)
+//                                    return
+//                                } else {
+//                                    print("criando musico pela primeira vez")
+//                                    guard let currentUser = currentUserRecord?.asMusician else {return}
+//                                    SessionManager.currentUser = currentUser
+//                                    completionHandler(currentUserRecord,nil)
+//                                }})
+                            self.userHasLogged = false
+                            completionHandler(nil,nil)
                         } else {
                             // Usuario ja Existe
                             print("record existe")
                             guard let user = userRecord?.asMusician else {return}
                             SessionManager.currentUser = user
+                            self.userHasLogged = true
                             completionHandler(userRecord,nil)
                         }
                     }

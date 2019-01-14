@@ -12,28 +12,31 @@ protocol LoginManager {
     func getCurrentUser(completionHandler: @escaping(Musician?,Error?)->Void)
 }
 
+typealias MusicianCompletion = (Musician?,Error?)->Void
 let SessionManager = sessionManager.instance
 
 class sessionManager: LoginManager {
+    var userHasLoged: Bool?
     static let instance = sessionManager()
     public var currentUserID: String?
     public var currentUser: Musician?
+    
 //    public var currentBandID: String?
     
     private init (){
-        //        getCurrentUserBandID(userRecord: CKRecord(recordType: "Users", recordID: CKRecord.ID(recordName: self.currentUserID))) { (bandID, error) in
-        //            if error != nil {
-        //                print(error?.localizedDescription as Any)
-        //                return
-        //            } else {
-        //                self.currentBandID = bandID!
-        //            }
-        //        }
+        getCurrentUser { (musician, error) in
+            if error != nil {
+                return
+            }
+            if let musician = musician {
+                self.currentUser = musician
+            }
+        }
     }
 
     
     
-    func getCurrentUser(completionHandler: @escaping(Musician?,Error?)->Void){
+    func getCurrentUser(completionHandler: @escaping(MusicianCompletion)){
         DAO.fetchCurrentUser { (userRecord, error) in
             if error != nil {
                 print(error?.localizedDescription as Any)
@@ -42,10 +45,8 @@ class sessionManager: LoginManager {
                 return
             } else {
                 if let userRecord = userRecord {
-                    self.currentUserID = userRecord.recordID.recordName
 //                    self.currentBandID = userRecord.value(forKey: "bandID") as? String
                     let musicianUser = userRecord.asMusician// Musician(asDictionary: userRecord.asDictionary)
-                    self.currentUser = musicianUser
                     completionHandler(musicianUser,error)
                     print("recuperei musico ja criado")
                 } else {

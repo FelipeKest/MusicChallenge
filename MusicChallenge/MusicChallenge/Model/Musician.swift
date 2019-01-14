@@ -78,4 +78,8 @@ class Musician:GenericProtocolClass {
     convenience init (){
         self.init(name: "Convenience Musician", age: 0, instruments: [],band:Band(), id: "Convenience")
     }
+    
+    required init(from decoder: Decoder) throws {
+        fatalError("init(from:) has not been implemented")
+    }
 }

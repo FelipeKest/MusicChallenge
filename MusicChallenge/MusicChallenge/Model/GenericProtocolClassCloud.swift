@@ -8,7 +8,7 @@
 
 import Foundation
 
-class GenericProtocolClass: Saveable,Loadable {
+class GenericProtocolClass: Saveable,Loadable, Codable {
    
     var id: String?
     

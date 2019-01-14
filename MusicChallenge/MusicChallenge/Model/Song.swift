@@ -54,4 +54,8 @@ class Song:GenericProtocolClass {
         self.init(name: "Convenience Song", creator: Musician(), id: "Convenience Id")
     }
     
+    required init(from decoder: Decoder) throws {
+        fatalError("init(from:) has not been implemented")
+    }
+    
 }

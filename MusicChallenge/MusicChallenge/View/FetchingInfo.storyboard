@@ -18,11 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ap7-52-6hd">
-                                <rect key="frame" x="177" y="397" width="20" height="20"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ap7-52-6hd">
+                                <rect key="frame" x="177" y="397" width="21" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="21" id="zcL-zm-qY8"/>
+                                </constraints>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Obtendo informações do iCloud" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czR-hm-N4y">
-                                <rect key="frame" x="65" y="323" width="244" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Obtendo informações do iCloud" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czR-hm-N4y">
+                                <rect key="frame" x="65" y="323" width="245" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -37,16 +40,17 @@
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Bvu-pQ-nVe" firstAttribute="leading" secondItem="Taj-ee-dcP" secondAttribute="leading" constant="91" id="23l-xt-GMU"/>
-                            <constraint firstItem="czR-hm-N4y" firstAttribute="top" secondItem="Bvu-pQ-nVe" secondAttribute="bottom" constant="20" id="2YY-11-aun"/>
+                            <constraint firstItem="czR-hm-N4y" firstAttribute="top" secondItem="Bvu-pQ-nVe" secondAttribute="bottom" constant="19" id="2YY-11-aun"/>
+                            <constraint firstItem="Taj-ee-dcP" firstAttribute="bottom" secondItem="ap7-52-6hd" secondAttribute="bottom" constant="250" id="7MS-hc-Aui"/>
                             <constraint firstItem="Bvu-pQ-nVe" firstAttribute="top" secondItem="Taj-ee-dcP" secondAttribute="top" constant="97" id="8d9-u3-3In"/>
                             <constraint firstItem="Bvu-pQ-nVe" firstAttribute="centerX" secondItem="gPg-Pb-JJR" secondAttribute="centerX" id="CEN-Xd-wz5"/>
-                            <constraint firstItem="Taj-ee-dcP" firstAttribute="bottom" secondItem="ap7-52-6hd" secondAttribute="bottom" constant="250" id="Iw4-Ke-5Td"/>
+                            <constraint firstItem="ap7-52-6hd" firstAttribute="top" secondItem="czR-hm-N4y" secondAttribute="bottom" constant="53" id="KaU-ul-R93"/>
+                            <constraint firstItem="ap7-52-6hd" firstAttribute="leading" secondItem="Taj-ee-dcP" secondAttribute="leading" constant="177" id="NRl-Ch-BKM"/>
+                            <constraint firstItem="ap7-52-6hd" firstAttribute="centerX" secondItem="gPg-Pb-JJR" secondAttribute="centerX" id="POp-1R-Xil"/>
                             <constraint firstItem="Bvu-pQ-nVe" firstAttribute="centerX" secondItem="czR-hm-N4y" secondAttribute="centerX" id="ZsB-iT-dcZ"/>
-                            <constraint firstItem="ap7-52-6hd" firstAttribute="leading" secondItem="Taj-ee-dcP" secondAttribute="leading" constant="177" id="a1m-By-p7P"/>
-                            <constraint firstItem="czR-hm-N4y" firstAttribute="centerX" secondItem="ap7-52-6hd" secondAttribute="centerX" id="p6t-XF-r1M"/>
                             <constraint firstItem="czR-hm-N4y" firstAttribute="leading" secondItem="Taj-ee-dcP" secondAttribute="leading" constant="65" id="tZA-se-xAu"/>
                             <constraint firstItem="czR-hm-N4y" firstAttribute="centerY" secondItem="gPg-Pb-JJR" secondAttribute="centerY" id="vVB-O9-LA0"/>
-                            <constraint firstItem="ap7-52-6hd" firstAttribute="top" secondItem="czR-hm-N4y" secondAttribute="bottom" constant="53" id="xpI-qN-LIv"/>
+                            <constraint firstItem="ap7-52-6hd" firstAttribute="centerX" secondItem="czR-hm-N4y" secondAttribute="centerX" id="yuu-hY-Rc4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Taj-ee-dcP"/>
                     </view>

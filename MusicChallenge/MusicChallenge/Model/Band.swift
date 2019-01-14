@@ -59,6 +59,10 @@ class Band:GenericProtocolClass {
         self.init(name: "Convieniece", members: [], id: "")
     }
     
+    required init(from decoder: Decoder) throws {
+        fatalError("init(from:) has not been implemented")
+    }
+    
 }
 
 
