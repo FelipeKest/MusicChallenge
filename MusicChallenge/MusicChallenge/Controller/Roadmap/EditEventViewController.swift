@@ -33,7 +33,7 @@ class EditEventViewController: UIViewController {
         datePicker.date = event.date
         
         if event.associatedSetlist == nil {
-            setlistLabel.text = "Sem setlist atrelada!"
+            setlistLabel.isHidden = true
             addSetlistButton.titleLabel?.text = "Adicionar setlist"
             setlistSongQtd.isHidden = true
             changeButton.isHidden = true

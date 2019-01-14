@@ -9,9 +9,40 @@
 import UIKit
 
 class NewEventViewController: UIViewController {
-
+    
+    @IBOutlet var locationField: UITextField!
+    @IBOutlet var nameField: UITextField!
+    @IBOutlet var datePicker: UIDatePicker!
+    @IBOutlet var setlistLabel: UILabel!
+    @IBOutlet var setlistName: UILabel!
+    @IBOutlet var setlistSongQtd: UILabel!
+    @IBOutlet var changeButton: UIButton!
+    @IBOutlet var removeButton: UIButton!
+    @IBOutlet var addSetlistButton: UIButton!
+    @IBOutlet var setlistImage: UIImageView!
+    
+    var newEvent: Event?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        datePicker.setValue(UIColor.white, forKey: "textColor")
+        
+        if newEvent?.associatedSetlist == nil {
+            setlistLabel.isHidden = true
+            addSetlistButton.titleLabel?.text = "Adicionar setlist"
+            setlistSongQtd.isHidden = true
+            changeButton.isHidden = true
+            removeButton.isHidden = true
+            setlistImage.isHidden = true
+            setlistName.isHidden = true
+        }
+        else {
+            setlistLabel.text = "Setlist:"
+            addSetlistButton.isHidden = true
+            setlistSongQtd.text = "\(newEvent?.associatedSetlist?.songs.count ?? 0) músicas"
+            setlistName.text = newEvent?.associatedSetlist?.name
+        }
 
         // Do any additional setup after loading the view.
     }

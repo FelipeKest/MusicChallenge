@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -129,6 +130,18 @@
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="vix-mJ-vES"/>
                     </view>
+                    <connections>
+                        <outlet property="addSetlistButton" destination="zmU-iW-r1U" id="QXh-N3-qhD"/>
+                        <outlet property="changeButton" destination="qTd-yD-5X9" id="55F-WW-c1l"/>
+                        <outlet property="datePicker" destination="2KK-mM-pcL" id="hRM-4i-Du5"/>
+                        <outlet property="locationField" destination="smu-cB-Dp7" id="RTg-JM-5KE"/>
+                        <outlet property="nameField" destination="jQ9-Yk-OFv" id="Gsq-Vf-zew"/>
+                        <outlet property="removeButton" destination="TXh-wM-p0J" id="QGz-PO-YDo"/>
+                        <outlet property="setlistImage" destination="NW1-8x-XS8" id="StY-ZJ-ofS"/>
+                        <outlet property="setlistLabel" destination="rcH-z2-dJ1" id="fUH-Dc-l4d"/>
+                        <outlet property="setlistName" destination="Yxg-Ld-KGm" id="rlV-Qh-jnG"/>
+                        <outlet property="setlistSongQtd" destination="8a4-az-yTb" id="5IT-sy-wN6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SaS-0x-dVa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
