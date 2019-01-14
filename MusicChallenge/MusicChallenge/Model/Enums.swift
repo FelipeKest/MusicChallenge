@@ -23,7 +23,7 @@ enum Instrument{
         case .Bass: return UIImage(named: "Bass.png")!
         case .Drums: return UIImage(named: "Drums.png")!
         case .Guitar: return UIImage(named: "Guitar.png")!
-        case .Singer: return UIImage(named: "voz.png")!
+        case .Singer: return UIImage(named: "Vocals.png")!
         case .Others: return UIImage(named: "Others.png")!
         }
     }

@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Join Band View Controller-->
         <scene sceneID="J3C-ye-hxX">
             <objects>
-                <viewController id="c5R-Nv-Ikh" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JoinBand" useStoryboardIdentifierAsRestorationIdentifier="YES" id="c5R-Nv-Ikh" customClass="JoinBandViewController" customModule="MusicChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1qv-9m-qu4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,10 +93,10 @@
             </objects>
             <point key="canvasLocation" x="103" y="125"/>
         </scene>
-        <!--Band-->
+        <!--Main-->
         <scene sceneID="wDg-tD-q0a">
             <objects>
-                <viewControllerPlaceholder storyboardName="Band" id="8KF-AD-6U4" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Main" id="8KF-AD-6U4" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GoE-Wt-cv3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="797" y="-24"/>

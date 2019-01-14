@@ -16,7 +16,7 @@ class Musician:GenericProtocolClass {
     
     static var allReferenced:[String:GenericProtocolClass] = [:]
     
-    init(name: String, age: Int, instruments: [Instrument] = [],band: Band,id: String) {
+    init(name: String, age: Int, instruments: [Instrument] = [],band: Band?,id: String) {
         self.name = name
         self.age = age
         self.instruments = instruments
@@ -41,7 +41,6 @@ class Musician:GenericProtocolClass {
         self.instruments = asDictionary["instruments"] as? [Instrument]
         super.init(id: asDictionary["id"] as? String)
         guard let musicianRecordName = asDictionary["musicianRecordName"] as? String else {return}
-        Musician.allReferenced[musicianRecordName] = self
         
         if let selfBandReference = asDictionary["band"] { //CKReference
 //            DAO.fetchBand(with: selfBandReference.recordID.recordName) { (bandRecord, error) in
@@ -72,7 +71,7 @@ class Musician:GenericProtocolClass {
 //            })
 //
 //        }
-
+        Musician.allReferenced[musicianRecordName] = self
     }
     
     convenience init (){

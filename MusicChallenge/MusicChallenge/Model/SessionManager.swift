@@ -24,14 +24,7 @@ class sessionManager: LoginManager {
 //    public var currentBandID: String?
     
     private init (){
-        getCurrentUser { (musician, error) in
-            if error != nil {
-                return
-            }
-            if let musician = musician {
-                self.currentUser = musician
-            }
-        }
+        
     }
 
     
@@ -47,10 +40,12 @@ class sessionManager: LoginManager {
                 if let userRecord = userRecord {
 //                    self.currentBandID = userRecord.value(forKey: "bandID") as? String
                     let musicianUser = userRecord.asMusician// Musician(asDictionary: userRecord.asDictionary)
-                    completionHandler(musicianUser,error)
+                    SessionManager.currentUser = musicianUser
+                    completionHandler(musicianUser,nil)
                     print("recuperei musico ja criado")
                 } else {
                     print("erro recuperando userID")
+                    completionHandler(nil,nil)
                 }
             }
         }

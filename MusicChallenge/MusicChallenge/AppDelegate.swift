@@ -15,21 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        do {
-            //load e vai pra oUtra tela
-            var user = SessionManager.currentUser ?? Musician()
-            try user.load()
-            window?.rootViewController = BandInfoViewController()
-            //reaload as info da banda pelo cloud tudo
-//            SessionManager.currentUser?.band.update()
-        } catch {
-            // vê se icloud tá logado
-            //se não tiver vai pra tela de la de login, de la onde?
-//            window?.rootViewController = viewcontrollerDeLogin
-        }
-        
         // Override point for customization after application launch.
-        // Ver se ele esta com conexao, tim sem fronteiras
         return true
     }
 

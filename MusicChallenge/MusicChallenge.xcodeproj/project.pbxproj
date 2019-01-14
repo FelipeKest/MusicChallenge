@@ -35,6 +35,7 @@
 		915E102621BB7A7300158899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 915E102521BB7A7300158899 /* Assets.xcassets */; };
 		915E102921BB7A7300158899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 915E102721BB7A7300158899 /* LaunchScreen.storyboard */; };
 		917DBFB221ECEE04002433DE /* BrianTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917DBFB121ECEE04002433DE /* BrianTest.swift */; };
+		917DBFB621ECFC57002433DE /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917DBFB521ECFC57002433DE /* CloudKit.framework */; };
 		91A9283521E926A700EDF529 /* CKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A9283321E926A700EDF529 /* CKExtensions.swift */; };
 		91A9283621E926A700EDF529 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A9283421E926A700EDF529 /* DAO.swift */; };
 		91A9284221E926E800EDF529 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A9283721E926E700EDF529 /* Event.swift */; };
@@ -101,6 +102,8 @@
 		915E102821BB7A7300158899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		915E102A21BB7A7300158899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		917DBFB121ECEE04002433DE /* BrianTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrianTest.swift; sourceTree = "<group>"; };
+		917DBFB321ECFBCF002433DE /* MusicChallenge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MusicChallenge.entitlements; sourceTree = "<group>"; };
+		917DBFB521ECFC57002433DE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		91A9283321E926A700EDF529 /* CKExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKExtensions.swift; sourceTree = "<group>"; };
 		91A9283421E926A700EDF529 /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		91A9283721E926E700EDF529 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -141,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				917DBFB621ECFC57002433DE /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +235,7 @@
 				91A9283121E926A700EDF529 /* Persistence */,
 				915E101D21BB7A7200158899 /* MusicChallenge */,
 				915E101C21BB7A7200158899 /* Products */,
+				917DBFB421ECFC57002433DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -245,6 +250,7 @@
 		915E101D21BB7A7200158899 /* MusicChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				917DBFB321ECFBCF002433DE /* MusicChallenge.entitlements */,
 				915E101E21BB7A7200158899 /* AppDelegate.swift */,
 				91A02DD421BC252D001BC7C6 /* Model */,
 				91AB5B5A21BEC713002862F1 /* View */,
@@ -255,6 +261,14 @@
 				915E102A21BB7A7300158899 /* Info.plist */,
 			);
 			path = MusicChallenge;
+			sourceTree = "<group>";
+		};
+		917DBFB421ECFC57002433DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				917DBFB521ECFC57002433DE /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		91A02DD421BC252D001BC7C6 /* Model */ = {
@@ -370,6 +384,11 @@
 				TargetAttributes = {
 					915E101A21BB7A7200158899 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -604,8 +623,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MusicChallenge/MusicChallenge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CRD27F4QAW;
+				DEVELOPMENT_TEAM = 93LU37KCD9;
 				INFOPLIST_FILE = MusicChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -622,8 +642,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MusicChallenge/MusicChallenge.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CRD27F4QAW;
+				DEVELOPMENT_TEAM = 93LU37KCD9;
 				INFOPLIST_FILE = MusicChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
