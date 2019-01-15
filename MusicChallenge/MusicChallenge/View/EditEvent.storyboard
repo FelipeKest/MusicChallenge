@@ -150,20 +150,11 @@
                         <outlet property="setlistLabel" destination="rcH-z2-dJ1" id="3Cb-3h-dej"/>
                         <outlet property="setlistName" destination="Yxg-Ld-KGm" id="T1j-ak-120"/>
                         <outlet property="setlistSongQtd" destination="8a4-az-yTb" id="rs6-22-NGF"/>
-                        <segue destination="vM0-ED-CRn" kind="show" identifier="ChooseSetlist" id="2j6-gJ-Aic"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SaS-0x-dVa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1591.2" y="28.335832083958024"/>
-        </scene>
-        <!--ChooseSetlist-->
-        <scene sceneID="wQo-9D-U43">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ChooseSetlist" id="vM0-ED-CRn" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Z38-WY-tuh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-863" y="28"/>
         </scene>
     </scenes>
     <resources>

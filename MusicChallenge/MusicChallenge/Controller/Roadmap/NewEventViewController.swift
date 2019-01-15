@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewEventViewController: UIViewController {
+class NewEventViewController: UIViewController , SelectSetlistProtocol{
     
     @IBOutlet var locationField: UITextField!
     @IBOutlet var nameField: UITextField!
@@ -21,15 +21,22 @@ class NewEventViewController: UIViewController {
     @IBOutlet var addSetlistButton: UIButton!
     @IBOutlet var setlistImage: UIImageView!
     
-    var newEvent: Event?
+    var newEventSetlist: Setlist?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         datePicker.setValue(UIColor.white, forKey: "textColor")
         
-        if newEvent?.associatedSetlist == nil {
+        datePicker.date = Date()
+        
+        if newEventSetlist == nil {
             setlistLabel.isHidden = true
+            addSetlistButton.isHidden = false
             addSetlistButton.titleLabel?.text = "Adicionar setlist"
             setlistSongQtd.isHidden = true
             changeButton.isHidden = true
@@ -38,14 +45,23 @@ class NewEventViewController: UIViewController {
             setlistName.isHidden = true
         }
         else {
+            setlistLabel.isHidden = false
             setlistLabel.text = "Setlist:"
+            setlistSongQtd.isHidden = false
+            changeButton.isHidden = false
+            removeButton.isHidden = false
+            setlistImage.isHidden = false
+            setlistName.isHidden = false
             addSetlistButton.isHidden = true
-            setlistSongQtd.text = "\(newEvent?.associatedSetlist?.songs.count ?? 0) músicas"
-            setlistName.text = newEvent?.associatedSetlist?.name
+            setlistSongQtd.text = "\(newEventSetlist?.songs.count ?? 0) músicas"
+            setlistName.text = newEventSetlist?.name
         }
-
-        // Do any additional setup after loading the view.
     }
+    
+    func getSetlist(selectedSetlist: Setlist) {
+        self.newEventSetlist = selectedSetlist
+    }
+    
     
 
     /*
@@ -57,6 +73,43 @@ class NewEventViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func addSetlistButton(_ sender: Any) {
+        print("button pressed")
+        
+        let sb = UIStoryboard(name: "ChooseSetlist", bundle: Bundle.main)
+        
+        let vc = sb.instantiateViewController(withIdentifier: "ChooseSetlistViewController") as! ChooseSetlistViewController
+        
+        vc.delegate = self
+        present(vc, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func changeButton(_ sender: Any) {
+        print("button pressed")
+        
+        let sb = UIStoryboard(name: "ChooseSetlist", bundle: Bundle.main)
+        
+        let vc = sb.instantiateViewController(withIdentifier: "ChooseSetlistViewController") as! ChooseSetlistViewController
+        
+        vc.delegate = self
+        present(vc, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func removeButton(_ sender: Any) {
+        let deleteAlert = UIAlertController(title: nil, message: "Deseja realmente retirar a setlist \(newEventSetlist?.name ?? "ERROR") do evento?", preferredStyle: .alert)
+        
+        let deleteAction = UIAlertAction(title: "Retirar", style: .destructive)
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
+        
+        deleteAlert.addAction(deleteAction)
+        deleteAlert.addAction(cancelAction)
+        
+        self.present(deleteAlert, animated: true, completion: nil)
+    }
+    
     @IBAction func cancelButton(sender: AnyObject) {
         dismiss(animated: true, completion: nil)
     }
