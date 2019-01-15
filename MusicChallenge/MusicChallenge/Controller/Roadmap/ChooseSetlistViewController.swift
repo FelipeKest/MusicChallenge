@@ -175,4 +175,7 @@ class ChooseSetlistViewController: UIViewController, UICollectionViewDataSource,
         self.navigationController?.navigationBar.isHidden = true
     }
     
+    @IBAction func cancelButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }
