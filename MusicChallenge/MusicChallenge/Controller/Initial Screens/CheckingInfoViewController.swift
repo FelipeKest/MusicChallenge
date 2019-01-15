@@ -68,6 +68,33 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
         //Pegar nome e email do icloud
         let name = txtName.text
         let age = txtAge.text
+        
+        guard let realName =  name else {return}
+        guard let strAge = age else {return}
+        
+        guard let realAge = Int(strAge) else {return}
+        
+        let musician = Musician(name: realName, age: realAge, band: nil, id: "")
+        
+        DAO.createMusician(musician: musician) { (error) in
+            if error != nil {
+                print(error?.localizedDescription as Any)
+                return
+            }
+            SessionManager.currentUser = musician
+            SessionManager.currentUserID = musician.id
+            
+            DispatchQueue.main.async {
+                let wantedStoryboard = UIStoryboard(name: "EditBand", bundle: Bundle.main)
+                
+                let vc = wantedStoryboard.instantiateViewController(withIdentifier: "JoinBandViewController")
+                
+                self.present(vc, animated: true, completion: nil)
+            }
+        }
+        
+        
+        
     }
     
     /*

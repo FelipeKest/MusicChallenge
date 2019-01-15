@@ -94,7 +94,7 @@ class dao: UserStatusDelegate{
     }
     
     //MARK: Create Functions
-    func createMusician(musician: Musician, completionHandler: @escaping (CKRecord?,Error?)->Void){
+    func createMusician(musician: Musician, completionHandler: @escaping (Error?)->Void){
         let musicianRecord = CKRecord(recordType: "Musician")
         musicianRecord.setValue(musician.name, forKey: "name")
         musicianRecord.setValue(musician.age, forKey: "age")
@@ -102,7 +102,7 @@ class dao: UserStatusDelegate{
         musicianRecord.setValue(musician.id, forKey: "id")
         database?.save(musicianRecord, completionHandler: { (record, error) in
             if error != nil {
-                completionHandler(nil,error)
+                completionHandler(error)
                 print(error!.localizedDescription)
                 return
             } else {
@@ -112,7 +112,7 @@ class dao: UserStatusDelegate{
                         print(error?.localizedDescription as Any)
                         return
                     }
-                    completionHandler(recordWithRecordName,nil)
+                    completionHandler(nil)
                 })
             }
         })

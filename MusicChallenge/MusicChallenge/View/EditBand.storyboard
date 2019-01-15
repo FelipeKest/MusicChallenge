@@ -18,10 +18,10 @@
             </objects>
             <point key="canvasLocation" x="494" y="143"/>
         </scene>
-        <!--View Controller-->
+        <!--JoinBandViewController-->
         <scene sceneID="YD7-R9-hAi">
             <objects>
-                <viewController id="7jM-Rg-yf0" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JoinBandViewController" title="JoinBandViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7jM-Rg-yf0" customClass="JoinBandViewController" customModule="MusicChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MLJ-L7-Ffr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

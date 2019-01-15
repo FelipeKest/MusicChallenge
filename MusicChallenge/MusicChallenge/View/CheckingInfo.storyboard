@@ -64,7 +64,6 @@
                                 <state key="normal" title="Concluir"/>
                                 <connections>
                                     <action selector="register:" destination="6sS-cB-ZBP" eventType="touchUpInside" id="ClW-ss-IUe"/>
-                                    <segue destination="aRz-JP-7HH" kind="show" id="WhZ-Mu-b8x"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Idade:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nF1-qd-8yg">
@@ -106,14 +105,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ONa-hc-o0Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-268" y="78.710644677661179"/>
-        </scene>
-        <!--JoinBand-->
-        <scene sceneID="QK4-dO-hd4">
-            <objects>
-                <viewControllerPlaceholder storyboardName="JoinBand" id="aRz-JP-7HH" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wl3-pc-yTX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="586" y="78"/>
         </scene>
     </scenes>
     <resources>
