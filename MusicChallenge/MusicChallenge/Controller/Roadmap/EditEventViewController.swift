@@ -22,7 +22,6 @@ class EditEventViewController: UIViewController, SelectSetlistProtocol{
     @IBOutlet var setlistImage: UIImageView!
     
     var event: Event!
-    var sentSetlist: Setlist?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +31,6 @@ class EditEventViewController: UIViewController, SelectSetlistProtocol{
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        event.associatedSetlist = sentSetlist
-        print(sentSetlist?.name ?? "Sem setlist")
         datePicker.setValue(UIColor.white, forKey: "textColor")
         
         locationField.text = event.location
@@ -65,7 +62,7 @@ class EditEventViewController: UIViewController, SelectSetlistProtocol{
     }
     
     func getSetlist(selectedSetlist: Setlist) {
-        self.sentSetlist = selectedSetlist
+        self.event.associatedSetlist = selectedSetlist
     }
     
 
@@ -90,12 +87,27 @@ class EditEventViewController: UIViewController, SelectSetlistProtocol{
     }
     
     @IBAction func changeButton(_ sender: Any) {
+        print("button pressed")
         
+        let sb = UIStoryboard(name: "ChooseSetlist", bundle: Bundle.main)
+        
+        let vc = sb.instantiateViewController(withIdentifier: "ChooseSetlistViewController") as! ChooseSetlistViewController
+        
+        vc.delegate = self
+        present(vc, animated: true, completion: nil)
     }
     
     
     @IBAction func removeButton(_ sender: Any) {
+        let deleteAlert = UIAlertController(title: nil, message: "Deseja realmente retirar a setlist \(event.associatedSetlist?.name ?? "ERROR") do evento?", preferredStyle: .alert)
         
+        let deleteAction = UIAlertAction(title: "Retirar", style: .destructive)
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
+        
+        deleteAlert.addAction(deleteAction)
+        deleteAlert.addAction(cancelAction)
+        
+        self.present(deleteAlert, animated: true, completion: nil)
     }
     
     
