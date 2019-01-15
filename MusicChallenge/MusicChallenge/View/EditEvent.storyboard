@@ -104,12 +104,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.8922216892" green="0.16046175360000001" blue="0.17606648799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Remover"/>
+                                <connections>
+                                    <action selector="removeButton:" destination="J1s-F1-yca" eventType="touchUpInside" id="0fg-VP-Nkq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTd-yD-5X9">
                                 <rect key="frame" x="115" y="591" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.8922216892" green="0.16046175360000001" blue="0.17606648799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Alterar"/>
+                                <connections>
+                                    <action selector="changeButton:" destination="J1s-F1-yca" eventType="touchUpInside" id="gXy-uw-QsK"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6N8-ce-Ehw">
                                 <rect key="frame" x="103" y="407" width="168" height="41"/>
@@ -118,6 +124,9 @@
                                 <state key="normal" title="Adicionar Setlist">
                                     <color key="titleColor" red="0.8922216892" green="0.16046175360000001" blue="0.17606648799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="addSetlistButton:" destination="J1s-F1-yca" eventType="touchUpInside" id="b1M-2q-i9J"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Setlist:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcH-z2-dJ1">
                                 <rect key="frame" x="16" y="363" width="343" height="24"/>
@@ -141,11 +150,20 @@
                         <outlet property="setlistLabel" destination="rcH-z2-dJ1" id="3Cb-3h-dej"/>
                         <outlet property="setlistName" destination="Yxg-Ld-KGm" id="T1j-ak-120"/>
                         <outlet property="setlistSongQtd" destination="8a4-az-yTb" id="rs6-22-NGF"/>
+                        <segue destination="vM0-ED-CRn" kind="show" identifier="ChooseSetlist" id="2j6-gJ-Aic"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SaS-0x-dVa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1591.2" y="28.335832083958024"/>
+        </scene>
+        <!--ChooseSetlist-->
+        <scene sceneID="wQo-9D-U43">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ChooseSetlist" id="vM0-ED-CRn" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z38-WY-tuh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-863" y="28"/>
         </scene>
     </scenes>
     <resources>

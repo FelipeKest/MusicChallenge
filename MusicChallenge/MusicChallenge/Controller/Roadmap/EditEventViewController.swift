@@ -8,8 +8,8 @@
 
 import UIKit
 
-class EditEventViewController: UIViewController {
-
+class EditEventViewController: UIViewController, SelectSetlistProtocol{
+    
     @IBOutlet var locationField: UITextField!
     @IBOutlet var nameField: UITextField!
     @IBOutlet var datePicker: UIDatePicker!
@@ -22,10 +22,18 @@ class EditEventViewController: UIViewController {
     @IBOutlet var setlistImage: UIImageView!
     
     var event: Event!
+    var sentSetlist: Setlist?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        event.associatedSetlist = sentSetlist
+        print(sentSetlist?.name ?? "Sem setlist")
         datePicker.setValue(UIColor.white, forKey: "textColor")
         
         locationField.text = event.location
@@ -34,6 +42,7 @@ class EditEventViewController: UIViewController {
         
         if event.associatedSetlist == nil {
             setlistLabel.isHidden = true
+            addSetlistButton.isHidden = false
             addSetlistButton.titleLabel?.text = "Adicionar setlist"
             setlistSongQtd.isHidden = true
             changeButton.isHidden = true
@@ -42,14 +51,21 @@ class EditEventViewController: UIViewController {
             setlistName.isHidden = true
         }
         else {
+            setlistLabel.isHidden = false
             setlistLabel.text = "Setlist:"
+            setlistSongQtd.isHidden = false
+            changeButton.isHidden = false
+            removeButton.isHidden = false
+            setlistImage.isHidden = false
+            setlistName.isHidden = false
             addSetlistButton.isHidden = true
             setlistSongQtd.text = "\(event.associatedSetlist?.songs.count ?? 0) músicas"
             setlistName.text = event.associatedSetlist?.name
         }
-        
-        
-        // Do any additional setup after loading the view.
+    }
+    
+    func getSetlist(selectedSetlist: Setlist) {
+        self.sentSetlist = selectedSetlist
     }
     
 
@@ -62,7 +78,27 @@ class EditEventViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func addSetlistButton(_ sender: Any) {
+        print("button pressed")
+        
+        let sb = UIStoryboard(name: "ChooseSetlist", bundle: Bundle.main)
+        
+        let vc = sb.instantiateViewController(withIdentifier: "ChooseSetlistViewController") as! ChooseSetlistViewController
+        
+        vc.delegate = self
+        present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func changeButton(_ sender: Any) {
+        
+    }
+    
+    
+    @IBAction func removeButton(_ sender: Any) {
+        
+    }
+    
+    
     @IBAction func cancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

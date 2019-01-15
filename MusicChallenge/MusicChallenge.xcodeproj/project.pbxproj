@@ -46,6 +46,8 @@
 		67D5BB2021C173D40058BCC7 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BB1F21C173D40058BCC7 /* PostViewController.swift */; };
 		67F4079B21E92B53009F85C3 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F4079A21E92B53009F85C3 /* NewEventViewController.swift */; };
 		67F4269921ED11CA002E2BB9 /* SetlistCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67F4269821ED11CA002E2BB9 /* SetlistCollectionViewCell.xib */; };
+		67F4269D21ED19DA002E2BB9 /* ChooseSetlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F4269C21ED19DA002E2BB9 /* ChooseSetlistViewController.swift */; };
+		67F426A021ED483C002E2BB9 /* ChooseSetlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F4269F21ED483C002E2BB9 /* ChooseSetlist.storyboard */; };
 		67F9DA7B21E7B3EF001D9134 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F9DA7A21E7B3EF001D9134 /* Event.storyboard */; };
 		67F9DA7D21E7B54D001D9134 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F9DA7C21E7B54D001D9134 /* EventViewController.swift */; };
 		67F9DA7F21E900FD001D9134 /* EditEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F9DA7E21E900FD001D9134 /* EditEvent.storyboard */; };
@@ -115,6 +117,8 @@
 		67F4079721E92B1D009F85C3 /* NewEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewEvent.storyboard; sourceTree = "<group>"; };
 		67F4079A21E92B53009F85C3 /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		67F4269821ED11CA002E2BB9 /* SetlistCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetlistCollectionViewCell.xib; sourceTree = "<group>"; };
+		67F4269C21ED19DA002E2BB9 /* ChooseSetlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseSetlistViewController.swift; sourceTree = "<group>"; };
+		67F4269F21ED483C002E2BB9 /* ChooseSetlist.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChooseSetlist.storyboard; sourceTree = "<group>"; };
 		67F9DA7A21E7B3EF001D9134 /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
 		67F9DA7C21E7B54D001D9134 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		67F9DA7E21E900FD001D9134 /* EditEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditEvent.storyboard; sourceTree = "<group>"; };
@@ -234,6 +238,7 @@
 				67F9DA7C21E7B54D001D9134 /* EventViewController.swift */,
 				67F9DA8021E90165001D9134 /* EditEventViewController.swift */,
 				67F4079A21E92B53009F85C3 /* NewEventViewController.swift */,
+				67F4269C21ED19DA002E2BB9 /* ChooseSetlistViewController.swift */,
 			);
 			path = Roadmap;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 				67F4079721E92B1D009F85C3 /* NewEvent.storyboard */,
 				D063195E21CAC35000CF40A9 /* SelectedSong.storyboard */,
 				D04607C821CC26F7006A4B88 /* NewSong.storyboard */,
+				67F4269F21ED483C002E2BB9 /* ChooseSetlist.storyboard */,
 				6704A16921E65DB2007115D3 /* EditSong.storyboard */,
 				D04607CA21CC2706006A4B88 /* NewSetlist.storyboard */,
 				6704A16B21E65DC1007115D3 /* EditSetlist.storyboard */,
@@ -402,6 +408,7 @@
 				D054FB7E21E68C5E004D3132 /* Profile.storyboard in Resources */,
 				D054FB8021E68C87004D3132 /* EditBand.storyboard in Resources */,
 				D092380E21C837DA00D092BE /* squealer embossed.ttf in Resources */,
+				67F426A021ED483C002E2BB9 /* ChooseSetlist.storyboard in Resources */,
 				67F9DA7B21E7B3EF001D9134 /* Event.storyboard in Resources */,
 				6750E8E521CC122900A193AE /* RepertoireTableViewCell.xib in Resources */,
 				D092381B21C84C0900D092BE /* Repertoire.storyboard in Resources */,
@@ -434,6 +441,7 @@
 				6777852721C77840002DAB83 /* RoadmapTableViewCell.swift in Sources */,
 				676CEE7621C838EC00961015 /* CreateSongViewController.swift in Sources */,
 				67F4079B21E92B53009F85C3 /* NewEventViewController.swift in Sources */,
+				67F4269D21ED19DA002E2BB9 /* ChooseSetlistViewController.swift in Sources */,
 				676CEE8321C843D700961015 /* MusicianProfileViewController.swift in Sources */,
 				676CEE7821C8390A00961015 /* ImportFromRepertoireViewController.swift in Sources */,
 				676CEE7E21C83C3500961015 /* WhatSetlistsHaveSongViewController.swift in Sources */,

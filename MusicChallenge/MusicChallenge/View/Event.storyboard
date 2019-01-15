@@ -42,21 +42,21 @@
                                     <barButtonItem systemItem="action" id="MnI-l3-KXV">
                                         <color key="tintColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="shareButton:" destination="JDy-2d-NsV" id="cuy-qV-mUD"/>
+                                            <action selector="shareButton:" destination="JDy-2d-NsV" id="r7f-Wx-0ui"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="1r4-VF-sST"/>
                                     <barButtonItem title="Editar" id="02p-9c-QB4">
                                         <color key="tintColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="editButton:" destination="JDy-2d-NsV" id="gpV-oX-Zms"/>
+                                            <action selector="editButton:" destination="JDy-2d-NsV" id="5mb-4N-3L8"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="5LO-7B-24f"/>
                                     <barButtonItem style="plain" systemItem="trash" id="9MH-CX-jbG">
                                         <color key="tintColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="deleteButton:" destination="JDy-2d-NsV" id="HTx-cx-1vr"/>
+                                            <action selector="deleteButton:" destination="JDy-2d-NsV" id="1sn-a7-ENq"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
