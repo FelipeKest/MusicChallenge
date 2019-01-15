@@ -73,16 +73,15 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
         guard let strAge = age else {return}
         
         guard let realAge = Int(strAge) else {return}
+        guard let userID = SessionManager.currentUserID else {print("error fetching uid"); return}
         
-        let musician = Musician(name: realName, age: realAge, band: nil, id: "")
+        let musician = Musician(name: realName, age: realAge, band: nil, id: userID)
         
         DAO.createMusician(musician: musician) { (error) in
             if error != nil {
                 print(error?.localizedDescription as Any)
                 return
             }
-            SessionManager.currentUser = musician
-            SessionManager.currentUserID = musician.id
             
             DispatchQueue.main.async {
                 let wantedStoryboard = UIStoryboard(name: "EditBand", bundle: Bundle.main)
