@@ -10,7 +10,7 @@
 
 import UIKit
 
-class OneSetlistViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class OneSetlistViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SelectFromRepertoireProtocol {
     
     @IBOutlet var setlistSongsTableView: UITableView!
     //@IBOutlet var setlistName: UILabel!
@@ -21,6 +21,8 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
     //@IBOutlet var key: UILabel!
     
     var setlist: Setlist!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,9 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
         // Do any additional setup after loading the view.
     }
     
+    
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         if let index = self.setlistSongsTableView.indexPathForSelectedRow{
             self.setlistSongsTableView.deselectRow(at: index, animated: true)
@@ -44,9 +49,20 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     
+    
+    func getSong(selectedSong: Song) {
+        setlist.songs.append(selectedSong)
+    }
+    
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return setlist.songs.count
     }
+    
+    
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let songsCell = tableView.dequeueReusableCell(withIdentifier: "repertoireCell", for: indexPath) as! RepertoireTableViewCell
@@ -74,6 +90,9 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
         return songsCell
     }
     
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSong" {
             let destination = segue.destination as? OneSongViewController
@@ -84,20 +103,38 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
     }
 
     
+    
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showSong", sender: self)
     }
+    
+    
+    
     
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
     
+    
+    
+    
     @IBAction func addButton(_ sender: Any) {
         let optionMenu = UIAlertController(title: nil, message: "Como quer adicionar a música?", preferredStyle: .actionSheet)
         
-        let addFromRepertoireAction = UIAlertAction(title: "Importar do repertório", style: .default)
-        let newSongAction = UIAlertAction(title: "Criar nova música", style: .default)
+        let addFromRepertoireAction = UIAlertAction(title: "Importar do repertório", style: .default) { action in
+            let sb = UIStoryboard(name: "ImportFromRepertoire", bundle: Bundle.main)
+            
+            let vc = sb.instantiateViewController(withIdentifier: ImportFromRepertoireViewController.identifier) as! ImportFromRepertoireViewController
+            
+            vc.delegate = self
+            self.present(vc, animated: true, completion: nil)
+        }
+        let newSongAction = UIAlertAction(title: "Criar nova música", style: .default){ action in
+            self.performSegue(withIdentifier: "newSong", sender: self)
+        }
         
         let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
         
@@ -108,12 +145,19 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
         self.present(optionMenu, animated: true, completion: nil)
     }
     
+    
+    
+    
+    
 
     @IBAction func shareButton(_ sender: Any) {
         let ac = UIActivityViewController(activityItems: ["O setlist \(setlist.name) da minha banda já está com \(setlist.songs.count) músicas iradas!"], applicationActivities: [])
         present(ac, animated: true)
     }
   
+    
+    
+    
     
     
     @IBAction func deleteButton(_ sender: Any) {
