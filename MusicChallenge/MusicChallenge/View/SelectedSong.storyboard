@@ -47,10 +47,10 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="trash" id="3xq-aY-n9m">
+                                    <barButtonItem systemItem="action" id="af5-KQ-U3I">
                                         <color key="tintColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="deleteButton:" destination="NY0-er-60Q" id="C7k-TL-ogy"/>
+                                            <action selector="shareButton:" destination="NY0-er-60Q" id="Dfj-jG-ALy"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Crb-ml-Np5"/>
@@ -61,10 +61,10 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Ytl-6E-1nz"/>
-                                    <barButtonItem systemItem="action" id="af5-KQ-U3I">
+                                    <barButtonItem style="plain" systemItem="trash" id="3xq-aY-n9m">
                                         <color key="tintColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="shareButton:" destination="NY0-er-60Q" id="Dfj-jG-ALy"/>
+                                            <action selector="deleteButton:" destination="NY0-er-60Q" id="C7k-TL-ogy"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>

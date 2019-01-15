@@ -46,6 +46,7 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
         if let index = self.setlistSongsTableView.indexPathForSelectedRow{
             self.setlistSongsTableView.deselectRow(at: index, animated: true)
         }
+        setlistSongsTableView.reloadData()
     }
     
     
