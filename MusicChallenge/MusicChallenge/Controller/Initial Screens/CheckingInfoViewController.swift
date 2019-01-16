@@ -20,8 +20,10 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtAge: UITextField!
-    @IBOutlet weak var pickerViewGender: UIPickerView!
-    @IBOutlet weak var pickerViewInstruments: UIPickerView!
+    @IBOutlet weak var concludeButton: UIButton!
+    
+   // @IBOutlet weak var pickerViewGender: UIPickerView!
+//    @IBOutlet weak var pickerViewInstruments: UIPickerView!
     
     
     var gender = ["Feminino", "Masculino"]
@@ -37,10 +39,11 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.pickerViewGender.delegate = self
-        self.pickerViewGender.dataSource = self
-        self.pickerViewInstruments.delegate = self
-        self.pickerViewInstruments.dataSource = self
+        concludeButton.layer.cornerRadius = 8
+        //self.pickerViewGender.delegate = self
+        //self.pickerViewGender.dataSource = self
+//        self.pickerViewInstruments.delegate = self
+//        self.pickerViewInstruments.dataSource = self
 
         // Do any additional setup after loading the view.
     }
@@ -71,15 +74,17 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
         let name = txtName.text
         let email = txtEmail.text
         let age = txtAge.text
-        let gender = self.pickerViewGender.selectedRow(inComponent: 0)
-        let instrument = pickerViewInstruments.selectedRow(inComponent: 0)
+        //let gender = self.pickerViewGender.selectedRow(inComponent: 0)
+        //let instrument = pickerViewInstruments.selectedRow(inComponent: 0)
         
-        print(gender)
-        print(self.gender[gender])
+//        print(gender)
+//        print(self.gender[gender])
         
-        
+     
         
     }
+    
+
     
     /*
     // MARK: - Navigation

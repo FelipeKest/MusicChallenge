@@ -18,7 +18,10 @@ class JoinBandViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        confirmCodeButton.layer.cornerRadius = 8
+        createBandButton.layer.cornerRadius = 8
         // Do any additional setup after loading the view.
     }
     

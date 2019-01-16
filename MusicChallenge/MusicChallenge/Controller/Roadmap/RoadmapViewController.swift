@@ -13,12 +13,11 @@ import UIKit
 class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var roadmapTableView: UITableView!
-    
     //@IBOutlet var searchBar: UISearchBar!
     //@IBOutlet var monthSelector: ? (descobrir o tipo disso)
     
     
-    var events: [Event] = [Event(name: "Rock in Rio 2197", place: "Terra 2", date: String("10-10-2197").toDate(dateFormat: "dd-MM-yyyy"), bandID: "asafasf", id: "1215578"),
+    var events: [Event] = [Event(name: "Rock in Rio 2197", place: "Terra 2", date: String("10-10-2197").toDate(dateFormat: "dd-MM-yyyy"), bandID: "asafasf", id: "1215578",eventType: EventTypes.Show),
                            
                            Event(name: "Ensaio p/ o Lopalazooba", place: "Casa do Jordel", date: String("05-07-1873").toDate(dateFormat: "dd-MM-yyyy"), setlist:
                                 Setlist(name: "Paulera", songs: [
@@ -32,6 +31,7 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         self.roadmapTableView.dataSource = self
         self.roadmapTableView.delegate = self
+        
         
         // Do any additional setup after loading the view.
     }
@@ -62,6 +62,7 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
         eventCell.eventName.text = events[indexPath.row].name
         eventCell.horario.text = events[indexPath.row].date.toString(dateFormat: "dd-MM-yyyy")
         eventCell.location.text = events[indexPath.row].location
+        eventCell.eventTypeImage.image = events[indexPath.row].eventType.image
         
         
         if events[indexPath.row].associatedSetlist != nil { //evento tem setlist associada
@@ -88,6 +89,8 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
             destination?.event = events[index!]
         }
     }
+    
+   
     
     @IBAction func addEvent(_ sender: Any) {
         performSegue(withIdentifier: "newEvent", sender: self)
