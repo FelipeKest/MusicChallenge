@@ -10,19 +10,53 @@
 
 import UIKit
 
-class JoinBandViewController: UIViewController {
+class JoinBandViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet var bandCodeTextField: UITextField!
-    @IBOutlet var confirmCodeButton: UIButton!
-    @IBOutlet var createBandButton: UIButton!
-
+    @IBOutlet weak var txtCode: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.txtCode.delegate = self
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+    }
+    
 
+    @IBAction func addMusician(_ sender: Any) {
+        guard let code = txtCode.text else {return}
+        guard let currentUser = SessionManager.currentUser else {return}
+        DAO.add(musician: currentUser, bandID: code) { (error) in
+            if error != nil {
+                print(error?.localizedDescription as Any)
+                return
+            }
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "goToBand", sender: self)
+            }
+        }
+    }
+    //    @IBAction func createBand(_ sender: Any) {
+//        guard let name = txtName.text else {return}
+//        guard let currentMusician = SessionManager.currentUser else {return}
+//        let band = Band(name: name, members: [currentMusician], id: "")
+//        DAO.createBand(band: band, user: currentMusician) { (band, error) in
+//            if error != nil {
+//                print(error?.localizedDescription as Any)
+//                return
+//            }
+//            else {
+//                print("Successful")
+//            }
+//        }
+//    }
+//
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     /*
     // MARK: - Navigation
 

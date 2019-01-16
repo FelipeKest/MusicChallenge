@@ -21,7 +21,7 @@
         <!--JoinBandViewController-->
         <scene sceneID="YD7-R9-hAi">
             <objects>
-                <viewController storyboardIdentifier="JoinBandViewController" title="JoinBandViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7jM-Rg-yf0" customClass="JoinBandViewController" customModule="MusicChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateBandViewController" title="JoinBandViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7jM-Rg-yf0" customClass="CreateBandViewController" customModule="MusicChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MLJ-L7-Ffr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,7 +61,7 @@
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Concluir"/>
                                 <connections>
-                                    <segue destination="1sW-6g-MHj" kind="show" id="uRk-f8-x5Y"/>
+                                    <action selector="createBand:" destination="7jM-Rg-yf0" eventType="touchUpInside" id="dY6-6a-BQL"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Formação:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeW-3p-evU">
@@ -108,6 +108,12 @@
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="9YL-Mp-yxU"/>
                     </view>
+                    <connections>
+                        <outlet property="txtBio" destination="XTN-CJ-d9W" id="BrC-Yf-G5w"/>
+                        <outlet property="txtGenero" destination="tUm-N6-Dlb" id="Hjh-Zq-odN"/>
+                        <outlet property="txtName" destination="cgG-qm-qLV" id="dGR-Km-07l"/>
+                        <segue destination="1sW-6g-MHj" kind="show" identifier="goToBand" id="cWg-8b-TFa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05E-qa-VIC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

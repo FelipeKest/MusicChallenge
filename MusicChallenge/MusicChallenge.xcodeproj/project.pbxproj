@@ -50,6 +50,7 @@
 		91A9284B21E926E800EDF529 /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A9284021E926E800EDF529 /* Extenstions.swift */; };
 		91A9284C21E926E800EDF529 /* Musician.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A9284121E926E800EDF529 /* Musician.swift */; };
 		91A9285021E9427500EDF529 /* CodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A9284F21E9427500EDF529 /* CodableExtensions.swift */; };
+		91CC219621EFAB240018CEDB /* CreateBandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CC219521EFAB240018CEDB /* CreateBandViewController.swift */; };
 		D02F2D0D21BEE2240090043A /* Roadmap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02F2D0C21BEE2240090043A /* Roadmap.storyboard */; };
 		D02F2D0F21BEE4530090043A /* Band.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02F2D0E21BEE4530090043A /* Band.storyboard */; };
 		D04607C921CC26F7006A4B88 /* NewSong.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D04607C821CC26F7006A4B88 /* NewSong.storyboard */; };
@@ -58,7 +59,7 @@
 		D054FB7A21E68587004D3132 /* CheckingInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D054FB7921E68587004D3132 /* CheckingInfo.storyboard */; };
 		D054FB7C21E68733004D3132 /* JoinBand.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D054FB7B21E68733004D3132 /* JoinBand.storyboard */; };
 		D054FB7E21E68C5E004D3132 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D054FB7D21E68C5E004D3132 /* Profile.storyboard */; };
-		D054FB8021E68C87004D3132 /* EditBand.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D054FB7F21E68C87004D3132 /* EditBand.storyboard */; };
+		D054FB8021E68C87004D3132 /* CreateBand.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D054FB7F21E68C87004D3132 /* CreateBand.storyboard */; };
 		D063195F21CAC35000CF40A9 /* SelectedSong.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D063195E21CAC35000CF40A9 /* SelectedSong.storyboard */; };
 		D063196121CAC36800CF40A9 /* SelectedSetlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D063196021CAC36800CF40A9 /* SelectedSetlist.storyboard */; };
 		D0659B2E21E9133D00099B8C /* CheckingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0659B2D21E9133D00099B8C /* CheckingInfoViewController.swift */; };
@@ -118,6 +119,7 @@
 		91A9284021E926E800EDF529 /* Extenstions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
 		91A9284121E926E800EDF529 /* Musician.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Musician.swift; sourceTree = "<group>"; };
 		91A9284F21E9427500EDF529 /* CodableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableExtensions.swift; sourceTree = "<group>"; };
+		91CC219521EFAB240018CEDB /* CreateBandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBandViewController.swift; sourceTree = "<group>"; };
 		D02F2D0C21BEE2240090043A /* Roadmap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Roadmap.storyboard; sourceTree = "<group>"; };
 		D02F2D0E21BEE4530090043A /* Band.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Band.storyboard; sourceTree = "<group>"; };
 		D04607C821CC26F7006A4B88 /* NewSong.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewSong.storyboard; sourceTree = "<group>"; };
@@ -126,7 +128,7 @@
 		D054FB7921E68587004D3132 /* CheckingInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckingInfo.storyboard; sourceTree = "<group>"; };
 		D054FB7B21E68733004D3132 /* JoinBand.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JoinBand.storyboard; sourceTree = "<group>"; };
 		D054FB7D21E68C5E004D3132 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
-		D054FB7F21E68C87004D3132 /* EditBand.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditBand.storyboard; sourceTree = "<group>"; };
+		D054FB7F21E68C87004D3132 /* CreateBand.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateBand.storyboard; sourceTree = "<group>"; };
 		D063195E21CAC35000CF40A9 /* SelectedSong.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectedSong.storyboard; sourceTree = "<group>"; };
 		D063196021CAC36800CF40A9 /* SelectedSetlist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectedSetlist.storyboard; sourceTree = "<group>"; };
 		D0659B2D21E9133D00099B8C /* CheckingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckingInfoViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			children = (
 				676CEE7321C82DE300961015 /* JoinBandViewController.swift */,
 				D0659B2D21E9133D00099B8C /* CheckingInfoViewController.swift */,
+				91CC219521EFAB240018CEDB /* CreateBandViewController.swift */,
 			);
 			path = "Initial Screens";
 			sourceTree = "<group>";
@@ -327,7 +330,7 @@
 				D054FB7921E68587004D3132 /* CheckingInfo.storyboard */,
 				D054FB7B21E68733004D3132 /* JoinBand.storyboard */,
 				D054FB7D21E68C5E004D3132 /* Profile.storyboard */,
-				D054FB7F21E68C87004D3132 /* EditBand.storyboard */,
+				D054FB7F21E68C87004D3132 /* CreateBand.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -420,7 +423,7 @@
 				D04607CB21CC2706006A4B88 /* NewSetlist.storyboard in Resources */,
 				D02F2D0D21BEE2240090043A /* Roadmap.storyboard in Resources */,
 				D054FB7E21E68C5E004D3132 /* Profile.storyboard in Resources */,
-				D054FB8021E68C87004D3132 /* EditBand.storyboard in Resources */,
+				D054FB8021E68C87004D3132 /* CreateBand.storyboard in Resources */,
 				D092380E21C837DA00D092BE /* squealer embossed.ttf in Resources */,
 				6750E8E521CC122900A193AE /* RepertoireTableViewCell.xib in Resources */,
 				D092381B21C84C0900D092BE /* Repertoire.storyboard in Resources */,
@@ -480,6 +483,7 @@
 				67D5BB1E21C16C570058BCC7 /* FeedViewController.swift in Sources */,
 				676CEE8121C843C400961015 /* BandInfoViewController.swift in Sources */,
 				915E101F21BB7A7200158899 /* AppDelegate.swift in Sources */,
+				91CC219621EFAB240018CEDB /* CreateBandViewController.swift in Sources */,
 				91A9284421E926E800EDF529 /* Band.swift in Sources */,
 				6777852521C77829002DAB83 /* SetlistCollectionViewCell.swift in Sources */,
 				676CEE7C21C83BCD00961015 /* OneSongViewController.swift in Sources */,

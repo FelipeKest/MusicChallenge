@@ -37,14 +37,18 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
         
         if song.instruments.count > 6{
             for i in 0...5 {
-                iconArray[i]?.image = song.instruments[i].image
+                if let instrument = song.instruments[i].instrument {
+                    iconArray[i]?.image = instrument.image
+                }
             }
             
             /*cellRepertoire.additionalInstruments.text = "+\(song.instruments.count - 6)"*/
         }
         else{
             for i in 0...song.instruments.count-1 {
-                iconArray[i]?.image = song.instruments[i].image
+                if let instrument = song.instruments[i].instrument {
+                    iconArray[i]?.image = instrument.image
+                }
             }
             
             //additionalInstruments.text = ""

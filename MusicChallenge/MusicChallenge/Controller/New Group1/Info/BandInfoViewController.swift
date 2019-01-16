@@ -18,7 +18,17 @@ class BandInfoViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func displayActivity(_ sender: Any) {
+        let textToShare = [SessionManager.currentUser?.band?.id]
+        let activityViewController = UIActivityViewController(activityItems: textToShare as [Any], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        
+        // exclude some activity types from the list (optional)
+        activityViewController.excludedActivityTypes = [.openInIBooks, .addToReadingList, .postToFacebook, .postToWeibo, .postToFlickr, .postToVimeo, .postToTencentWeibo, .postToTwitter, .saveToCameraRoll, .markupAsPDF ]
+        // present the view controller
+        self.present(activityViewController, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -18,32 +18,13 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
     //@IBOutlet var songSearchBar: UISearchBar!
     
     var songs: [Song] = [
-        
-                        Song(name: "Born To Be Wild", instruments: [
-                            Instrument.Bass,
-                            Instrument.Guitar,
-                            Instrument.Drums,
-                            Instrument.Singer
-                            ],
-                             creator: Musician(), id: ""),
+                        Song(name: "Born To Be Wild"),
                          
-                        Song(name: "MEGALOVANIA", instruments: [
-                            Instrument.Others,
-                            Instrument.Guitar],
-                             creator: Musician(), id: ""),
+                        Song(name: "MEGALOVANIA"),
                          
-                        Song(name: "Love Of My Life (Acapella)", instruments: [
-                            Instrument.Singer,
-                            Instrument.Singer,
-                            Instrument.Singer,
-                            Instrument.Singer,
-                            Instrument.Singer],
-                             creator: Musician(), id: ""),
+                        Song(name: "Love Of My Life (Acapella)"),
         
-                        Song(name: "The Sound Of Silence", instruments: [
-                            Instrument.Bass],
-                             creator: Musician(),
-                             id: "")
+                        Song(name: "The Sound Of Silence")
         
     ]
     
@@ -95,14 +76,18 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
         
         if song.instruments.count > 4{
             for i in 0...3 {
-                iconArray[i]?.image = song.instruments[i].image
+                if let instrument = song.instruments[i].instrument {
+                    iconArray[i]?.image = instrument.image
+                }
             }
             
             cellRepertoire.additionalInstruments.text = "+\(song.instruments.count - 4)"
         }
         else{
             for i in 0...song.instruments.count-1 {
-                iconArray[i]?.image = song.instruments[i].image
+                if let instrument = song.instruments[i].instrument {
+                    iconArray[i]?.image = instrument.image
+                }
             }
             
             cellRepertoire.additionalInstruments.text = ""

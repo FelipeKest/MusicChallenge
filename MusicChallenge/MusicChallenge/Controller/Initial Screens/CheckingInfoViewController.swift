@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     
     @IBOutlet weak var txtName: UITextField!
@@ -25,7 +25,11 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
         
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
-
+        
+        self.txtName.delegate = self
+        self.txtEmail.delegate = self
+        self.txtAge.delegate = self
+        
         // Do any additional setup after loading the view.
         SessionManager.getCurrentUser { (musician, error) in
             
@@ -84,7 +88,7 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
             }
             
             DispatchQueue.main.async {
-                let wantedStoryboard = UIStoryboard(name: "EditBand", bundle: Bundle.main)
+                let wantedStoryboard = UIStoryboard(name: "CreateBand", bundle: Bundle.main)
                 
                 let vc = wantedStoryboard.instantiateViewController(withIdentifier: "JoinBandViewController")
                 
@@ -96,6 +100,11 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
         
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
     /*
     // MARK: - Navigation
 

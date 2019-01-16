@@ -43,7 +43,7 @@
                                     <color key="titleColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="NqP-Rg-0Qn" kind="show" id="tlJ-v0-ODG"/>
+                                    <segue destination="XO9-o6-MUo" kind="show" id="4ib-P5-fSX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A74-J6-Ohv">
@@ -56,7 +56,8 @@
                                     <color key="titleColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="8KF-AD-6U4" kind="show" id="p7b-r6-E0G"/>
+                                    <action selector="addMusician:" destination="c5R-Nv-Ikh" eventType="touchUpInside" id="hSe-G9-OhK"/>
+                                    <segue destination="8KF-AD-6U4" kind="show" identifier="goToBand" id="p7b-r6-E0G"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4CK-he-RFI">
@@ -88,6 +89,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zOx-V6-2V7"/>
                     </view>
+                    <connections>
+                        <outlet property="txtCode" destination="4CK-he-RFI" id="Qyb-kR-4Xi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgf-D9-hmC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -101,13 +105,13 @@
             </objects>
             <point key="canvasLocation" x="797" y="-24"/>
         </scene>
-        <!--EditBand-->
-        <scene sceneID="4GM-5b-i2X">
+        <!--CreateBand-->
+        <scene sceneID="sfu-Uv-Oro">
             <objects>
-                <viewControllerPlaceholder storyboardName="EditBand" id="NqP-Rg-0Qn" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vqg-Xb-ida" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="CreateBand" id="XO9-o6-MUo" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yPW-7v-R5f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857" y="321"/>
+            <point key="canvasLocation" x="639" y="309"/>
         </scene>
     </scenes>
     <resources>

@@ -12,7 +12,7 @@ class Band:GenericProtocolClass {
     var repertoire: [Song] = []
     var setlists:[Setlist] = []
     var events:[Event] = []
-    static var allReferenced:[String:GenericProtocolClass] = [:]
+    static var allReferenced:[String:Band] = [:]
     
     override var asDictionary:[String:Any] {
         var result:[String:Any] = [:]

@@ -56,42 +56,90 @@ class dao: UserStatusDelegate{
         }
     }
     
-//    func inviteTo(band:Band){
-//        let bandID = band.id!
-//        let invitationCode = bandID+"/"+userID
-//        print(invitationCode)
-//    }
-    
     func add(musician: Musician, bandID: String,completionHandler: @escaping(Error?)->Void){
-        var bandRecord = CKRecord(recordType: "Band")
         queryBand(id: bandID) { (record, error) in
             if error != nil {
                 print(error?.localizedDescription as Any)
                 completionHandler(error)
                 return
             }
-            guard let record = record else {return}
-            //peguei a band
-            bandRecord = record
-            print(bandRecord["name"] as Any)
-            //membros da banda
-            guard var bandMembers = bandRecord.value(forKey: "members") as? [CKRecord.Reference] else {return}
             guard let musicianID = musician.id else {return}
-            self.queryMusician(id: musicianID, completionHandler: { (musicianRecord, error) in
-                if error != nil {
-                    print(error?.localizedDescription as Any)
+            self.queryMusician(id: musicianID, completionHandler: { (musicianRecord, musicianError) in
+                if musicianError != nil {
+                    print(musicianError?.localizedDescription as Any)
+                    completionHandler(error)
                     return
                 }
+                guard let bandRecord = record else {return}
                 guard let musicianRecord = musicianRecord else {return}
+                //peguei a band
+                print(bandRecord["name"] as Any)
+                //membros da banda
+                guard let bandMembers = bandRecord.value(forKey: "members") as? [CKRecord.Reference] else {return}
+                //variavel auxiliar
+                var auxiliarBandMembers = bandMembers
+                //recordName do musician
+                let musicianID = musicianRecord.recordID.recordName
+                //reference da band
                 let bandReference = CKRecord.Reference(record: bandRecord, action: .none)
-                musicianRecord.setValue(bandReference, forKey: "band")
+                //reference do musico
                 let musicianReference = CKRecord.Reference(record: musicianRecord, action: .none)
-                bandMembers.append(musicianReference)
-                bandRecord.setValue(bandMembers, forKey: "members")
-                completionHandler(nil)
+                auxiliarBandMembers.append(musicianReference)
+                bandRecord.setValue(auxiliarBandMembers, forKey: "members")
+                musicianRecord.setValue(bandReference, forKey: "band")
+                let modifierOperation = CKModifyRecordsOperation(recordsToSave: [musicianRecord, bandRecord], recordIDsToDelete: [])
+                modifierOperation.modifyRecordsCompletionBlock = { _,_,modifyError in
+                    guard modifyError == nil else {
+                        guard let cloudError = modifyError as? CKError else {
+                            completionHandler(error)
+                            return
+                        }
+                        if cloudError.code == .partialFailure {
+                            guard let errors = cloudError.partialErrorsByItemID else {
+                                completionHandler(error)
+                                return
+                            }
+                            for (_, error) in errors {
+                                if let currentErrror = error as? CKError {
+                                    return
+                                }
+                            }
+                        }
+                        completionHandler(error)
+                        return
+                    }
+                    completionHandler(nil)
+                }
+                self.database?.add(modifierOperation)
             })
         }
     }
+//            self.database?.save(bandRecord, completionHandler: { (savedBandRecord, error) in
+//                if error != nil {
+//                    print(error?.localizedDescription as Any)
+//                    return
+//                }
+//                print("Salvou")
+//                self.database?.save(musicianRecord, completionHandler: { (savedMusician, err) in
+//                    if err != nil {
+//                        print("Entrou!!")
+//                        print(err?.localizedDescription as Any)
+//                        bandRecord.setValue(bandMembers, forKey: "members")
+//                        self.database?.save(bandRecord, completionHandler: { (savedFailedBandRecord, er) in
+//                            if er != nil {
+//                                print("Entrou 2")
+//                                print(er?.localizedDescription as Any)
+//                            }
+//                        })
+//                    }
+//                    else{
+//                        print("Salvou 2")
+//                    }
+//                })
+//                completionHandler(nil)
+//            })
+//        }
+    
     
     //MARK: Create Functions
     func createMusician(musician: Musician, completionHandler: @escaping (Error?)->Void){
@@ -113,6 +161,38 @@ class dao: UserStatusDelegate{
                         return
                     }
                     completionHandler(nil)
+                })
+            }
+        })
+    }
+    
+    func createBand(band: Band,user:Musician, completionHandler: @escaping (Band?,Error?)->Void){
+        let bandRecord = CKRecord(recordType: "Band")
+        bandRecord.setValue(band.name, forKey: "name")
+        bandRecord.setValue(band.id, forKey: "id")
+        let musicianReference = [CKRecord.Reference(recordID: CKRecord.ID(recordName: user.musicianRecordName!), action: .none)]
+        bandRecord.setValue(musicianReference, forKey: "members")
+        database?.save(bandRecord, completionHandler: { (result, error) in
+            if error != nil {
+                completionHandler(nil,error)
+                print(error!.localizedDescription)
+                return
+            } else {
+                //sem erro
+                result?.setValue(result?.recordID.recordName, forKey: "id")
+                guard let userID = user.musicianRecordName else {return}
+                result?.setValue(CKRecord(recordType: "Musician", recordID: CKRecord.ID(recordName: userID)), forKey: "members")
+                self.database?.save(result!, completionHandler: { (bandResult, err) in
+                    if err != nil {
+                        print(err?.localizedDescription as Any)
+                        completionHandler(nil,err)
+                        return
+                    }
+                    band.id = bandRecord.recordID.recordName
+                    band.members.append(user)
+                    user.band = band
+                    
+                    completionHandler(band,nil)
                 })
             }
         })
@@ -180,23 +260,7 @@ class dao: UserStatusDelegate{
     }
     
     
-    func createBand(band: Band,user:Musician, completionHandler: @escaping (Band?,Error?)->Void){
-        var bandRecord = CKRecord(recordType: "Band")
-        bandRecord = band.asCKRecord
-        database?.save(bandRecord, completionHandler: { (result, error) in
-            if error != nil {
-                completionHandler(nil,error)
-                print(error!.localizedDescription)
-                return
-            } else {
-                //sem erro
-                band.id = bandRecord.recordID.recordName
-                band.members.append(user)
-                user.band = band
-                completionHandler(band,nil)
-            }
-        })
-    }
+
     
 
     

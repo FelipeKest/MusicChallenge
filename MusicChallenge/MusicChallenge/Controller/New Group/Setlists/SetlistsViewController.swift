@@ -18,91 +18,39 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         Setlist(name: "Rock Diversas", songs: [
             
-            Song(name: "Born To Be Wild", instruments: [
-                Instrument.Bass,
-                Instrument.Guitar,
-                Instrument.Drums,
-                Instrument.Singer
-                ]),
+            Song(name: "Born To Be Wild"),
             
-            Song(name: "MEGALOVANIA", instruments: [
-                Instrument.Others,
-                Instrument.Guitar
-                ]),
+            Song(name: "MEGALOVANIA"),
             
-            Song(name: "Love Of My Life (Acapella)", instruments: [
-                Instrument.Singer,
-                Instrument.Singer,
-                Instrument.Singer,
-                Instrument.Singer,
-                Instrument.Singer
-                ]),
+            Song(name: "Love Of My Life (Acapella)"),
             
-            Song(name: "The Sound Of Silence", instruments: [
-                Instrument.Bass
-                ])
+            Song(name: "The Sound Of Silence")
             ]
         ),
         
         Setlist(name: "SÓ AS TOP", songs: [
             
-            Song(name: "MEGALOVANIA", instruments: [
-                Instrument.Bass,
-                Instrument.Guitar,
-                Instrument.Drums,
-                Instrument.Singer
-                ]),
+            Song(name: "MEGALOVANIA"),
             
-            Song(name: "MEGALOVANIA DRUM COVER", instruments: [
-                Instrument.Drums,
-                Instrument.Drums
-                ]),
+            Song(name: "MEGALOVANIA DRUM COVER"),
             
-            Song(name: "MEGALOVANIA ACAPELLA", instruments: [
-                Instrument.Singer,
-                Instrument.Singer
-                ]),
+            Song(name: "MEGALOVANIA ACAPELLA"),
             
-            Song(name: "MEGALOVANIA PT.2", instruments: [
-                Instrument.Bass,
-                Instrument.Guitar,
-                Instrument.Others,
-                Instrument.Others
-                ])
-            ]),
+            Song(name: "MEGALOVANIA PT.2")
+            ]
+        ),
         
         Setlist(name: "Jazzlike", songs: [
             
-            Song(name: "Watermelon Man", instruments: [
-                Instrument.Bass,
-                Instrument.Guitar,
-                Instrument.Drums,
-                Instrument.Guitar
-                ]),
+            Song(name: "Watermelon Man"),
             
-            Song(name: "Gran Turismo 3 Theme", instruments: [
-                Instrument.Bass,
-                Instrument.Others,
-                Instrument.Guitar
-                ]),
+            Song(name: "Gran Turismo 3 Theme"),
             
-            Song(name: "Epic Sax Guy", instruments: [
-                Instrument.Others
-                ]),
+            Song(name: "Epic Sax Guy"),
             
-            Song(name: "21st Century Schizoid Man", instruments: [
-                Instrument.Bass,
-                Instrument.Guitar,
-                Instrument.Others,
-                Instrument.Guitar
-                ]),
+            Song(name: "21st Century Schizoid Man"),
             
-            Song(name: "Get Back", instruments: [
-                Instrument.Bass,
-                Instrument.Guitar,
-                Instrument.Drums,
-                Instrument.Singer
-                ])
+            Song(name: "Get Back")
             ]
         )
     ]

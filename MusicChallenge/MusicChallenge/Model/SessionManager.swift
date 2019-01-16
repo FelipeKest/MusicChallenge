@@ -20,8 +20,7 @@ class sessionManager: LoginManager {
     static let instance = sessionManager()
     public var currentUserID: String?
     public var currentUser: Musician?
-    
-//    public var currentBandID: String?
+    public var currentBandID: String?
     
     private init (){
         

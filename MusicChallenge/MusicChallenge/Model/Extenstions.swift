@@ -34,3 +34,15 @@ extension Array where Element == Instrument {
         return strings
     }
 }
+
+extension String {
+    var asInstrument: Instrument {
+        switch self {
+            case "Bass": return .Bass
+            case "Guitar": return .Guitar
+            case "Singer": return .Singer
+            case "Drums": return .Drums
+            default: return .Others
+        }
+    }
+}
