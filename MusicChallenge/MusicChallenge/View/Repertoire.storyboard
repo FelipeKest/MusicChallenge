@@ -18,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O6D-Wz-0rU">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O6D-Wz-0rU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -38,6 +37,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="O6D-Wz-0rU" firstAttribute="leading" secondItem="2xG-a1-czw" secondAttribute="leading" id="OQv-X9-FTe"/>
+                            <constraint firstItem="O6D-Wz-0rU" firstAttribute="top" secondItem="KKn-kD-yWt" secondAttribute="top" id="WIL-zV-Abn"/>
+                            <constraint firstItem="O6D-Wz-0rU" firstAttribute="trailing" secondItem="2xG-a1-czw" secondAttribute="trailing" id="iEd-kL-6ig"/>
+                            <constraint firstItem="O6D-Wz-0rU" firstAttribute="bottom" secondItem="2xG-a1-czw" secondAttribute="bottom" id="vhW-ua-wwa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2xG-a1-czw"/>
                     </view>
                     <navigationItem key="navigationItem" title="Songs" id="UBx-sO-8vh">
