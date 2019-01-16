@@ -37,6 +37,7 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
                             Instrument(type: InstrumentTypes.Singer, id: ""),
                             Instrument(type: InstrumentTypes.Singer, id: ""),
                             Instrument(type: InstrumentTypes.Singer, id: ""),
+                            Instrument(type: InstrumentTypes.Singer, id: ""),
                             Instrument(type: InstrumentTypes.Singer, id: "")],
                                   bandID: "", id: ""),
         
@@ -89,13 +90,13 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
         let cellRepertoire = tableView.dequeueReusableCell(withIdentifier: RepertoireTableViewCell.identifier, for: indexPath) as! RepertoireTableViewCell
         
         let song = songs[indexPath.row]
-        var iconArray = [cellRepertoire.instrument0, cellRepertoire.instrument1, cellRepertoire.instrument2, cellRepertoire.instrument3]
+        var iconArray = [cellRepertoire.instrument0, cellRepertoire.instrument1, cellRepertoire.instrument2, cellRepertoire.instrument3, cellRepertoire.instrument4]
         
-        if song.instruments.count > 4{
-            for i in 0...3 {
+        if song.instruments.count > 5{
+            for i in 1...4 {
                 iconArray[i]?.image = song.instruments[i].type.image
             }
-            
+            cellRepertoire.instrument0.isHidden = true
             cellRepertoire.additionalInstruments.text = "+\(song.instruments.count - 4)"
         }
         else{

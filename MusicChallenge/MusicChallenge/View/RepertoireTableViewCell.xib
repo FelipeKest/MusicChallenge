@@ -62,6 +62,10 @@
                             <constraint firstAttribute="height" constant="29" id="o4E-nm-2ZM"/>
                         </constraints>
                     </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ygt-cg-lST">
+                        <rect key="frame" x="333" y="7" width="29" height="29"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ZlN-4J-Evg" firstAttribute="top" secondItem="zW3-Cp-RQq" secondAttribute="top" constant="11" id="2ub-Gc-whf"/>
@@ -87,10 +91,11 @@
             <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="additionalInstruments" destination="ZlN-4J-Evg" id="bnj-q9-yek"/>
-                <outlet property="instrument0" destination="u0U-zT-BVY" id="puL-3r-rFr"/>
-                <outlet property="instrument1" destination="iC3-ce-dCj" id="Pjp-oM-0xj"/>
-                <outlet property="instrument2" destination="YyV-PR-NcB" id="o58-jX-PzH"/>
-                <outlet property="instrument3" destination="FJv-jk-NGF" id="Kkp-vc-PXG"/>
+                <outlet property="instrument0" destination="Ygt-cg-lST" id="41m-Zi-yMj"/>
+                <outlet property="instrument1" destination="u0U-zT-BVY" id="ovq-RA-nWc"/>
+                <outlet property="instrument2" destination="iC3-ce-dCj" id="QF4-aW-fpF"/>
+                <outlet property="instrument3" destination="YyV-PR-NcB" id="yie-At-emz"/>
+                <outlet property="instrument4" destination="FJv-jk-NGF" id="K6i-Va-YYK"/>
                 <outlet property="songName" destination="khu-rF-jfb" id="5GH-Hs-U9b"/>
             </connections>
             <point key="canvasLocation" x="136.80000000000001" y="158.32083958020991"/>

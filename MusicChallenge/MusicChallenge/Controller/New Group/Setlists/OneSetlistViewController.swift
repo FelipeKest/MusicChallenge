@@ -73,13 +73,13 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
         let songsCell = tableView.dequeueReusableCell(withIdentifier: "repertoireCell", for: indexPath) as! RepertoireTableViewCell
         
         let song = setlist.songs[indexPath.row]
-        var iconArray = [songsCell.instrument0, songsCell.instrument1, songsCell.instrument2, songsCell.instrument3]
+        var iconArray = [songsCell.instrument0, songsCell.instrument1, songsCell.instrument2, songsCell.instrument3, songsCell.instrument4]
         
-        if song.instruments.count > 4{
-            for i in 0...3 {
+        if song.instruments.count > 5{
+            for i in 1...4 {
                 iconArray[i]?.image = song.instruments[i].type.image
             }
-            
+            songsCell.instrument0.isHidden = true
             songsCell.additionalInstruments.text = "+\(song.instruments.count - 4)"
         }
         else{
