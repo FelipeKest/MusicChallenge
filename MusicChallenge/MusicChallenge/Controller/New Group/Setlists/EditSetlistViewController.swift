@@ -27,4 +27,7 @@ class EditSetlistViewController: UIViewController {
     }
     */
 
+    @IBAction func cancelButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }

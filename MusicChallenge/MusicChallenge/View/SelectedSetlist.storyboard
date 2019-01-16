@@ -32,11 +32,10 @@
                                                 <action selector="backButton:" destination="L6h-u0-D2v" id="cNv-d4-W5E"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Editar" id="OjD-V9-Qvv">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="25d-pL-Olp">
                                             <color key="tintColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
-                                                <action selector="backButton:" destination="L6h-u0-D2v" id="UeR-q2-Zrf"/>
-                                                <segue destination="eao-IE-1TO" kind="show" identifier="editSetlist" id="VR5-ZU-Fdh"/>
+                                                <action selector="addButton:" destination="L6h-u0-D2v" id="Wdu-HP-xS0"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -71,10 +70,11 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="CbA-rd-QSX"/>
-                                    <barButtonItem systemItem="add" id="25d-pL-Olp">
+                                    <barButtonItem title="Editar" id="OjD-V9-Qvv">
                                         <color key="tintColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="addButton:" destination="L6h-u0-D2v" id="Wdu-HP-xS0"/>
+                                            <action selector="backButton:" destination="L6h-u0-D2v" id="UeR-q2-Zrf"/>
+                                            <segue destination="eao-IE-1TO" kind="show" identifier="editSetlist" id="VR5-ZU-Fdh"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="By3-Sa-HYt"/>
