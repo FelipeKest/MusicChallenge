@@ -64,7 +64,6 @@
 		D054FB8021E68C87004D3132 /* EditBand.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D054FB7F21E68C87004D3132 /* EditBand.storyboard */; };
 		D063195F21CAC35000CF40A9 /* SelectedSong.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D063195E21CAC35000CF40A9 /* SelectedSong.storyboard */; };
 		D063196121CAC36800CF40A9 /* SelectedSetlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D063196021CAC36800CF40A9 /* SelectedSetlist.storyboard */; };
-		D0659B2E21E9133D00099B8C /* CheckingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0659B2D21E9133D00099B8C /* CheckingInfoViewController.swift */; };
 		D092380D21C837DA00D092BE /* squealer.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D092380B21C837DA00D092BE /* squealer.ttf */; };
 		D092380E21C837DA00D092BE /* squealer embossed.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D092380C21C837DA00D092BE /* squealer embossed.ttf */; };
 		D092381721C8498800D092BE /* Songs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D092381621C8498800D092BE /* Songs.storyboard */; };
@@ -73,6 +72,7 @@
 		D0A9CB5B21C18D7E00E83D9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A9CB5A21C18D7E00E83D9D /* Main.storyboard */; };
 		D0B4D9F221E3FA3600C427B2 /* DAODummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B4D9F121E3FA3600C427B2 /* DAODummy.swift */; };
 		D0EE7DFD21CD6B2C00DDA7C9 /* CreateSetlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE7DFC21CD6B2C00DDA7C9 /* CreateSetlistViewController.swift */; };
+		D0FF458621EF8A4D004393CA /* EditBandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF458521EF8A4D004393CA /* EditBandViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,7 +135,6 @@
 		D054FB7F21E68C87004D3132 /* EditBand.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditBand.storyboard; sourceTree = "<group>"; };
 		D063195E21CAC35000CF40A9 /* SelectedSong.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectedSong.storyboard; sourceTree = "<group>"; };
 		D063196021CAC36800CF40A9 /* SelectedSetlist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectedSetlist.storyboard; sourceTree = "<group>"; };
-		D0659B2D21E9133D00099B8C /* CheckingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckingInfoViewController.swift; sourceTree = "<group>"; };
 		D092380B21C837DA00D092BE /* squealer.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = squealer.ttf; sourceTree = "<group>"; };
 		D092380C21C837DA00D092BE /* squealer embossed.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "squealer embossed.ttf"; sourceTree = "<group>"; };
 		D092381621C8498800D092BE /* Songs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Songs.storyboard; sourceTree = "<group>"; };
@@ -144,6 +143,7 @@
 		D0A9CB5A21C18D7E00E83D9D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D0B4D9F121E3FA3600C427B2 /* DAODummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAODummy.swift; sourceTree = "<group>"; };
 		D0EE7DFC21CD6B2C00DDA7C9 /* CreateSetlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSetlistViewController.swift; sourceTree = "<group>"; };
+		D0FF458521EF8A4D004393CA /* EditBandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBandViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +180,7 @@
 				676CEE7F21C843A900961015 /* Info */,
 				67D5BB1D21C16C570058BCC7 /* FeedViewController.swift */,
 				67D5BB1F21C173D40058BCC7 /* PostViewController.swift */,
+				D0FF458521EF8A4D004393CA /* EditBandViewController.swift */,
 			);
 			name = Band;
 			path = "New Group1";
@@ -460,6 +461,7 @@
 				67F9DA8121E90165001D9134 /* EditEventViewController.swift in Sources */,
 				67D5BB1E21C16C570058BCC7 /* FeedViewController.swift in Sources */,
 				676CEE8121C843C400961015 /* BandInfoViewController.swift in Sources */,
+				D0FF458621EF8A4D004393CA /* EditBandViewController.swift in Sources */,
 				915E101F21BB7A7200158899 /* AppDelegate.swift in Sources */,
 				6777852521C77829002DAB83 /* SetlistCollectionViewCell.swift in Sources */,
 				676CEE7C21C83BCD00961015 /* OneSongViewController.swift in Sources */,
