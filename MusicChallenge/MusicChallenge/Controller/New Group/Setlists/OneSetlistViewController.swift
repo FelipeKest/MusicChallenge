@@ -51,8 +51,12 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
     
     
     
-    func getSong(selectedSong: Song) {
-        setlist.songs.append(selectedSong)
+    func getSongs(selectedSongs: [Song]) {
+        for i in 0...selectedSongs.count-1 {
+            print(selectedSongs[i].name)
+            setlist.songs.append(selectedSongs[i])
+        }
+        //setlist.songs.append(selectedSong)
     }
     
     

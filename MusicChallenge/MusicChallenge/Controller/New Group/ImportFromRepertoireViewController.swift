@@ -11,7 +11,7 @@
 import UIKit
 
 protocol SelectFromRepertoireProtocol {
-    func getSong(selectedSong: Song)
+    func getSongs(selectedSongs: [Song])
 }
 
 class ImportFromRepertoireViewController: UIViewController , UITableViewDataSource, UITableViewDelegate{
@@ -23,6 +23,7 @@ class ImportFromRepertoireViewController: UIViewController , UITableViewDataSour
     var delegate: SelectFromRepertoireProtocol?
     
     var checked = [Bool]()
+    var selectedSongs: [Song] = []
     
     var songs: [Song] = [
         
@@ -148,7 +149,16 @@ class ImportFromRepertoireViewController: UIViewController , UITableViewDataSour
     @IBAction func doneButton(_ sender: Any) {
         
         //passar array de músicas selecionadas para o delegate
+        for i in 0...songs.count-1 {
+            if checked[i] == true {
+                print(songs[i].name)
+                selectedSongs.append(songs[i])
+            }
+        }
         
-        dismiss(animated: true, completion: nil)
+        if selectedSongs.count > 0 {
+            delegate?.getSongs(selectedSongs: selectedSongs)
+            dismiss(animated: true, completion: nil)
+        }
     }
 }
