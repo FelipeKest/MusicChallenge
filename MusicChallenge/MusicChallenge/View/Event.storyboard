@@ -75,13 +75,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Terra 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkG-DX-eEg">
-                                <rect key="frame" x="52" y="179" width="219" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rock In Rio 2193 Second Edition" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeG-1Z-Dw7">
                                 <rect key="frame" x="16" y="64" width="255" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -103,8 +96,8 @@
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f0y-se-7GU">
-                                <rect key="frame" x="16" y="175" width="28" height="28"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="map_icon" translatesAutoresizingMaskIntoConstraints="NO" id="f0y-se-7GU">
+                                <rect key="frame" x="16" y="179" width="15" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKf-Lw-lhw">
@@ -136,10 +129,17 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IcX-TY-JmY">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stage1" translatesAutoresizingMaskIntoConstraints="NO" id="IcX-TY-JmY">
                                 <rect key="frame" x="289" y="92" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Terra 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkG-DX-eEg">
+                                <rect key="frame" x="39" y="179" width="219" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="wDN-HX-V5R"/>
@@ -152,6 +152,7 @@
                         <outlet property="eventName" destination="yeG-1Z-Dw7" id="KeO-V3-xFw"/>
                         <outlet property="eventSetlistName" destination="Pdj-RT-JHA" id="DT3-3p-IN8"/>
                         <outlet property="eventSetlistTableView" destination="P5J-5y-O0E" id="xkV-Ll-bhu"/>
+                        <outlet property="eventTypeImage" destination="IcX-TY-JmY" id="05z-9h-5XP"/>
                         <outlet property="goToSetlist" destination="xKf-Lw-lhw" id="6mP-v3-ZLV"/>
                         <outlet property="setlistSongQtd" destination="KBc-qx-Hhb" id="OJl-Ho-UNM"/>
                         <segue destination="pvz-k9-owk" kind="show" identifier="showSetlist" id="BSD-JI-unI"/>
@@ -188,4 +189,8 @@
             <point key="canvasLocation" x="622" y="188"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="map_icon" width="134" height="192"/>
+        <image name="stage1" width="192" height="192"/>
+    </resources>
 </document>

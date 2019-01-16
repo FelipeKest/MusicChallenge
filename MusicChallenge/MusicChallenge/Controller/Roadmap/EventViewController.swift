@@ -18,7 +18,9 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet var setlistSongQtd: UILabel!
     @IBOutlet var eventSetlistTableView: UITableView!
     @IBOutlet var goToSetlist: UIButton!
+    @IBOutlet var eventTypeImage: UIImageView!
     
+
     var event: Event!
     
     override func viewDidLoad() {
@@ -33,6 +35,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         eventName.text = event.name
         eventDate.text = event.date.toString(dateFormat: "dd-MM-yyyy")
         eventLocation.text = event.location
+        eventTypeImage.image = event.eventType.image
         
         if event.associatedSetlist != nil {
             eventSetlistName.text = "Setlist: \(event.associatedSetlist?.name ?? "nenhuma")"
