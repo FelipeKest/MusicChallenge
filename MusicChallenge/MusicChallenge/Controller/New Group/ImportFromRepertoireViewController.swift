@@ -22,9 +22,9 @@ class ImportFromRepertoireViewController: UIViewController , UITableViewDataSour
     
     var delegate: SelectFromRepertoireProtocol?
     
-    var songs: [Song] = [
-        
+    var checked = [Bool]()
     
+    var songs: [Song] = [
         
         Song(name: "Born To Be Wild", instruments: [
             Instrument(type: InstrumentTypes.Bass, id: ""),
@@ -58,6 +58,9 @@ class ImportFromRepertoireViewController: UIViewController , UITableViewDataSour
         self.repertoireTableView.dataSource = self
         self.repertoireTableView.delegate = self
         
+        checked = Array(repeating: false, count: songs.count)
+        
+        repertoireTableView.allowsMultipleSelection = true
         let tableXib = UINib(nibName: "RepertoireTableViewCell", bundle: nil)
         repertoireTableView.register(tableXib, forCellReuseIdentifier: "repertoireCell")
 
@@ -106,17 +109,46 @@ class ImportFromRepertoireViewController: UIViewController , UITableViewDataSour
         
         cellRepertoire.songName.text = song.name
         
+        if checked[indexPath.row] == false{
+            cellRepertoire.accessoryType = .none
+        } else if checked[indexPath.row] {
+            cellRepertoire.accessoryType = .checkmark
+        }
+        
         
         return cellRepertoire
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        delegate?.getSong(selectedSong: songs[indexPath.row])
-        self.dismiss(animated: true, completion: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if let cell = tableView.cellForRow(at: indexPath as IndexPath) {
+            
+            cell.tintColor = UIColor.red
+            
+            if cell.accessoryType == .checkmark {
+                cell.accessoryType = .none
+                checked[indexPath.row] = false
+            } else {
+                cell.accessoryType = .checkmark
+                checked[indexPath.row] = true
+            }
+        }
+        
+        //delegate?.getSong(selectedSong: songs[indexPath.row])
+        //self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func cancelButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func doneButton(_ sender: Any) {
+        
+        //passar array de músicas selecionadas para o delegate
+        
         dismiss(animated: true, completion: nil)
     }
 }
