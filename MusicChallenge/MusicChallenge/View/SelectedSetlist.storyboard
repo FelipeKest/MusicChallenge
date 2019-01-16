@@ -26,13 +26,13 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Title" id="5Ji-M3-GIL">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="iI8-0B-V6Z">
+                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="iI8-0B-V6Z">
                                             <color key="tintColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="backButton:" destination="L6h-u0-D2v" id="cNv-d4-W5E"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="OjD-V9-Qvv">
+                                        <barButtonItem key="rightBarButtonItem" title="Editar" id="OjD-V9-Qvv">
                                             <color key="tintColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="backButton:" destination="L6h-u0-D2v" id="UeR-q2-Zrf"/>
@@ -86,8 +86,8 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by Guilherme Vassallo in 19/10/18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHR-QS-MXV">
-                                <rect key="frame" x="27" y="187" width="321" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Criada por Guilherme Vassallo em 19/10/18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHR-QS-MXV">
+                                <rect key="frame" x="24" y="187" width="327" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="syq-11-Ba1"/>
                                 </constraints>

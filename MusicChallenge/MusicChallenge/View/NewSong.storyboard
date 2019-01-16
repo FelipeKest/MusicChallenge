@@ -26,14 +26,14 @@
                                     <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="New Song" id="v9K-nu-av8">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Hjb-B1-0ZJ">
+                                    <navigationItem title="Nova Música" id="v9K-nu-av8">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="Hjb-B1-0ZJ">
                                             <color key="tintColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="cancelButton:" destination="71M-dv-jQh" id="rg4-eH-iQV"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="HEF-yF-NyH">
+                                        <barButtonItem key="rightBarButtonItem" title="Pronto" id="HEF-yF-NyH">
                                             <color key="tintColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </barButtonItem>
                                     </navigationItem>

@@ -26,14 +26,14 @@
                                     <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Edit Setlist" id="gB4-Sx-mZH">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="9HL-il-MK3">
+                                    <navigationItem title="Editar Setlist" id="gB4-Sx-mZH">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="9HL-il-MK3">
                                             <color key="tintColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="cancelButton:" destination="tRQ-ag-Txf" id="f0t-6n-HHC"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="pTQ-KU-iSU">
+                                        <barButtonItem key="rightBarButtonItem" title="Pronto" id="pTQ-KU-iSU">
                                             <color key="tintColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="doneButton:" destination="tRQ-ag-Txf" id="hrz-2f-7LO"/>

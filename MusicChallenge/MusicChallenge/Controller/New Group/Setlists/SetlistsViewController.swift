@@ -154,7 +154,7 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let setlistCell = collectionView.dequeueReusableCell(withReuseIdentifier: "setlistCell", for: indexPath) as! SetlistCollectionViewCell
         
-        setlistCell.numberOfSongs.text = "\(setlists[indexPath.row].songs.count)"
+        setlistCell.numberOfSongs.text = "\(setlists[indexPath.row].songs.count) Músicas"
         setlistCell.setlistName.text = setlists[indexPath.row].name
         
         return setlistCell

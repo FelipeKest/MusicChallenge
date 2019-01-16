@@ -48,7 +48,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Selecione uma Setlist" id="mSF-JV-sWC">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="4C4-Jr-QSk">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="4C4-Jr-QSk">
                                             <color key="tintColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="cancelButton:" destination="CRg-X2-eAc" id="MEv-Cp-pXr"/>

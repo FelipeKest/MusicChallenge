@@ -99,7 +99,7 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
         //        segmentedControl
         
         segmentedControl.backgroundColor = UIColor(red: 29/255, green: 29/255, blue: 29/255, alpha: 1)
-        segmentedControl.commaSeperatedButtonTitles = "Setlists, Repertoire"
+        segmentedControl.commaSeperatedButtonTitles = "Setlists, Repertório"
         segmentedControl.addTarget(self, action: #selector(onChangeOfSegment(_:)), for: .valueChanged)
         
         self.view.addSubview(segmentedControl)
