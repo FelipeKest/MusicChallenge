@@ -112,6 +112,21 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("Delete Pressed")
+            let deleteAlert = UIAlertController(title: nil, message: "Deseja realmente excluir \(setlist.songs[indexPath.row].name)?", preferredStyle: .alert)
+            
+            let deleteAction = UIAlertAction(title: "Excluir", style: .destructive)
+            let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
+            
+            deleteAlert.addAction(deleteAction)
+            deleteAlert.addAction(cancelAction)
+            
+            self.present(deleteAlert, animated: true, completion: nil)
+        }
+    }
+    
     
     
     @IBAction func backButton(_ sender: Any) {
