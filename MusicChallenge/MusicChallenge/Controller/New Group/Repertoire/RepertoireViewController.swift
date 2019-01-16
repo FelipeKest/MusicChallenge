@@ -86,7 +86,7 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cellRepertoire = tableView.dequeueReusableCell(withIdentifier: "repertoireCell", for: indexPath) as! RepertoireTableViewCell
+        let cellRepertoire = tableView.dequeueReusableCell(withIdentifier: RepertoireTableViewCell.identifier, for: indexPath) as! RepertoireTableViewCell
         
         let song = songs[indexPath.row]
         var iconArray = [cellRepertoire.instrument0, cellRepertoire.instrument1, cellRepertoire.instrument2, cellRepertoire.instrument3]

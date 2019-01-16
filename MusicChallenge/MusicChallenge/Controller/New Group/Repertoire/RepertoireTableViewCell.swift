@@ -21,7 +21,7 @@ class RepertoireTableViewCell: UITableViewCell {
     
     @IBOutlet var additionalInstruments: UILabel!
     
-    
+    static let identifier = "repertoireCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()

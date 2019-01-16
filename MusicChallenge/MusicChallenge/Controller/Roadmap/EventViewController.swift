@@ -107,6 +107,11 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let index = eventSetlistTableView.indexPathForSelectedRow?.row
             destination?.song = event.associatedSetlist?.songs[index!]
         }
+        if segue.identifier == "editEvent" {
+            let destination = segue.destination as? EditEventViewController
+            destination?.event = event
+        }
+        
     }
     
     

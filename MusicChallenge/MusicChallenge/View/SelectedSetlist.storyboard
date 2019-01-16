@@ -135,6 +135,7 @@
                         <outlet property="songQtd" destination="k7o-6r-z1q" id="zTm-I2-b4O"/>
                         <outlet property="statusBar" destination="5Ji-M3-GIL" id="CAD-ne-4Ts"/>
                         <segue destination="0bv-cW-Nuk" kind="show" identifier="showSong" id="eB7-qP-oiy"/>
+                        <segue destination="cax-YG-s8E" kind="show" identifier="newSong" id="t6m-n8-Yup"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bPN-Yx-PnT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -147,7 +148,7 @@
                 <viewControllerPlaceholder storyboardName="EditSetlist" id="eao-IE-1TO" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hjr-nX-qfx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="860" y="-258"/>
+            <point key="canvasLocation" x="498" y="-387"/>
         </scene>
         <!--SelectedSong-->
         <scene sceneID="H8A-tB-ynN">
@@ -155,7 +156,15 @@
                 <viewControllerPlaceholder storyboardName="SelectedSong" id="0bv-cW-Nuk" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uVv-Fi-gQs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="953" y="41"/>
+            <point key="canvasLocation" x="733" y="-66"/>
+        </scene>
+        <!--NewSong-->
+        <scene sceneID="KAd-tN-H2h">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewSong" id="cax-YG-s8E" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8l1-OU-Ar1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="733" y="184"/>
         </scene>
     </scenes>
     <resources>

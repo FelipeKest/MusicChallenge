@@ -19,86 +19,109 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO_BANDPLAN" translatesAutoresizingMaskIntoConstraints="NO" id="gGS-1d-0yk">
-                                <rect key="frame" x="91" y="79" width="193" height="187"/>
+                                <rect key="frame" x="91.5" y="60.5" width="192" height="186"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="gGS-1d-0yk" secondAttribute="height" multiplier="32:31" id="g4L-BE-Lfi"/>
+                                    <constraint firstAttribute="width" constant="192" id="Fxc-O7-U1J"/>
+                                    <constraint firstAttribute="height" constant="186" id="xpO-q2-AzT"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para começar digite o código da sua banda:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihZ-0Y-Vu7">
-                                <rect key="frame" x="22" y="294" width="335" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ou crie uma nova banda:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBv-rx-fLm">
+                                <rect key="frame" x="94" y="439.5" width="187" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="187" id="dxd-oU-1dH"/>
+                                    <constraint firstAttribute="height" constant="21" id="vG0-QP-ty4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ou crie uma nova banda:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBv-rx-fLm">
-                                <rect key="frame" x="94" y="464" width="187" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="if2-Hf-cVT">
-                                <rect key="frame" x="141" y="501" width="92" height="46"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="if2-Hf-cVT">
+                                <rect key="frame" x="141.5" y="480.5" width="92" height="46"/>
+                                <color key="backgroundColor" red="0.23928892609999999" green="0.2352953851" blue="0.23521471020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="92" id="T3L-9E-pD1"/>
+                                    <constraint firstAttribute="height" constant="46" id="vVO-46-GR2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
                                 <state key="normal" title="Criar">
                                     <color key="titleColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="NqP-Rg-0Qn" kind="show" id="tlJ-v0-ODG"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A74-J6-Ohv">
-                                <rect key="frame" x="141" y="394" width="92" height="46"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A74-J6-Ohv">
+                                <rect key="frame" x="141.5" y="373.5" width="92" height="46"/>
+                                <color key="backgroundColor" red="0.23928892609999999" green="0.2352953851" blue="0.23521471020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="qJo-xj-Lqd"/>
+                                    <constraint firstAttribute="width" constant="92" id="IhF-rx-B1M"/>
+                                    <constraint firstAttribute="height" constant="46" id="mbf-OE-4a6"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="25"/>
                                 <state key="normal" title="Entrar">
                                     <color key="titleColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="8KF-AD-6U4" kind="show" id="p7b-r6-E0G"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4CK-he-RFI">
-                                <rect key="frame" x="87" y="340" width="201" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4CK-he-RFI">
+                                <rect key="frame" x="87" y="318.5" width="201" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="L68-ux-Ecz"/>
+                                    <constraint firstAttribute="width" constant="201" id="gJK-ED-Mc1"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para começar digite o código da sua banda:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihZ-0Y-Vu7">
+                                <rect key="frame" x="20" y="269.5" width="335" height="20"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="gGS-1d-0yk" firstAttribute="centerX" secondItem="4CK-he-RFI" secondAttribute="centerX" id="5cb-7n-JSl"/>
-                            <constraint firstItem="ihZ-0Y-Vu7" firstAttribute="leading" secondItem="zOx-V6-2V7" secondAttribute="leading" constant="22" id="8Al-I9-hyx"/>
-                            <constraint firstItem="gGS-1d-0yk" firstAttribute="centerX" secondItem="1qv-9m-qu4" secondAttribute="centerX" id="Icv-jW-QBv"/>
-                            <constraint firstItem="gGS-1d-0yk" firstAttribute="top" secondItem="zOx-V6-2V7" secondAttribute="top" constant="59" id="K5T-QH-xY1"/>
-                            <constraint firstItem="A74-J6-Ohv" firstAttribute="leading" secondItem="if2-Hf-cVT" secondAttribute="leading" id="P6e-i6-d2S"/>
-                            <constraint firstItem="xBv-rx-fLm" firstAttribute="top" secondItem="A74-J6-Ohv" secondAttribute="bottom" constant="24" id="P7q-jQ-x3J"/>
-                            <constraint firstItem="4CK-he-RFI" firstAttribute="top" secondItem="ihZ-0Y-Vu7" secondAttribute="bottom" constant="25" id="REh-vt-lBL"/>
-                            <constraint firstItem="gGS-1d-0yk" firstAttribute="leading" secondItem="zOx-V6-2V7" secondAttribute="leading" constant="91" id="TFo-WK-w5C"/>
-                            <constraint firstItem="gGS-1d-0yk" firstAttribute="centerX" secondItem="if2-Hf-cVT" secondAttribute="centerX" id="UQ1-Wm-c0P"/>
-                            <constraint firstItem="gGS-1d-0yk" firstAttribute="centerX" secondItem="xBv-rx-fLm" secondAttribute="centerX" id="WYZ-fU-Mvo"/>
-                            <constraint firstItem="A74-J6-Ohv" firstAttribute="top" secondItem="4CK-he-RFI" secondAttribute="bottom" constant="24" id="dF0-oV-yyE"/>
-                            <constraint firstItem="A74-J6-Ohv" firstAttribute="leading" secondItem="zOx-V6-2V7" secondAttribute="leading" constant="141" id="f4a-4M-LYa"/>
-                            <constraint firstItem="if2-Hf-cVT" firstAttribute="top" secondItem="xBv-rx-fLm" secondAttribute="bottom" constant="16" id="iWA-iG-cwJ"/>
-                            <constraint firstItem="ihZ-0Y-Vu7" firstAttribute="top" secondItem="gGS-1d-0yk" secondAttribute="bottom" constant="28" id="ilq-t1-LAB"/>
-                            <constraint firstItem="zOx-V6-2V7" firstAttribute="bottom" secondItem="if2-Hf-cVT" secondAttribute="bottom" constant="120" id="k7Z-pk-rBt"/>
-                            <constraint firstAttribute="bottom" secondItem="A74-J6-Ohv" secondAttribute="bottom" constant="227" id="pBb-P8-VgM"/>
-                            <constraint firstItem="gGS-1d-0yk" firstAttribute="centerX" secondItem="A74-J6-Ohv" secondAttribute="centerX" id="rtv-hp-kgK"/>
+                            <constraint firstItem="if2-Hf-cVT" firstAttribute="top" secondItem="xBv-rx-fLm" secondAttribute="bottom" constant="20" id="8Nz-6s-RtR"/>
+                            <constraint firstItem="ihZ-0Y-Vu7" firstAttribute="centerX" secondItem="1qv-9m-qu4" secondAttribute="centerX" id="J9a-E3-WPs"/>
+                            <constraint firstItem="xBv-rx-fLm" firstAttribute="top" secondItem="A74-J6-Ohv" secondAttribute="bottom" constant="20" id="NDA-w4-dyi"/>
+                            <constraint firstItem="A74-J6-Ohv" firstAttribute="centerX" secondItem="1qv-9m-qu4" secondAttribute="centerX" id="OUt-DN-CEV"/>
+                            <constraint firstItem="xBv-rx-fLm" firstAttribute="centerX" secondItem="1qv-9m-qu4" secondAttribute="centerX" id="S9V-ex-su7"/>
+                            <constraint firstItem="ihZ-0Y-Vu7" firstAttribute="leading" secondItem="gGS-1d-0yk" secondAttribute="trailing" constant="-263.5" id="anC-Fb-i9s"/>
+                            <constraint firstItem="if2-Hf-cVT" firstAttribute="centerX" secondItem="1qv-9m-qu4" secondAttribute="centerX" id="bTk-Lm-LjH"/>
+                            <constraint firstItem="gGS-1d-0yk" firstAttribute="centerY" secondItem="1qv-9m-qu4" secondAttribute="centerY" constant="-180" id="c3o-CF-OgL"/>
+                            <constraint firstItem="gGS-1d-0yk" firstAttribute="centerX" secondItem="1qv-9m-qu4" secondAttribute="centerX" id="rAe-YN-OiB"/>
+                            <constraint firstItem="A74-J6-Ohv" firstAttribute="top" secondItem="4CK-he-RFI" secondAttribute="bottom" constant="25" id="t0e-f6-Y8Y"/>
+                            <constraint firstItem="ihZ-0Y-Vu7" firstAttribute="centerY" secondItem="1qv-9m-qu4" secondAttribute="centerY" constant="-54" id="tD4-cZ-uAx"/>
+                            <constraint firstItem="4CK-he-RFI" firstAttribute="centerY" secondItem="1qv-9m-qu4" secondAttribute="centerY" id="xbZ-w1-E76"/>
+                            <constraint firstItem="4CK-he-RFI" firstAttribute="centerX" secondItem="1qv-9m-qu4" secondAttribute="centerX" id="zaU-WS-MO1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zOx-V6-2V7"/>
                     </view>
+                    <connections>
+                        <outlet property="bandCodeTextField" destination="4CK-he-RFI" id="uia-6m-CzH"/>
+                        <outlet property="confirmCodeButton" destination="A74-J6-Ohv" id="1sT-zm-crn"/>
+                        <outlet property="createBandButton" destination="if2-Hf-cVT" id="Kt8-UX-IBA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgf-D9-hmC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="103" y="125"/>
+            <point key="canvasLocation" x="101.59999999999999" y="124.58770614692655"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--Main-->
         <scene sceneID="wDg-tD-q0a">
             <objects>
-                <viewControllerPlaceholder id="8KF-AD-6U4" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Main" id="8KF-AD-6U4" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GoE-Wt-cv3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="797" y="-24"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--EditBand-->
         <scene sceneID="4GM-5b-i2X">
             <objects>
-                <viewControllerPlaceholder id="NqP-Rg-0Qn" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="EditBand" id="NqP-Rg-0Qn" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vqg-Xb-ida" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="857" y="321"/>

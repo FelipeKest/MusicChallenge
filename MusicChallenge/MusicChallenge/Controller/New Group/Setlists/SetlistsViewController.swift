@@ -128,6 +128,9 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         self.setlistsCollectionView.dataSource = self
         self.setlistsCollectionView.delegate = self
+        
+        let collectionXib = UINib(nibName: "SetlistCollectionViewCell", bundle: nil)
+        setlistsCollectionView.register(collectionXib, forCellWithReuseIdentifier: "setlistCell")
         // Do any additional setup after loading the view.
     }
     
