@@ -28,12 +28,7 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     var gender = ["Feminino", "Masculino"]
     //var instruments = ["Electric Guitar", "Acoustic Guitar", "Bass", "Drums","Keyboard/Piano",  ]
-    var instruments: [Instrument] =
-        [Instrument(type: InstrumentTypes.Bass, id: "Bass"),
-         Instrument(type: InstrumentTypes.Drums, id: "Drums"),
-         Instrument(type: InstrumentTypes.Guitar, id: "Guitar"),
-         Instrument(type: InstrumentTypes.Singer, id: "Voice"),
-         Instrument(type: InstrumentTypes.Others, id: "Others")]
+    var instruments: [Instrument] = []
     
     
     override func viewDidLoad() {
@@ -66,7 +61,7 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     func pickerViewInstruments(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return self.instruments[row].type.text
+        return self.instruments[row].text
     }
 
     

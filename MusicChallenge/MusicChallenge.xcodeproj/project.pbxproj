@@ -14,16 +14,20 @@
 		6750E8E521CC122900A193AE /* RepertoireTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6750E8E421CC122900A193AE /* RepertoireTableViewCell.xib */; };
 		675421F821F0EDD00027FE6C /* InstrumentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675421F721F0EDD00027FE6C /* InstrumentsTableViewCell.swift */; };
 		675421FA21F0F4B10027FE6C /* InstrumentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 675421F921F0F4B10027FE6C /* InstrumentsTableViewCell.xib */; };
-		675A8D8E21CAC50C00C5A377 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A8D8421CAC50A00C5A377 /* Event.swift */; };
-		675A8D8F21CAC50C00C5A377 /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A8D8521CAC50B00C5A377 /* Instrument.swift */; };
-		675A8D9021CAC50C00C5A377 /* GenericProtocolClassCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A8D8621CAC50B00C5A377 /* GenericProtocolClassCloud.swift */; };
-		675A8D9121CAC50C00C5A377 /* Musician.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A8D8721CAC50B00C5A377 /* Musician.swift */; };
-		675A8D9221CAC50C00C5A377 /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A8D8821CAC50B00C5A377 /* Extenstions.swift */; };
-		675A8D9321CAC50C00C5A377 /* Band.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A8D8921CAC50B00C5A377 /* Band.swift */; };
-		675A8D9421CAC50C00C5A377 /* ModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A8D8A21CAC50B00C5A377 /* ModelProtocols.swift */; };
-		675A8D9521CAC50C00C5A377 /* Setlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A8D8B21CAC50B00C5A377 /* Setlist.swift */; };
-		675A8D9621CAC50C00C5A377 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A8D8C21CAC50C00C5A377 /* Song.swift */; };
-		675A8D9721CAC50C00C5A377 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A8D8D21CAC50C00C5A377 /* Enums.swift */; };
+		6754220A21F110590027FE6C /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6754220521F1100C0027FE6C /* Song.swift */; };
+		6754220B21F1105B0027FE6C /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6754220721F1100C0027FE6C /* SessionManager.swift */; };
+		6754220C21F1105E0027FE6C /* Setlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6754220421F1100C0027FE6C /* Setlist.swift */; };
+		6754220D21F110620027FE6C /* ModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6754220221F1100C0027FE6C /* ModelProtocols.swift */; };
+		6754220E21F110650027FE6C /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6754220821F1100D0027FE6C /* Instrument.swift */; };
+		6754220F21F110680027FE6C /* GenericProtocolClassCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6754220621F1100C0027FE6C /* GenericProtocolClassCloud.swift */; };
+		6754221021F1106A0027FE6C /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6754220321F1100C0027FE6C /* Extenstions.swift */; };
+		6754221121F1106E0027FE6C /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6754220121F1100C0027FE6C /* Event.swift */; };
+		6754221221F110720027FE6C /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6754220021F1100B0027FE6C /* Enums.swift */; };
+		6754221321F110750027FE6C /* Band.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675421FF21F1100B0027FE6C /* Band.swift */; };
+		6754221421F110890027FE6C /* Musician.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6754220921F1100D0027FE6C /* Musician.swift */; };
+		6754221821F111FA0027FE6C /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6754221521F111FA0027FE6C /* DAO.swift */; };
+		6754221921F111FA0027FE6C /* CodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6754221621F111FA0027FE6C /* CodableExtensions.swift */; };
+		6754221A21F111FA0027FE6C /* CKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6754221721F111FA0027FE6C /* CKExtensions.swift */; };
 		676386B721E68CC7008DF13F /* FetchingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676386B621E68CC7008DF13F /* FetchingInfoViewController.swift */; };
 		676386B921E68CF0008DF13F /* CheckingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676386B821E68CF0008DF13F /* CheckingInfoViewController.swift */; };
 		676BB33621E93B0700AAAA77 /* NewEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F4079721E92B1D009F85C3 /* NewEvent.storyboard */; };
@@ -58,7 +62,6 @@
 		915E101F21BB7A7200158899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915E101E21BB7A7200158899 /* AppDelegate.swift */; };
 		915E102621BB7A7300158899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 915E102521BB7A7300158899 /* Assets.xcassets */; };
 		915E102921BB7A7300158899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 915E102721BB7A7300158899 /* LaunchScreen.storyboard */; };
-		91A02DD621BC2542001BC7C6 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A02DD521BC2542001BC7C6 /* DAO.swift */; };
 		D02F2D0D21BEE2240090043A /* Roadmap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02F2D0C21BEE2240090043A /* Roadmap.storyboard */; };
 		D02F2D0F21BEE4530090043A /* Band.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02F2D0E21BEE4530090043A /* Band.storyboard */; };
 		D04607C921CC26F7006A4B88 /* NewSong.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D04607C821CC26F7006A4B88 /* NewSong.storyboard */; };
@@ -76,7 +79,6 @@
 		D092381921C84BF000D092BE /* Setlists.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D092381821C84BF000D092BE /* Setlists.storyboard */; };
 		D092381B21C84C0900D092BE /* Repertoire.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D092381A21C84C0900D092BE /* Repertoire.storyboard */; };
 		D0A9CB5B21C18D7E00E83D9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A9CB5A21C18D7E00E83D9D /* Main.storyboard */; };
-		D0B4D9F221E3FA3600C427B2 /* DAODummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B4D9F121E3FA3600C427B2 /* DAODummy.swift */; };
 		D0EE7DFD21CD6B2C00DDA7C9 /* CreateSetlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE7DFC21CD6B2C00DDA7C9 /* CreateSetlistViewController.swift */; };
 		D0FF458621EF8A4D004393CA /* EditBandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF458521EF8A4D004393CA /* EditBandViewController.swift */; };
 /* End PBXBuildFile section */
@@ -89,16 +91,20 @@
 		6750E8E421CC122900A193AE /* RepertoireTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepertoireTableViewCell.xib; sourceTree = "<group>"; };
 		675421F721F0EDD00027FE6C /* InstrumentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentsTableViewCell.swift; sourceTree = "<group>"; };
 		675421F921F0F4B10027FE6C /* InstrumentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstrumentsTableViewCell.xib; sourceTree = "<group>"; };
-		675A8D8421CAC50A00C5A377 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		675A8D8521CAC50B00C5A377 /* Instrument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
-		675A8D8621CAC50B00C5A377 /* GenericProtocolClassCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericProtocolClassCloud.swift; sourceTree = "<group>"; };
-		675A8D8721CAC50B00C5A377 /* Musician.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Musician.swift; sourceTree = "<group>"; };
-		675A8D8821CAC50B00C5A377 /* Extenstions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
-		675A8D8921CAC50B00C5A377 /* Band.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Band.swift; sourceTree = "<group>"; };
-		675A8D8A21CAC50B00C5A377 /* ModelProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelProtocols.swift; sourceTree = "<group>"; };
-		675A8D8B21CAC50B00C5A377 /* Setlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setlist.swift; sourceTree = "<group>"; };
-		675A8D8C21CAC50C00C5A377 /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
-		675A8D8D21CAC50C00C5A377 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		675421FF21F1100B0027FE6C /* Band.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Band.swift; sourceTree = "<group>"; };
+		6754220021F1100B0027FE6C /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		6754220121F1100C0027FE6C /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		6754220221F1100C0027FE6C /* ModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProtocols.swift; sourceTree = "<group>"; };
+		6754220321F1100C0027FE6C /* Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
+		6754220421F1100C0027FE6C /* Setlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setlist.swift; sourceTree = "<group>"; };
+		6754220521F1100C0027FE6C /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		6754220621F1100C0027FE6C /* GenericProtocolClassCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericProtocolClassCloud.swift; sourceTree = "<group>"; };
+		6754220721F1100C0027FE6C /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		6754220821F1100D0027FE6C /* Instrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
+		6754220921F1100D0027FE6C /* Musician.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Musician.swift; sourceTree = "<group>"; };
+		6754221521F111FA0027FE6C /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
+		6754221621F111FA0027FE6C /* CodableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExtensions.swift; sourceTree = "<group>"; };
+		6754221721F111FA0027FE6C /* CKExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKExtensions.swift; sourceTree = "<group>"; };
 		676386B621E68CC7008DF13F /* FetchingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchingInfoViewController.swift; sourceTree = "<group>"; };
 		676386B821E68CF0008DF13F /* CheckingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckingInfoViewController.swift; sourceTree = "<group>"; };
 		676CEE7321C82DE300961015 /* JoinBandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinBandViewController.swift; sourceTree = "<group>"; };
@@ -135,7 +141,6 @@
 		915E102521BB7A7300158899 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		915E102821BB7A7300158899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		915E102A21BB7A7300158899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		91A02DD521BC2542001BC7C6 /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		D02F2D0C21BEE2240090043A /* Roadmap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Roadmap.storyboard; sourceTree = "<group>"; };
 		D02F2D0E21BEE4530090043A /* Band.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Band.storyboard; sourceTree = "<group>"; };
 		D04607C821CC26F7006A4B88 /* NewSong.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewSong.storyboard; sourceTree = "<group>"; };
@@ -153,7 +158,6 @@
 		D092381821C84BF000D092BE /* Setlists.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setlists.storyboard; sourceTree = "<group>"; };
 		D092381A21C84C0900D092BE /* Repertoire.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Repertoire.storyboard; sourceTree = "<group>"; };
 		D0A9CB5A21C18D7E00E83D9D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		D0B4D9F121E3FA3600C427B2 /* DAODummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAODummy.swift; sourceTree = "<group>"; };
 		D0EE7DFC21CD6B2C00DDA7C9 /* CreateSetlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSetlistViewController.swift; sourceTree = "<group>"; };
 		D0FF458521EF8A4D004393CA /* EditBandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBandViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -287,18 +291,20 @@
 		91A02DD421BC252D001BC7C6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				675A8D8921CAC50B00C5A377 /* Band.swift */,
-				675A8D8D21CAC50C00C5A377 /* Enums.swift */,
-				675A8D8421CAC50A00C5A377 /* Event.swift */,
-				675A8D8821CAC50B00C5A377 /* Extenstions.swift */,
-				675A8D8621CAC50B00C5A377 /* GenericProtocolClassCloud.swift */,
-				675A8D8521CAC50B00C5A377 /* Instrument.swift */,
-				675A8D8A21CAC50B00C5A377 /* ModelProtocols.swift */,
-				675A8D8721CAC50B00C5A377 /* Musician.swift */,
-				675A8D8B21CAC50B00C5A377 /* Setlist.swift */,
-				675A8D8C21CAC50C00C5A377 /* Song.swift */,
-				91A02DD521BC2542001BC7C6 /* DAO.swift */,
-				D0B4D9F121E3FA3600C427B2 /* DAODummy.swift */,
+				675421FF21F1100B0027FE6C /* Band.swift */,
+				6754220021F1100B0027FE6C /* Enums.swift */,
+				6754220121F1100C0027FE6C /* Event.swift */,
+				6754220321F1100C0027FE6C /* Extenstions.swift */,
+				6754220621F1100C0027FE6C /* GenericProtocolClassCloud.swift */,
+				6754220821F1100D0027FE6C /* Instrument.swift */,
+				6754220221F1100C0027FE6C /* ModelProtocols.swift */,
+				6754220921F1100D0027FE6C /* Musician.swift */,
+				6754220721F1100C0027FE6C /* SessionManager.swift */,
+				6754220421F1100C0027FE6C /* Setlist.swift */,
+				6754220521F1100C0027FE6C /* Song.swift */,
+				6754221721F111FA0027FE6C /* CKExtensions.swift */,
+				6754221621F111FA0027FE6C /* CodableExtensions.swift */,
+				6754221521F111FA0027FE6C /* DAO.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -461,7 +467,6 @@
 				676CEE7E21C83C3500961015 /* WhatSetlistsHaveSongViewController.swift in Sources */,
 				67F9DA7D21E7B54D001D9134 /* EventViewController.swift in Sources */,
 				D0EE7DFD21CD6B2C00DDA7C9 /* CreateSetlistViewController.swift in Sources */,
-				91A02DD621BC2542001BC7C6 /* DAO.swift in Sources */,
 				6704A17021E65EA1007115D3 /* EditSetlistViewController.swift in Sources */,
 				676386B721E68CC7008DF13F /* FetchingInfoViewController.swift in Sources */,
 				6777852021C77591002DAB83 /* RepertoireViewController.swift in Sources */,
@@ -469,32 +474,35 @@
 				6777852921C7B953002DAB83 /* RepertoireTableViewCell.swift in Sources */,
 				67D5BB1A21C15DE50058BCC7 /* RoadmapViewController.swift in Sources */,
 				676DD52721C98D5500049130 /* CustomSegmentedContrl.swift in Sources */,
+				6754220E21F110650027FE6C /* Instrument.swift in Sources */,
 				67D5BB2021C173D40058BCC7 /* PostViewController.swift in Sources */,
-				D0B4D9F221E3FA3600C427B2 /* DAODummy.swift in Sources */,
 				676CEE8521C843E300961015 /* MyProfileViewController.swift in Sources */,
-				675A8D9221CAC50C00C5A377 /* Extenstions.swift in Sources */,
-				675A8D9121CAC50C00C5A377 /* Musician.swift in Sources */,
-				675A8D9721CAC50C00C5A377 /* Enums.swift in Sources */,
-				675A8D8E21CAC50C00C5A377 /* Event.swift in Sources */,
+				6754220D21F110620027FE6C /* ModelProtocols.swift in Sources */,
+				6754220C21F1105E0027FE6C /* Setlist.swift in Sources */,
 				675421F821F0EDD00027FE6C /* InstrumentsTableViewCell.swift in Sources */,
+				6754221221F110720027FE6C /* Enums.swift in Sources */,
 				67D5BB1C21C168B10058BCC7 /* SetlistsViewController.swift in Sources */,
+				6754221A21F111FA0027FE6C /* CKExtensions.swift in Sources */,
+				6754221821F111FA0027FE6C /* DAO.swift in Sources */,
 				676DD52521C98CB600049130 /* SongsViewController.swift in Sources */,
-				675A8D8F21CAC50C00C5A377 /* Instrument.swift in Sources */,
 				6704A16E21E65E8B007115D3 /* EditSongViewController.swift in Sources */,
+				6754221121F1106E0027FE6C /* Event.swift in Sources */,
+				6754221321F110750027FE6C /* Band.swift in Sources */,
 				676CEE7A21C83AD700961015 /* OneSetlistViewController.swift in Sources */,
 				67F9DA8121E90165001D9134 /* EditEventViewController.swift in Sources */,
 				67D5BB1E21C16C570058BCC7 /* FeedViewController.swift in Sources */,
 				676CEE8121C843C400961015 /* BandInfoViewController.swift in Sources */,
+				6754221421F110890027FE6C /* Musician.swift in Sources */,
 				D0FF458621EF8A4D004393CA /* EditBandViewController.swift in Sources */,
 				915E101F21BB7A7200158899 /* AppDelegate.swift in Sources */,
+				6754220A21F110590027FE6C /* Song.swift in Sources */,
+				6754221021F1106A0027FE6C /* Extenstions.swift in Sources */,
 				6777852521C77829002DAB83 /* SetlistCollectionViewCell.swift in Sources */,
 				676CEE7C21C83BCD00961015 /* OneSongViewController.swift in Sources */,
-				675A8D9621CAC50C00C5A377 /* Song.swift in Sources */,
-				675A8D9521CAC50C00C5A377 /* Setlist.swift in Sources */,
-				675A8D9321CAC50C00C5A377 /* Band.swift in Sources */,
-				675A8D9421CAC50C00C5A377 /* ModelProtocols.swift in Sources */,
-				675A8D9021CAC50C00C5A377 /* GenericProtocolClassCloud.swift in Sources */,
+				6754221921F111FA0027FE6C /* CodableExtensions.swift in Sources */,
 				676CEE7421C82DE300961015 /* JoinBandViewController.swift in Sources */,
+				6754220B21F1105B0027FE6C /* SessionManager.swift in Sources */,
+				6754220F21F110680027FE6C /* GenericProtocolClassCloud.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

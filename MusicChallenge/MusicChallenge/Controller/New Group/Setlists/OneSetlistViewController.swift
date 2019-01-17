@@ -75,16 +75,16 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
         let song = setlist.songs[indexPath.row]
         var iconArray = [songsCell.instrument0, songsCell.instrument1, songsCell.instrument2, songsCell.instrument3, songsCell.instrument4]
         
-        if song.instruments.count > 5{
+        if song.musicians.count > 5{
             for i in 1...4 {
-                iconArray[i]?.image = song.instruments[i].type.image
+                iconArray[i]?.image = song.musicians[i].instrument?.image
             }
             songsCell.instrument0.isHidden = true
-            songsCell.additionalInstruments.text = "+\(song.instruments.count - 4)"
+            songsCell.additionalInstruments.text = "+\(song.musicians.count - 4)"
         }
         else{
-            for i in 0...song.instruments.count-1 {
-                iconArray[i]?.image = song.instruments[i].type.image
+            for i in 0...song.musicians.count-1 {
+                iconArray[i]?.image = song.musicians[i].instrument?.image
             }
             
             songsCell.additionalInstruments.text = ""

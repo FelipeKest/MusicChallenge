@@ -36,4 +36,9 @@ class Event:GenericProtocolClass {
         self.eventType = asDictionary["eventType"] as! EventTypes
         super.init(id: asDictionary["id"] as? String)
     }
+    
+    required init(from decoder: Decoder) throws {
+        fatalError("init(from:) has not been implemented")
+    }
 }
+

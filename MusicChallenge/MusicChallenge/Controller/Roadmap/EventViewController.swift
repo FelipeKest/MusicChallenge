@@ -74,16 +74,16 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let song = event.associatedSetlist?.songs[indexPath.row]
         var iconArray = [songsCell.instrument0, songsCell.instrument1, songsCell.instrument2, songsCell.instrument3]
         
-        if (song?.instruments.count)! > 4{
+        if (song?.musicians.count)! > 4{
             for i in 0...3 {
-                iconArray[i]?.image = song?.instruments[i].type.image
+                iconArray[i]?.image = song?.musicians[i].instrument?.image
             }
             
-            songsCell.additionalInstruments.text = "+\((song?.instruments.count)! - 4)"
+            songsCell.additionalInstruments.text = "+\((song?.musicians.count)! - 4)"
         }
         else{
-            for i in 0...(song?.instruments.count)!-1 {
-                iconArray[i]?.image = song?.instruments[i].type.image
+            for i in 0...(song?.musicians.count)!-1 {
+                iconArray[i]?.image = song?.musicians[i].instrument?.image
             }
             
             songsCell.additionalInstruments.text = ""

@@ -41,16 +41,16 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
         
         var iconArray = [instrument1, instrument2, instrument3, instrument4, instrument5, instrument6]
         
-        if song.instruments.count > 6{
+        if song.musicians.count > 6{
             for i in 0...5 {
-                iconArray[i]?.image = song.instruments[i].type.image
+                iconArray[i]?.image = song.musicians[i].instrument?.image
             }
             
             /*cellRepertoire.additionalInstruments.text = "+\(song.instruments.count - 6)"*/
         }
         else{
-            for i in 0...song.instruments.count-1 {
-                iconArray[i]?.image = song.instruments[i].type.image
+            for i in 0...song.musicians.count-1 {
+                iconArray[i]?.image = song.musicians[i].instrument?.image
             }
             
             //additionalInstruments.text = ""
@@ -69,15 +69,15 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return song.instruments.count
+        return song.musicians.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //temporário!
         let instrumentsCell = tableView.dequeueReusableCell(withIdentifier: InstrumentsTableViewCell.identifier, for: indexPath) as! InstrumentsTableViewCell
         
-        instrumentsCell.instrumentImage.image = song?.instruments[indexPath.row].type.image
-        instrumentsCell.instrumentName.text = song?.instruments[indexPath.row].type.text
+        instrumentsCell.instrumentImage.image = song?.musicians[indexPath.row].instrument?.image
+        instrumentsCell.instrumentName.text = song?.musicians[indexPath.row].instrument?.text
         
         return instrumentsCell
     }

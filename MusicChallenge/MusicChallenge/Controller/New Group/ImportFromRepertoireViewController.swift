@@ -25,34 +25,7 @@ class ImportFromRepertoireViewController: UIViewController , UITableViewDataSour
     var checked = [Bool]()
     var selectedSongs: [Song] = []
     
-    var songs: [Song] = [
-        
-        Song(name: "Born To Be Wild", instruments: [
-            Instrument(type: InstrumentTypes.Bass, id: ""),
-            Instrument(type: InstrumentTypes.Guitar, id: ""),
-            Instrument(type: InstrumentTypes.Drums, id: ""),
-            Instrument(type: InstrumentTypes.Singer, id: "")
-            ],
-             bandID: "", id: ""),
-        
-        Song(name: "MEGALOVANIA", instruments: [
-            Instrument(type: InstrumentTypes.Others, id: ""),
-            Instrument(type: InstrumentTypes.Guitar, id: "")],
-             bandID: "", id: ""),
-        
-        Song(name: "Love Of My Life (Acapella)", instruments: [
-            Instrument(type: InstrumentTypes.Singer, id: ""),
-            Instrument(type: InstrumentTypes.Singer, id: ""),
-            Instrument(type: InstrumentTypes.Singer, id: ""),
-            Instrument(type: InstrumentTypes.Singer, id: ""),
-            Instrument(type: InstrumentTypes.Singer, id: ""),
-            Instrument(type: InstrumentTypes.Singer, id: "")],
-             bandID: "", id: ""),
-        
-        Song(name: "The Sound Of Silence", instruments: [
-            Instrument(type: InstrumentTypes.Bass, id: "")], bandID: "", id: "")
-        
-    ]
+    var songs: [Song] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,16 +67,16 @@ class ImportFromRepertoireViewController: UIViewController , UITableViewDataSour
         let song = songs[indexPath.row]
         var iconArray = [cellRepertoire.instrument0, cellRepertoire.instrument1, cellRepertoire.instrument2, cellRepertoire.instrument3, cellRepertoire.instrument4]
         
-        if song.instruments.count > 5{
+        if song.musicians.count > 5{
             for i in 1...4 {
-                iconArray[i]?.image = song.instruments[i].type.image
+                iconArray[i]?.image = song.musicians[i].instrument?.image
             }
             cellRepertoire.instrument0.isHidden = true
-            cellRepertoire.additionalInstruments.text = "+\(song.instruments.count - 4)"
+            cellRepertoire.additionalInstruments.text = "+\(song.musicians.count - 4)"
         }
         else{
-            for i in 0...song.instruments.count-1 {
-                iconArray[i]?.image = song.instruments[i].type.image
+            for i in 0...song.musicians.count-1 {
+                iconArray[i]?.image = song.musicians[i].instrument?.image
             }
             
             cellRepertoire.additionalInstruments.text = ""

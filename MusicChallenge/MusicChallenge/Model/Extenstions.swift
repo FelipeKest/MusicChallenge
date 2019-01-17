@@ -29,9 +29,21 @@ extension Array where Element == Instrument {
     var instrumentsAsString:[String]{
         var strings:[String] = []
         for instrument in self {
-            strings.append(instrument.type.text)
+            strings.append(instrument.text)
         }
         return strings
+    }
+}
+
+extension String {
+    var asInstrument: Instrument {
+        switch self {
+            case "Bass": return .Bass
+            case "Guitar": return .Guitar
+            case "Singer": return .Singer
+            case "Drums": return .Drums
+            default: return .Others
+        }
     }
 }
 

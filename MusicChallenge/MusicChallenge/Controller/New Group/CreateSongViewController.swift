@@ -34,14 +34,14 @@ class CreateSongViewController: UIViewController , UITableViewDelegate, UITableV
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return newSong?.instruments.count ?? 0
+        return newSong?.musicians.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let instrumentsCell = tableView.dequeueReusableCell(withIdentifier: InstrumentsTableViewCell.identifier, for: indexPath) as! InstrumentsTableViewCell
         
-        instrumentsCell.instrumentImage.image = newSong?.instruments[indexPath.row].type.image
-        instrumentsCell.instrumentName.text = newSong?.instruments[indexPath.row].type.text
+        instrumentsCell.instrumentImage.image = newSong?.musicians[indexPath.row].instrument?.image
+        instrumentsCell.instrumentName.text = newSong?.musicians[indexPath.row].instrument?.text
         
         return instrumentsCell
     }

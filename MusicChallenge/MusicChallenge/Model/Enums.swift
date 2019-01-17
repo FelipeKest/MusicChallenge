@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-enum InstrumentTypes {
+enum Instrument{
     
     case Bass
     case Guitar
@@ -58,5 +58,4 @@ enum EventTypes {
         
     }
 }
-
 
