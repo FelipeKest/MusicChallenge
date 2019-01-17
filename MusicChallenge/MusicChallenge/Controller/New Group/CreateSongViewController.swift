@@ -10,20 +10,50 @@
 
 import UIKit
 
-class CreateSongViewController: UIViewController {
-
-    @IBOutlet var newSongTableView: UITableView!
+class CreateSongViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
+    
+    @IBOutlet var instrumentsTableView: UITableView!
+    @IBOutlet var nameField: UITextField!
+    @IBOutlet var keyField: UITextField!
+    @IBOutlet var bpmField: UITextField!
+    
+    var newSong: Song?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        instrumentsTableView.delegate = self
+        instrumentsTableView.dataSource = self
+        
+        let tableXib = UINib(nibName: "InstrumentsTableViewCell", bundle: nil)
+       instrumentsTableView.register(tableXib, forCellReuseIdentifier: "instrumentsCell")
 
         // Do any additional setup after loading the view.
     }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return newSong?.instruments.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let instrumentsCell = tableView.dequeueReusableCell(withIdentifier: InstrumentsTableViewCell.identifier, for: indexPath) as! InstrumentsTableViewCell
+        
+        instrumentsCell.instrumentImage.image = newSong?.instruments[indexPath.row].type.image
+        instrumentsCell.instrumentName.text = newSong?.instruments[indexPath.row].type.text
+        
+        return instrumentsCell
+    }
+    
     
     @IBAction func cancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func addInstrumentButton(_ sender: Any) {
+        
+    }
     /*
     // MARK: - Navigation
 

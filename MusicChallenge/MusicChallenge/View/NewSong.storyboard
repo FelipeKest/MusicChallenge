@@ -89,36 +89,12 @@
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rZe-I7-vtG">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="instrumentsCell" id="rZe-I7-vtG">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rZe-I7-vtG" id="1tv-ar-A6t">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nakori Shimaro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fa1-Af-Wgl">
-                                                    <rect key="frame" x="227" y="9" width="133" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Guitarra" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mu9-ql-KU1">
-                                                    <rect key="frame" x="51" y="9" width="70" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Guitar" translatesAutoresizingMaskIntoConstraints="NO" id="ePJ-9F-V65">
-                                                    <rect key="frame" x="15" y="7" width="28" height="28"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_rock" translatesAutoresizingMaskIntoConstraints="NO" id="vor-4f-F1z">
-                                                    <rect key="frame" x="191" y="7" width="28" height="28"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                            </subviews>
                                             <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -135,13 +111,19 @@
                                 <rect key="frame" x="325" y="265" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.8922216892" green="0.16046175360000001" blue="0.17606648799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="addInstrumentButton:" destination="71M-dv-jQh" eventType="touchUpInside" id="bVD-HD-xBQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Uzy-at-XCw"/>
                     </view>
                     <connections>
-                        <outlet property="newSongTableView" destination="iRO-X9-5qu" id="lf3-2v-QY7"/>
+                        <outlet property="bpmField" destination="q5X-ah-q8T" id="dAJ-at-tCB"/>
+                        <outlet property="instrumentsTableView" destination="iRO-X9-5qu" id="g9P-fC-Fsh"/>
+                        <outlet property="keyField" destination="7xq-jf-1V5" id="cIs-mp-j5g"/>
+                        <outlet property="nameField" destination="R4b-Rj-Iux" id="vXa-Jp-w95"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yid-TV-aB4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -149,8 +131,4 @@
             <point key="canvasLocation" x="-1591.2" y="44.527736131934034"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Guitar" width="545" height="546"/>
-        <image name="user_rock" width="595" height="583"/>
-    </resources>
 </document>

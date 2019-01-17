@@ -249,12 +249,12 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
     
     
     @IBAction func addClick(_ sender: Any) {
-        let optionMenu = UIAlertController(title: nil, message: "O que deseja fazer?", preferredStyle: .actionSheet)
+        let optionMenu = UIAlertController(title: nil, message: "O que deseja criar?", preferredStyle: .actionSheet)
         
-        let createSongAction = UIAlertAction(title: "Adicionar música ao repertório", style: .default) { action in
+        let createSongAction = UIAlertAction(title: "Nova música", style: .default) { action in
             self.performSegue(withIdentifier: "addSong", sender: self)
         }
-        let createSetlistAction = UIAlertAction(title: "Criar nova Setlist", style: .default){ action in
+        let createSetlistAction = UIAlertAction(title: "Nova Setlist", style: .default){ action in
             self.performSegue(withIdentifier: "addSetlist", sender: self)
         }
         

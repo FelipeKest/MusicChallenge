@@ -13,6 +13,7 @@
 		6704A17021E65EA1007115D3 /* EditSetlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6704A16F21E65EA1007115D3 /* EditSetlistViewController.swift */; };
 		6750E8E521CC122900A193AE /* RepertoireTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6750E8E421CC122900A193AE /* RepertoireTableViewCell.xib */; };
 		675421F821F0EDD00027FE6C /* InstrumentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675421F721F0EDD00027FE6C /* InstrumentsTableViewCell.swift */; };
+		675421FA21F0F4B10027FE6C /* InstrumentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 675421F921F0F4B10027FE6C /* InstrumentsTableViewCell.xib */; };
 		675A8D8E21CAC50C00C5A377 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A8D8421CAC50A00C5A377 /* Event.swift */; };
 		675A8D8F21CAC50C00C5A377 /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A8D8521CAC50B00C5A377 /* Instrument.swift */; };
 		675A8D9021CAC50C00C5A377 /* GenericProtocolClassCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A8D8621CAC50B00C5A377 /* GenericProtocolClassCloud.swift */; };
@@ -87,6 +88,7 @@
 		6704A16F21E65EA1007115D3 /* EditSetlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSetlistViewController.swift; sourceTree = "<group>"; };
 		6750E8E421CC122900A193AE /* RepertoireTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepertoireTableViewCell.xib; sourceTree = "<group>"; };
 		675421F721F0EDD00027FE6C /* InstrumentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentsTableViewCell.swift; sourceTree = "<group>"; };
+		675421F921F0F4B10027FE6C /* InstrumentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstrumentsTableViewCell.xib; sourceTree = "<group>"; };
 		675A8D8421CAC50A00C5A377 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		675A8D8521CAC50B00C5A377 /* Instrument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
 		675A8D8621CAC50B00C5A377 /* GenericProtocolClassCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericProtocolClassCloud.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 				D02F2D0E21BEE4530090043A /* Band.storyboard */,
 				6750E8E421CC122900A193AE /* RepertoireTableViewCell.xib */,
 				67F4269821ED11CA002E2BB9 /* SetlistCollectionViewCell.xib */,
+				675421F921F0F4B10027FE6C /* InstrumentsTableViewCell.xib */,
 				D054FB7721E684F5004D3132 /* FetchingInfo.storyboard */,
 				D054FB7921E68587004D3132 /* CheckingInfo.storyboard */,
 				D054FB7B21E68733004D3132 /* JoinBand.storyboard */,
@@ -434,6 +437,7 @@
 				D063196121CAC36800CF40A9 /* SelectedSetlist.storyboard in Resources */,
 				D054FB7A21E68587004D3132 /* CheckingInfo.storyboard in Resources */,
 				6704A16C21E65DC1007115D3 /* EditSetlist.storyboard in Resources */,
+				675421FA21F0F4B10027FE6C /* InstrumentsTableViewCell.xib in Resources */,
 				D092380D21C837DA00D092BE /* squealer.ttf in Resources */,
 				D054FB7C21E68733004D3132 /* JoinBand.storyboard in Resources */,
 				67F426A421EE6F82002E2BB9 /* ImportFromRepertoire.storyboard in Resources */,

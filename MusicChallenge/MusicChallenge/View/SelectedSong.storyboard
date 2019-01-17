@@ -121,6 +121,22 @@
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="69k-3S-Lby">
+                                <rect key="frame" x="0.0" y="265" width="375" height="358"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="instrumentsCell" id="t9l-9r-PZe" customClass="InstrumentsTableViewCell" customModule="MusicChallenge" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t9l-9r-PZe" id="z2x-L9-d8w">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="R39-aG-KI3"/>
@@ -133,6 +149,7 @@
                         <outlet property="instrument4" destination="psH-r8-QN5" id="aQG-XA-cST"/>
                         <outlet property="instrument5" destination="m2j-Nf-1kR" id="4wl-w4-R7j"/>
                         <outlet property="instrument6" destination="xxz-eO-d1M" id="Rb8-Qx-BXg"/>
+                        <outlet property="instrumentsTableView" destination="69k-3S-Lby" id="3nw-Oy-aW0"/>
                         <outlet property="key" destination="x1b-qT-jTj" id="8WG-me-euR"/>
                         <outlet property="songName" destination="EwF-Oy-Jim" id="UOH-sC-gRc"/>
                         <segue destination="10t-X8-mXB" kind="show" identifier="editSong" id="Mxy-Mo-JfA"/>

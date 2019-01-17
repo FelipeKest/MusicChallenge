@@ -15,7 +15,7 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBOutlet var songName: UILabel!
     //@IBOutlet var creatorName: UILabel!
-    //@IBOutlet var instrumentsTableView: UITableView!
+    @IBOutlet var instrumentsTableView: UITableView!
     
     @IBOutlet var instrument1: UIImageView!
     @IBOutlet var instrument2: UIImageView!
@@ -32,6 +32,12 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        instrumentsTableView.delegate = self
+        instrumentsTableView.dataSource = self
+        
+        let tableXib = UINib(nibName: "InstrumentsTableViewCell", bundle: nil)
+        instrumentsTableView.register(tableXib, forCellReuseIdentifier: "instrumentsCell")
         
         var iconArray = [instrument1, instrument2, instrument3, instrument4, instrument5, instrument6]
         
@@ -63,14 +69,17 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return song.instruments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //temporário!
-        let songsCell = tableView.dequeueReusableCell(withIdentifier: "songsCell", for: indexPath) as! RepertoireTableViewCell
+        let instrumentsCell = tableView.dequeueReusableCell(withIdentifier: InstrumentsTableViewCell.identifier, for: indexPath) as! InstrumentsTableViewCell
         
-        return songsCell
+        instrumentsCell.instrumentImage.image = song?.instruments[indexPath.row].type.image
+        instrumentsCell.instrumentName.text = song?.instruments[indexPath.row].type.text
+        
+        return instrumentsCell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
