@@ -10,8 +10,14 @@ import UIKit
 
 class EditSetlistViewController: UIViewController {
 
+    @IBOutlet var setlistNameField: UITextField!
+    
+    var setlist: Setlist!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setlistNameField.text = setlist.name
 
         // Do any additional setup after loading the view.
     }

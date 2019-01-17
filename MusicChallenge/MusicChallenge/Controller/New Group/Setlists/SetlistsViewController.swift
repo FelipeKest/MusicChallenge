@@ -14,7 +14,11 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
     //@IBOutlet var segmentedControl: UISegmentedControl!
     //@IBOutlet var addSetlistButton: UIBarButtonItem!
     
-    var setlists: [Setlist] = []
+    var setlists: [Setlist] = [
+        
+        Setlist(name: "xXx Egdy Emocore >.< xXx", songs: [
+            Song(name: "Meus pais não me entendem", instruments: [SongMusician()], creator: Musician(), id: "aaaaaaaaaaaaa")])
+    ]
     
     
     

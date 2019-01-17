@@ -43,10 +43,16 @@
                             </navigationBar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setlistImage" translatesAutoresizingMaskIntoConstraints="NO" id="Q3V-hc-U09">
                                 <rect key="frame" x="0.0" y="64" width="375" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="9eb-Cy-zzn"/>
+                                </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vgw-MY-BPI">
-                                <rect key="frame" x="0.0" y="227" width="375" height="396"/>
+                                <rect key="frame" x="0.0" y="216" width="375" height="407"/>
                                 <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="407" id="j6g-Lw-zvw"/>
+                                </constraints>
                                 <color key="sectionIndexBackgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="repertoireCell" id="kFH-JF-ck8">
@@ -60,6 +66,18 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Criada por Guilherme Vassallo em 19/10/18" textAlignment="right" lineBreakMode="headTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="yHR-QS-MXV">
+                                <rect key="frame" x="16" y="187" width="343" height="21"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16 Songs" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7o-6r-z1q">
+                                <rect key="frame" x="284" y="158" width="75" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="6Cl-Wv-hGP">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
@@ -73,8 +91,7 @@
                                     <barButtonItem title="Editar" id="OjD-V9-Qvv">
                                         <color key="tintColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="backButton:" destination="L6h-u0-D2v" id="UeR-q2-Zrf"/>
-                                            <segue destination="eao-IE-1TO" kind="show" identifier="editSetlist" id="VR5-ZU-Fdh"/>
+                                            <action selector="editButton:" destination="L6h-u0-D2v" id="c6F-lP-LFa"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="By3-Sa-HYt"/>
@@ -86,45 +103,28 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Criada por Guilherme Vassallo em 19/10/18" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHR-QS-MXV">
-                                <rect key="frame" x="24" y="187" width="327" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="syq-11-Ba1"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16 Songs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7o-6r-z1q">
-                                <rect key="frame" x="273" y="158" width="75" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="wqF-Nu-NoC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Q3V-hc-U09" firstAttribute="trailing" secondItem="Vgw-MY-BPI" secondAttribute="trailing" id="2cA-wL-bpT"/>
-                            <constraint firstItem="k7o-6r-z1q" firstAttribute="leading" secondItem="cAs-KS-gvR" secondAttribute="leading" constant="273" id="4Tl-NV-ahb"/>
-                            <constraint firstItem="Vgw-MY-BPI" firstAttribute="trailing" secondItem="6Cl-Wv-hGP" secondAttribute="trailing" id="6yP-33-UgD"/>
-                            <constraint firstItem="Q3V-hc-U09" firstAttribute="leading" secondItem="Vgw-MY-BPI" secondAttribute="leading" id="C9d-fs-LfG"/>
-                            <constraint firstItem="Vgw-MY-BPI" firstAttribute="leading" secondItem="6Cl-Wv-hGP" secondAttribute="leading" id="Myb-nn-TKu"/>
-                            <constraint firstItem="yHR-QS-MXV" firstAttribute="top" secondItem="k7o-6r-z1q" secondAttribute="bottom" constant="8" symbolic="YES" id="O75-NG-vA1"/>
-                            <constraint firstItem="Vgw-MY-BPI" firstAttribute="top" secondItem="yHR-QS-MXV" secondAttribute="bottom" constant="19" id="P9f-Yy-0IL"/>
-                            <constraint firstItem="k7o-6r-z1q" firstAttribute="top" secondItem="duJ-1B-m4k" secondAttribute="bottom" constant="94" id="Rvk-u2-3qF"/>
-                            <constraint firstAttribute="trailing" secondItem="duJ-1B-m4k" secondAttribute="trailing" id="SDN-pj-qgn"/>
-                            <constraint firstItem="duJ-1B-m4k" firstAttribute="leading" secondItem="Q3V-hc-U09" secondAttribute="leading" id="TS2-ej-mys"/>
-                            <constraint firstItem="duJ-1B-m4k" firstAttribute="leading" secondItem="H4q-zy-aMY" secondAttribute="leading" id="ddE-0H-igS"/>
-                            <constraint firstItem="Q3V-hc-U09" firstAttribute="centerX" secondItem="yHR-QS-MXV" secondAttribute="centerX" id="hAY-ND-Q6i"/>
-                            <constraint firstItem="6Cl-Wv-hGP" firstAttribute="top" secondItem="Vgw-MY-BPI" secondAttribute="bottom" id="j3x-cQ-JY8"/>
-                            <constraint firstItem="duJ-1B-m4k" firstAttribute="top" secondItem="cAs-KS-gvR" secondAttribute="top" id="kaZ-XM-53U"/>
-                            <constraint firstItem="Vgw-MY-BPI" firstAttribute="top" secondItem="Q3V-hc-U09" secondAttribute="bottom" constant="1" id="nnD-8l-9id"/>
-                            <constraint firstItem="6Cl-Wv-hGP" firstAttribute="bottom" secondItem="cAs-KS-gvR" secondAttribute="bottom" id="qg1-l3-fZ4"/>
-                            <constraint firstItem="duJ-1B-m4k" firstAttribute="trailing" secondItem="Q3V-hc-U09" secondAttribute="trailing" id="rCc-mW-Fcw"/>
-                            <constraint firstItem="Q3V-hc-U09" firstAttribute="top" secondItem="duJ-1B-m4k" secondAttribute="bottom" id="usc-7p-EOe"/>
+                            <constraint firstItem="duJ-1B-m4k" firstAttribute="centerX" secondItem="yHR-QS-MXV" secondAttribute="centerX" id="3T5-k9-aF7"/>
+                            <constraint firstItem="k7o-6r-z1q" firstAttribute="trailing" secondItem="H4q-zy-aMY" secondAttribute="trailingMargin" id="Acn-4w-Znf"/>
+                            <constraint firstItem="duJ-1B-m4k" firstAttribute="trailing" secondItem="6Cl-Wv-hGP" secondAttribute="trailing" id="CLu-u1-a2s"/>
+                            <constraint firstItem="duJ-1B-m4k" firstAttribute="leading" secondItem="Vgw-MY-BPI" secondAttribute="leading" id="DVx-w9-Le7"/>
+                            <constraint firstItem="duJ-1B-m4k" firstAttribute="leading" secondItem="6Cl-Wv-hGP" secondAttribute="leading" id="Hb0-89-8FY"/>
+                            <constraint firstItem="k7o-6r-z1q" firstAttribute="trailing" secondItem="yHR-QS-MXV" secondAttribute="trailing" id="J89-0y-8hs"/>
+                            <constraint firstItem="Q3V-hc-U09" firstAttribute="trailing" secondItem="duJ-1B-m4k" secondAttribute="trailing" id="O0B-a5-211"/>
+                            <constraint firstItem="Q3V-hc-U09" firstAttribute="leading" secondItem="duJ-1B-m4k" secondAttribute="leading" id="RvB-RZ-9TN"/>
+                            <constraint firstItem="Vgw-MY-BPI" firstAttribute="top" secondItem="yHR-QS-MXV" secondAttribute="bottom" constant="8" id="ZEC-GQ-VvS"/>
+                            <constraint firstItem="Q3V-hc-U09" firstAttribute="top" secondItem="duJ-1B-m4k" secondAttribute="bottom" id="a5E-as-oRT"/>
+                            <constraint firstItem="Vgw-MY-BPI" firstAttribute="top" secondItem="yHR-QS-MXV" secondAttribute="bottom" constant="8" symbolic="YES" id="g1L-UO-TDg"/>
+                            <constraint firstItem="k7o-6r-z1q" firstAttribute="top" secondItem="H4q-zy-aMY" secondAttribute="top" constant="158" id="jmW-aY-5T2"/>
+                            <constraint firstAttribute="trailing" secondItem="duJ-1B-m4k" secondAttribute="trailing" id="kxP-1g-d6s"/>
+                            <constraint firstItem="yHR-QS-MXV" firstAttribute="top" secondItem="k7o-6r-z1q" secondAttribute="bottom" constant="8" symbolic="YES" id="lgT-5Q-iVA"/>
+                            <constraint firstItem="Vgw-MY-BPI" firstAttribute="top" secondItem="H4q-zy-aMY" secondAttribute="top" constant="216" id="p0l-lP-ztJ"/>
+                            <constraint firstItem="duJ-1B-m4k" firstAttribute="trailing" secondItem="Vgw-MY-BPI" secondAttribute="trailing" id="pSX-aL-Qqb"/>
+                            <constraint firstItem="duJ-1B-m4k" firstAttribute="leading" secondItem="H4q-zy-aMY" secondAttribute="leading" id="rQf-Jd-Ek1"/>
+                            <constraint firstItem="k7o-6r-z1q" firstAttribute="top" secondItem="duJ-1B-m4k" secondAttribute="bottom" constant="94" id="scz-P6-Rvz"/>
+                            <constraint firstItem="6Cl-Wv-hGP" firstAttribute="top" secondItem="Vgw-MY-BPI" secondAttribute="bottom" id="us1-gb-bYm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cAs-KS-gvR"/>
                     </view>
@@ -136,11 +136,12 @@
                         <outlet property="statusBar" destination="5Ji-M3-GIL" id="CAD-ne-4Ts"/>
                         <segue destination="0bv-cW-Nuk" kind="show" identifier="showSong" id="eB7-qP-oiy"/>
                         <segue destination="cax-YG-s8E" kind="show" identifier="newSong" id="t6m-n8-Yup"/>
+                        <segue destination="eao-IE-1TO" kind="show" identifier="editSetlist" id="iEF-HC-xAP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bPN-Yx-PnT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-65" y="30"/>
+            <point key="canvasLocation" x="-66.400000000000006" y="29.23538230884558"/>
         </scene>
         <!--EditSetlist-->
         <scene sceneID="RF3-TJ-td5">
@@ -148,7 +149,7 @@
                 <viewControllerPlaceholder storyboardName="EditSetlist" id="eao-IE-1TO" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hjr-nX-qfx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="498" y="-387"/>
+            <point key="canvasLocation" x="-66" y="477"/>
         </scene>
         <!--SelectedSong-->
         <scene sceneID="H8A-tB-ynN">

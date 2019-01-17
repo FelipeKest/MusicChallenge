@@ -17,7 +17,7 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
     //@IBOutlet var addSongButton: UIBarButtonItem!
     //@IBOutlet var songSearchBar: UISearchBar!
     
-    var songs: [Song] = []
+    var songs: [Song] = [Song(name: "Fuscão preto")]
     
     override func viewDidLoad() {
         super.viewDidLoad()

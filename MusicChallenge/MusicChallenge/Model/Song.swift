@@ -76,7 +76,13 @@ class SongMusician {
             }
         }
     }
+    
+    init(musician: Musician, instrument: Instrument) {
+        self.musician = musician
+        self.instrument = instrument
+    }
     convenience init(){
-        self.init(from: "DA0A1DE1-9654-4338-8C27-A3BE52B23C5E|Bass")
+//        self.init(from: "DA0A1DE1-9654-4338-8C27-A3BE52B23C5E|Bass")
+        self.init(musician: Musician(), instrument: Instrument.Bass)
     }
 }

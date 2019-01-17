@@ -33,6 +33,7 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
         let tableXib = UINib(nibName: "RepertoireTableViewCell", bundle: nil)
         setlistSongsTableView.register(tableXib, forCellReuseIdentifier: "repertoireCell")
         
+        self.setlistCreator.text = "Criada por \(setlist.creator.name) em \(Date().toString(dateFormat: "dd-MM-yyyy"))"
         self.statusBar.title = setlist.name
         self.songQtd.text = "\(setlist.songs.count) Songs"
 
@@ -104,6 +105,10 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
             let index = setlistSongsTableView.indexPathForSelectedRow?.row
             destination?.song = setlist.songs[index!]
             destination?.songSetlist = setlist
+        }
+        if segue.identifier == "editSetlist" {
+            let destination = segue.destination as? EditSetlistViewController
+            destination?.setlist = setlist
         }
     }
 
@@ -192,6 +197,9 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
         self.present(deleteAlert, animated: true, completion: nil)
     }
     
+    @IBAction func editButton(_ sender: Any) {
+        performSegue(withIdentifier: "editSetlist", sender: self)
+    }
     
     
     /*
