@@ -12,6 +12,7 @@
 		6704A16E21E65E8B007115D3 /* EditSongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6704A16D21E65E8B007115D3 /* EditSongViewController.swift */; };
 		6704A17021E65EA1007115D3 /* EditSetlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6704A16F21E65EA1007115D3 /* EditSetlistViewController.swift */; };
 		6750E8E521CC122900A193AE /* RepertoireTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6750E8E421CC122900A193AE /* RepertoireTableViewCell.xib */; };
+		675421F821F0EDD00027FE6C /* InstrumentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675421F721F0EDD00027FE6C /* InstrumentsTableViewCell.swift */; };
 		675A8D8E21CAC50C00C5A377 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A8D8421CAC50A00C5A377 /* Event.swift */; };
 		675A8D8F21CAC50C00C5A377 /* Instrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A8D8521CAC50B00C5A377 /* Instrument.swift */; };
 		675A8D9021CAC50C00C5A377 /* GenericProtocolClassCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675A8D8621CAC50B00C5A377 /* GenericProtocolClassCloud.swift */; };
@@ -85,6 +86,7 @@
 		6704A16D21E65E8B007115D3 /* EditSongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSongViewController.swift; sourceTree = "<group>"; };
 		6704A16F21E65EA1007115D3 /* EditSetlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSetlistViewController.swift; sourceTree = "<group>"; };
 		6750E8E421CC122900A193AE /* RepertoireTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepertoireTableViewCell.xib; sourceTree = "<group>"; };
+		675421F721F0EDD00027FE6C /* InstrumentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentsTableViewCell.swift; sourceTree = "<group>"; };
 		675A8D8421CAC50A00C5A377 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		675A8D8521CAC50B00C5A377 /* Instrument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instrument.swift; sourceTree = "<group>"; };
 		675A8D8621CAC50B00C5A377 /* GenericProtocolClassCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericProtocolClassCloud.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				676DD52421C98CB600049130 /* SongsViewController.swift */,
 				6704A16D21E65E8B007115D3 /* EditSongViewController.swift */,
 				676CEE7521C838EC00961015 /* CreateSongViewController.swift */,
+				675421F721F0EDD00027FE6C /* InstrumentsTableViewCell.swift */,
 				676CEE7D21C83C3500961015 /* WhatSetlistsHaveSongViewController.swift */,
 				676CEE7B21C83BCD00961015 /* OneSongViewController.swift */,
 				676CEE7721C8390A00961015 /* ImportFromRepertoireViewController.swift */,
@@ -469,6 +472,7 @@
 				675A8D9121CAC50C00C5A377 /* Musician.swift in Sources */,
 				675A8D9721CAC50C00C5A377 /* Enums.swift in Sources */,
 				675A8D8E21CAC50C00C5A377 /* Event.swift in Sources */,
+				675421F821F0EDD00027FE6C /* InstrumentsTableViewCell.swift in Sources */,
 				67D5BB1C21C168B10058BCC7 /* SetlistsViewController.swift in Sources */,
 				676DD52521C98CB600049130 /* SongsViewController.swift in Sources */,
 				675A8D8F21CAC50C00C5A377 /* Instrument.swift in Sources */,
@@ -625,7 +629,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CRD27F4QAW;
+				DEVELOPMENT_TEAM = MQCZXY3BDQ;
 				INFOPLIST_FILE = MusicChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -643,7 +647,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CRD27F4QAW;
+				DEVELOPMENT_TEAM = MQCZXY3BDQ;
 				INFOPLIST_FILE = MusicChallenge/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

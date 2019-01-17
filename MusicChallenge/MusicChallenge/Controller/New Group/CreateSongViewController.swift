@@ -12,6 +12,8 @@ import UIKit
 
 class CreateSongViewController: UIViewController {
 
+    @IBOutlet var newSongTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
