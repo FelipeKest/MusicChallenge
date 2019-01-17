@@ -74,18 +74,18 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
         let song = songs[indexPath.row]
         var iconArray = [cellRepertoire.instrument0, cellRepertoire.instrument1, cellRepertoire.instrument2, cellRepertoire.instrument3]
         
-        if song.instruments.count > 4{
+        if song.musicians.count > 4{
             for i in 0...3 {
-                if let instrument = song.instruments[i].instrument {
+                if let instrument = song.musicians[i].instrument {
                     iconArray[i]?.image = instrument.image
                 }
             }
             
-            cellRepertoire.additionalInstruments.text = "+\(song.instruments.count - 4)"
+            cellRepertoire.additionalInstruments.text = "+\(song.musicians.count - 4)"
         }
         else{
-            for i in 0...song.instruments.count-1 {
-                if let instrument = song.instruments[i].instrument {
+            for i in 0...song.musicians.count-1 {
+                if let instrument = song.musicians[i].instrument {
                     iconArray[i]?.image = instrument.image
                 }
             }

@@ -9,15 +9,17 @@
 class Song:GenericProtocolClass {
     
     var name: String
-    var instruments: [SongMusician]
+    var musicians: [SongMusician]
     var creator: Musician
+    
+    static var allReferenced:[String:Song] = [:]
 //    var band: Band
 //    var setlists: [Setlist]
 
     override var asDictionary: [String : Any] {
         var result: [String:Any] = [:]
         result["name"] = self.name
-        result["instruments"] = self.instruments
+        result["instruments"] = self.musicians
         result["creator"] = self.creator
 //        result["bandID"] = self.band
 //        result["setlists"] = self.setlists
@@ -33,9 +35,9 @@ class Song:GenericProtocolClass {
 //        super.init(id: id)
 //    }
     
-    init(name: String, instruments: [SongMusician] = [SongMusician(from: "DA0A1DE1-9654-4338-8C27-A3BE52B23C5E|Bass")], creator: Musician = Musician(), id: String = "") {
+    init(name: String, instruments: [SongMusician] = [SongMusician()], creator: Musician = Musician(), id: String = "") {
         self.name = name
-        self.instruments = instruments
+        self.musicians = instruments
         self.creator = creator
 //        self.setlists = setlists
         super.init(id: id)
@@ -43,7 +45,7 @@ class Song:GenericProtocolClass {
     
     required init(asDictionary: [String : Any]) {
         self.name = asDictionary["name"] as! String
-        self.instruments = asDictionary["instruments"] as! [SongMusician]
+        self.musicians = asDictionary["instruments"] as! [SongMusician]
         self.creator = asDictionary["creatorID"] as! Musician
 //        self.setlists = asDictionary["setlists"] as! [Setlist]
 //        self.band = asDictionary["bandID"] as! Band
@@ -73,5 +75,8 @@ class SongMusician {
                 self.musician = musician.value
             }
         }
+    }
+    convenience init(){
+        self.init(from: "DA0A1DE1-9654-4338-8C27-A3BE52B23C5E|Bass")
     }
 }

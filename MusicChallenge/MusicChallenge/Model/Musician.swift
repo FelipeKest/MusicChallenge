@@ -43,13 +43,13 @@ class Musician:GenericProtocolClass {
         guard let musicianRecordName = asDictionary["musicianRecordName"] as? String else {return}
         self.musicianRecordName = musicianRecordName
         if let selfBandReference = asDictionary["band"] { //CKReference
-//            DAO.fetchBand(with: selfBandReference.recordID.recordName) { (bandRecord, error) in
+//            DAO.fetchBand(with: selfBandReference) { (bandRecord, error) in
 //                if error != nil {
 //                    print(error?.localizedDescription as Any)
-//                    return
+//                    returnnn
 //                }
 //                self.band = bandRecord?.asBand
-//            }
+            }
         }
         // se o currentUser já existe eu ou um membro da banda
 //        guard let bandID = asDictionary["band"] as? [String:Any] else {return} //da um erro
@@ -71,8 +71,6 @@ class Musician:GenericProtocolClass {
 //            })
 //
 //        }
-        Musician.allReferenced[musicianRecordName] = self
-    }
     
     convenience init (){
         self.init(name: "Convenience Musician", age: 0, instruments: [],band:Band(), id: "Convenience")

@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Join Band View Controller-->
+        <!--JoinBandViewController-->
         <scene sceneID="J3C-ye-hxX">
             <objects>
-                <viewController storyboardIdentifier="JoinBand" useStoryboardIdentifierAsRestorationIdentifier="YES" id="c5R-Nv-Ikh" customClass="JoinBandViewController" customModule="MusicChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JoinBand" title="JoinBandViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="c5R-Nv-Ikh" customClass="JoinBandViewController" customModule="MusicChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1qv-9m-qu4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,7 +43,7 @@
                                     <color key="titleColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="XO9-o6-MUo" kind="show" id="4ib-P5-fSX"/>
+                                    <segue destination="XO9-o6-MUo" kind="show" id="3wE-GU-46W"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A74-J6-Ohv">
@@ -111,7 +111,7 @@
                 <viewControllerPlaceholder storyboardName="CreateBand" id="XO9-o6-MUo" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yPW-7v-R5f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="639" y="309"/>
+            <point key="canvasLocation" x="797" y="314"/>
         </scene>
     </scenes>
     <resources>

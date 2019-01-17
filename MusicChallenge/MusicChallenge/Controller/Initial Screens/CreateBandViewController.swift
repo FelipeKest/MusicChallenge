@@ -41,7 +41,7 @@ class CreateBandViewController: UIViewController, UITextFieldDelegate, UITextVie
         guard let currentUser = SessionManager.currentUser else {return}
         let band = Band(name: name, members: [currentUser], id: "")
         
-        DAO.createBand(band: band, user: currentUser) { (savedBand, error) in
+        DAO.createBand(band: band, user: currentUser) { (error) in
             if error != nil {
                 print(error?.localizedDescription as Any)
                 return

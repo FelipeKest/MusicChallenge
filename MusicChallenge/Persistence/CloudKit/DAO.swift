@@ -67,7 +67,7 @@ class dao: UserStatusDelegate{
             self.queryMusician(id: musicianID, completionHandler: { (musicianRecord, musicianError) in
                 if musicianError != nil {
                     print(musicianError?.localizedDescription as Any)
-                    completionHandler(error)
+                    completionHandler(musicianError)
                     return
                 }
                 guard let bandRecord = record else {return}
@@ -78,8 +78,6 @@ class dao: UserStatusDelegate{
                 guard let bandMembers = bandRecord.value(forKey: "members") as? [CKRecord.Reference] else {return}
                 //variavel auxiliar
                 var auxiliarBandMembers = bandMembers
-                //recordName do musician
-                let musicianID = musicianRecord.recordID.recordName
                 //reference da band
                 let bandReference = CKRecord.Reference(record: bandRecord, action: .none)
                 //reference do musico
@@ -91,16 +89,16 @@ class dao: UserStatusDelegate{
                 modifierOperation.modifyRecordsCompletionBlock = { _,_,modifyError in
                     guard modifyError == nil else {
                         guard let cloudError = modifyError as? CKError else {
-                            completionHandler(error)
+                            completionHandler(modifyError)
                             return
                         }
                         if cloudError.code == .partialFailure {
                             guard let errors = cloudError.partialErrorsByItemID else {
-                                completionHandler(error)
+                                completionHandler(cloudError)
                                 return
                             }
                             for (_, error) in errors {
-                                if let currentErrror = error as? CKError {
+                                if error is CKError {
                                     return
                                 }
                             }
@@ -166,36 +164,67 @@ class dao: UserStatusDelegate{
         })
     }
     
-    func createBand(band: Band,user:Musician, completionHandler: @escaping (Band?,Error?)->Void){
-        let bandRecord = CKRecord(recordType: "Band")
-        bandRecord.setValue(band.name, forKey: "name")
-        bandRecord.setValue(band.id, forKey: "id")
-        let musicianReference = [CKRecord.Reference(recordID: CKRecord.ID(recordName: user.musicianRecordName!), action: .none)]
-        bandRecord.setValue(musicianReference, forKey: "members")
-        database?.save(bandRecord, completionHandler: { (result, error) in
+    func createBand(band: Band,user:Musician, completionHandler: @escaping (Error?)->Void){
+        queryMusician(id: user.id!) { (musicianRecord, error) in
             if error != nil {
-                completionHandler(nil,error)
-                print(error!.localizedDescription)
+                print(error?.localizedDescription as Any)
+                completionHandler(error)
                 return
-            } else {
-                //sem erro
-                result?.setValue(result?.recordID.recordName, forKey: "id")
-                guard let userID = user.musicianRecordName else {return}
-                result?.setValue(CKRecord(recordType: "Musician", recordID: CKRecord.ID(recordName: userID)), forKey: "members")
-                self.database?.save(result!, completionHandler: { (bandResult, err) in
-                    if err != nil {
-                        print(err?.localizedDescription as Any)
-                        completionHandler(nil,err)
-                        return
-                    }
-                    band.id = bandRecord.recordID.recordName
-                    band.members.append(user)
-                    user.band = band
-                    
-                    completionHandler(band,nil)
-                })
             }
-        })
+            let bandRecord = CKRecord(recordType: "Band")
+            bandRecord.setValue(band.name, forKey: "name")
+            bandRecord.setValue(band.id, forKey: "id")
+//            let musicianReference = [CKRecord.Reference(recordID: CKRecord.ID(recordName: user.musicianRecordName!), action: .none)]
+            let musicianReference = [CKRecord.Reference(record: musicianRecord!, action: .none)]
+            bandRecord.setValue(musicianReference, forKey: "members")
+            self.database?.save(bandRecord, completionHandler: { (result, error) in
+                if error != nil {
+                    completionHandler(error)
+                    print(error!.localizedDescription)
+                    return
+                } else {
+                    //sem erro
+                    result?.setValue(result?.recordID.recordName, forKey: "id")
+                    musicianRecord!.setValue(CKRecord.Reference(record: result!,action: .none), forKey: "band")
+//                    self.database?.save(result!, completionHandler: { (bandResult, err) in
+//                        if err != nil {
+//                            print(err?.localizedDescription as Any)
+//                            completionHandler(nil,err)
+//                            return
+//                        }
+//                        band.id = bandRecord.recordID.recordName
+//                        band.members.append(user)
+//                        user.band = band
+//
+//                        completionHandler(band,nil)
+//                    })
+                    let modifierOperation = CKModifyRecordsOperation(recordsToSave: [musicianRecord!, result!], recordIDsToDelete: [])
+                    modifierOperation.modifyRecordsCompletionBlock = { _,_,modifyError in
+                        guard modifyError == nil else {
+                            guard let cloudError = modifyError as? CKError else {
+                                completionHandler(modifyError)
+                                return
+                            }
+                            if cloudError.code == .partialFailure {
+                                guard let errors = cloudError.partialErrorsByItemID else {
+                                    completionHandler(cloudError)
+                                    return
+                                }
+                                for (_, error) in errors {
+                                    if error is CKError {
+                                        return
+                                    }
+                                }
+                            }
+                            completionHandler(error)
+                            return
+                        }
+                        completionHandler(nil)
+                    }
+                    self.database?.add(modifierOperation)
+                }
+            })
+        }
     }
 
     
@@ -226,37 +255,67 @@ class dao: UserStatusDelegate{
 //    }
     
     func createSong(song: Song,by musician: Musician, on band:Band, completionHandler: @escaping (Song?,Error?)->Void){
-        var songRecord = CKRecord(recordType: "Song")
-        let musicianRecord = CKRecord(recordType: "Musician", recordID: CKRecord.ID(recordName: musician.id!))
+        let songRecord = CKRecord(recordType: "Song")
+        var musicianRecord = CKRecord(recordType: "Musician")
         var bandRecord = CKRecord(recordType: "Band")
         queryBand(id: band.id!) { (record, error) in
             if error != nil {
                 print(error?.localizedDescription as Any)
-            } else {
-                bandRecord = record!
-            }
-        }
-        
-        for musicians in (bandRecord.value(forKey: "members") as? [CKRecord.Reference])! {
-            if musicians.recordID == musicianRecord.recordID {
-                songRecord.setValue(musician.id, forKey: "creatorID")
-            }
-        }
-        
-        songRecord = song.asCKRecord
-        database?.save(songRecord, completionHandler: {(result, error) in
-            if error != nil {
                 completionHandler(nil,error)
-                print(error!.localizedDescription)
                 return
             } else {
-                //TODO: Pegar e modifcar as musicas no campo ["repertoire"] do Record da Banda
-                print("saved record")
-                songRecord.setValue(result?.recordID.recordName, forKey: "id")
-                songRecord.setValue(bandRecord.recordID.recordName, forKey: "bandID")
-                completionHandler(song, nil)
+                bandRecord = record!
+                self.queryMusician(id: musician.id!) { (musicianRec, err) in
+                    if err != nil {
+                        print(err?.localizedDescription as Any)
+                        completionHandler(nil,err)
+                        return
+                    }
+                    guard let musicianRec = musicianRec else {return}
+                    musicianRecord = musicianRec
+                    songRecord.setValue(song.name, forKey: "name")
+                    let musicianReference = CKRecord.Reference(record: musicianRecord, action: .none)
+                    songRecord.setValue(musicianReference, forKey: "creator")
+                    guard var bandRepertoire = bandRecord["repertoire"] as? [CKRecord.Reference] else {return}
+                    self.database?.save(songRecord, completionHandler: { (savedSongRecord, songError) in
+                        if songError != nil {
+                            print(songError?.localizedDescription as Any)
+                            completionHandler(nil,songError)
+                            return
+                        }
+                        guard let savedSongRecord = savedSongRecord else {return}
+                        bandRepertoire.append(CKRecord.Reference(record: savedSongRecord, action: .none))
+                        bandRecord.setValue(bandRepertoire, forKey: "repertoire")
+                        let modifierOperation = CKModifyRecordsOperation(recordsToSave: [bandRecord], recordIDsToDelete: [])
+                        modifierOperation.modifyRecordsCompletionBlock = { _,_,modifyError in
+                            guard modifyError == nil else {
+                                guard let cloudError = modifyError as? CKError else {
+                                    completionHandler(nil,error)
+                                    return
+                                }
+                                if cloudError.code == .partialFailure {
+                                    guard let errors = cloudError.partialErrorsByItemID else {
+                                        completionHandler(nil,cloudError)
+                                        return
+                                    }
+                                    for (_, error) in errors {
+                                        if error is CKError {
+                                            return
+                                        }
+                                    }
+                                }
+                                completionHandler(nil,error)
+                                return
+                            }
+                            completionHandler(Song(asDictionary: songRecord.asDictionary),nil)
+                        }
+                        self.database?.add(modifierOperation)
+
+                    })
+                }
+
             }
-        })
+        }
     }
     
     
@@ -443,7 +502,7 @@ class dao: UserStatusDelegate{
                 print("\tkey: \(key) \n\tvalue: \(value)")
             }
 //            Se sim
-            if let member = Musician.allReferenced[allMembersID[i].recordID.recordName] as? Musician {
+            if let member = Musician.allReferenced[allMembersID[i].recordID.recordName] {
                 //adiciona na banda
                 band.members.append(member)
                 print("nome do member \(member.name)")
@@ -702,5 +761,39 @@ class dao: UserStatusDelegate{
 //        })
 //    }
     
-    
+    func saveRecord(record: CKRecord, completion: @escaping (CKRecord) -> CKRecord) {
+        let recordToSave = completion(record)
+        let modify = CKModifyRecordsOperation(recordsToSave: [recordToSave], recordIDsToDelete: nil)
+        
+        modify.qualityOfService = .userInteractive
+        modify.perRecordCompletionBlock = {
+            [weak self] (record: CKRecord?, error: Error?) -> Void in
+            if let ckError = error as? CKError {
+
+                // Check if the record was changed in the server
+                if ckError.code == CKError.Code.serverRecordChanged {
+                    
+                    print(ckError.code.rawValue)
+                    
+                    let serverRecord = ckError.userInfo["ServerRecord"]
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + (ckError.retryAfterSeconds ?? 0)) {
+                        self!.saveRecord(record: serverRecord as! CKRecord, completion: completion)
+                    }
+                }
+                
+            }
+                
+            else {
+                //change the value
+                print("record saved")
+                
+            }
+        }
+        
+        modify.savePolicy = .ifServerRecordUnchanged
+        
+        self.container.publicCloudDatabase.add(modify)
+    }
+
 }

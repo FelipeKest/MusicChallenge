@@ -12,22 +12,24 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
 
     
     @IBOutlet weak var txtName: UITextField!
-    @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtAge: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     
     var instruments = [Instrument.Bass.text,Instrument.Drums.text,Instrument.Guitar.text,Instrument.Others.text,Instrument.Singer.text]
 
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.activityIndicator.isHidden = true
         
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
         
         self.txtName.delegate = self
-        self.txtEmail.delegate = self
         self.txtAge.delegate = self
         
         // Do any additional setup after loading the view.
@@ -73,6 +75,13 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
         let name = txtName.text
         let age = txtAge.text
         
+        
+        self.activityIndicator.isHidden = false
+        self.activityIndicator.startAnimating()
+        self.view.isUserInteractionEnabled = false
+        
+        self.view.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 0.8)
+        
         guard let realName =  name else {return}
         guard let strAge = age else {return}
         
@@ -82,16 +91,19 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
         let musician = Musician(name: realName, age: realAge, band: nil, id: userID)
         
         DAO.createMusician(musician: musician) { (error) in
+
             if error != nil {
+                self.activityIndicator.stopAnimating()
+                self.view.isUserInteractionEnabled = true
                 print(error?.localizedDescription as Any)
                 return
             }
-            
+
             DispatchQueue.main.async {
-                let wantedStoryboard = UIStoryboard(name: "CreateBand", bundle: Bundle.main)
-                
-                let vc = wantedStoryboard.instantiateViewController(withIdentifier: "JoinBandViewController")
-                
+                self.activityIndicator.stopAnimating()
+                self.view.isUserInteractionEnabled = true
+                let wantedStoryboard = UIStoryboard(name: "JoinBand", bundle: Bundle.main)
+                let vc = wantedStoryboard.instantiateViewController(withIdentifier: "JoinBand")
                 self.present(vc, animated: true, completion: nil)
             }
         }

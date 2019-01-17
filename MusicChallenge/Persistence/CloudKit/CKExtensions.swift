@@ -47,6 +47,14 @@ extension CKRecord {
 }
 
 
+//MARK: CKREferences Extension
+extension CKRecord.Reference {
+    var asDictionary: [String:Any] {
+        var result = CKRecord(recordType: "",recordID: self.recordID)
+        return result.asDictionary
+    }
+}
+
 //MARK: CKRecord Array Extension
 extension Array where Element == CKRecord {
     var asMusicianArray: [Musician] {

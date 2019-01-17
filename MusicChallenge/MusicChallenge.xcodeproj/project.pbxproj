@@ -51,6 +51,7 @@
 		91A9284C21E926E800EDF529 /* Musician.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A9284121E926E800EDF529 /* Musician.swift */; };
 		91A9285021E9427500EDF529 /* CodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A9284F21E9427500EDF529 /* CodableExtensions.swift */; };
 		91CC219621EFAB240018CEDB /* CreateBandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CC219521EFAB240018CEDB /* CreateBandViewController.swift */; };
+		91CC219821F111940018CEDB /* DAOFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CC219721F111940018CEDB /* DAOFacade.swift */; };
 		D02F2D0D21BEE2240090043A /* Roadmap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02F2D0C21BEE2240090043A /* Roadmap.storyboard */; };
 		D02F2D0F21BEE4530090043A /* Band.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02F2D0E21BEE4530090043A /* Band.storyboard */; };
 		D04607C921CC26F7006A4B88 /* NewSong.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D04607C821CC26F7006A4B88 /* NewSong.storyboard */; };
@@ -120,6 +121,7 @@
 		91A9284121E926E800EDF529 /* Musician.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Musician.swift; sourceTree = "<group>"; };
 		91A9284F21E9427500EDF529 /* CodableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableExtensions.swift; sourceTree = "<group>"; };
 		91CC219521EFAB240018CEDB /* CreateBandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBandViewController.swift; sourceTree = "<group>"; };
+		91CC219721F111940018CEDB /* DAOFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAOFacade.swift; sourceTree = "<group>"; };
 		D02F2D0C21BEE2240090043A /* Roadmap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Roadmap.storyboard; sourceTree = "<group>"; };
 		D02F2D0E21BEE4530090043A /* Band.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Band.storyboard; sourceTree = "<group>"; };
 		D04607C821CC26F7006A4B88 /* NewSong.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewSong.storyboard; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 		91A9283121E926A700EDF529 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				91CC219721F111940018CEDB /* DAOFacade.swift */,
 				91A9283221E926A700EDF529 /* CloudKit */,
 			);
 			path = Persistence;
@@ -483,6 +486,7 @@
 				67D5BB1E21C16C570058BCC7 /* FeedViewController.swift in Sources */,
 				676CEE8121C843C400961015 /* BandInfoViewController.swift in Sources */,
 				915E101F21BB7A7200158899 /* AppDelegate.swift in Sources */,
+				91CC219821F111940018CEDB /* DAOFacade.swift in Sources */,
 				91CC219621EFAB240018CEDB /* CreateBandViewController.swift in Sources */,
 				91A9284421E926E800EDF529 /* Band.swift in Sources */,
 				6777852521C77829002DAB83 /* SetlistCollectionViewCell.swift in Sources */,
