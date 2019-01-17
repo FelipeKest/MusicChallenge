@@ -42,6 +42,7 @@ class CreateSongViewController: UIViewController , UITableViewDelegate, UITableV
         
         instrumentsCell.instrumentImage.image = newSong?.musicians[indexPath.row].instrument?.image
         instrumentsCell.instrumentName.text = newSong?.musicians[indexPath.row].instrument?.text
+        instrumentsCell.musicianName.text = newSong?.musicians[indexPath.row].musician?.name
         
         return instrumentsCell
     }

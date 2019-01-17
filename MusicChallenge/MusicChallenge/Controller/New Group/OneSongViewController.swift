@@ -78,6 +78,7 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
         
         instrumentsCell.instrumentImage.image = song?.musicians[indexPath.row].instrument?.image
         instrumentsCell.instrumentName.text = song?.musicians[indexPath.row].instrument?.text
+        instrumentsCell.musicianName.text = song?.musicians[indexPath.row].musician?.name
         
         return instrumentsCell
     }

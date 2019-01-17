@@ -41,6 +41,7 @@ class EditSongViewController: UIViewController, UITableViewDataSource, UITableVi
         
         instrumentsCell.instrumentImage.image = song?.musicians[indexPath.row].instrument?.image
         instrumentsCell.instrumentName.text = song?.musicians[indexPath.row].instrument?.text
+        instrumentsCell.musicianName.text = song?.musicians[indexPath.row].musician?.name
         
         return instrumentsCell
     }
@@ -49,6 +50,11 @@ class EditSongViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBAction func cancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func addInstrumentButton(_ sender: Any) {
+        
+    }
+    
     
     /*
     // MARK: - Navigation
