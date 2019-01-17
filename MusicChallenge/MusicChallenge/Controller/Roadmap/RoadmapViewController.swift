@@ -17,7 +17,10 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
     //@IBOutlet var monthSelector: ? (descobrir o tipo disso)
     
     
-    var events: [Event] = []
+    var events: [Event] = [
+        Event(name: "Batalha de Rap Medieval", place: "Avenida Real Edinburgo", date: String("11/04/427").toDate(dateFormat: "dd-MM-yyyy"), bandID: "asghhhhhhhh", id: "sfdfasfasfasfas", eventType: EventTypes.Show),
+        Event(name: "Jam Soul", place: "Casa da Gleidi", date: String("10/10/2010").toDate(dateFormat: "dd-MM-yyyy"), setlist: Setlist(name: "Cool", songs: [Song(name: "CoolSong")]), bandID: "333333333", id: "4444444444", eventType: EventTypes.Rehearsal)
+    ]
     
     
     override func viewDidLoad() {
