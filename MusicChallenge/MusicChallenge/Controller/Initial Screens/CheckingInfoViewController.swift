@@ -41,8 +41,10 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
             }
             
             if let _ = musician {
+                print("tem musico")
                 if let _ = musician?.band {
                     //tem musico e banda
+                    print("tem banda")
                     let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
                     guard let destinationViewController = mainStoryboard.instantiateViewController(withIdentifier: "Main") as? UITabBarController else {return}
                     self.present(destinationViewController, animated: true, completion: nil)

@@ -93,11 +93,23 @@ extension Saveable {
         for item in self.asDictionary {
             //se o valor do item e saveble
             if let value = item.value as? GenericProtocolClass {
-                record.setValue(CKRecord.Reference(record: value.asCKRecord, action: .none), forKey: item.key)
+                //reference dos caras
+                //record.setValue(CKRecord.Reference(record: value.asCKRecord, action: .none), forKey: item.key)
+                if type(of: value) == Musician.self {
+                    let musician = value as? Musician
+                    record.setValue(CKRecord.Reference(recordID: CKRecord.ID(recordName: (musician?.musicianRecordName)!), action: .none), forKey: item.key)
+                } else {
+                    record.setValue(CKRecord.Reference(recordID: CKRecord.ID(recordName: value.id!), action: .none), forKey: item.key)
+                }
             } else if let value = item.value as? [GenericProtocolClass]{
                 var CKReferenceArray: [CKRecord.Reference] = []
                 for index in value {
-                    CKReferenceArray.append(CKRecord.Reference(record: index.asCKRecord, action: .none))
+                    if type(of: index) == Musician.self {
+                        let musician = index as? Musician
+                        CKReferenceArray.append(CKRecord.Reference(recordID: CKRecord.ID(recordName: (musician?.musicianRecordName)!), action: .none))
+                    } else {
+                        CKReferenceArray.append(CKRecord.Reference(recordID: CKRecord.ID(recordName: index.id!), action: .none))
+                    }
                 }
                 record.setValue(CKReferenceArray, forKey: item.key)
             } else {

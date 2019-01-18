@@ -528,9 +528,6 @@ class dao: UserStatusDelegate{
                     if bandID == wantedID {
                         // e um elemento de um nsarray
                         let member = musician.asMusician
-                        print(type(of: results))
-                        print(type(of: member))
-                        print(type(of: band.members))
                         band.members.append(member)
                     }
                 }
