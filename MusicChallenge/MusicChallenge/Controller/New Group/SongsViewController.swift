@@ -57,7 +57,6 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupKeyboardDismissRecognizer()
         // Do any additional setup after loading the view, typically from a nib.
         ssss()
         currentPage = 0
@@ -86,24 +85,6 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
         
         
         
-    }
-    
-    
-    func setupKeyboardDismissRecognizer(){
-        let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(EditSongViewController.dismissKeyboard))
-        
-        tapRecognizer.cancelsTouchesInView = true
-        
-        self.view.addGestureRecognizer(tapRecognizer)
-    }
-    
-    
-    
-    @objc func dismissKeyboard()
-    {
-        view.endEditing(true)
     }
     
     func currentUserChanged() {

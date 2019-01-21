@@ -44,8 +44,6 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
         instrumentsTableView.delegate = self
         instrumentsTableView.dataSource = self
         
-        setupKeyboardDismissRecognizer()
-        
         let tableXib = UINib(nibName: "InstrumentsTableViewCell", bundle: nil)
         instrumentsTableView.register(tableXib, forCellReuseIdentifier: "instrumentsCell")
         
@@ -70,20 +68,6 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     
-    func setupKeyboardDismissRecognizer(){
-        let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(EditSongViewController.dismissKeyboard))
-        
-        tapRecognizer.cancelsTouchesInView = true
-        
-        self.view.addGestureRecognizer(tapRecognizer)
-    }
-    
-    @objc func dismissKeyboard()
-    {
-        view.endEditing(true)
-    }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

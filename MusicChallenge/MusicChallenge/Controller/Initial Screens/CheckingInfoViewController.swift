@@ -11,6 +11,12 @@ import UIKit
 class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 0
+    }
+    
+
+    
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtAge: UITextField!
@@ -28,8 +34,6 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupKeyboardDismissRecognizer()
-        
         concludeButton.layer.cornerRadius = 8
         //self.pickerViewGender.delegate = self
         //self.pickerViewGender.dataSource = self
@@ -37,25 +41,6 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
 //        self.pickerViewInstruments.dataSource = self
 
         // Do any additional setup after loading the view.
-    }
-    
-    func setupKeyboardDismissRecognizer(){
-        let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(EditSongViewController.dismissKeyboard))
-        
-        tapRecognizer.cancelsTouchesInView = true
-        
-        self.view.addGestureRecognizer(tapRecognizer)
-    }
-    
-    @objc func dismissKeyboard()
-    {
-        view.endEditing(true)
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 0
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

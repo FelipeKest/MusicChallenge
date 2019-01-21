@@ -30,8 +30,6 @@ class ImportFromRepertoireViewController: UIViewController , UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupKeyboardDismissRecognizer()
-        
         self.repertoireTableView.dataSource = self
         self.repertoireTableView.delegate = self
         
@@ -42,21 +40,6 @@ class ImportFromRepertoireViewController: UIViewController , UITableViewDataSour
         repertoireTableView.register(tableXib, forCellReuseIdentifier: "repertoireCell")
 
         // Do any additional setup after loading the view.
-    }
-    
-    func setupKeyboardDismissRecognizer(){
-        let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(EditSongViewController.dismissKeyboard))
-        
-        tapRecognizer.cancelsTouchesInView = true
-        
-        self.view.addGestureRecognizer(tapRecognizer)
-    }
-    
-    @objc func dismissKeyboard()
-    {
-        view.endEditing(true)
     }
     
 

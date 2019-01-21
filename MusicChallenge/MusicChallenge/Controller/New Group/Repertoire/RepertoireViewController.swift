@@ -22,8 +22,6 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupKeyboardDismissRecognizer()
-        
         self.repertoireTableView.dataSource = self
         self.repertoireTableView.delegate = self
         
@@ -40,22 +38,6 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
         if let index = self.repertoireTableView.indexPathForSelectedRow{
             self.repertoireTableView.deselectRow(at: index, animated: true)
         }
-    }
-    
-    
-    func setupKeyboardDismissRecognizer(){
-        let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(EditSongViewController.dismissKeyboard))
-        
-        tapRecognizer.cancelsTouchesInView = true
-        
-        self.view.addGestureRecognizer(tapRecognizer)
-    }
-    
-    @objc func dismissKeyboard()
-    {
-        view.endEditing(true)
     }
     
     

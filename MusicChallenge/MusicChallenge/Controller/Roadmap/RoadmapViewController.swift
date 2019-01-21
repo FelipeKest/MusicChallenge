@@ -29,7 +29,7 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupKeyboardDismissRecognizer()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -41,21 +41,6 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
         if let index = self.roadmapTableView.indexPathForSelectedRow{
             self.roadmapTableView.deselectRow(at: index, animated: true)
         }
-    }
-    
-    func setupKeyboardDismissRecognizer(){
-        let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(EditSongViewController.dismissKeyboard))
-        
-        tapRecognizer.cancelsTouchesInView = true
-        
-        self.view.addGestureRecognizer(tapRecognizer)
-    }
-    
-    @objc func dismissKeyboard()
-    {
-        view.endEditing(true)
     }
     
     

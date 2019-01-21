@@ -26,8 +26,6 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupKeyboardDismissRecognizer()
-        
         }
         
         //createdBy.text =
@@ -48,17 +46,13 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         eventTypeImage.image = event.eventType.image
         
         if event.associatedSetlist != nil {
-            
-            eventSetlistTableView.isHidden = false
-            goToSetlist.isHidden = false
-            
             eventSetlistName.text = "Setlist: \(event.associatedSetlist?.name ?? "nenhuma")"
             
             setlistSongQtd.text = "\(event.associatedSetlist?.songs.count ?? 0) músicas"
         }
         else {
-            eventSetlistTableView.isHidden = true
-            goToSetlist.isHidden = true
+            eventSetlistTableView.alpha = 0
+            goToSetlist.alpha = 0
             
             eventSetlistName.text = "Sem setlist atrelada."
             
@@ -128,20 +122,6 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     
-    func setupKeyboardDismissRecognizer(){
-        let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(EditSongViewController.dismissKeyboard))
-        
-        tapRecognizer.cancelsTouchesInView = true
-        
-        self.view.addGestureRecognizer(tapRecognizer)
-    }
-    
-    @objc func dismissKeyboard()
-    {
-        view.endEditing(true)
-    }
     
     
     @IBAction func backButton(_ sender: Any) {
