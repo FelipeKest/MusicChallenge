@@ -34,6 +34,8 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupKeyboardDismissRecognizer()
+        
         concludeButton.layer.cornerRadius = 8
         //self.pickerViewGender.delegate = self
         //self.pickerViewGender.dataSource = self
@@ -42,6 +44,21 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
 
         // Do any additional setup after loading the view.
     }
+    
+    
+    func setupKeyboardDismissRecognizer(){
+        let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(CheckingInfoViewController.dismissKeyboard))
+        
+        self.view.addGestureRecognizer(tapRecognizer)
+    }
+    
+    @objc func dismissKeyboard()
+    {
+        view.endEditing(true)
+    }
+    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

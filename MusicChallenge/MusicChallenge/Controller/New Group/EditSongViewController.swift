@@ -21,6 +21,8 @@ class EditSongViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupKeyboardDismissRecognizer()
+        
         instrumentsTableView.delegate = self
         instrumentsTableView.dataSource = self
         
@@ -31,6 +33,21 @@ class EditSongViewController: UIViewController, UITableViewDataSource, UITableVi
 
         // Do any additional setup after loading the view.
     }
+    
+    
+    func setupKeyboardDismissRecognizer(){
+        let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(EditSongViewController.dismissKeyboard))
+        
+        self.view.addGestureRecognizer(tapRecognizer)
+    }
+    
+    @objc func dismissKeyboard()
+    {
+        view.endEditing(true)
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return song?.musicians.count ?? 0
@@ -54,7 +71,6 @@ class EditSongViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBAction func addInstrumentButton(_ sender: Any) {
         
     }
-    
     
     /*
     // MARK: - Navigation

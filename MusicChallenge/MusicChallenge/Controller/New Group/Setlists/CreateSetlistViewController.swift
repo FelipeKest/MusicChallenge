@@ -12,9 +12,25 @@ class CreateSetlistViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupKeyboardDismissRecognizer()
 
         // Do any additional setup after loading the view.
     }
+    
+    func setupKeyboardDismissRecognizer(){
+        let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(CreateSetlistViewController.dismissKeyboard))
+        
+        self.view.addGestureRecognizer(tapRecognizer)
+    }
+    
+    @objc func dismissKeyboard()
+    {
+        view.endEditing(true)
+    }
+    
     
     @IBAction func cancelButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
