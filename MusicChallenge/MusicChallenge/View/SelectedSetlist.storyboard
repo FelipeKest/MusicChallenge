@@ -47,6 +47,10 @@
                                     <constraint firstAttribute="height" constant="162" id="9eb-Cy-zzn"/>
                                 </constraints>
                             </imageView>
+                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bwF-YU-wjL">
+                                <rect key="frame" x="0.0" y="64" width="375" height="162"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vgw-MY-BPI">
                                 <rect key="frame" x="0.0" y="216" width="375" height="407"/>
                                 <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -107,13 +111,17 @@
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="duJ-1B-m4k" firstAttribute="centerX" secondItem="yHR-QS-MXV" secondAttribute="centerX" id="3T5-k9-aF7"/>
+                            <constraint firstItem="bwF-YU-wjL" firstAttribute="leading" secondItem="Q3V-hc-U09" secondAttribute="leading" id="4VY-RP-3vj"/>
+                            <constraint firstItem="bwF-YU-wjL" firstAttribute="top" secondItem="Q3V-hc-U09" secondAttribute="top" id="9qP-xa-PVA"/>
                             <constraint firstItem="k7o-6r-z1q" firstAttribute="trailing" secondItem="H4q-zy-aMY" secondAttribute="trailingMargin" id="Acn-4w-Znf"/>
                             <constraint firstItem="duJ-1B-m4k" firstAttribute="trailing" secondItem="6Cl-Wv-hGP" secondAttribute="trailing" id="CLu-u1-a2s"/>
                             <constraint firstItem="duJ-1B-m4k" firstAttribute="leading" secondItem="Vgw-MY-BPI" secondAttribute="leading" id="DVx-w9-Le7"/>
+                            <constraint firstItem="bwF-YU-wjL" firstAttribute="bottom" secondItem="Q3V-hc-U09" secondAttribute="bottom" id="Gg9-X0-wyP"/>
                             <constraint firstItem="duJ-1B-m4k" firstAttribute="leading" secondItem="6Cl-Wv-hGP" secondAttribute="leading" id="Hb0-89-8FY"/>
                             <constraint firstItem="k7o-6r-z1q" firstAttribute="trailing" secondItem="yHR-QS-MXV" secondAttribute="trailing" id="J89-0y-8hs"/>
                             <constraint firstItem="Q3V-hc-U09" firstAttribute="trailing" secondItem="duJ-1B-m4k" secondAttribute="trailing" id="O0B-a5-211"/>
                             <constraint firstItem="Q3V-hc-U09" firstAttribute="leading" secondItem="duJ-1B-m4k" secondAttribute="leading" id="RvB-RZ-9TN"/>
+                            <constraint firstItem="bwF-YU-wjL" firstAttribute="trailing" secondItem="Q3V-hc-U09" secondAttribute="trailing" id="WTX-wU-s5r"/>
                             <constraint firstItem="Vgw-MY-BPI" firstAttribute="top" secondItem="yHR-QS-MXV" secondAttribute="bottom" constant="8" id="ZEC-GQ-VvS"/>
                             <constraint firstItem="Q3V-hc-U09" firstAttribute="top" secondItem="duJ-1B-m4k" secondAttribute="bottom" id="a5E-as-oRT"/>
                             <constraint firstItem="Vgw-MY-BPI" firstAttribute="top" secondItem="yHR-QS-MXV" secondAttribute="bottom" constant="8" symbolic="YES" id="g1L-UO-TDg"/>
