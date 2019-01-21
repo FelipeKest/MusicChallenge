@@ -32,12 +32,30 @@ class ChooseSetlistViewController: UIViewController, UICollectionViewDataSource,
     
     override func viewDidLoad() {
         
+        setupKeyboardDismissRecognizer()
+        
         self.setlistsCollectionView.dataSource = self
         self.setlistsCollectionView.delegate = self
         
         let collectionXib = UINib(nibName: "SetlistCollectionViewCell", bundle: nil)
         setlistsCollectionView.register(collectionXib, forCellWithReuseIdentifier: "setlistCell")
         // Do any additional setup after loading the view.
+    }
+    
+    
+    func setupKeyboardDismissRecognizer(){
+        let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(EditSongViewController.dismissKeyboard))
+        
+        tapRecognizer.cancelsTouchesInView = true
+        
+        self.view.addGestureRecognizer(tapRecognizer)
+    }
+    
+    @objc func dismissKeyboard()
+    {
+        view.endEditing(true)
     }
     
     

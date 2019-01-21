@@ -26,6 +26,8 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupKeyboardDismissRecognizer()
 
         // Do any additional setup after loading the view.
     }
@@ -172,7 +174,20 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     
+    func setupKeyboardDismissRecognizer(){
+        let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(OneSetlistViewController.dismissKeyboard))
+        
+        tapRecognizer.cancelsTouchesInView = true
+        
+        self.view.addGestureRecognizer(tapRecognizer)
+    }
     
+    @objc func dismissKeyboard()
+    {
+        view.endEditing(true)
+    }
     
     
 

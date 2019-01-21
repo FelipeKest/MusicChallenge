@@ -19,12 +19,27 @@ class JoinBandViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupKeyboardDismissRecognizer()
         
         confirmCodeButton.layer.cornerRadius = 8
         createBandButton.layer.cornerRadius = 8
         // Do any additional setup after loading the view.
     }
     
+    func setupKeyboardDismissRecognizer(){
+        let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(EditSongViewController.dismissKeyboard))
+        
+        tapRecognizer.cancelsTouchesInView = true
+        
+        self.view.addGestureRecognizer(tapRecognizer)
+    }
+    
+    @objc func dismissKeyboard()
+    {
+        view.endEditing(true)
+    }
 
     /*
     // MARK: - Navigation
