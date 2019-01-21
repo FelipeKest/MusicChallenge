@@ -10,7 +10,8 @@
 
 import UIKit
 
-class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NewEventProtocol {
+    
     
     @IBOutlet var roadmapTableView: UITableView!
     //@IBOutlet var searchBar: UISearchBar!
@@ -25,13 +26,18 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
             bandID: "333333333", id: "4444444444", eventType: EventTypes.Rehearsal)
     ]
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         // Do any additional setup after loading the view.
     }
+    
+    
+    func getEvent(newEvent: Event) {
+            events.append(newEvent)
+    }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -41,6 +47,8 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
         if let index = self.roadmapTableView.indexPathForSelectedRow{
             self.roadmapTableView.deselectRow(at: index, animated: true)
         }
+        
+        roadmapTableView.reloadData()
     }
     
     
@@ -94,7 +102,12 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
    
     
     @IBAction func addEvent(_ sender: Any) {
-        performSegue(withIdentifier: "newEvent", sender: self)
+        let sb = UIStoryboard(name: "NewEvent", bundle: Bundle.main)
+        
+        let vc = sb.instantiateViewController(withIdentifier: "NewEventViewController") as! NewEventViewController
+        
+        vc.delegate = self
+        self.present(vc, animated: true, completion: nil)
     }
     
 }

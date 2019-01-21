@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol NewEventProtocol {
+    func getEvent (newEvent: Event)
+}
+
 class NewEventViewController: UIViewController , SelectSetlistProtocol{
     
     @IBOutlet var locationField: UITextField!
@@ -20,8 +24,12 @@ class NewEventViewController: UIViewController , SelectSetlistProtocol{
     @IBOutlet var removeButton: UIButton!
     @IBOutlet var addSetlistButton: UIButton!
     @IBOutlet var setlistImage: UIImageView!
+    @IBOutlet var eventTypeSelector: UISegmentedControl!
     
-    var newEventSetlist: Setlist?
+    var newEvent: Event?
+    var selectedSetlist: Setlist?
+    
+    var delegate: NewEventProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +43,9 @@ class NewEventViewController: UIViewController , SelectSetlistProtocol{
         
         datePicker.date = Date()
         
-        if newEventSetlist == nil {
+        print(selectedSetlist?.name ?? "No setlist")
+        
+        if selectedSetlist == nil {
             setlistLabel.isHidden = true
             addSetlistButton.isHidden = false
             addSetlistButton.titleLabel?.text = "Adicionar setlist"
@@ -54,13 +64,13 @@ class NewEventViewController: UIViewController , SelectSetlistProtocol{
             setlistImage.isHidden = false
             setlistName.isHidden = false
             addSetlistButton.isHidden = true
-            setlistSongQtd.text = "\(newEventSetlist?.songs.count ?? 0) músicas"
-            setlistName.text = newEventSetlist?.name
+            setlistSongQtd.text = "\(selectedSetlist?.songs.count ?? 0) músicas"
+            setlistName.text = selectedSetlist?.name
         }
     }
     
     func getSetlist(selectedSetlist: Setlist) {
-        self.newEventSetlist = selectedSetlist
+        self.selectedSetlist = selectedSetlist
     }
 
     /*
@@ -98,7 +108,7 @@ class NewEventViewController: UIViewController , SelectSetlistProtocol{
     
     
     @IBAction func removeButton(_ sender: Any) {
-        let deleteAlert = UIAlertController(title: nil, message: "Deseja realmente retirar a setlist \(newEventSetlist?.name ?? "ERROR") do evento?", preferredStyle: .alert)
+        let deleteAlert = UIAlertController(title: nil, message: "Deseja realmente retirar a setlist \(newEvent?.associatedSetlist?.name ?? "ERROR") do evento?", preferredStyle: .alert)
         
         let deleteAction = UIAlertAction(title: "Retirar", style: .destructive)
         let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
@@ -113,4 +123,26 @@ class NewEventViewController: UIViewController , SelectSetlistProtocol{
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func doneButton(_ sender: Any) {
+            if (nameField.text?.isEmpty)! || (locationField.text?.isEmpty)! {
+              print("textfields vazias")
+            }
+            else {
+            
+            newEvent = Event(name: nameField.text ?? "ERROR", place: locationField.text ?? "ERROR", date: datePicker.date, bandID: "aaasfssavv", id: "156264773")
+            
+            if eventTypeSelector.isEnabledForSegment(at: 0) {
+                newEvent?.eventType = EventTypes.Show
+            }
+            else{
+                newEvent?.eventType = EventTypes.Rehearsal
+            }
+            
+            newEvent?.associatedSetlist = selectedSetlist
+            
+            delegate?.getEvent(newEvent: newEvent!)
+            
+            dismiss(animated: true, completion: nil)
+        }
+    }
 }
