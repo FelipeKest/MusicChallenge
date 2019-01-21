@@ -18,22 +18,26 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     var events: [Event] = [
-        Event(name: "Batalha de Rap Medieval", place: "Avenida Real Edinburgo", date: String("11/04/427").toDate(dateFormat: "dd-MM-yyyy"), bandID: "asghhhhhhhh", id: "sfdfasfasfasfas", eventType: EventTypes.Show),
-        Event(name: "Jam Soul", place: "Casa da Gleidi", date: String("10/10/2010").toDate(dateFormat: "dd-MM-yyyy"), setlist: Setlist(name: "Cool", songs: [Song(name: "CoolSong")]), bandID: "333333333", id: "4444444444", eventType: EventTypes.Rehearsal)
+        Event(name: "Festival de Rock", place: "Avenida Real Edinburgo", date: String("11/04/2019").toDate(dateFormat: "dd-MM-yyyy"), bandID: "asghhhhhhhh", id: "sfdfasfasfasfas", eventType: EventTypes.Show),
+        Event(name: "Jam Soul", place: "Casa da Gleidi", date: String("10/10/2019").toDate(dateFormat: "dd-MM-yyyy"), setlist: Setlist(name: "Jazz Em'Up", songs: [
+            Song(name: "Hit The Road, Jack", instruments: [SongMusician()], creator: Musician(), id: "aaaaaaaaaaaaa"),
+            Song(name: "Watermelon Man", instruments: [SongMusician()], creator: Musician(), id: "aasfasasfasf")]),
+            bandID: "333333333", id: "4444444444", eventType: EventTypes.Rehearsal)
     ]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.roadmapTableView.dataSource = self
-        self.roadmapTableView.delegate = self
         
         
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        self.roadmapTableView.dataSource = self
+        self.roadmapTableView.delegate = self
+        
         if let index = self.roadmapTableView.indexPathForSelectedRow{
             self.roadmapTableView.deselectRow(at: index, animated: true)
         }

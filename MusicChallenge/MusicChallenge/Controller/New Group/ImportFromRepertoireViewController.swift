@@ -25,7 +25,7 @@ class ImportFromRepertoireViewController: UIViewController , UITableViewDataSour
     var checked = [Bool]()
     var selectedSongs: [Song] = []
     
-    var songs: [Song] = []
+    var songs: [Song] = [Song(name: "Watermelon Man"), Song(name: "Stairway To Heaven"), Song(name: "Hit The Road, Jack"), Song(name: "Pinball Wizard", instruments: [SongMusician.init(musician: Musician(), instrument: Instrument.Drums), SongMusician.init(musician: Musician(), instrument: Instrument.Guitar)], creator: Musician(), id: "aaaaaaaaaaaaa")]
     
     override func viewDidLoad() {
         super.viewDidLoad()

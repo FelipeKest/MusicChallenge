@@ -16,8 +16,10 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     var setlists: [Setlist] = [
         
-        Setlist(name: "xXx Egdy Emocore >.< xXx", songs: [
-            Song(name: "Meus pais não me entendem", instruments: [SongMusician()], creator: Musician(), id: "aaaaaaaaaaaaa")])
+        Setlist(name: "Rock Diversas", songs: [
+            Song(name: "Stairway to Heaven", instruments: [SongMusician()], creator: Musician(), id: "aaaaaaaaaaaaa")]),
+        Setlist(name: "Jazz Em'Up", songs: [
+            Song(name: "Hit The Road, Jack", instruments: [SongMusician()], creator: Musician(), id: "aaaaaaaaaaaaa"), Song(name: "Watermelon Man", instruments: [SongMusician()], creator: Musician(), id: "aasfasasfasf")])
     ]
     
     

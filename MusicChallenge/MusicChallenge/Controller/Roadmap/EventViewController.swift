@@ -26,9 +26,17 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        }
+        
+        //createdBy.text =
+        
+        // Do any additional setup after loading the view.
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
         self.eventSetlistTableView.dataSource = self
         self.eventSetlistTableView.delegate = self
-
+        
         let tableXib = UINib(nibName: "RepertoireTableViewCell", bundle: nil)
         eventSetlistTableView.register(tableXib, forCellReuseIdentifier: "repertoireCell")
         
@@ -51,15 +59,11 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
             setlistSongQtd.text = "Acesse 'editar' para adicionar uma!"
         }
         
-        //createdBy.text =
-        
-        // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
         if let index = self.eventSetlistTableView.indexPathForSelectedRow{
             self.eventSetlistTableView.deselectRow(at: index, animated: true)
         }
+        
+        eventSetlistTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -157,7 +161,6 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBAction func goToSetlist(_ sender: Any) {
         performSegue(withIdentifier: "showSetlist", sender: self)
     }
-    
     /*
     // MARK: - Navigation
 

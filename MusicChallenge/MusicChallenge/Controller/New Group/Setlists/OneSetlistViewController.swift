@@ -26,6 +26,14 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+    
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
         
         self.setlistSongsTableView.delegate = self
         self.setlistSongsTableView.dataSource = self
@@ -36,14 +44,7 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
         self.setlistCreator.text = "Criada por \(setlist.creator.name) em \(Date().toString(dateFormat: "dd-MM-yyyy"))"
         self.statusBar.title = setlist.name
         self.songQtd.text = "\(setlist.songs.count) Songs"
-
-        // Do any additional setup after loading the view.
-    }
-    
-    
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
+        
         if let index = self.setlistSongsTableView.indexPathForSelectedRow{
             self.setlistSongsTableView.deselectRow(at: index, animated: true)
         }

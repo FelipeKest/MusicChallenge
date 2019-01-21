@@ -32,7 +32,15 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //bpm.text
         
+        /*instrumentsTableView.delegate = self
+        instrumentsTableView.dataSource = self*/
+
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         instrumentsTableView.delegate = self
         instrumentsTableView.dataSource = self
         
@@ -55,14 +63,8 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
             
             //additionalInstruments.text = ""
         }
-        
+        instrumentsTableView.reloadData()
         songName.text = song.name
-        //bpm.text
-        
-        /*instrumentsTableView.delegate = self
-        instrumentsTableView.dataSource = self*/
-
-        // Do any additional setup after loading the view.
     }
     
     

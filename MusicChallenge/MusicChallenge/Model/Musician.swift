@@ -73,7 +73,7 @@ class Musician:GenericProtocolClass {
 //        }
     
     convenience init (){
-        self.init(name: "Convenience Musician", age: 0, instruments: [],band:Band(), id: "Convenience")
+        self.init(name: "Guilherme Vassallo", age: 0, instruments: [],band:Band(), id: "Convenience")
     }
     
     required init(from decoder: Decoder) throws {
