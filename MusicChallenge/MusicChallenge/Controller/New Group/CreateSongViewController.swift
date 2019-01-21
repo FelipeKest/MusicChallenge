@@ -23,7 +23,7 @@ class CreateSongViewController: UIViewController , UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupKeyboardDismissRecognizer()
+        self.setupDismissKeyboard()
         
         instrumentsTableView.delegate = self
         instrumentsTableView.dataSource = self
@@ -32,20 +32,6 @@ class CreateSongViewController: UIViewController , UITableViewDelegate, UITableV
        instrumentsTableView.register(tableXib, forCellReuseIdentifier: "instrumentsCell")
 
         // Do any additional setup after loading the view.
-    }
-    
-    
-    func setupKeyboardDismissRecognizer(){
-        let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(CreateSongViewController.dismissKeyboard))
-        
-        self.view.addGestureRecognizer(tapRecognizer)
-    }
-    
-    @objc func dismissKeyboard()
-    {
-        view.endEditing(true)
     }
     
     

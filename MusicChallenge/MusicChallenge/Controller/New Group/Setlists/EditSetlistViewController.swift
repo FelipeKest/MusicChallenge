@@ -17,25 +17,11 @@ class EditSetlistViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupKeyboardDismissRecognizer()
+        self.setupDismissKeyboard()
         
         setlistNameField.text = setlist.name
 
         // Do any additional setup after loading the view.
-    }
-    
-    
-    func setupKeyboardDismissRecognizer(){
-        let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(EditSetlistViewController.dismissKeyboard))
-        
-        self.view.addGestureRecognizer(tapRecognizer)
-    }
-    
-    @objc func dismissKeyboard()
-    {
-        view.endEditing(true)
     }
     
 

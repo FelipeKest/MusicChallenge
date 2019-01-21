@@ -26,7 +26,7 @@ class NewEventViewController: UIViewController , SelectSetlistProtocol{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupKeyboardDismissRecognizer()
+        self.setupDismissKeyboard()
         // Do any additional setup after loading the view.
     }
     
@@ -62,21 +62,6 @@ class NewEventViewController: UIViewController , SelectSetlistProtocol{
     func getSetlist(selectedSetlist: Setlist) {
         self.newEventSetlist = selectedSetlist
     }
-    
-    
-    func setupKeyboardDismissRecognizer(){
-        let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(NewEventViewController.dismissKeyboard))
-        
-        self.view.addGestureRecognizer(tapRecognizer)
-    }
-    
-    @objc func dismissKeyboard()
-    {
-        view.endEditing(true)
-    }
-    
 
     /*
     // MARK: - Navigation

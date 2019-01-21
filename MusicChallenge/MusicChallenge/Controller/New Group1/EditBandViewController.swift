@@ -15,7 +15,7 @@ class EditBandViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        setupKeyboardDismissRecognizer()
+        self.setupDismissKeyboard()
         
         concludeButton.layer.cornerRadius = 8
         
@@ -23,19 +23,6 @@ class EditBandViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-    
-    func setupKeyboardDismissRecognizer(){
-        let tapRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(
-            target: self,
-            action: #selector(EditBandViewController.dismissKeyboard))
-        
-        self.view.addGestureRecognizer(tapRecognizer)
-    }
-    
-    @objc func dismissKeyboard()
-    {
-        view.endEditing(true)
     }
     
 
