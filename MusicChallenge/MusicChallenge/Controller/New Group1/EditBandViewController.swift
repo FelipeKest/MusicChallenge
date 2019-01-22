@@ -11,9 +11,14 @@ import UIKit
 class EditBandViewController: UIViewController {
 
     @IBOutlet weak var concludeButton: UIButton!
+    @IBOutlet weak var formationDate: UIDatePicker!
     
     
     override func viewDidLoad() {
+        
+        formationDate.setValue(UIColor.white, forKey: "textColor")
+        
+        formationDate.datePickerMode = UIDatePicker.Mode(rawValue: 1)!
         
         self.setupDismissKeyboard()
         
