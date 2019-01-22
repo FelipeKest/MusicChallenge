@@ -49,10 +49,12 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
             eventSetlistName.text = "Setlist: \(event.associatedSetlist?.name ?? "nenhuma")"
             
             setlistSongQtd.text = "\(event.associatedSetlist?.songs.count ?? 0) músicas"
+            
+            eventSetlistTableView.isHidden = false
         }
         else {
-            eventSetlistTableView.alpha = 0
-            goToSetlist.alpha = 0
+            eventSetlistTableView.isHidden = true
+            goToSetlist.isHidden = true
             
             eventSetlistName.text = "Sem setlist atrelada."
             

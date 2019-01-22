@@ -20,8 +20,10 @@ class EditEventViewController: UIViewController, SelectSetlistProtocol{
     @IBOutlet var removeButton: UIButton!
     @IBOutlet var addSetlistButton: UIButton!
     @IBOutlet var setlistImage: UIImageView!
+    @IBOutlet var eventTypeSelector: UISegmentedControl!
     
     var event: Event!
+    var selectedSetlist: Setlist?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +39,13 @@ class EditEventViewController: UIViewController, SelectSetlistProtocol{
         nameField.text = event.name
         datePicker.date = event.date
         
-        if event.associatedSetlist == nil {
+        if event.associatedSetlist != nil && selectedSetlist == nil {
+            selectedSetlist = event.associatedSetlist
+        }
+        
+        print(selectedSetlist?.name ?? "NO SETLIST")
+        
+        if selectedSetlist == nil {
             setlistLabel.isHidden = true
             addSetlistButton.isHidden = false
             addSetlistButton.titleLabel?.text = "Adicionar setlist"
@@ -56,13 +64,13 @@ class EditEventViewController: UIViewController, SelectSetlistProtocol{
             setlistImage.isHidden = false
             setlistName.isHidden = false
             addSetlistButton.isHidden = true
-            setlistSongQtd.text = "\(event.associatedSetlist?.songs.count ?? 0) músicas"
-            setlistName.text = event.associatedSetlist?.name
+            setlistSongQtd.text = "\(selectedSetlist?.songs.count ?? 0) músicas"
+            setlistName.text = selectedSetlist?.name
         }
     }
     
     func getSetlist(selectedSetlist: Setlist) {
-        self.event.associatedSetlist = selectedSetlist
+        self.selectedSetlist = selectedSetlist
     }
     
     
@@ -115,5 +123,28 @@ class EditEventViewController: UIViewController, SelectSetlistProtocol{
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func doneButton(_ sender: Any) {
+        
+        if (nameField.text?.isEmpty)! || (locationField.text?.isEmpty)! {
+            print("textfields vazias")
+        }
+        else {
+            
+            event.name = nameField.text ?? "ERROR"
+            event.location = locationField.text ?? "ERROR"
+            event.date = datePicker.date
+            
+            if eventTypeSelector.isEnabledForSegment(at: 0) {
+                event?.eventType = EventTypes.Show
+            }
+            else{
+                event?.eventType = EventTypes.Rehearsal
+            }
+            
+            event?.associatedSetlist = selectedSetlist
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
     
 }

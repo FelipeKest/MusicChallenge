@@ -75,7 +75,8 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         
         if events[indexPath.row].associatedSetlist != nil { //evento tem setlist associada
-            eventCell.setlist.text = "Setlist: \(events[indexPath.row].associatedSetlist?.name ?? "no_set_found")"
+            eventCell.setlist.text = events[indexPath.row].associatedSetlist?.name
+            eventCell.setlist.textColor = UIColor.white
         }
         else { //não tem setlist associada
             eventCell.setlist.text = "Sem setlist!"
