@@ -10,7 +10,8 @@
 
 import UIKit
 
-class RepertoireViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class RepertoireViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate{
+    
     
     @IBOutlet var repertoireTableView: UITableView!
     //@IBOutlet var segmentedControl: UISegmentedControl!
@@ -38,18 +39,10 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
         if let index = self.repertoireTableView.indexPathForSelectedRow{
             self.repertoireTableView.deselectRow(at: index, animated: true)
         }
+        
+        repertoireTableView.reloadData()
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return songs.count

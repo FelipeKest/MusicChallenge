@@ -10,6 +10,10 @@
 
 import UIKit
 
+protocol NewSongProtocol {
+    func getSong (newSong: Song)
+}
+
 class CreateSongViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet var instrumentsTableView: UITableView!
@@ -19,6 +23,7 @@ class CreateSongViewController: UIViewController , UITableViewDelegate, UITableV
     
     var newSong: Song?
     
+    var delegate: NewSongProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +61,21 @@ class CreateSongViewController: UIViewController , UITableViewDelegate, UITableV
     
     @IBAction func addInstrumentButton(_ sender: Any) {
         
+    }
+    
+    
+    @IBAction func doneButton(_ sender: Any) {
+        
+        if (nameField.text?.isEmpty)! {
+            print("textfield vazia")
+        }
+        else {
+        newSong = Song(name: nameField.text ?? "ERROR")
+        delegate?.getSong(newSong: newSong ?? Song())
+        print(newSong?.name ?? "NO SONG")
+        
+        dismiss(animated: true, completion: nil)
+        }
     }
     /*
     // MARK: - Navigation
