@@ -32,5 +32,9 @@ class BandInfoViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func codeSendButton(_ sender: Any) {
+        let ac = UIActivityViewController(activityItems: ["Use este código para se juntar a nossa banda no BandPlan: F3G2C456G2V698VV23KS3JG34366GGHK-B"], applicationActivities: [])
+        present(ac, animated: true)
+    }
+    
 }

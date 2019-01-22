@@ -37,7 +37,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lucas Gouveia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAX-Z1-ern">
-                                        <rect key="frame" x="34" y="560" width="307" height="20"/>
+                                        <rect key="frame" x="34" y="561" width="307" height="20"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -64,83 +64,94 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Felipe Kestelmann" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z12-Q9-r3Y">
-                                        <rect key="frame" x="34" y="532" width="307" height="20"/>
+                                        <rect key="frame" x="34" y="533" width="307" height="20"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guilherme Vassallo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNC-7p-5yU">
-                                        <rect key="frame" x="34" y="504" width="307" height="20"/>
+                                        <rect key="frame" x="34" y="505" width="307" height="20"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formada em:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8r-u4-Ajb">
-                                        <rect key="frame" x="37" y="394" width="112.5" height="23.5"/>
+                                        <rect key="frame" x="37" y="394" width="113" height="24"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
                                         <color key="textColor" red="0.80000000000000004" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gênero: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5O-1c-KDB">
-                                        <rect key="frame" x="37" y="433.5" width="70" height="23.5"/>
+                                        <rect key="frame" x="37" y="434" width="70" height="24"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
                                         <color key="textColor" red="0.80000000000000004" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Membros:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gF5-zc-dV1">
-                                        <rect key="frame" x="145" y="465.5" width="85" height="23.5"/>
+                                        <rect key="frame" x="145" y="466" width="85" height="24"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
                                         <color key="textColor" red="0.80000000000000004" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWa-uz-hBJ">
-                                        <rect key="frame" x="305" y="436.5" width="36" height="20"/>
+                                        <rect key="frame" x="305" y="437.5" width="36" height="20"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10/10/1978" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Tb-Rw-J0l">
-                                        <rect key="frame" x="264" y="397" width="77" height="20"/>
+                                        <rect key="frame" x="264" y="397.5" width="77" height="20"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKX-Hl-4Nt">
-                                        <rect key="frame" x="55" y="616" width="13" height="20"/>
+                                        <rect key="frame" x="55" y="617" width="13" height="20"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfb-nf-wzp">
-                                        <rect key="frame" x="55" y="644" width="13" height="20"/>
+                                        <rect key="frame" x="55" y="645" width="13" height="20"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPP-OL-pNN">
-                                        <rect key="frame" x="55" y="672" width="13" height="20"/>
+                                        <rect key="frame" x="55" y="673" width="13" height="20"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiH-Xg-l2l">
-                                        <rect key="frame" x="55" y="700" width="13" height="20"/>
+                                        <rect key="frame" x="55" y="701" width="13" height="20"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Andrew Costa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3h-9R-hIQ">
-                                        <rect key="frame" x="34" y="588" width="99" height="20"/>
+                                        <rect key="frame" x="34" y="589" width="99" height="20"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bdp-Gq-Z9M">
-                                        <rect key="frame" x="55" y="728" width="13" height="20"/>
+                                        <rect key="frame" x="55" y="729" width="13" height="20"/>
                                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eqK-zA-Um1">
+                                        <rect key="frame" x="8" y="8" width="67" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="67" id="GXs-fy-qe9"/>
+                                            <constraint firstAttribute="height" constant="29" id="sG8-2N-Zoz"/>
+                                        </constraints>
+                                        <state key="normal" title="Código"/>
+                                        <connections>
+                                            <action selector="codeSendButton:" destination="2QT-us-nC5" eventType="touchUpInside" id="ron-dZ-Sw8"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="iPP-OL-pNN" firstAttribute="leading" secondItem="Pfb-nf-wzp" secondAttribute="trailing" constant="-13" id="0Yw-hW-ciz"/>
@@ -164,9 +175,11 @@
                                     <constraint firstItem="DaY-D2-fur" firstAttribute="top" secondItem="pqe-hT-fsN" secondAttribute="bottom" constant="61" id="MqH-hn-uRV"/>
                                     <constraint firstItem="s3h-9R-hIQ" firstAttribute="leading" secondItem="VAX-Z1-ern" secondAttribute="trailing" constant="-307" id="ROd-s1-S0j"/>
                                     <constraint firstItem="RK8-Zp-EoM" firstAttribute="leading" secondItem="R60-1e-IR6" secondAttribute="leading" constant="34" id="Sdh-ay-vcS"/>
+                                    <constraint firstItem="eqK-zA-Um1" firstAttribute="top" secondItem="7dj-60-l70" secondAttribute="top" id="SqK-2W-tsj"/>
                                     <constraint firstItem="pqe-hT-fsN" firstAttribute="leading" secondItem="R60-1e-IR6" secondAttribute="leading" id="Sst-EV-lb3"/>
                                     <constraint firstItem="z12-Q9-r3Y" firstAttribute="trailing" secondItem="VAX-Z1-ern" secondAttribute="trailing" id="TO0-gK-b3x"/>
                                     <constraint firstItem="xiH-Xg-l2l" firstAttribute="leading" secondItem="iPP-OL-pNN" secondAttribute="trailing" constant="-13" id="TRO-u0-ARC"/>
+                                    <constraint firstItem="eqK-zA-Um1" firstAttribute="leading" secondItem="R60-1e-IR6" secondAttribute="leadingMargin" id="Uju-oI-E6m"/>
                                     <constraint firstItem="bNC-7p-5yU" firstAttribute="top" secondItem="a5O-1c-KDB" secondAttribute="bottom" constant="47" id="WNK-7L-WUF"/>
                                     <constraint firstItem="RK8-Zp-EoM" firstAttribute="top" secondItem="pqe-hT-fsN" secondAttribute="bottom" constant="8" symbolic="YES" id="WOu-b4-5Qw"/>
                                     <constraint firstItem="o8r-u4-Ajb" firstAttribute="leading" secondItem="R60-1e-IR6" secondAttribute="leading" constant="37" id="ZLi-MP-EaZ"/>

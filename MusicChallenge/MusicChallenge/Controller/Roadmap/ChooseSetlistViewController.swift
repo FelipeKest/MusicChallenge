@@ -23,9 +23,10 @@ class ChooseSetlistViewController: UIViewController, UICollectionViewDataSource,
     var setlists: [Setlist] = [
         
         Setlist(name: "Rock Diversas", songs: [
-            Song(name: "Stairway to Heaven", instruments: [SongMusician()], creator: Musician(), id: "aaaaaaaaaaaaa")]),
+            Song(name: "Stairway to Heaven", instruments: [SongMusician()], creator: Musician(), id: "aaaaaaaaaaaaa"),]),
         Setlist(name: "Jazz Em'Up", songs: [
-            Song(name: "Hit The Road, Jack", instruments: [SongMusician()], creator: Musician(), id: "aaaaaaaaaaaaa"), Song(name: "Watermelon Man", instruments: [SongMusician()], creator: Musician(), id: "aasfasasfasf")])
+            Song(name: "Hit The Road, Jack", instruments: [SongMusician()], creator: Musician(), id: "aaaaaaaaaaaaa"), Song(name: "Watermelon Man", instruments: [SongMusician()], creator: Musician(), id: "aasfasasfasf")]),
+        Setlist(name: "Música Brasileiras", songs: [Song(name: "Tempo Perdido")])
     ]
     
     
