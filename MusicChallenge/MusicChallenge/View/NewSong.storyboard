@@ -116,7 +116,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfU-dq-jAz">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfU-dq-jAz">
                                 <rect key="frame" x="337" y="268" width="22" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="71k-9R-M8f"/>
@@ -145,6 +145,7 @@
                             <constraint firstItem="kxF-VL-VvG" firstAttribute="leading" secondItem="EfH-vr-X2g" secondAttribute="trailing" constant="-104" id="9ng-Du-Xla"/>
                             <constraint firstItem="kxF-VL-VvG" firstAttribute="trailing" secondItem="Uzy-at-XCw" secondAttribute="trailing" id="B3w-Tl-dCb"/>
                             <constraint firstItem="iRO-X9-5qu" firstAttribute="leading" secondItem="Uzy-at-XCw" secondAttribute="leading" id="BFD-lg-95x"/>
+                            <constraint firstItem="IfU-dq-jAz" firstAttribute="top" secondItem="q5X-ah-q8T" secondAttribute="bottom" constant="35" id="BbV-I8-r1B"/>
                             <constraint firstItem="iRO-X9-5qu" firstAttribute="trailing" secondItem="Uzy-at-XCw" secondAttribute="trailing" id="DGG-W4-1FB"/>
                             <constraint firstItem="R4b-Rj-Iux" firstAttribute="top" secondItem="kxF-VL-VvG" secondAttribute="bottom" constant="40" id="DlP-sp-43r"/>
                             <constraint firstItem="IfU-dq-jAz" firstAttribute="leading" secondItem="C7l-Iz-eVn" secondAttribute="trailing" constant="127" id="J2g-E6-wbs"/>
