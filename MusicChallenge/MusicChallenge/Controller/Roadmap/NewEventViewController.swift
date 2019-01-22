@@ -42,6 +42,8 @@ class NewEventViewController: UIViewController , SelectSetlistProtocol{
     override func viewWillAppear(_ animated: Bool) {
         datePicker.setValue(UIColor.white, forKey: "textColor")
         
+        datePicker.datePickerMode = UIDatePicker.Mode(rawValue: 1)!
+        
         datePicker.date = Date()
         
         print(selectedSetlist?.name ?? "No setlist")
@@ -165,5 +167,9 @@ class NewEventViewController: UIViewController , SelectSetlistProtocol{
             
             dismiss(animated: true, completion: nil)
         }
+        
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }

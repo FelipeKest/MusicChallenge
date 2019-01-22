@@ -112,4 +112,9 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.present(vc, animated: true, completion: nil)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
+
+

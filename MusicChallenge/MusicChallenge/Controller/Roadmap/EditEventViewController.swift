@@ -35,6 +35,8 @@ class EditEventViewController: UIViewController, SelectSetlistProtocol{
     override func viewWillAppear(_ animated: Bool) {
         datePicker.setValue(UIColor.white, forKey: "textColor")
         
+        datePicker.datePickerMode = UIDatePicker.Mode(rawValue: 1)!
+        
         locationField.text = event.location
         nameField.text = event.name
         datePicker.date = event.date
@@ -146,5 +148,9 @@ class EditEventViewController: UIViewController, SelectSetlistProtocol{
         
         dismiss(animated: true, completion: nil)
     }
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
+
+

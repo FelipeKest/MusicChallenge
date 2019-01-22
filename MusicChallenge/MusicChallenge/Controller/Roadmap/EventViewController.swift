@@ -169,6 +169,11 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBAction func goToSetlist(_ sender: Any) {
         performSegue(withIdentifier: "showSetlist", sender: self)
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     /*
     // MARK: - Navigation
 
