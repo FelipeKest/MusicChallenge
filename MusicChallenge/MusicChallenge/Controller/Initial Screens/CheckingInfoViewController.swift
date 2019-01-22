@@ -82,6 +82,10 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
         
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
 
     
     /*

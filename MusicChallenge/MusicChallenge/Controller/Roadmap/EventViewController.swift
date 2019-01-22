@@ -19,6 +19,7 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet var eventSetlistTableView: UITableView!
     @IBOutlet var goToSetlist: UIButton!
     @IBOutlet var eventTypeImage: UIImageView!
+    @IBOutlet weak var acesseLabel: UILabel!
     
 
     var event: Event!
@@ -51,6 +52,8 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
             setlistSongQtd.text = "\(event.associatedSetlist?.songs.count ?? 0) músicas"
             
             eventSetlistTableView.isHidden = false
+            
+            acesseLabel.isHidden = true
         }
         else {
             eventSetlistTableView.isHidden = true
@@ -58,7 +61,11 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             eventSetlistName.text = "Sem setlist atrelada."
             
-            setlistSongQtd.text = "Acesse 'editar' para adicionar uma!"
+            acesseLabel.text = "Acesse 'editar' para adicionar uma."
+            
+            setlistSongQtd.isHidden = true
+            
+            acesseLabel.isHidden = false
         }
         
         if let index = self.eventSetlistTableView.indexPathForSelectedRow{
@@ -122,7 +129,6 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
     }
-    
     
     
     

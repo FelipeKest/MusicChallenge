@@ -81,16 +81,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instrumento(s):" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naL-Or-GbF">
-                                <rect key="frame" x="128.5" y="419" width="118" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="C1y-AI-ORk"/>
-                                    <constraint firstAttribute="width" constant="118" id="j7Z-ft-Ufk"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sGE-zk-FEw">
                                 <rect key="frame" x="122.5" y="285" width="201" height="30"/>
                                 <constraints>
@@ -129,7 +119,6 @@
                             <constraint firstItem="vcC-2X-zYH" firstAttribute="centerX" secondItem="5VX-vA-Fia" secondAttribute="centerX" id="7Fy-tH-Eak"/>
                             <constraint firstItem="Upd-pG-Wb9" firstAttribute="leading" secondItem="sGE-zk-FEw" secondAttribute="leading" id="B8A-kO-TrF"/>
                             <constraint firstItem="ja1-Ed-yK3" firstAttribute="bottom" secondItem="FaV-79-xUF" secondAttribute="bottom" constant="20" id="KYA-zy-lCu"/>
-                            <constraint firstItem="naL-Or-GbF" firstAttribute="centerX" secondItem="5VX-vA-Fia" secondAttribute="centerX" id="Pfk-1O-RrE"/>
                             <constraint firstItem="FeC-F2-f4j" firstAttribute="centerY" secondItem="5VX-vA-Fia" secondAttribute="centerY" constant="-187" id="TsI-eE-EZP"/>
                             <constraint firstItem="sGE-zk-FEw" firstAttribute="top" secondItem="vcC-2X-zYH" secondAttribute="bottom" constant="16" id="Wjw-6B-IfH"/>
                             <constraint firstItem="9tf-Kb-gqk" firstAttribute="top" secondItem="vcC-2X-zYH" secondAttribute="bottom" constant="20" id="YOP-ho-uR8"/>
@@ -139,7 +128,6 @@
                             <constraint firstItem="uXO-DE-buu" firstAttribute="leading" secondItem="nF1-qd-8yg" secondAttribute="trailing" constant="-49" id="iUx-yd-RLZ"/>
                             <constraint firstItem="vcC-2X-zYH" firstAttribute="leading" secondItem="9tf-Kb-gqk" secondAttribute="trailing" constant="-11" id="lrk-yz-zK4"/>
                             <constraint firstItem="sGE-zk-FEw" firstAttribute="leading" secondItem="9tf-Kb-gqk" secondAttribute="trailing" constant="42" id="npa-L3-QMt"/>
-                            <constraint firstItem="naL-Or-GbF" firstAttribute="centerY" secondItem="5VX-vA-Fia" secondAttribute="centerY" constant="96" id="oUG-tb-0hP"/>
                             <constraint firstItem="uXO-DE-buu" firstAttribute="top" secondItem="9tf-Kb-gqk" secondAttribute="bottom" constant="25" id="rLH-DW-R6w"/>
                             <constraint firstItem="uXO-DE-buu" firstAttribute="leading" secondItem="9tf-Kb-gqk" secondAttribute="trailing" constant="-52" id="u27-xE-Cj5"/>
                             <constraint firstItem="ja1-Ed-yK3" firstAttribute="trailing" secondItem="FaV-79-xUF" secondAttribute="trailing" constant="16" id="vDF-kC-8OF"/>
