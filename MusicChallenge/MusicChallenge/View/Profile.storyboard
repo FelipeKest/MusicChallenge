@@ -24,8 +24,8 @@
                                     <constraint firstAttribute="height" constant="227" id="Xy0-xf-0UJ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do Músico" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOm-TE-n8e">
-                                <rect key="frame" x="110.5" y="303.5" width="154" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guilherme Vassallo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOm-TE-n8e">
+                                <rect key="frame" x="98.5" y="303.5" width="178" height="30"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
                                 <color key="textColor" red="0.80000000000000004" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -36,7 +36,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Drums" translatesAutoresizingMaskIntoConstraints="NO" id="PZT-9X-eA0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vocals" translatesAutoresizingMaskIntoConstraints="NO" id="PZT-9X-eA0">
                                 <rect key="frame" x="93" y="362" width="57" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="57" id="SxH-8X-HaD"/>
@@ -61,7 +61,7 @@
                                 <rect key="frame" x="0.0" y="21" width="375" height="44"/>
                                 <color key="tintColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
-                                    <navigationItem title="Title" id="bXB-ve-TfG">
+                                    <navigationItem title="Perfil" id="bXB-ve-TfG">
                                         <barButtonItem key="leftBarButtonItem" title="Voltar" id="I7x-Zu-hOX">
                                             <connections>
                                                 <action selector="backButton:" destination="e7l-eZ-1o2" id="Bku-N0-u8y"/>
@@ -104,8 +104,8 @@
     </scenes>
     <resources>
         <image name="AcousticGuitar" width="512" height="512"/>
-        <image name="Drums" width="512" height="512"/>
         <image name="Guitar" width="545" height="546"/>
+        <image name="Vocals" width="512" height="512"/>
         <image name="yuan-thirdy-583227-unsplash" width="5184" height="3456"/>
     </resources>
 </document>
