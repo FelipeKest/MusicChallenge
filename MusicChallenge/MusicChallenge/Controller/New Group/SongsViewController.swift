@@ -8,7 +8,8 @@
 
 import UIKit
 
-class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate, CurrentUserObserver, NewSongProtocol{
+class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate, CurrentUserObserver, NewSongProtocol, NewSetlistProtocol{
+    
     
     
     @IBOutlet var setlistsCollectionView: UICollectionView!
@@ -94,6 +95,9 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
         vc2.songs.append(newSong)
     }
     
+    func getSetlist(newSetlist: Setlist) {
+        vc1.setlists.append(newSetlist)
+    }
     
     
     var segmentedControl: CustomSegmentedContrl!
@@ -264,7 +268,12 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
             self.present(vc, animated: true, completion: nil)
         }
         let createSetlistAction = UIAlertAction(title: "Nova Setlist", style: .default){ action in
-            self.performSegue(withIdentifier: "addSetlist", sender: self)
+            let sb = UIStoryboard(name: "NewSetlist", bundle: Bundle.main)
+            
+            let vc = sb.instantiateViewController(withIdentifier: "CreateSetlistViewController") as! CreateSetlistViewController
+            
+            vc.delegate = self
+            self.present(vc, animated: true, completion: nil)
         }
         
         let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)

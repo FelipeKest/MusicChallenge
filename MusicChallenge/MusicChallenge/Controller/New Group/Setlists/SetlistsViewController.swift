@@ -33,7 +33,6 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
         setlistsCollectionView.register(collectionXib, forCellWithReuseIdentifier: "setlistCell")
         // Do any additional setup after loading the view.
     }
-    
 
     /*
     // MARK: - Navigation
@@ -44,6 +43,12 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+        
+        setlistsCollectionView.reloadData()
+    }
     
     
     
@@ -70,9 +75,4 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
             destination.setlist = setlists[(index?.item)!]
         }
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = true
-    }
-
 }

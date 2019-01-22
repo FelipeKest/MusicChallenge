@@ -8,8 +8,18 @@
 
 import UIKit
 
+protocol NewSetlistProtocol {
+    func getSetlist (newSetlist: Setlist)
+}
+
 class CreateSetlistViewController: UIViewController {
 
+    @IBOutlet var nameField: UITextField!
+    
+    var newSetlist: Setlist?
+    
+    var delegate: NewSetlistProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +36,15 @@ class CreateSetlistViewController: UIViewController {
     
     @IBAction func doneButton(_ sender: Any) {
         
+        if (nameField.text?.isEmpty)! {
+            print("nameField vazia")
+        }
+        else {
+            newSetlist = Setlist(name: nameField?.text ?? "ERROR", songs: [])
+            delegate?.getSetlist(newSetlist: newSetlist ?? Setlist(name: "ERROR", songs: []))
+            print(newSetlist?.name ?? "NO SETLIST")
+            dismiss(animated: true, completion: nil)
+        }
     }
     
     /*
