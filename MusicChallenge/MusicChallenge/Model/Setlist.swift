@@ -11,6 +11,7 @@ class Setlist:GenericProtocolClass {
     var name: String
     var songs: [Song]
     var creator: Musician
+    static var allReferenced: [String:Setlist] = [:]
 //    var bandID: String
     
     override var asDictionary: [String : Any] {

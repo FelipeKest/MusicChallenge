@@ -14,7 +14,7 @@ class Event:GenericProtocolClass {
     var date: Date
     var associatedSetlist: Setlist
     var bandID: String
-    
+    static var allReferenced: [String:Event] = [:]
     
     init(name:String,place:String,date: Date,setlist:Setlist,bandID: String,id: String?) {
         self.name = name

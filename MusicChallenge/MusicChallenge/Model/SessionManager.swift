@@ -8,14 +8,10 @@
 
 import CloudKit
 
-protocol LoginManager {
-    func getCurrentUser(completionHandler: @escaping(Musician?,Error?)->Void)
-}
-
 typealias MusicianCompletion = (Musician?,Error?)->Void
 let SessionManager = sessionManager.instance
 
-class sessionManager: LoginManager {
+class sessionManager {
     var userHasLoged: Bool?
     static let instance = sessionManager()
     public var currentUserID: String?
@@ -26,19 +22,17 @@ class sessionManager: LoginManager {
         
     }
 
-    
-    
     func getCurrentUser(completionHandler: @escaping(MusicianCompletion)){
-        DAO.fetchCurrentUser { (userRecord, error) in
+        DAO.fetchCurrentUser { (user, error) in
             if error != nil {
                 print(error?.localizedDescription as Any)
                 print("error in session manager")
                 completionHandler(nil,error)
                 return
             } else {
-                if let userRecord = userRecord {
+                if let user = user {
 //                    self.currentBandID = userRecord.value(forKey: "bandID") as? String
-                    let musicianUser = userRecord.asMusician// Musician(asDictionary: userRecord.asDictionary)
+                    let musicianUser = user// Musician(asDictionary: userRecord.asDictionary)
                     SessionManager.currentUser = musicianUser
                     completionHandler(musicianUser,nil)
                     print("recuperei musico ja criado")
@@ -49,8 +43,6 @@ class sessionManager: LoginManager {
             }
         }
     }
-    
-    
 }
     
     

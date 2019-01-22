@@ -90,15 +90,16 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
         guard let realAge = Int(strAge) else {return}
         guard let userID = SessionManager.currentUserID else {print("error fetching uid"); return}
         
-        let musician = Musician(name: realName, age: realAge, band: nil, id: userID)
+        let musician = Musician(name: realName, age: realAge, band: nil, id: userID, musicianRecordName: nil)
         
         DAO.createMusician(musician: musician) { (error) in
-
             if error != nil {
-                self.activityIndicator.stopAnimating()
-                self.view.isUserInteractionEnabled = true
-                print(error?.localizedDescription as Any)
-                return
+                DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()
+                    self.view.isUserInteractionEnabled = true
+                    print(error?.localizedDescription as Any)
+                    return
+                }
             }
 
             DispatchQueue.main.async {
@@ -109,9 +110,6 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
                 self.present(vc, animated: true, completion: nil)
             }
         }
-        
-        
-        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

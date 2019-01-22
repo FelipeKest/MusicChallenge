@@ -15,7 +15,6 @@ extension CKRecord {
         var result:[String:Any] = [:]
         for item in self.allKeys() {
             result[String(item)] = self.object(forKey: item)
-            print("key: \(item) for object: \(String(describing: self.object(forKey: item)))")
         }
         return result
     }
@@ -50,7 +49,8 @@ extension CKRecord {
 //MARK: CKREferences Extension
 extension CKRecord.Reference {
     var asDictionary: [String:Any] {
-        var result = CKRecord(recordType: "",recordID: self.recordID)
+        
+        let result = CKRecord(recordType: "",recordID: self.recordID)
         return result.asDictionary
     }
 }

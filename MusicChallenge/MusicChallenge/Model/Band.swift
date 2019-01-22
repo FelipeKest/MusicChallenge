@@ -41,19 +41,23 @@ class Band:GenericProtocolClass {
         super.init(id: asDictionary["id"] as? String)
         //Vejo se os musicos estao no Musico.allReferenced (ja lidos) coloco eles no members
         guard let id = asDictionary["id"] as? String else {return}
-        Band.allReferenced[id] = self
-        if let membersID = asDictionary["members"] { //CKReference
-        // se nao
-            DAO.queryAllMusicians(from: self, and: membersID) { (error) in
+        DAOFacade.load(band: self, from: asDictionary) { (error) in
+            if error != nil {
                 print(error?.localizedDescription as Any)
-                print("Ate aqui")
+                return
             }
+            Band.allReferenced[id] = self
         }
-//        self.repertoire = asDictionary["repertoire"] as! [Song]
-//        self.setlists = asDictionary["setlists"] as! [Setlist]
-//        self.events = asDictionary["events"] as! [Event]
-        
     }
+
+//    func bandAsynchtonousInit(from dict:[String:Any], with completionHandler: @escaping(Band?,Error?)->Void){
+//        let name = dict["name"]
+//        let id = dict["id"]
+//        var band: Band
+//        DAOFacade.load(band: self, from: dict) { (error) in
+//
+//        }
+//    }
     
     convenience init() {
         self.init(name: "Convieniece", members: [], id: "")

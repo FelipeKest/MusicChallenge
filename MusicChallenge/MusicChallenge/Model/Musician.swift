@@ -16,13 +16,16 @@ class Musician:GenericProtocolClass {
     
     static var allReferenced:[String:Musician] = [:]
     
-    init(name: String, age: Int, instruments: [Instrument] = [],band: Band?,id: String) {
+    init(name: String, age: Int, instruments: [Instrument] = [],band: Band?,id: String, musicianRecordName: String?) {
         self.name = name
         self.age = age
         self.instruments = instruments
+        self.musicianRecordName = musicianRecordName
         self.band = band
         super.init(id: id)
-        Musician.allReferenced[id] = self
+        if let recordName = musicianRecordName {
+            Musician.allReferenced[recordName] = self
+        }
     }
     
     override var asDictionary: [String : Any] {
@@ -38,19 +41,18 @@ class Musician:GenericProtocolClass {
     required init(asDictionary: [String : Any]) {
         self.name = asDictionary["name"] as! String
         self.age = asDictionary["age"] as! Int
-        self.instruments = asDictionary["instruments"] as? [Instrument]
+        print("banda do model", asDictionary["band"] as Any)
         super.init(id: asDictionary["id"] as? String)
+
         guard let musicianRecordName = asDictionary["musicianRecordName"] as? String else {return}
-        self.musicianRecordName = musicianRecordName
-        if let selfBandReference = asDictionary["band"] { //CKReference
-//            DAO.fetchBand(with: selfBandReference) { (bandRecord, error) in
-//                if error != nil {
-//                    print(error?.localizedDescription as Any)
-//                    returnnn
-//                }
-//                self.band = bandRecord?.asBand
+        
+        DAOFacade.load(musician: self, from: asDictionary) { (error) in
+            if error == nil {
+                Musician.allReferenced[musicianRecordName] = self
             }
         }
+    }
+    
         // se o currentUser já existe eu ou um membro da banda
 //        guard let bandID = asDictionary["band"] as? [String:Any] else {return} //da um erro
 //        let selfBandRecord = CKRecord(recordType: "Band", recordID: selfBandReference.recordID)
@@ -73,7 +75,8 @@ class Musician:GenericProtocolClass {
 //        }
     
     convenience init (){
-        self.init(name: "Convenience Musician", age: 0, instruments: [],band:Band(), id: "Convenience")
+//        self.init(name: "Convenience Musician", age: 0, instruments: [],band:Band(), id: "Convenience")
+        self.init(name: "Blaaa", age: 10, band: Band(), id: "Convenience", musicianRecordName: nil)
     }
     
     required init(from decoder: Decoder) throws {
