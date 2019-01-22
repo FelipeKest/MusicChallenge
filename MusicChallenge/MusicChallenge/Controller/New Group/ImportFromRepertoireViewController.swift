@@ -135,4 +135,8 @@ class ImportFromRepertoireViewController: UIViewController , UITableViewDataSour
             dismiss(animated: true, completion: nil)
         }
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }

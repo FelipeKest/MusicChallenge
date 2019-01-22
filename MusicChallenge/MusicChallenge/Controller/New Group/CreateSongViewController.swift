@@ -57,6 +57,11 @@ class CreateSongViewController: UIViewController , UITableViewDelegate, UITableV
     @IBAction func addInstrumentButton(_ sender: Any) {
         
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     /*
     // MARK: - Navigation
 

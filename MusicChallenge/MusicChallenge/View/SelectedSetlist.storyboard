@@ -52,11 +52,8 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vgw-MY-BPI">
-                                <rect key="frame" x="0.0" y="216" width="375" height="407"/>
+                                <rect key="frame" x="0.0" y="213.5" width="375" height="409.5"/>
                                 <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="407" id="j6g-Lw-zvw"/>
-                                </constraints>
                                 <color key="sectionIndexBackgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="repertoireCell" id="kFH-JF-ck8">
@@ -71,14 +68,14 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Criada por Guilherme Vassallo em 19/10/18" textAlignment="right" lineBreakMode="headTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="yHR-QS-MXV">
-                                <rect key="frame" x="16" y="187" width="343" height="21"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <rect key="frame" x="87" y="188" width="272" height="17.5"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16 Songs" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7o-6r-z1q">
-                                <rect key="frame" x="284" y="158" width="75" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <rect key="frame" x="296.5" y="158" width="62.5" height="22"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="22"/>
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -110,29 +107,35 @@
                         </subviews>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="duJ-1B-m4k" firstAttribute="centerX" secondItem="yHR-QS-MXV" secondAttribute="centerX" id="3T5-k9-aF7"/>
+                            <constraint firstItem="bwF-YU-wjL" firstAttribute="trailing" secondItem="cAs-KS-gvR" secondAttribute="trailing" id="18Z-um-Rze"/>
+                            <constraint firstItem="duJ-1B-m4k" firstAttribute="top" secondItem="cAs-KS-gvR" secondAttribute="top" id="2HJ-2Z-GG7"/>
                             <constraint firstItem="bwF-YU-wjL" firstAttribute="leading" secondItem="Q3V-hc-U09" secondAttribute="leading" id="4VY-RP-3vj"/>
+                            <constraint firstItem="6Cl-Wv-hGP" firstAttribute="trailing" secondItem="cAs-KS-gvR" secondAttribute="trailing" id="7ze-gn-9Du"/>
                             <constraint firstItem="bwF-YU-wjL" firstAttribute="top" secondItem="Q3V-hc-U09" secondAttribute="top" id="9qP-xa-PVA"/>
                             <constraint firstItem="k7o-6r-z1q" firstAttribute="trailing" secondItem="H4q-zy-aMY" secondAttribute="trailingMargin" id="Acn-4w-Znf"/>
-                            <constraint firstItem="duJ-1B-m4k" firstAttribute="trailing" secondItem="6Cl-Wv-hGP" secondAttribute="trailing" id="CLu-u1-a2s"/>
-                            <constraint firstItem="duJ-1B-m4k" firstAttribute="leading" secondItem="Vgw-MY-BPI" secondAttribute="leading" id="DVx-w9-Le7"/>
+                            <constraint firstItem="6Cl-Wv-hGP" firstAttribute="trailing" secondItem="cAs-KS-gvR" secondAttribute="trailing" id="Blt-39-HNM"/>
+                            <constraint firstItem="duJ-1B-m4k" firstAttribute="leading" secondItem="cAs-KS-gvR" secondAttribute="leading" id="C9N-tN-yEM"/>
+                            <constraint firstItem="6Cl-Wv-hGP" firstAttribute="leading" secondItem="cAs-KS-gvR" secondAttribute="leading" id="CtS-aP-Cca"/>
                             <constraint firstItem="bwF-YU-wjL" firstAttribute="bottom" secondItem="Q3V-hc-U09" secondAttribute="bottom" id="Gg9-X0-wyP"/>
-                            <constraint firstItem="duJ-1B-m4k" firstAttribute="leading" secondItem="6Cl-Wv-hGP" secondAttribute="leading" id="Hb0-89-8FY"/>
+                            <constraint firstItem="6Cl-Wv-hGP" firstAttribute="bottom" secondItem="cAs-KS-gvR" secondAttribute="bottom" id="Hw5-fW-HIs"/>
+                            <constraint firstItem="6Cl-Wv-hGP" firstAttribute="bottom" secondItem="cAs-KS-gvR" secondAttribute="bottom" id="I6P-Gq-PmD"/>
                             <constraint firstItem="k7o-6r-z1q" firstAttribute="trailing" secondItem="yHR-QS-MXV" secondAttribute="trailing" id="J89-0y-8hs"/>
-                            <constraint firstItem="Q3V-hc-U09" firstAttribute="trailing" secondItem="duJ-1B-m4k" secondAttribute="trailing" id="O0B-a5-211"/>
-                            <constraint firstItem="Q3V-hc-U09" firstAttribute="leading" secondItem="duJ-1B-m4k" secondAttribute="leading" id="RvB-RZ-9TN"/>
+                            <constraint firstItem="bwF-YU-wjL" firstAttribute="leading" secondItem="cAs-KS-gvR" secondAttribute="leading" id="U1T-U3-bH5"/>
                             <constraint firstItem="bwF-YU-wjL" firstAttribute="trailing" secondItem="Q3V-hc-U09" secondAttribute="trailing" id="WTX-wU-s5r"/>
+                            <constraint firstItem="bwF-YU-wjL" firstAttribute="top" secondItem="duJ-1B-m4k" secondAttribute="bottom" id="Wg2-Db-gRf"/>
                             <constraint firstItem="Vgw-MY-BPI" firstAttribute="top" secondItem="yHR-QS-MXV" secondAttribute="bottom" constant="8" id="ZEC-GQ-VvS"/>
-                            <constraint firstItem="Q3V-hc-U09" firstAttribute="top" secondItem="duJ-1B-m4k" secondAttribute="bottom" id="a5E-as-oRT"/>
+                            <constraint firstItem="6Cl-Wv-hGP" firstAttribute="bottom" secondItem="cAs-KS-gvR" secondAttribute="bottom" id="dDx-r7-fTl"/>
                             <constraint firstItem="Vgw-MY-BPI" firstAttribute="top" secondItem="yHR-QS-MXV" secondAttribute="bottom" constant="8" symbolic="YES" id="g1L-UO-TDg"/>
+                            <constraint firstItem="6Cl-Wv-hGP" firstAttribute="top" secondItem="Vgw-MY-BPI" secondAttribute="bottom" id="grZ-Ei-6xp"/>
                             <constraint firstItem="k7o-6r-z1q" firstAttribute="top" secondItem="H4q-zy-aMY" secondAttribute="top" constant="158" id="jmW-aY-5T2"/>
-                            <constraint firstAttribute="trailing" secondItem="duJ-1B-m4k" secondAttribute="trailing" id="kxP-1g-d6s"/>
+                            <constraint firstItem="6Cl-Wv-hGP" firstAttribute="leading" secondItem="cAs-KS-gvR" secondAttribute="leading" id="joS-tM-vut"/>
+                            <constraint firstItem="duJ-1B-m4k" firstAttribute="trailing" secondItem="cAs-KS-gvR" secondAttribute="trailing" id="lWd-Op-bc0"/>
                             <constraint firstItem="yHR-QS-MXV" firstAttribute="top" secondItem="k7o-6r-z1q" secondAttribute="bottom" constant="8" symbolic="YES" id="lgT-5Q-iVA"/>
-                            <constraint firstItem="Vgw-MY-BPI" firstAttribute="top" secondItem="H4q-zy-aMY" secondAttribute="top" constant="216" id="p0l-lP-ztJ"/>
-                            <constraint firstItem="duJ-1B-m4k" firstAttribute="trailing" secondItem="Vgw-MY-BPI" secondAttribute="trailing" id="pSX-aL-Qqb"/>
-                            <constraint firstItem="duJ-1B-m4k" firstAttribute="leading" secondItem="H4q-zy-aMY" secondAttribute="leading" id="rQf-Jd-Ek1"/>
-                            <constraint firstItem="k7o-6r-z1q" firstAttribute="top" secondItem="duJ-1B-m4k" secondAttribute="bottom" constant="94" id="scz-P6-Rvz"/>
+                            <constraint firstItem="Vgw-MY-BPI" firstAttribute="trailing" secondItem="cAs-KS-gvR" secondAttribute="trailing" id="ofa-MK-8s8"/>
+                            <constraint firstItem="6Cl-Wv-hGP" firstAttribute="trailing" secondItem="cAs-KS-gvR" secondAttribute="trailing" id="q0e-RC-Rnb"/>
                             <constraint firstItem="6Cl-Wv-hGP" firstAttribute="top" secondItem="Vgw-MY-BPI" secondAttribute="bottom" id="us1-gb-bYm"/>
+                            <constraint firstItem="Vgw-MY-BPI" firstAttribute="leading" secondItem="cAs-KS-gvR" secondAttribute="leading" id="wBu-km-8Zh"/>
+                            <constraint firstItem="6Cl-Wv-hGP" firstAttribute="leading" secondItem="cAs-KS-gvR" secondAttribute="leading" id="wHS-W6-nC0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cAs-KS-gvR"/>
                     </view>

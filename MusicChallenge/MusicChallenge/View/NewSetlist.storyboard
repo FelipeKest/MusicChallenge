@@ -18,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H2p-CK-sPz">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2p-CK-sPz">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="barTintColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -42,33 +41,58 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setlistImage" translatesAutoresizingMaskIntoConstraints="NO" id="5q6-7D-cre">
-                                <rect key="frame" x="104" y="91" width="166" height="158"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setlistImage" translatesAutoresizingMaskIntoConstraints="NO" id="5q6-7D-cre">
+                                <rect key="frame" x="104.5" y="91" width="166" height="158"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="158" id="2jc-fK-ps7"/>
+                                    <constraint firstAttribute="width" constant="166" id="LWR-2Y-Eol"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Capa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcV-Np-uxf">
-                                <rect key="frame" x="165" y="257" width="44" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcV-Np-uxf">
+                                <rect key="frame" x="166.5" y="257" width="42" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="3lq-Bz-Wb5"/>
+                                    <constraint firstAttribute="height" constant="24" id="z7u-wq-d2g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAD-Ag-XVt">
-                                <rect key="frame" x="42" y="321" width="58" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAD-Ag-XVt">
+                                <rect key="frame" x="46" y="321" width="56" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="Nnf-ip-y56"/>
+                                    <constraint firstAttribute="height" constant="24" id="l8V-kP-6BX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M7F-7D-E4C">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M7F-7D-E4C">
                                 <rect key="frame" x="108" y="318" width="224" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="224" id="3nm-O1-teX"/>
+                                    <constraint firstAttribute="height" constant="30" id="FVT-ho-3hd"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WcV-Np-uxf" firstAttribute="top" secondItem="5q6-7D-cre" secondAttribute="bottom" constant="8" id="09e-ks-XDB"/>
+                            <constraint firstItem="H2p-CK-sPz" firstAttribute="leading" secondItem="HJO-3S-liO" secondAttribute="leading" id="ABX-u8-69l"/>
+                            <constraint firstItem="WcV-Np-uxf" firstAttribute="leading" secondItem="EAD-Ag-XVt" secondAttribute="trailing" constant="64.5" id="Ieb-1L-JRt"/>
+                            <constraint firstItem="5q6-7D-cre" firstAttribute="centerX" secondItem="BLX-yc-imn" secondAttribute="centerX" id="Ynt-ng-1cQ"/>
+                            <constraint firstItem="5q6-7D-cre" firstAttribute="top" secondItem="H2p-CK-sPz" secondAttribute="bottom" constant="27" id="c3q-EY-Jqg"/>
+                            <constraint firstItem="WcV-Np-uxf" firstAttribute="centerX" secondItem="BLX-yc-imn" secondAttribute="centerX" id="fdD-0r-4VX"/>
+                            <constraint firstItem="H2p-CK-sPz" firstAttribute="trailing" secondItem="HJO-3S-liO" secondAttribute="trailing" id="gd7-6u-DQD"/>
+                            <constraint firstItem="M7F-7D-E4C" firstAttribute="top" secondItem="WcV-Np-uxf" secondAttribute="bottom" constant="37" id="iwl-8C-N3Q"/>
+                            <constraint firstItem="H2p-CK-sPz" firstAttribute="top" secondItem="HJO-3S-liO" secondAttribute="top" id="ljj-tq-uOw"/>
+                            <constraint firstItem="EAD-Ag-XVt" firstAttribute="top" secondItem="WcV-Np-uxf" secondAttribute="bottom" constant="40" id="qod-6a-3kA"/>
+                            <constraint firstItem="M7F-7D-E4C" firstAttribute="leading" secondItem="WcV-Np-uxf" secondAttribute="trailing" constant="-100.5" id="wpl-R0-0tZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="HJO-3S-liO"/>
                     </view>
                 </viewController>

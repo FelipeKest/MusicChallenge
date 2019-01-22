@@ -267,6 +267,9 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
         self.present(optionMenu, animated: true, completion: nil)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
 }
 

@@ -158,6 +158,10 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
         
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
 
     /*
     // MARK: - Navigation

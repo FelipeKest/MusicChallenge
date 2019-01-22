@@ -202,6 +202,10 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
         performSegue(withIdentifier: "editSetlist", sender: self)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     
     /*
     // MARK: - Navigation
