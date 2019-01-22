@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate, CurrentUserObserver{
+class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate, CurrentUserObserver, NewSongProtocol, NewSetlistProtocol{
     
     
     @IBOutlet var setlistsCollectionView: UICollectionView!
@@ -21,6 +21,8 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
     private var pageController: UIPageViewController!
     private var arrVC:[UIViewController] = []
     private var currentPage: Int!
+    
+    var addedSong: Song?
     
     lazy var vc1: SetlistsViewController = {
         
@@ -85,6 +87,14 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
         
         
         
+    }
+    
+    func getSong(newSong: Song) {
+        vc2.songs.append(newSong)
+    }
+    
+    func getSetlist(newSetlist: Setlist) {
+        vc1.setlists.append(newSetlist)
     }
     
     func currentUserChanged() {
@@ -252,10 +262,20 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
         let optionMenu = UIAlertController(title: nil, message: "O que deseja criar?", preferredStyle: .actionSheet)
         
         let createSongAction = UIAlertAction(title: "Nova música", style: .default) { action in
-            self.performSegue(withIdentifier: "addSong", sender: self)
+            let sb = UIStoryboard(name: "NewSong", bundle: Bundle.main)
+            
+            let vc = sb.instantiateViewController(withIdentifier: "CreateSongViewController") as! CreateSongViewController
+            
+            vc.delegate = self
+            self.present(vc, animated: true, completion: nil)
         }
         let createSetlistAction = UIAlertAction(title: "Nova Setlist", style: .default){ action in
-            self.performSegue(withIdentifier: "addSetlist", sender: self)
+            let sb = UIStoryboard(name: "NewSetlist", bundle: Bundle.main)
+            
+            let vc = sb.instantiateViewController(withIdentifier: "CreateSetlistViewController") as! CreateSetlistViewController
+            
+            vc.delegate = self
+            self.present(vc, animated: true, completion: nil)
         }
         
         let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)

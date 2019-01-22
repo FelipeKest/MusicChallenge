@@ -38,6 +38,8 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
         if let index = self.repertoireTableView.indexPathForSelectedRow{
             self.repertoireTableView.deselectRow(at: index, animated: true)
         }
+        
+        repertoireTableView.reloadData()
     }
     
     

@@ -13,7 +13,7 @@
         <!--Create Setlist View Controller-->
         <scene sceneID="YKF-Pf-NRx">
             <objects>
-                <viewController id="sb5-Zz-YMW" customClass="CreateSetlistViewController" customModule="MusicChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateSetlistViewController" id="sb5-Zz-YMW" customClass="CreateSetlistViewController" customModule="MusicChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BLX-yc-imn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,6 +95,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HJO-3S-liO"/>
                     </view>
+                    <connections>
+                        <outlet property="nameField" destination="M7F-7D-E4C" id="qix-1K-JKL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NQQ-lG-VhW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

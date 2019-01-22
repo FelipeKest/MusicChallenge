@@ -34,7 +34,14 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+        
+        setlistsCollectionView.reloadData()
+    }
 
+    
+    
     /*
     // MARK: - Navigation
 
@@ -70,9 +77,4 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
             destination.setlist = setlists[(index?.item)!]
         }
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = true
-    }
-
 }
