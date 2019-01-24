@@ -10,6 +10,15 @@ import UIKit
 
 class MembersTableViewCell: UITableViewCell {
 
+    @IBOutlet var memberName: UILabel!
+    @IBOutlet var memberImage: UIImageView!
+    
+    @IBOutlet var memberInst1: UIImageView!
+    @IBOutlet var memberInst2: UIImageView!
+    @IBOutlet var memberInst3: UIImageView!
+    
+    @IBOutlet var memberOtherInst: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
