@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,14 +13,13 @@
         <!--New Event View Controller-->
         <scene sceneID="L68-tv-B9a">
             <objects>
-                <viewController id="J1s-F1-yca" customClass="NewEventViewController" customModule="MusicChallenge" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewEventViewController" id="J1s-F1-yca" customClass="NewEventViewController" customModule="MusicChallenge" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SEt-9g-0WT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KQs-Vq-k0q">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KQs-Vq-k0q">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="barTintColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -34,101 +34,227 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="P9c-wA-Ox6">
                                             <color key="tintColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <connections>
+                                                <action selector="doneButton:" destination="J1s-F1-yca" id="2Pm-8m-gB9"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMN-Qc-HGy">
-                                <rect key="frame" x="16" y="109" width="58" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Nome:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMN-Qc-HGy">
+                                <rect key="frame" x="16" y="91" width="47" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="vy8-Ob-W3q"/>
+                                    <constraint firstAttribute="width" constant="47" id="vzc-YS-ntP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Local:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jl5-pl-xU7">
-                                <rect key="frame" x="16" y="157" width="53" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Local:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jl5-pl-xU7">
+                                <rect key="frame" x="18" y="136" width="45" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="GEo-ti-26Q"/>
+                                    <constraint firstAttribute="width" constant="45" id="kXO-fk-RTy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="smu-cB-Dp7">
-                                <rect key="frame" x="82" y="151" width="277" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="smu-cB-Dp7">
+                                <rect key="frame" x="82" y="131" width="277" height="30"/>
+                                <color key="tintColor" red="0.80000000000000004" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="OaI-Yw-OW8"/>
+                                    <constraint firstAttribute="width" constant="277" id="Tjn-Ey-yTL"/>
+                                </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Setlist:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcH-z2-dJ1">
-                                <rect key="frame" x="157" y="363" width="60" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Setlist Maneira Legal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yxg-Ld-KGm">
-                                <rect key="frame" x="97" y="531" width="181" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8 músicas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8a4-az-yTb">
-                                <rect key="frame" x="150" y="563" width="74" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jQ9-Yk-OFv">
-                                <rect key="frame" x="82" y="106" width="277" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jQ9-Yk-OFv">
+                                <rect key="frame" x="82" y="86" width="277" height="30"/>
+                                <color key="tintColor" red="0.80000000000000004" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="277" id="RtA-dv-w6q"/>
+                                    <constraint firstAttribute="height" constant="30" id="dV2-5J-y8h"/>
+                                </constraints>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sS-xq-GpW">
-                                <rect key="frame" x="16" y="260" width="47" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Data:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sS-xq-GpW">
+                                <rect key="frame" x="18" y="234" width="39" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="39" id="Q83-oh-mm8"/>
+                                    <constraint firstAttribute="height" constant="20" id="d1Y-Mb-lJ8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="setlistImage" translatesAutoresizingMaskIntoConstraints="NO" id="NW1-8x-XS8">
-                                <rect key="frame" x="123" y="395" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXh-wM-p0J">
-                                <rect key="frame" x="203" y="591" width="61" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.8922216892" green="0.16046175360000001" blue="0.17606648799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Remover"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTd-yD-5X9">
-                                <rect key="frame" x="115" y="591" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.8922216892" green="0.16046175360000001" blue="0.17606648799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Alterar"/>
-                            </button>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="2KK-mM-pcL">
-                                <rect key="frame" x="82" y="189" width="277" height="166"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Tipo:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Yd-Qh-V1Q">
+                                <rect key="frame" x="22" y="347" width="37" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="3EB-tb-bkD"/>
+                                    <constraint firstAttribute="width" constant="37" id="5vQ-mS-3ZF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="2KK-mM-pcL">
+                                <rect key="frame" x="82" y="174" width="277" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="277" id="6lp-bi-3Ob"/>
+                                    <constraint firstAttribute="height" constant="140" id="PVl-fR-lOb"/>
+                                </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="568921477.76140404">
                                     <!--2019-01-11 17:44:37 +0000-->
                                 </date>
+                                <locale key="locale" localeIdentifier="pt_BR"/>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmU-iW-r1U">
-                                <rect key="frame" x="104" y="410" width="168" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setlist Maneira Legal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yxg-Ld-KGm">
+                                <rect key="frame" x="99" y="557" width="177" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="HSV-Wk-Jt5"/>
+                                    <constraint firstAttribute="width" constant="177" id="g7J-50-7Hl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 músicas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8a4-az-yTb">
+                                <rect key="frame" x="144.5" y="588" width="86" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="2cd-8c-8Fw"/>
+                                    <constraint firstAttribute="width" constant="86" id="L5T-2r-e5U"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setlistImage" translatesAutoresizingMaskIntoConstraints="NO" id="NW1-8x-XS8">
+                                <rect key="frame" x="123.5" y="416" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Hab-r5-GNC"/>
+                                    <constraint firstAttribute="width" constant="128" id="d67-QR-4ls"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXh-wM-p0J">
+                                <rect key="frame" x="207.5" y="624" width="55" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="4Km-ii-V5N"/>
+                                    <constraint firstAttribute="height" constant="32" id="4Sk-0k-1Al"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
+                                <color key="tintColor" red="0.8922216892" green="0.16046175360000001" blue="0.17606648799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Remover"/>
+                                <connections>
+                                    <action selector="removeButton:" destination="J1s-F1-yca" eventType="touchUpInside" id="R24-AB-xF4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qTd-yD-5X9">
+                                <rect key="frame" x="116.5" y="624" width="42" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="TYg-G8-Iff"/>
+                                    <constraint firstAttribute="width" constant="42" id="cd2-2w-aVt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="20"/>
+                                <color key="tintColor" red="0.8922216892" green="0.16046175360000001" blue="0.17606648799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Alterar"/>
+                                <connections>
+                                    <action selector="changeButton:" destination="J1s-F1-yca" eventType="touchUpInside" id="YLK-2e-sNz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmU-iW-r1U">
+                                <rect key="frame" x="98.5" y="442" width="178" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="PIc-Os-drW"/>
+                                    <constraint firstAttribute="width" constant="178" id="iQk-np-kLi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="26"/>
                                 <state key="normal" title="Adicionar Setlist">
                                     <color key="titleColor" red="0.8922216892" green="0.16046175360000001" blue="0.17606648799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="addSetlistButton:" destination="J1s-F1-yca" eventType="touchUpInside" id="Kty-qL-u7F"/>
+                                </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Pss-89-mI2">
+                                <rect key="frame" x="82" y="339" width="277" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="4n9-tt-QuE"/>
+                                    <constraint firstAttribute="width" constant="277" id="n8j-Dd-Fzx"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Show"/>
+                                    <segment title="Ensaio"/>
+                                </segments>
+                                <color key="tintColor" red="0.8922216892" green="0.16046175360000001" blue="0.17606648799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Setlist:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcH-z2-dJ1">
+                                <rect key="frame" x="142" y="378" width="91" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="3oz-kL-dsj"/>
+                                    <constraint firstAttribute="width" constant="91" id="8hB-MP-TiZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NW1-8x-XS8" firstAttribute="top" secondItem="rcH-z2-dJ1" secondAttribute="bottom" constant="8" id="3jP-CO-PWb"/>
+                            <constraint firstItem="rcH-z2-dJ1" firstAttribute="top" secondItem="Pss-89-mI2" secondAttribute="bottom" constant="6" id="6C3-xd-B2J"/>
+                            <constraint firstItem="smu-cB-Dp7" firstAttribute="top" secondItem="jQ9-Yk-OFv" secondAttribute="bottom" constant="15" id="6r4-XM-0JO"/>
+                            <constraint firstItem="Jl5-pl-xU7" firstAttribute="leading" secondItem="1sS-xq-GpW" secondAttribute="trailing" constant="-39" id="6sW-DX-DTq"/>
+                            <constraint firstItem="qTd-yD-5X9" firstAttribute="top" secondItem="8a4-az-yTb" secondAttribute="bottom" constant="12" id="8OD-rv-awb"/>
+                            <constraint firstItem="NW1-8x-XS8" firstAttribute="centerX" secondItem="SEt-9g-0WT" secondAttribute="centerX" id="8ZJ-T7-cJp"/>
+                            <constraint firstItem="zmU-iW-r1U" firstAttribute="centerX" secondItem="SEt-9g-0WT" secondAttribute="centerX" id="BHz-Xr-HQL"/>
+                            <constraint firstItem="0Yd-Qh-V1Q" firstAttribute="top" secondItem="1sS-xq-GpW" secondAttribute="bottom" constant="93" id="CUX-pE-jvX"/>
+                            <constraint firstItem="Yxg-Ld-KGm" firstAttribute="centerX" secondItem="SEt-9g-0WT" secondAttribute="centerX" id="FpU-oB-des"/>
+                            <constraint firstItem="8a4-az-yTb" firstAttribute="centerX" secondItem="SEt-9g-0WT" secondAttribute="centerX" id="GXT-gC-KRl"/>
+                            <constraint firstItem="0Yd-Qh-V1Q" firstAttribute="leading" secondItem="1sS-xq-GpW" secondAttribute="trailing" constant="-35" id="H0W-Gc-QCq"/>
+                            <constraint firstItem="rMN-Qc-HGy" firstAttribute="top" secondItem="KQs-Vq-k0q" secondAttribute="bottom" constant="27" id="HrA-7d-4Gl"/>
+                            <constraint firstItem="zmU-iW-r1U" firstAttribute="top" secondItem="rcH-z2-dJ1" secondAttribute="bottom" constant="34" id="Ipb-Se-wrL"/>
+                            <constraint firstItem="Pss-89-mI2" firstAttribute="leading" secondItem="2KK-mM-pcL" secondAttribute="trailing" constant="-277" id="LGT-3k-ixB"/>
+                            <constraint firstItem="KQs-Vq-k0q" firstAttribute="top" secondItem="vix-mJ-vES" secondAttribute="top" id="LgM-f9-7tg"/>
+                            <constraint firstItem="Yxg-Ld-KGm" firstAttribute="top" secondItem="NW1-8x-XS8" secondAttribute="bottom" constant="13" id="Vwg-nx-Zky"/>
+                            <constraint firstItem="Jl5-pl-xU7" firstAttribute="top" secondItem="rMN-Qc-HGy" secondAttribute="bottom" constant="25" id="aBa-zs-pv3"/>
+                            <constraint firstItem="Jl5-pl-xU7" firstAttribute="leading" secondItem="rMN-Qc-HGy" secondAttribute="trailing" constant="-45" id="aJR-yH-0ub"/>
+                            <constraint firstItem="KQs-Vq-k0q" firstAttribute="trailing" secondItem="vix-mJ-vES" secondAttribute="trailing" id="dgn-IC-0lI"/>
+                            <constraint firstItem="8a4-az-yTb" firstAttribute="top" secondItem="Yxg-Ld-KGm" secondAttribute="bottom" constant="7" id="fc2-j9-irP"/>
+                            <constraint firstItem="KQs-Vq-k0q" firstAttribute="leading" secondItem="vix-mJ-vES" secondAttribute="leading" id="hGx-jQ-WnM"/>
+                            <constraint firstItem="8a4-az-yTb" firstAttribute="leading" secondItem="qTd-yD-5X9" secondAttribute="trailing" constant="-14" id="hck-xu-Dhr"/>
+                            <constraint firstItem="jQ9-Yk-OFv" firstAttribute="leading" secondItem="KQs-Vq-k0q" secondAttribute="trailing" constant="-293" id="k1g-iO-reg"/>
+                            <constraint firstItem="smu-cB-Dp7" firstAttribute="leading" secondItem="jQ9-Yk-OFv" secondAttribute="trailing" constant="-277" id="k96-fg-CC6"/>
+                            <constraint firstItem="1sS-xq-GpW" firstAttribute="top" secondItem="Jl5-pl-xU7" secondAttribute="bottom" constant="78" id="kvc-C0-gV3"/>
+                            <constraint firstItem="Pss-89-mI2" firstAttribute="top" secondItem="2KK-mM-pcL" secondAttribute="bottom" constant="25" id="lMo-Fr-7pS"/>
+                            <constraint firstItem="jQ9-Yk-OFv" firstAttribute="top" secondItem="KQs-Vq-k0q" secondAttribute="bottom" constant="22" id="mVB-uw-Dq5"/>
+                            <constraint firstItem="TXh-wM-p0J" firstAttribute="top" secondItem="8a4-az-yTb" secondAttribute="bottom" constant="12" id="mZO-Wp-ZYE"/>
+                            <constraint firstItem="2KK-mM-pcL" firstAttribute="leading" secondItem="smu-cB-Dp7" secondAttribute="trailing" constant="-277" id="sVy-Kl-DdS"/>
+                            <constraint firstItem="TXh-wM-p0J" firstAttribute="leading" secondItem="8a4-az-yTb" secondAttribute="trailing" constant="-23" id="shW-kW-riB"/>
+                            <constraint firstItem="KQs-Vq-k0q" firstAttribute="leading" secondItem="rMN-Qc-HGy" secondAttribute="trailing" constant="-63" id="tKG-Yf-nI6"/>
+                            <constraint firstItem="rcH-z2-dJ1" firstAttribute="centerX" secondItem="SEt-9g-0WT" secondAttribute="centerX" id="yPM-eE-4qL"/>
+                            <constraint firstItem="2KK-mM-pcL" firstAttribute="top" secondItem="smu-cB-Dp7" secondAttribute="bottom" constant="13" id="z9O-fI-Vo9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vix-mJ-vES"/>
                     </view>
+                    <connections>
+                        <outlet property="addSetlistButton" destination="zmU-iW-r1U" id="QXh-N3-qhD"/>
+                        <outlet property="changeButton" destination="qTd-yD-5X9" id="55F-WW-c1l"/>
+                        <outlet property="datePicker" destination="2KK-mM-pcL" id="hRM-4i-Du5"/>
+                        <outlet property="eventTypeSelector" destination="Pss-89-mI2" id="sUg-0X-XP5"/>
+                        <outlet property="locationField" destination="smu-cB-Dp7" id="RTg-JM-5KE"/>
+                        <outlet property="nameField" destination="jQ9-Yk-OFv" id="Gsq-Vf-zew"/>
+                        <outlet property="removeButton" destination="TXh-wM-p0J" id="QGz-PO-YDo"/>
+                        <outlet property="setlistImage" destination="NW1-8x-XS8" id="StY-ZJ-ofS"/>
+                        <outlet property="setlistLabel" destination="rcH-z2-dJ1" id="fUH-Dc-l4d"/>
+                        <outlet property="setlistName" destination="Yxg-Ld-KGm" id="rlV-Qh-jnG"/>
+                        <outlet property="setlistSongQtd" destination="8a4-az-yTb" id="5IT-sy-wN6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SaS-0x-dVa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

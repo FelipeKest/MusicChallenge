@@ -10,36 +10,46 @@
 
 import UIKit
 
-class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NewEventProtocol {
+    
     
     @IBOutlet var roadmapTableView: UITableView!
-    
     //@IBOutlet var searchBar: UISearchBar!
     //@IBOutlet var monthSelector: ? (descobrir o tipo disso)
     
     
-    var events: [Event] = [Event(name: "Rock in Rio 2197", place: "Terra 2", date: String("10-10-2197").toDate(dateFormat: "dd-MM-yyyy"), bandID: "asafasf", id: "1215578"),
-                           
-                           Event(name: "Ensaio p/ o Lopalazooba", place: "Casa do Jordel", date: String("05-07-1873").toDate(dateFormat: "dd-MM-yyyy"), setlist:
-                                Setlist(name: "Paulera", songs: [
-                                    Song(name: "Rock do Pinico", instruments:[
-                                            Instrument(type: InstrumentTypes.Guitar, id: "1313518")],
-                                bandID: "12312312", id: "12312415")], bandID: "1231214", id: "124124124"), bandID: "asafasf", id: "1215578")]
-    
+    var events: [Event] = [
+        Event(name: "Festival de Rock", place: "Avenida Real Edinburgo", date: String("11/04/2019").toDate(dateFormat: "dd-MM-yyyy"), bandID: "asghhhhhhhh", id: "sfdfasfasfasfas", eventType: EventTypes.Show),
+        Event(name: "Jam Soul", place: "Casa da Gleidi", date: String("10/10/2019").toDate(dateFormat: "dd-MM-yyyy"), setlist: Setlist(name: "Jazz Em'Up", songs: [
+            Song(name: "Hit The Road, Jack", instruments: [SongMusician()], creator: Musician(), id: "aaaaaaaaaaaaa"),
+            Song(name: "Watermelon Man", instruments: [SongMusician()], creator: Musician(), id: "aasfasasfasf")]),
+            bandID: "333333333", id: "4444444444", eventType: EventTypes.Rehearsal)
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.roadmapTableView.dataSource = self
-        self.roadmapTableView.delegate = self
+        
         
         // Do any additional setup after loading the view.
     }
     
+    
+    func getEvent(newEvent: Event) {
+            events.append(newEvent)
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
+        
+        self.roadmapTableView.dataSource = self
+        self.roadmapTableView.delegate = self
+        
         if let index = self.roadmapTableView.indexPathForSelectedRow{
             self.roadmapTableView.deselectRow(at: index, animated: true)
         }
+        
+        roadmapTableView.reloadData()
     }
     
     
@@ -62,10 +72,12 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
         eventCell.eventName.text = events[indexPath.row].name
         eventCell.horario.text = events[indexPath.row].date.toString(dateFormat: "dd-MM-yyyy")
         eventCell.location.text = events[indexPath.row].location
+        eventCell.eventTypeImage.image = events[indexPath.row].eventType.image
         
         
         if events[indexPath.row].associatedSetlist != nil { //evento tem setlist associada
-            eventCell.setlist.text = "Setlist: \(events[indexPath.row].associatedSetlist?.name ?? "no_set_found")"
+            eventCell.setlist.text = events[indexPath.row].associatedSetlist?.name
+            eventCell.setlist.textColor = UIColor.white
         }
         else { //não tem setlist associada
             eventCell.setlist.text = "Sem setlist!"
@@ -89,8 +101,20 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+   
+    
     @IBAction func addEvent(_ sender: Any) {
-        performSegue(withIdentifier: "newEvent", sender: self)
+        let sb = UIStoryboard(name: "NewEvent", bundle: Bundle.main)
+        
+        let vc = sb.instantiateViewController(withIdentifier: "NewEventViewController") as! NewEventViewController
+        
+        vc.delegate = self
+        self.present(vc, animated: true, completion: nil)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }
+
+

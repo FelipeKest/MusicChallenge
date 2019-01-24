@@ -10,8 +10,16 @@ import UIKit
 
 class EditSetlistViewController: UIViewController {
 
+    @IBOutlet var setlistNameField: UITextField!
+    
+    var setlist: Setlist!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.setupDismissKeyboard()
+        
+        setlistNameField.text = setlist.name
 
         // Do any additional setup after loading the view.
     }
@@ -27,4 +35,11 @@ class EditSetlistViewController: UIViewController {
     }
     */
 
+    @IBAction func cancelButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }

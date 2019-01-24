@@ -17,109 +17,9 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
     var setlists: [Setlist] = [
         
         Setlist(name: "Rock Diversas", songs: [
-            
-            Song(name: "Born To Be Wild", instruments: [
-                Instrument(type: InstrumentTypes.Bass, id: ""),
-                Instrument(type: InstrumentTypes.Guitar, id: ""),
-                Instrument(type: InstrumentTypes.Drums, id: ""),
-                Instrument(type: InstrumentTypes.Singer, id: "")
-                ],
-                      bandID: "", id: ""),
-            
-            Song(name: "MEGALOVANIA", instruments: [
-                Instrument(type: InstrumentTypes.Others, id: ""),
-                Instrument(type: InstrumentTypes.Guitar, id: "")
-                ],
-                      bandID: "", id: ""),
-            
-            Song(name: "Love Of My Life (Acapella)", instruments: [
-                Instrument(type: InstrumentTypes.Singer, id: ""),
-                Instrument(type: InstrumentTypes.Singer, id: ""),
-                Instrument(type: InstrumentTypes.Singer, id: ""),
-                Instrument(type: InstrumentTypes.Singer, id: ""),
-                Instrument(type: InstrumentTypes.Singer, id: "")
-                ],
-                      bandID: "", id: ""),
-            
-            Song(name: "The Sound Of Silence", instruments: [
-                Instrument(type: InstrumentTypes.Bass, id: "")
-                ], bandID: "", id: "")
-            
-            ]
-            , bandID: "", id: ""),
-        
-        Setlist(name: "SÓ AS TOP", songs: [
-            
-            Song(name: "MEGALOVANIA", instruments: [
-                Instrument(type: InstrumentTypes.Bass, id: ""),
-                Instrument(type: InstrumentTypes.Guitar, id: ""),
-                Instrument(type: InstrumentTypes.Drums, id: ""),
-                Instrument(type: InstrumentTypes.Singer, id: "")
-                ],
-                      bandID: "", id: ""),
-            
-            Song(name: "MEGALOVANIA DRUM COVER", instruments: [
-                Instrument(type: InstrumentTypes.Drums, id: ""),
-                Instrument(type: InstrumentTypes.Drums, id: "")
-                ],
-                      bandID: "", id: ""),
-            
-            Song(name: "MEGALOVANIA ACAPELLA", instruments: [
-                Instrument(type: InstrumentTypes.Singer, id: ""),
-                Instrument(type: InstrumentTypes.Singer, id: "")
-                ],
-                      bandID: "", id: ""),
-            
-            Song(name: "MEGALOVANIA PT.2", instruments: [
-                Instrument(type: InstrumentTypes.Bass, id: ""),
-                Instrument(type: InstrumentTypes.Guitar, id: ""),
-                Instrument(type: InstrumentTypes.Others, id: ""),
-                Instrument(type: InstrumentTypes.Others, id: "")
-                ], bandID: "", id: "")
-            
-            ]
-            , bandID: "", id: ""),
-        
-        Setlist(name: "Jazzlike", songs: [
-            
-            Song(name: "Watermelon Man", instruments: [
-                Instrument(type: InstrumentTypes.Bass, id: ""),
-                Instrument(type: InstrumentTypes.Guitar, id: ""),
-                Instrument(type: InstrumentTypes.Drums, id: ""),
-                Instrument(type: InstrumentTypes.Guitar, id: "")
-                ],
-                 bandID: "", id: ""),
-            
-            Song(name: "Gran Turismo 3 Theme", instruments: [
-                Instrument(type: InstrumentTypes.Bass, id: ""),
-                Instrument(type: InstrumentTypes.Others, id: ""),
-                Instrument(type: InstrumentTypes.Guitar, id: "")
-                ],
-                 bandID: "", id: ""),
-            
-            Song(name: "Epic Sax Guy", instruments: [
-                Instrument(type: InstrumentTypes.Others, id: "")
-                ],
-                 bandID: "", id: ""),
-            
-            Song(name: "21st Century Schizoid Man", instruments: [
-                Instrument(type: InstrumentTypes.Bass, id: ""),
-                Instrument(type: InstrumentTypes.Guitar, id: ""),
-                Instrument(type: InstrumentTypes.Others, id: ""),
-                Instrument(type: InstrumentTypes.Guitar, id: "")
-                ], bandID: "", id: ""),
-            
-            Song(name: "Get Back", instruments: [
-                Instrument(type: InstrumentTypes.Bass, id: ""),
-                Instrument(type: InstrumentTypes.Guitar, id: ""),
-                Instrument(type: InstrumentTypes.Drums, id: ""),
-                Instrument(type: InstrumentTypes.Singer, id: "")
-                ], bandID: "", id: "")
-            
-            ]
-            , bandID: "", id: ""),
-        
-        
+            Song(name: "Stairway to Heaven", instruments: [SongMusician()], creator: Musician(), id: "aaaaaaaaaaaaa")]),
+        Setlist(name: "Jazz Em'Up", songs: [
+            Song(name: "Hit The Road, Jack", instruments: [SongMusician()], creator: Musician(), id: "aaaaaaaaaaaaa"), Song(name: "Watermelon Man", instruments: [SongMusician()], creator: Musician(), id: "aasfasasfasf")])
     ]
     
     
@@ -128,10 +28,20 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         self.setlistsCollectionView.dataSource = self
         self.setlistsCollectionView.delegate = self
+        
+        let collectionXib = UINib(nibName: "SetlistCollectionViewCell", bundle: nil)
+        setlistsCollectionView.register(collectionXib, forCellWithReuseIdentifier: "setlistCell")
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+        
+        setlistsCollectionView.reloadData()
+    }
 
+    
+    
     /*
     // MARK: - Navigation
 
@@ -151,7 +61,7 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let setlistCell = collectionView.dequeueReusableCell(withReuseIdentifier: "setlistCell", for: indexPath) as! SetlistCollectionViewCell
         
-        setlistCell.numberOfSongs.text = "\(setlists[indexPath.row].songs.count)"
+        setlistCell.numberOfSongs.text = "\(setlists[indexPath.row].songs.count) Músicas"
         setlistCell.setlistName.text = setlists[indexPath.row].name
         
         return setlistCell
@@ -167,9 +77,4 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
             destination.setlist = setlists[(index?.item)!]
         }
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = true
-    }
-
 }

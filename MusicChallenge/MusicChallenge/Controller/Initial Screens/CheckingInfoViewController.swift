@@ -20,30 +20,31 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtAge: UITextField!
-    @IBOutlet weak var pickerViewGender: UIPickerView!
-    @IBOutlet weak var pickerViewInstruments: UIPickerView!
+    @IBOutlet weak var concludeButton: UIButton!
+    
+   // @IBOutlet weak var pickerViewGender: UIPickerView!
+//    @IBOutlet weak var pickerViewInstruments: UIPickerView!
     
     
     var gender = ["Feminino", "Masculino"]
     //var instruments = ["Electric Guitar", "Acoustic Guitar", "Bass", "Drums","Keyboard/Piano",  ]
-    var instruments: [Instrument] =
-        [Instrument(type: InstrumentTypes.Bass, id: "Bass"),
-         Instrument(type: InstrumentTypes.Drums, id: "Drums"),
-         Instrument(type: InstrumentTypes.Guitar, id: "Guitar"),
-         Instrument(type: InstrumentTypes.Singer, id: "Voice"),
-         Instrument(type: InstrumentTypes.Others, id: "Others")]
+    var instruments: [Instrument] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.pickerViewGender.delegate = self
-        self.pickerViewGender.dataSource = self
-        self.pickerViewInstruments.delegate = self
-        self.pickerViewInstruments.dataSource = self
+        self.setupDismissKeyboard()
+        
+        concludeButton.layer.cornerRadius = 8
+        //self.pickerViewGender.delegate = self
+        //self.pickerViewGender.dataSource = self
+//        self.pickerViewInstruments.delegate = self
+//        self.pickerViewInstruments.dataSource = self
 
         // Do any additional setup after loading the view.
     }
+    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -63,7 +64,7 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     func pickerViewInstruments(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return self.instruments[row].type.text
+        return self.instruments[row].text
     }
 
     
@@ -71,15 +72,21 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
         let name = txtName.text
         let email = txtEmail.text
         let age = txtAge.text
-        let gender = self.pickerViewGender.selectedRow(inComponent: 0)
-        let instrument = pickerViewInstruments.selectedRow(inComponent: 0)
+        //let gender = self.pickerViewGender.selectedRow(inComponent: 0)
+        //let instrument = pickerViewInstruments.selectedRow(inComponent: 0)
         
-        print(gender)
-        print(self.gender[gender])
+//        print(gender)
+//        print(self.gender[gender])
         
-        
+     
         
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+
     
     /*
     // MARK: - Navigation

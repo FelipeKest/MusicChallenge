@@ -10,7 +10,7 @@
 
 import UIKit
 
-class OneSetlistViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class OneSetlistViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SelectFromRepertoireProtocol {
     
     @IBOutlet var setlistSongsTableView: UITableView!
     //@IBOutlet var setlistName: UILabel!
@@ -21,9 +21,19 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
     //@IBOutlet var key: UILabel!
     
     var setlist: Setlist!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+    
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
         
         self.setlistSongsTableView.delegate = self
         self.setlistSongsTableView.dataSource = self
@@ -31,39 +41,52 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
         let tableXib = UINib(nibName: "RepertoireTableViewCell", bundle: nil)
         setlistSongsTableView.register(tableXib, forCellReuseIdentifier: "repertoireCell")
         
+        self.setlistCreator.text = "Criada por \(setlist.creator.name) em \(Date().toString(dateFormat: "dd-MM-yyyy"))"
         self.statusBar.title = setlist.name
         self.songQtd.text = "\(setlist.songs.count) Songs"
-
-        // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
+        
         if let index = self.setlistSongsTableView.indexPathForSelectedRow{
             self.setlistSongsTableView.deselectRow(at: index, animated: true)
         }
+        setlistSongsTableView.reloadData()
     }
+    
+    
+    
+    func getSongs(selectedSongs: [Song]) {
+        for i in 0...selectedSongs.count-1 {
+            print(selectedSongs[i].name)
+            setlist.songs.append(selectedSongs[i])
+        }
+        //setlist.songs.append(selectedSong)
+    }
+    
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return setlist.songs.count
     }
     
+    
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let songsCell = tableView.dequeueReusableCell(withIdentifier: "repertoireCell", for: indexPath) as! RepertoireTableViewCell
         
         let song = setlist.songs[indexPath.row]
-        var iconArray = [songsCell.instrument0, songsCell.instrument1, songsCell.instrument2, songsCell.instrument3]
+        var iconArray = [songsCell.instrument0, songsCell.instrument1, songsCell.instrument2, songsCell.instrument3, songsCell.instrument4]
         
-        if song.instruments.count > 4{
-            for i in 0...3 {
-                iconArray[i]?.image = song.instruments[i].type.image
+        if song.musicians.count > 5{
+            for i in 1...4 {
+                iconArray[i]?.image = song.musicians[i].instrument?.image
             }
-            
-            songsCell.additionalInstruments.text = "+\(song.instruments.count - 4)"
+            songsCell.instrument0.isHidden = true
+            songsCell.additionalInstruments.text = "+\(song.musicians.count - 4)"
         }
         else{
-            for i in 0...song.instruments.count-1 {
-                iconArray[i]?.image = song.instruments[i].type.image
+            for i in 0...song.musicians.count-1 {
+                iconArray[i]?.image = song.musicians[i].instrument?.image
             }
             
             songsCell.additionalInstruments.text = ""
@@ -74,6 +97,9 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
         return songsCell
     }
     
+    
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSong" {
             let destination = segue.destination as? OneSongViewController
@@ -81,23 +107,60 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
             destination?.song = setlist.songs[index!]
             destination?.songSetlist = setlist
         }
+        if segue.identifier == "editSetlist" {
+            let destination = segue.destination as? EditSetlistViewController
+            destination?.setlist = setlist
+        }
     }
 
+    
+    
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showSong", sender: self)
     }
+    
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("Delete Pressed")
+            let deleteAlert = UIAlertController(title: nil, message: "Deseja realmente excluir \(setlist.songs[indexPath.row].name)?", preferredStyle: .alert)
+            
+            let deleteAction = UIAlertAction(title: "Excluir", style: .destructive)
+            let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
+            
+            deleteAlert.addAction(deleteAction)
+            deleteAlert.addAction(cancelAction)
+            
+            self.present(deleteAlert, animated: true, completion: nil)
+        }
+    }
+    
+    
     
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
     
+    
+    
+    
     @IBAction func addButton(_ sender: Any) {
         let optionMenu = UIAlertController(title: nil, message: "Como quer adicionar a música?", preferredStyle: .actionSheet)
         
-        let addFromRepertoireAction = UIAlertAction(title: "Importar do repertório", style: .default)
-        let newSongAction = UIAlertAction(title: "Criar nova música", style: .default)
+        let addFromRepertoireAction = UIAlertAction(title: "Importar do repertório", style: .default) { action in
+            let sb = UIStoryboard(name: "ImportFromRepertoire", bundle: Bundle.main)
+            
+            let vc = sb.instantiateViewController(withIdentifier: ImportFromRepertoireViewController.identifier) as! ImportFromRepertoireViewController
+            
+            vc.delegate = self
+            self.present(vc, animated: true, completion: nil)
+        }
+        let newSongAction = UIAlertAction(title: "Criar nova música", style: .default){ action in
+            self.performSegue(withIdentifier: "newSong", sender: self)
+        }
         
         let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
         
@@ -108,12 +171,19 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
         self.present(optionMenu, animated: true, completion: nil)
     }
     
+    
+    
+    
+    
 
     @IBAction func shareButton(_ sender: Any) {
         let ac = UIActivityViewController(activityItems: ["O setlist \(setlist.name) da minha banda já está com \(setlist.songs.count) músicas iradas!"], applicationActivities: [])
         present(ac, animated: true)
     }
   
+    
+    
+    
     
     
     @IBAction func deleteButton(_ sender: Any) {
@@ -128,6 +198,13 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
         self.present(deleteAlert, animated: true, completion: nil)
     }
     
+    @IBAction func editButton(_ sender: Any) {
+        performSegue(withIdentifier: "editSetlist", sender: self)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     
     /*

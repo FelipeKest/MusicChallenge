@@ -18,45 +18,61 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet var setlistSongQtd: UILabel!
     @IBOutlet var eventSetlistTableView: UITableView!
     @IBOutlet var goToSetlist: UIButton!
+    @IBOutlet var eventTypeImage: UIImageView!
+    @IBOutlet weak var acesseLabel: UILabel!
     
+
     var event: Event!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        }
+        
+        //createdBy.text =
+        
+        // Do any additional setup after loading the view.
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
         self.eventSetlistTableView.dataSource = self
         self.eventSetlistTableView.delegate = self
-
+        
         let tableXib = UINib(nibName: "RepertoireTableViewCell", bundle: nil)
         eventSetlistTableView.register(tableXib, forCellReuseIdentifier: "repertoireCell")
         
         eventName.text = event.name
         eventDate.text = event.date.toString(dateFormat: "dd-MM-yyyy")
         eventLocation.text = event.location
+        eventTypeImage.image = event.eventType.image
         
         if event.associatedSetlist != nil {
             eventSetlistName.text = "Setlist: \(event.associatedSetlist?.name ?? "nenhuma")"
             
             setlistSongQtd.text = "\(event.associatedSetlist?.songs.count ?? 0) músicas"
+            
+            eventSetlistTableView.isHidden = false
+            
+            acesseLabel.isHidden = true
         }
         else {
-            eventSetlistTableView.alpha = 0
-            goToSetlist.alpha = 0
+            eventSetlistTableView.isHidden = true
+            goToSetlist.isHidden = true
             
             eventSetlistName.text = "Sem setlist atrelada."
             
-            setlistSongQtd.text = "Acesse 'editar' para adicionar uma!"
+            acesseLabel.text = "Acesse 'editar' para adicionar uma."
+            
+            setlistSongQtd.isHidden = true
+            
+            acesseLabel.isHidden = false
         }
         
-        //createdBy.text =
-        
-        // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
         if let index = self.eventSetlistTableView.indexPathForSelectedRow{
             self.eventSetlistTableView.deselectRow(at: index, animated: true)
         }
+        
+        eventSetlistTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,16 +87,16 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let song = event.associatedSetlist?.songs[indexPath.row]
         var iconArray = [songsCell.instrument0, songsCell.instrument1, songsCell.instrument2, songsCell.instrument3]
         
-        if (song?.instruments.count)! > 4{
+        if (song?.musicians.count)! > 4{
             for i in 0...3 {
-                iconArray[i]?.image = song?.instruments[i].type.image
+                iconArray[i]?.image = song?.musicians[i].instrument?.image
             }
             
-            songsCell.additionalInstruments.text = "+\((song?.instruments.count)! - 4)"
+            songsCell.additionalInstruments.text = "+\((song?.musicians.count)! - 4)"
         }
         else{
-            for i in 0...(song?.instruments.count)!-1 {
-                iconArray[i]?.image = song?.instruments[i].type.image
+            for i in 0...(song?.musicians.count)!-1 {
+                iconArray[i]?.image = song?.musicians[i].instrument?.image
             }
             
             songsCell.additionalInstruments.text = ""
@@ -107,8 +123,12 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let index = eventSetlistTableView.indexPathForSelectedRow?.row
             destination?.song = event.associatedSetlist?.songs[index!]
         }
+        if segue.identifier == "editEvent" {
+            let destination = segue.destination as? EditEventViewController
+            destination?.event = event
+        }
+        
     }
-    
     
     
     
@@ -148,6 +168,10 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBAction func goToSetlist(_ sender: Any) {
         performSegue(withIdentifier: "showSetlist", sender: self)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     /*

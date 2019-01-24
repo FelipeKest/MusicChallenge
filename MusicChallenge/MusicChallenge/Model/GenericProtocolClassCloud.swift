@@ -8,7 +8,8 @@
 
 import Foundation
 
-class GenericProtocolClass: Saveable,Loadable {
+class GenericProtocolClass: Saveable,Loadable, Codable {
+   
     var id: String?
     
     var asDictionary: [String : Any] {
@@ -24,6 +25,5 @@ class GenericProtocolClass: Saveable,Loadable {
     init(id: String?){
         self.id = id
     }
-
 }
 

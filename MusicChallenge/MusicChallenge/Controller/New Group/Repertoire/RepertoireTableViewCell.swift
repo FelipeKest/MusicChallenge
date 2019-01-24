@@ -18,10 +18,11 @@ class RepertoireTableViewCell: UITableViewCell {
     @IBOutlet var instrument1: UIImageView!
     @IBOutlet var instrument2: UIImageView!
     @IBOutlet var instrument3: UIImageView!
+    @IBOutlet var instrument4: UIImageView!
     
     @IBOutlet var additionalInstruments: UILabel!
     
-    
+    static let identifier = "repertoireCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()

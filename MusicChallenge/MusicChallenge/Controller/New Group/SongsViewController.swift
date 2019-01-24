@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate, CurrentUserObserver{
+class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate, CurrentUserObserver, NewSongProtocol, NewSetlistProtocol{
     
     
     @IBOutlet var setlistsCollectionView: UICollectionView!
@@ -21,6 +21,8 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
     private var pageController: UIPageViewController!
     private var arrVC:[UIViewController] = []
     private var currentPage: Int!
+    
+    var addedSong: Song?
     
     lazy var vc1: SetlistsViewController = {
         
@@ -72,7 +74,7 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        dao.currenUserObserver = self
+        //dao.currentUserObserver = self
         
         
         
@@ -87,6 +89,14 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
         
     }
     
+    func getSong(newSong: Song) {
+        vc2.songs.append(newSong)
+    }
+    
+    func getSetlist(newSetlist: Setlist) {
+        vc1.setlists.append(newSetlist)
+    }
+    
     func currentUserChanged() {
         // Atualiza a tela
     }
@@ -99,7 +109,7 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
         //        segmentedControl
         
         segmentedControl.backgroundColor = UIColor(red: 29/255, green: 29/255, blue: 29/255, alpha: 1)
-        segmentedControl.commaSeperatedButtonTitles = "Setlists, Repertoire"
+        segmentedControl.commaSeperatedButtonTitles = "Setlists, Repertório"
         segmentedControl.addTarget(self, action: #selector(onChangeOfSegment(_:)), for: .valueChanged)
         
         self.view.addSubview(segmentedControl)
@@ -249,14 +259,37 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
     
     
     @IBAction func addClick(_ sender: Any) {
-        if currentPage == 0 {
-            self.performSegue(withIdentifier: "addSetlist", sender: nil)
+        let optionMenu = UIAlertController(title: nil, message: "O que deseja criar?", preferredStyle: .actionSheet)
+        
+        let createSongAction = UIAlertAction(title: "Nova música", style: .default) { action in
+            let sb = UIStoryboard(name: "NewSong", bundle: Bundle.main)
+            
+            let vc = sb.instantiateViewController(withIdentifier: "CreateSongViewController") as! CreateSongViewController
+            
+            vc.delegate = self
+            self.present(vc, animated: true, completion: nil)
         }
-        else {
-                self.performSegue(withIdentifier: "addSong", sender: nil)
-            }
+        let createSetlistAction = UIAlertAction(title: "Nova Setlist", style: .default){ action in
+            let sb = UIStoryboard(name: "NewSetlist", bundle: Bundle.main)
+            
+            let vc = sb.instantiateViewController(withIdentifier: "CreateSetlistViewController") as! CreateSetlistViewController
+            
+            vc.delegate = self
+            self.present(vc, animated: true, completion: nil)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
+        
+        optionMenu.addAction(createSongAction)
+        optionMenu.addAction(createSetlistAction)
+        optionMenu.addAction(cancelAction)
+        
+        self.present(optionMenu, animated: true, completion: nil)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
 }
 

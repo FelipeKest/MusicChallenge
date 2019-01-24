@@ -14,14 +14,16 @@ class Event:GenericProtocolClass {
     var date: Date
     var associatedSetlist: Setlist?
     var bandID: String
+    var eventType: EventTypes
     
     
-    init(name:String,place:String,date: Date,setlist:Setlist? = nil,bandID: String,id: String?) {
+    init(name:String,place:String,date: Date,setlist:Setlist? = nil,bandID: String,id: String?,eventType: EventTypes = EventTypes.Rehearsal) {
         self.name = name
         self.location = place
         self.date = date
         self.associatedSetlist = setlist
         self.bandID = bandID
+        self.eventType = eventType
         super.init(id: id!)
     }
     
@@ -31,6 +33,12 @@ class Event:GenericProtocolClass {
         self.date = asDictionary["date"] as! Date
         self.associatedSetlist = asDictionary["associatedSetlist"] as? Setlist
         self.bandID = asDictionary["bandID"] as! String
+        self.eventType = asDictionary["eventType"] as! EventTypes
         super.init(id: asDictionary["id"] as? String)
     }
+    
+    required init(from decoder: Decoder) throws {
+        fatalError("init(from:) has not been implemented")
+    }
 }
+

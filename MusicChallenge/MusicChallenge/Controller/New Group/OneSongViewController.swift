@@ -15,7 +15,7 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBOutlet var songName: UILabel!
     //@IBOutlet var creatorName: UILabel!
-    //@IBOutlet var instrumentsTableView: UITableView!
+    @IBOutlet var instrumentsTableView: UITableView!
     
     @IBOutlet var instrument1: UIImageView!
     @IBOutlet var instrument2: UIImageView!
@@ -32,25 +32,6 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        var iconArray = [instrument1, instrument2, instrument3, instrument4, instrument5, instrument6]
-        
-        if song.instruments.count > 6{
-            for i in 0...5 {
-                iconArray[i]?.image = song.instruments[i].type.image
-            }
-            
-            /*cellRepertoire.additionalInstruments.text = "+\(song.instruments.count - 6)"*/
-        }
-        else{
-            for i in 0...song.instruments.count-1 {
-                iconArray[i]?.image = song.instruments[i].type.image
-            }
-            
-            //additionalInstruments.text = ""
-        }
-        
-        songName.text = song.name
         //bpm.text
         
         /*instrumentsTableView.delegate = self
@@ -59,18 +40,49 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        instrumentsTableView.delegate = self
+        instrumentsTableView.dataSource = self
+        
+        let tableXib = UINib(nibName: "InstrumentsTableViewCell", bundle: nil)
+        instrumentsTableView.register(tableXib, forCellReuseIdentifier: "instrumentsCell")
+        
+        var iconArray = [instrument1, instrument2, instrument3, instrument4, instrument5, instrument6]
+        
+        if song.musicians.count > 6{
+            for i in 0...5 {
+                iconArray[i]?.image = song.musicians[i].instrument?.image
+            }
+            
+            /*cellRepertoire.additionalInstruments.text = "+\(song.instruments.count - 6)"*/
+        }
+        else{
+            for i in 0...song.musicians.count-1 {
+                iconArray[i]?.image = song.musicians[i].instrument?.image
+            }
+            
+            //additionalInstruments.text = ""
+        }
+        instrumentsTableView.reloadData()
+        songName.text = song.name
+    }
+    
     
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return song.musicians.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //temporário!
-        let songsCell = tableView.dequeueReusableCell(withIdentifier: "songsCell", for: indexPath) as! RepertoireTableViewCell
+        let instrumentsCell = tableView.dequeueReusableCell(withIdentifier: InstrumentsTableViewCell.identifier, for: indexPath) as! InstrumentsTableViewCell
         
-        return songsCell
+        instrumentsCell.instrumentImage.image = song?.musicians[indexPath.row].instrument?.image
+        instrumentsCell.instrumentName.text = song?.musicians[indexPath.row].instrument?.text
+        instrumentsCell.musicianName.text = song?.musicians[indexPath.row].musician?.name
+        
+        return instrumentsCell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -144,6 +156,10 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBAction func editButton(_ sender: Any) {
         performSegue(withIdentifier: "editSong", sender: self)
         
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
 

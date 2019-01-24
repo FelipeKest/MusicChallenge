@@ -18,8 +18,16 @@ class JoinBandViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.setupDismissKeyboard()
+        
+        confirmCodeButton.layer.cornerRadius = 8
+        createBandButton.layer.cornerRadius = 8
         // Do any additional setup after loading the view.
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
 

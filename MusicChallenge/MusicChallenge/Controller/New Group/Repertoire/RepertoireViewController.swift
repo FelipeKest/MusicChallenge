@@ -17,33 +17,7 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
     //@IBOutlet var addSongButton: UIBarButtonItem!
     //@IBOutlet var songSearchBar: UISearchBar!
     
-    var songs: [Song] = [
-        
-                        Song(name: "Born To Be Wild", instruments: [
-                            Instrument(type: InstrumentTypes.Bass, id: ""),
-                            Instrument(type: InstrumentTypes.Guitar, id: ""),
-                            Instrument(type: InstrumentTypes.Drums, id: ""),
-                            Instrument(type: InstrumentTypes.Singer, id: "")
-                            ],
-                                  bandID: "", id: ""),
-                         
-                        Song(name: "MEGALOVANIA", instruments: [
-                            Instrument(type: InstrumentTypes.Others, id: ""),
-                            Instrument(type: InstrumentTypes.Guitar, id: "")],
-                                  bandID: "", id: ""),
-                         
-                        Song(name: "Love Of My Life (Acapella)", instruments: [
-                            Instrument(type: InstrumentTypes.Singer, id: ""),
-                            Instrument(type: InstrumentTypes.Singer, id: ""),
-                            Instrument(type: InstrumentTypes.Singer, id: ""),
-                            Instrument(type: InstrumentTypes.Singer, id: ""),
-                            Instrument(type: InstrumentTypes.Singer, id: "")],
-                                  bandID: "", id: ""),
-        
-                        Song(name: "The Sound Of Silence", instruments: [
-                            Instrument(type: InstrumentTypes.Bass, id: "")], bandID: "", id: "")
-        
-    ]
+    var songs: [Song] = [Song(name: "Watermelon Man"), Song(name: "Stairway To Heaven"), Song(name: "Hit The Road, Jack"), Song(name: "Pinball Wizard", instruments: [SongMusician.init(musician: Musician(), instrument: Instrument.Drums), SongMusician.init(musician: Musician(), instrument: Instrument.Guitar)], creator: Musician(), id: "aaaaaaaaaaaaa")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +38,8 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
         if let index = self.repertoireTableView.indexPathForSelectedRow{
             self.repertoireTableView.deselectRow(at: index, animated: true)
         }
+        
+        repertoireTableView.reloadData()
     }
     
     
@@ -86,21 +62,21 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cellRepertoire = tableView.dequeueReusableCell(withIdentifier: "repertoireCell", for: indexPath) as! RepertoireTableViewCell
+        let cellRepertoire = tableView.dequeueReusableCell(withIdentifier: RepertoireTableViewCell.identifier, for: indexPath) as! RepertoireTableViewCell
         
         let song = songs[indexPath.row]
-        var iconArray = [cellRepertoire.instrument0, cellRepertoire.instrument1, cellRepertoire.instrument2, cellRepertoire.instrument3]
+        var iconArray = [cellRepertoire.instrument0, cellRepertoire.instrument1, cellRepertoire.instrument2, cellRepertoire.instrument3, cellRepertoire.instrument4]
         
-        if song.instruments.count > 4{
-            for i in 0...3 {
-                iconArray[i]?.image = song.instruments[i].type.image
+        if song.musicians.count > 5{
+            for i in 1...4 {
+                iconArray[i]?.image = song.musicians[i].instrument?.image
             }
-            
-            cellRepertoire.additionalInstruments.text = "+\(song.instruments.count - 4)"
+            cellRepertoire.instrument0.isHidden = true
+            cellRepertoire.additionalInstruments.text = "+\(song.musicians.count - 4)"
         }
         else{
-            for i in 0...song.instruments.count-1 {
-                iconArray[i]?.image = song.instruments[i].type.image
+            for i in 0...song.musicians.count-1 {
+                iconArray[i]?.image = song.musicians[i].instrument?.image
             }
             
             cellRepertoire.additionalInstruments.text = ""
@@ -128,6 +104,20 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("Delete Pressed")
+            let deleteAlert = UIAlertController(title: nil, message: "Deseja realmente excluir \(songs[indexPath.row].name)?", preferredStyle: .alert)
+            
+            let deleteAction = UIAlertAction(title: "Excluir", style: .destructive)
+            let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
+            
+            deleteAlert.addAction(deleteAction)
+            deleteAlert.addAction(cancelAction)
+            
+            self.present(deleteAlert, animated: true, completion: nil)
+        }
+    }
     
     
     
