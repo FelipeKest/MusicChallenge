@@ -13,7 +13,7 @@
         <!--Title-->
         <scene sceneID="vzs-LP-cbI">
             <objects>
-                <viewController id="e7l-eZ-1o2" customClass="MusicianProfileViewController" customModule="MusicChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="e7l-eZ-1o2" customClass="MyProfileViewController" customModule="MusicChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pfh-i1-rPO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,12 +61,13 @@
                                 <rect key="frame" x="0.0" y="21" width="375" height="44"/>
                                 <color key="tintColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
-                                    <navigationItem title="Perfil" id="bXB-ve-TfG">
+                                    <navigationItem title="Meu Perfil" id="bXB-ve-TfG">
                                         <barButtonItem key="leftBarButtonItem" title="Voltar" id="I7x-Zu-hOX">
                                             <connections>
-                                                <action selector="backButton:" destination="e7l-eZ-1o2" id="Bku-N0-u8y"/>
+                                                <action selector="backButton:" destination="e7l-eZ-1o2" id="wma-jY-nkM"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Editar" id="XNw-3I-c23"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

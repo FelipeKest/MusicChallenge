@@ -34,6 +34,13 @@ class BandInfoViewController: UIViewController , UITableViewDataSource, UITableV
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let index = self.membersTableView.indexPathForSelectedRow{
+            self.membersTableView.deselectRow(at: index, animated: true)
+        }
+        
+        membersTableView.reloadData()
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return band.members.count
@@ -65,6 +72,9 @@ class BandInfoViewController: UIViewController , UITableViewDataSource, UITableV
         return membersCell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "memberProfile", sender: self)
+    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
