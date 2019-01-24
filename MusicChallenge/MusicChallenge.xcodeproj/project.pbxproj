@@ -60,6 +60,7 @@
 		67F9DA7D21E7B54D001D9134 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F9DA7C21E7B54D001D9134 /* EventViewController.swift */; };
 		67F9DA7F21E900FD001D9134 /* EditEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F9DA7E21E900FD001D9134 /* EditEvent.storyboard */; };
 		67F9DA8121E90165001D9134 /* EditEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F9DA8021E90165001D9134 /* EditEventViewController.swift */; };
+		67FB941321FA30AB006EB7E2 /* MembersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FB941221FA30AB006EB7E2 /* MembersTableViewCell.swift */; };
 		915E101F21BB7A7200158899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915E101E21BB7A7200158899 /* AppDelegate.swift */; };
 		915E102621BB7A7300158899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 915E102521BB7A7300158899 /* Assets.xcassets */; };
 		915E102921BB7A7300158899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 915E102721BB7A7300158899 /* LaunchScreen.storyboard */; };
@@ -138,6 +139,7 @@
 		67F9DA7C21E7B54D001D9134 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		67F9DA7E21E900FD001D9134 /* EditEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditEvent.storyboard; sourceTree = "<group>"; };
 		67F9DA8021E90165001D9134 /* EditEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventViewController.swift; sourceTree = "<group>"; };
+		67FB941221FA30AB006EB7E2 /* MembersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersTableViewCell.swift; sourceTree = "<group>"; };
 		915E101B21BB7A7200158899 /* MusicChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		915E101E21BB7A7200158899 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		915E102521BB7A7300158899 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				676CEE8021C843C400961015 /* BandInfoViewController.swift */,
+				67FB941221FA30AB006EB7E2 /* MembersTableViewCell.swift */,
 				676CEE8221C843D700961015 /* MusicianProfileViewController.swift */,
 				676CEE8421C843E300961015 /* MyProfileViewController.swift */,
 			);
@@ -464,6 +467,7 @@
 				6777852721C77840002DAB83 /* RoadmapTableViewCell.swift in Sources */,
 				676CEE7621C838EC00961015 /* CreateSongViewController.swift in Sources */,
 				67F4079B21E92B53009F85C3 /* NewEventViewController.swift in Sources */,
+				67FB941321FA30AB006EB7E2 /* MembersTableViewCell.swift in Sources */,
 				67F4269D21ED19DA002E2BB9 /* ChooseSetlistViewController.swift in Sources */,
 				676CEE8321C843D700961015 /* MusicianProfileViewController.swift in Sources */,
 				676CEE7821C8390A00961015 /* ImportFromRepertoireViewController.swift in Sources */,
