@@ -53,7 +53,7 @@
                                         </constraints>
                                         <state key="normal" title="Button" image="user_rock"/>
                                         <connections>
-                                            <segue destination="QRO-kI-UDD" kind="show" id="biD-f3-prH"/>
+                                            <segue destination="QRO-kI-UDD" kind="show" identifier="myProfile" id="biD-f3-prH"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Formada em:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8r-u4-Ajb">
@@ -243,10 +243,10 @@
             </objects>
             <point key="canvasLocation" x="-368.80000000000001" y="165.51724137931035"/>
         </scene>
-        <!--Profile-->
+        <!--MyProfile-->
         <scene sceneID="2y4-m1-1Ae">
             <objects>
-                <viewControllerPlaceholder storyboardName="Profile" id="QRO-kI-UDD" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="MyProfile" id="QRO-kI-UDD" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7IU-pb-TlS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="382" y="-26"/>

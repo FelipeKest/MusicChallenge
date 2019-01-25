@@ -47,6 +47,8 @@
 		6777852921C7B953002DAB83 /* RepertoireTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6777852821C7B953002DAB83 /* RepertoireTableViewCell.swift */; };
 		67B9229D21F657B500879007 /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B9229C21F657B500879007 /* UIExtensions.swift */; };
 		67BFA08F21FB757C000D22C0 /* MusiciansTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67BFA08E21FB757C000D22C0 /* MusiciansTableViewCell.xib */; };
+		67BFA09121FB8C72000D22C0 /* InstrumentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67BFA09021FB8C72000D22C0 /* InstrumentsTableViewCell.xib */; };
+		67BFA09321FB8CD0000D22C0 /* InstrumentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67BFA09221FB8CD0000D22C0 /* InstrumentsTableViewCell.swift */; };
 		67D5BB1A21C15DE50058BCC7 /* RoadmapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BB1921C15DE50058BCC7 /* RoadmapViewController.swift */; };
 		67D5BB1C21C168B10058BCC7 /* SetlistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BB1B21C168B10058BCC7 /* SetlistsViewController.swift */; };
 		67D5BB1E21C16C570058BCC7 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BB1D21C16C570058BCC7 /* FeedViewController.swift */; };
@@ -72,7 +74,7 @@
 		D054FB7821E684F5004D3132 /* FetchingInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D054FB7721E684F5004D3132 /* FetchingInfo.storyboard */; };
 		D054FB7A21E68587004D3132 /* CheckingInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D054FB7921E68587004D3132 /* CheckingInfo.storyboard */; };
 		D054FB7C21E68733004D3132 /* JoinBand.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D054FB7B21E68733004D3132 /* JoinBand.storyboard */; };
-		D054FB7E21E68C5E004D3132 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D054FB7D21E68C5E004D3132 /* Profile.storyboard */; };
+		D054FB7E21E68C5E004D3132 /* MyProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D054FB7D21E68C5E004D3132 /* MyProfile.storyboard */; };
 		D054FB8021E68C87004D3132 /* EditBand.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D054FB7F21E68C87004D3132 /* EditBand.storyboard */; };
 		D063195F21CAC35000CF40A9 /* SelectedSong.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D063195E21CAC35000CF40A9 /* SelectedSong.storyboard */; };
 		D063196121CAC36800CF40A9 /* SelectedSetlist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D063196021CAC36800CF40A9 /* SelectedSetlist.storyboard */; };
@@ -126,6 +128,8 @@
 		6777852821C7B953002DAB83 /* RepertoireTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepertoireTableViewCell.swift; sourceTree = "<group>"; };
 		67B9229C21F657B500879007 /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		67BFA08E21FB757C000D22C0 /* MusiciansTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusiciansTableViewCell.xib; sourceTree = "<group>"; };
+		67BFA09021FB8C72000D22C0 /* InstrumentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstrumentsTableViewCell.xib; sourceTree = "<group>"; };
+		67BFA09221FB8CD0000D22C0 /* InstrumentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstrumentsTableViewCell.swift; sourceTree = "<group>"; };
 		67D5BB1921C15DE50058BCC7 /* RoadmapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadmapViewController.swift; sourceTree = "<group>"; };
 		67D5BB1B21C168B10058BCC7 /* SetlistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetlistsViewController.swift; sourceTree = "<group>"; };
 		67D5BB1D21C16C570058BCC7 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -154,7 +158,7 @@
 		D054FB7721E684F5004D3132 /* FetchingInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FetchingInfo.storyboard; sourceTree = "<group>"; };
 		D054FB7921E68587004D3132 /* CheckingInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckingInfo.storyboard; sourceTree = "<group>"; };
 		D054FB7B21E68733004D3132 /* JoinBand.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JoinBand.storyboard; sourceTree = "<group>"; };
-		D054FB7D21E68C5E004D3132 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		D054FB7D21E68C5E004D3132 /* MyProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyProfile.storyboard; sourceTree = "<group>"; };
 		D054FB7F21E68C87004D3132 /* EditBand.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditBand.storyboard; sourceTree = "<group>"; };
 		D063195E21CAC35000CF40A9 /* SelectedSong.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectedSong.storyboard; sourceTree = "<group>"; };
 		D063196021CAC36800CF40A9 /* SelectedSetlist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectedSetlist.storyboard; sourceTree = "<group>"; };
@@ -225,6 +229,7 @@
 				676CEE8021C843C400961015 /* BandInfoViewController.swift */,
 				67FB941221FA30AB006EB7E2 /* MembersTableViewCell.swift */,
 				676CEE8221C843D700961015 /* MusicianProfileViewController.swift */,
+				67BFA09221FB8CD0000D22C0 /* InstrumentsTableViewCell.swift */,
 				676CEE8421C843E300961015 /* MyProfileViewController.swift */,
 			);
 			path = Info;
@@ -341,7 +346,8 @@
 				D054FB7721E684F5004D3132 /* FetchingInfo.storyboard */,
 				D054FB7921E68587004D3132 /* CheckingInfo.storyboard */,
 				D054FB7B21E68733004D3132 /* JoinBand.storyboard */,
-				D054FB7D21E68C5E004D3132 /* Profile.storyboard */,
+				D054FB7D21E68C5E004D3132 /* MyProfile.storyboard */,
+				67BFA09021FB8C72000D22C0 /* InstrumentsTableViewCell.xib */,
 				67BFA08E21FB757C000D22C0 /* MusiciansTableViewCell.xib */,
 				67FB941621FA5DCA006EB7E2 /* MemberProfile.storyboard */,
 				D054FB7F21E68C87004D3132 /* EditBand.storyboard */,
@@ -432,11 +438,12 @@
 				915E102921BB7A7300158899 /* LaunchScreen.storyboard in Resources */,
 				D04607CB21CC2706006A4B88 /* NewSetlist.storyboard in Resources */,
 				D02F2D0D21BEE2240090043A /* Roadmap.storyboard in Resources */,
-				D054FB7E21E68C5E004D3132 /* Profile.storyboard in Resources */,
+				D054FB7E21E68C5E004D3132 /* MyProfile.storyboard in Resources */,
 				D054FB8021E68C87004D3132 /* EditBand.storyboard in Resources */,
 				D092380E21C837DA00D092BE /* squealer embossed.ttf in Resources */,
 				67F426A021ED483C002E2BB9 /* ChooseSetlist.storyboard in Resources */,
 				67F9DA7B21E7B3EF001D9134 /* Event.storyboard in Resources */,
+				67BFA09121FB8C72000D22C0 /* InstrumentsTableViewCell.xib in Resources */,
 				6750E8E521CC122900A193AE /* RepertoireTableViewCell.xib in Resources */,
 				67BFA08F21FB757C000D22C0 /* MusiciansTableViewCell.xib in Resources */,
 				D092381B21C84C0900D092BE /* Repertoire.storyboard in Resources */,
@@ -508,6 +515,7 @@
 				915E101F21BB7A7200158899 /* AppDelegate.swift in Sources */,
 				6754220A21F110590027FE6C /* Song.swift in Sources */,
 				6754221021F1106A0027FE6C /* Extenstions.swift in Sources */,
+				67BFA09321FB8CD0000D22C0 /* InstrumentsTableViewCell.swift in Sources */,
 				6777852521C77829002DAB83 /* SetlistCollectionViewCell.swift in Sources */,
 				676CEE7C21C83BCD00961015 /* OneSongViewController.swift in Sources */,
 				6754221921F111FA0027FE6C /* CodableExtensions.swift in Sources */,
