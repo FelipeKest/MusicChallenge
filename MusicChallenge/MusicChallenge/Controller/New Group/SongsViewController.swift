@@ -22,6 +22,7 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
     private var arrVC:[UIViewController] = []
     private var currentPage: Int!
     
+    
     var addedSong: Song?
     
     lazy var vc1: SetlistsViewController = {
@@ -68,7 +69,9 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
         arrVC.append(vc2)
         //    arrVC.append(vc3)
         
-        
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedString.Key.foregroundColor: UIColor.red,
+             NSAttributedString.Key.font: UIFont(name: "DIN Condensed", size: 21)!]
         
         
     }
