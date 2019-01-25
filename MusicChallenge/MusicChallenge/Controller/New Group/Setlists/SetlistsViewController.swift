@@ -31,6 +31,9 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         let collectionXib = UINib(nibName: "SetlistCollectionViewCell", bundle: nil)
         setlistsCollectionView.register(collectionXib, forCellWithReuseIdentifier: "setlistCell")
+//        let shape = UIView(frame: CGRect(x: UIScreen.main.bounds.width/2, y: 0, width: 1, height: UIScreen.main.bounds.height))
+//        shape.UIColor
+//        shape.addSubview(self.view)
         // Do any additional setup after loading the view.
     }
     
