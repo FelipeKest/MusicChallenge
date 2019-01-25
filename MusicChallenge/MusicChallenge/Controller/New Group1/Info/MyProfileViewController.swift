@@ -12,13 +12,23 @@ import UIKit
 
 class MyProfileViewController: UIViewController {
 
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var ageLabel: UILabel!
+    @IBOutlet var instrumentsLabel: UILabel!
+    
+    @IBOutlet var musiciansTableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func backButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -108,7 +108,7 @@
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="instrumentsCell" id="rZe-I7-vtG">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="musiciansCell" id="rZe-I7-vtG" customClass="MusiciansTableViewCell" customModule="MusicChallenge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rZe-I7-vtG" id="1tv-ar-A6t">
@@ -171,8 +171,8 @@
                     </view>
                     <connections>
                         <outlet property="bpmField" destination="q5X-ah-q8T" id="dAJ-at-tCB"/>
-                        <outlet property="instrumentsTableView" destination="iRO-X9-5qu" id="g9P-fC-Fsh"/>
                         <outlet property="keyField" destination="7xq-jf-1V5" id="cIs-mp-j5g"/>
+                        <outlet property="musiciansTableView" destination="iRO-X9-5qu" id="g9P-fC-Fsh"/>
                         <outlet property="nameField" destination="R4b-Rj-Iux" id="vXa-Jp-w95"/>
                     </connections>
                 </viewController>

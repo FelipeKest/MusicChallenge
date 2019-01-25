@@ -1,21 +1,23 @@
 //
-//  InstrumentsTableViewCell.swift
+//  MembersTableViewCell.swift
 //  MusicChallenge
 //
-//  Created by Guilherme Vassallo on 17/01/19.
+//  Created by Guilherme Vassallo on 24/01/19.
 //  Copyright © 2019 Felipe Kestelman. All rights reserved.
 //
 
 import UIKit
 
-class InstrumentsTableViewCell: UITableViewCell {
+class MembersTableViewCell: UITableViewCell {
 
-    @IBOutlet var instrumentImage: UIImageView!
-    @IBOutlet var instrumentName: UILabel!
-    @IBOutlet var musicianImage: UIImageView!
-    @IBOutlet var musicianName: UILabel!
+    @IBOutlet var memberName: UILabel!
+    @IBOutlet var memberImage: UIImageView!
     
-    static let identifier = "instrumentsCell"
+    @IBOutlet var memberInst1: UIImageView!
+    @IBOutlet var memberInst2: UIImageView!
+    @IBOutlet var memberInst3: UIImageView!
+    
+    @IBOutlet var memberOtherInst: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

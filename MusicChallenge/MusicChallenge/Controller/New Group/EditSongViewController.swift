@@ -14,7 +14,7 @@ class EditSongViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet var nameField: UITextField!
     @IBOutlet var keyField: UITextField!
     @IBOutlet var bpmField: UITextField!
-    @IBOutlet var instrumentsTableView: UITableView!
+    @IBOutlet var musiciansTableView: UITableView!
     
     var song: Song?
     
@@ -23,11 +23,11 @@ class EditSongViewController: UIViewController, UITableViewDataSource, UITableVi
         
         self.setupDismissKeyboard()
         
-        instrumentsTableView.delegate = self
-        instrumentsTableView.dataSource = self
+        musiciansTableView.delegate = self
+        musiciansTableView.dataSource = self
         
-        let tableXib = UINib(nibName: "InstrumentsTableViewCell", bundle: nil)
-        instrumentsTableView.register(tableXib, forCellReuseIdentifier: "instrumentsCell")
+        let tableXib = UINib(nibName: "MusiciansTableViewCell", bundle: nil)
+        musiciansTableView.register(tableXib, forCellReuseIdentifier: "musiciansCell")
         
         nameField.text = song?.name
 
@@ -40,13 +40,13 @@ class EditSongViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let instrumentsCell = tableView.dequeueReusableCell(withIdentifier: InstrumentsTableViewCell.identifier, for: indexPath) as! InstrumentsTableViewCell
+        let musiciansCell = tableView.dequeueReusableCell(withIdentifier: MusiciansTableViewCell.identifier, for: indexPath) as! MusiciansTableViewCell
         
-        instrumentsCell.instrumentImage.image = song?.musicians[indexPath.row].instrument?.image
-        instrumentsCell.instrumentName.text = song?.musicians[indexPath.row].instrument?.text
-        instrumentsCell.musicianName.text = song?.musicians[indexPath.row].musician?.name
+        musiciansCell.instrumentImage.image = song?.musicians[indexPath.row].instrument?.image
+        musiciansCell.instrumentName.text = song?.musicians[indexPath.row].instrument?.text
+        musiciansCell.musicianName.text = song?.musicians[indexPath.row].musician?.name
         
-        return instrumentsCell
+        return musiciansCell
     }
     
     
