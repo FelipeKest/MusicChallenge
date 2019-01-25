@@ -12,6 +12,13 @@ import UIKit
 
 class MyProfileViewController: UIViewController {
 
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var ageLabel: UILabel!
+    @IBOutlet var instrumentsLabel: UILabel!
+    
+    @IBOutlet var musiciansTableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

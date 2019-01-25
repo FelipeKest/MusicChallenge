@@ -89,7 +89,7 @@
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="instrumentsCell" id="CGX-7h-Gjg" customClass="InstrumentsTableViewCell" customModule="MusicChallenge" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="musiciansCell" id="CGX-7h-Gjg" customClass="MusiciansTableViewCell" customModule="MusicChallenge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CGX-7h-Gjg" id="7k4-IS-1BH">
@@ -121,8 +121,8 @@
                     </view>
                     <connections>
                         <outlet property="bpmField" destination="rp2-bq-fyl" id="qgF-pK-RIN"/>
-                        <outlet property="instrumentsTableView" destination="sEb-Ww-Tkw" id="HFN-S6-Ebx"/>
                         <outlet property="keyField" destination="Ix5-k4-h8g" id="aam-EB-9yN"/>
+                        <outlet property="musiciansTableView" destination="sEb-Ww-Tkw" id="HFN-S6-Ebx"/>
                         <outlet property="nameField" destination="oK6-Xo-WHD" id="MYl-7d-dAi"/>
                     </connections>
                 </viewController>

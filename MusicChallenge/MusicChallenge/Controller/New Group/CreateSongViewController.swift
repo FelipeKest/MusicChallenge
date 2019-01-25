@@ -16,7 +16,7 @@ protocol NewSongProtocol {
 
 class CreateSongViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
     
-    @IBOutlet var instrumentsTableView: UITableView!
+    @IBOutlet var musiciansTableView: UITableView!
     @IBOutlet var nameField: UITextField!
     @IBOutlet var keyField: UITextField!
     @IBOutlet var bpmField: UITextField!
@@ -31,11 +31,11 @@ class CreateSongViewController: UIViewController , UITableViewDelegate, UITableV
         
         self.setupDismissKeyboard()
         
-        instrumentsTableView.delegate = self
-        instrumentsTableView.dataSource = self
+        musiciansTableView.delegate = self
+        musiciansTableView.dataSource = self
         
-        let tableXib = UINib(nibName: "InstrumentsTableViewCell", bundle: nil)
-       instrumentsTableView.register(tableXib, forCellReuseIdentifier: "instrumentsCell")
+        let tableXib = UINib(nibName: "MusiciansTableViewCell", bundle: nil)
+       musiciansTableView.register(tableXib, forCellReuseIdentifier: "musiciansCell")
 
         // Do any additional setup after loading the view.
     }
@@ -46,13 +46,13 @@ class CreateSongViewController: UIViewController , UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let instrumentsCell = tableView.dequeueReusableCell(withIdentifier: InstrumentsTableViewCell.identifier, for: indexPath) as! InstrumentsTableViewCell
+        let musiciansCell = tableView.dequeueReusableCell(withIdentifier: MusiciansTableViewCell.identifier, for: indexPath) as! MusiciansTableViewCell
         
-        instrumentsCell.instrumentImage.image = newSong?.musicians[indexPath.row].instrument?.image
-        instrumentsCell.instrumentName.text = newSong?.musicians[indexPath.row].instrument?.text
-        instrumentsCell.musicianName.text = newSong?.musicians[indexPath.row].musician?.name
+        musiciansCell.instrumentImage.image = newSong?.musicians[indexPath.row].instrument?.image
+        musiciansCell.instrumentName.text = newSong?.musicians[indexPath.row].instrument?.text
+        musiciansCell.musicianName.text = newSong?.musicians[indexPath.row].musician?.name
         
-        return instrumentsCell
+        return musiciansCell
     }
     
     

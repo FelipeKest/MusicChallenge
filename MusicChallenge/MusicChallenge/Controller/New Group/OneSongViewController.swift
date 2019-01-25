@@ -15,7 +15,7 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBOutlet var songName: UILabel!
     //@IBOutlet var creatorName: UILabel!
-    @IBOutlet var instrumentsTableView: UITableView!
+    @IBOutlet var musiciansTableView: UITableView!
     
     @IBOutlet var instrument1: UIImageView!
     @IBOutlet var instrument2: UIImageView!
@@ -34,18 +34,18 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         //bpm.text
         
-        /*instrumentsTableView.delegate = self
-        instrumentsTableView.dataSource = self*/
+        /*musiciansTableView.delegate = self
+        musiciansTableView.dataSource = self*/
 
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        instrumentsTableView.delegate = self
-        instrumentsTableView.dataSource = self
+        musiciansTableView.delegate = self
+        musiciansTableView.dataSource = self
         
-        let tableXib = UINib(nibName: "InstrumentsTableViewCell", bundle: nil)
-        instrumentsTableView.register(tableXib, forCellReuseIdentifier: "instrumentsCell")
+        let tableXib = UINib(nibName: "MusiciansTableViewCell", bundle: nil)
+        musiciansTableView.register(tableXib, forCellReuseIdentifier: "musiciansCell")
         
         var iconArray = [instrument1, instrument2, instrument3, instrument4, instrument5, instrument6]
         
@@ -63,7 +63,7 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
             
             //additionalInstruments.text = ""
         }
-        instrumentsTableView.reloadData()
+        musiciansTableView.reloadData()
         songName.text = song.name
     }
     
@@ -76,13 +76,13 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //temporário!
-        let instrumentsCell = tableView.dequeueReusableCell(withIdentifier: InstrumentsTableViewCell.identifier, for: indexPath) as! InstrumentsTableViewCell
+        let musiciansCell = tableView.dequeueReusableCell(withIdentifier: MusiciansTableViewCell.identifier, for: indexPath) as! MusiciansTableViewCell
         
-        instrumentsCell.instrumentImage.image = song?.musicians[indexPath.row].instrument?.image
-        instrumentsCell.instrumentName.text = song?.musicians[indexPath.row].instrument?.text
-        instrumentsCell.musicianName.text = song?.musicians[indexPath.row].musician?.name
+        musiciansCell.instrumentImage.image = song?.musicians[indexPath.row].instrument?.image
+        musiciansCell.instrumentName.text = song?.musicians[indexPath.row].instrument?.text
+        musiciansCell.musicianName.text = song?.musicians[indexPath.row].musician?.name
         
-        return instrumentsCell
+        return musiciansCell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

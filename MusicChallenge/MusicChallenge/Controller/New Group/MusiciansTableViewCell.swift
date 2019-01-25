@@ -1,5 +1,5 @@
 //
-//  InstrumentsTableViewCell.swift
+//  MusiciansTableViewCell.swift
 //  MusicChallenge
 //
 //  Created by Guilherme Vassallo on 17/01/19.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-class InstrumentsTableViewCell: UITableViewCell {
+class MusiciansTableViewCell: UITableViewCell {
 
     @IBOutlet var instrumentImage: UIImageView!
     @IBOutlet var instrumentName: UILabel!
     @IBOutlet var musicianImage: UIImageView!
     @IBOutlet var musicianName: UILabel!
     
-    static let identifier = "instrumentsCell"
+    static let identifier = "musiciansCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -146,7 +146,7 @@
                                 <rect key="frame" x="0.0" y="264" width="375" height="359"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="instrumentsCell" id="t9l-9r-PZe" customClass="InstrumentsTableViewCell" customModule="MusicChallenge" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="musiciansCell" id="t9l-9r-PZe" customClass="MusiciansTableViewCell" customModule="MusicChallenge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t9l-9r-PZe" id="z2x-L9-d8w">
@@ -209,8 +209,8 @@
                         <outlet property="instrument4" destination="psH-r8-QN5" id="aQG-XA-cST"/>
                         <outlet property="instrument5" destination="m2j-Nf-1kR" id="4wl-w4-R7j"/>
                         <outlet property="instrument6" destination="xxz-eO-d1M" id="Rb8-Qx-BXg"/>
-                        <outlet property="instrumentsTableView" destination="69k-3S-Lby" id="3nw-Oy-aW0"/>
                         <outlet property="key" destination="x1b-qT-jTj" id="8WG-me-euR"/>
+                        <outlet property="musiciansTableView" destination="69k-3S-Lby" id="3nw-Oy-aW0"/>
                         <outlet property="songName" destination="EwF-Oy-Jim" id="UOH-sC-gRc"/>
                         <segue destination="10t-X8-mXB" kind="show" identifier="editSong" id="Mxy-Mo-JfA"/>
                     </connections>
