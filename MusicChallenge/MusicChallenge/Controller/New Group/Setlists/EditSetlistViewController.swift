@@ -8,9 +8,10 @@
 
 import UIKit
 
-class EditSetlistViewController: UIViewController {
+class EditSetlistViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet var setlistNameField: UITextField!
+    @IBOutlet weak var setlistImage: UIImageView!
     
     var setlist: Setlist!
     
@@ -39,7 +40,36 @@ class EditSetlistViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func doneButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func changeImage(_ sender: Any) {
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        setlistImage.image = info[.originalImage] as? UIImage
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    
+    
+    
+    
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
 }

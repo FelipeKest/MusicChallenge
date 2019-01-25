@@ -10,13 +10,16 @@
 
 import UIKit
 
-class OneSetlistViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SelectFromRepertoireProtocol {
+class OneSetlistViewController: UIViewController, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, SelectFromRepertoireProtocol {
     
     @IBOutlet var setlistSongsTableView: UITableView!
     //@IBOutlet var setlistName: UILabel!
     @IBOutlet var songQtd: UILabel!
     @IBOutlet var statusBar: UINavigationItem!
     @IBOutlet var setlistCreator: UILabel!
+    @IBOutlet weak var setlistImage: UIImageView!
+    
+    
     //@IBOutlet var bpm: UILabel!
     //@IBOutlet var key: UILabel!
     
@@ -206,6 +209,23 @@ class OneSetlistViewController: UIViewController, UITableViewDataSource, UITable
         return .lightContent
     }
     
+    @IBAction func changeImage(_ sender: Any) {
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
+         let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    
+        setlistImage.image = info[.originalImage] as? UIImage
+        self.dismiss(animated: true, completion: nil)
+        
+    }
     
     /*
     // MARK: - Navigation
