@@ -47,7 +47,9 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
                     print("tem banda")
                     let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
                     guard let destinationViewController = mainStoryboard.instantiateViewController(withIdentifier: "Main") as? UITabBarController else {return}
-                    self.present(destinationViewController, animated: true, completion: nil)
+                    DispatchQueue.main.async {
+                        self.present(destinationViewController, animated: true, completion: nil)
+                    }
                     return
                 }
                 //tem musico sem banda

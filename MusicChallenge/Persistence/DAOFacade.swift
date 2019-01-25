@@ -62,7 +62,7 @@ class daofacade {
     func load(musician: Musician, from dict: [String:Any], completionHandler: @escaping(Error?)->Void){
         musician.name = dict["name"] as! String
         musician.age = dict["age"] as! Int
-        let instrumentsString = dict["instruments"] as! [String]
+        guard let instrumentsString = dict["instruments"] as? [String] else {return}
         var instruments: [Instrument] = []
         for instrument in instrumentsString {
             instruments.append(instrument.asInstrument)
@@ -72,7 +72,7 @@ class daofacade {
         guard let musicianRecordName = dict["musicianRecordName"] as? String else {return}
         musician.musicianRecordName = musicianRecordName
         if let bandReference = dict["band"] as? CKRecord.Reference {
-            DAO.fetchBand(with: bandReference.recordID.recordName) { (bandRecord, error) in
+            DAO.fetchBand2(with: bandReference.recordID.recordName) { (bandRecord, error) in
                 if error != nil {
                     print(error?.localizedDescription as Any)
                     completionHandler(error)

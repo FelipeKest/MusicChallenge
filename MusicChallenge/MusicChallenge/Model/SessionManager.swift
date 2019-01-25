@@ -18,6 +18,7 @@ class sessionManager {
     public var currentUser: Musician?
     public var currentBandID: String?
     
+    
     private init (){
         
     }
