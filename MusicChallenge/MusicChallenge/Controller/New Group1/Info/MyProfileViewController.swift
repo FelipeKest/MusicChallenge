@@ -33,6 +33,14 @@ class MyProfileViewController: UIViewController ,UITableViewDelegate, UITableVie
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        ageLabel.text = "\(profile.age) Anos"
+        nameLabel.text = profile.name
+        instrumentsLabel.text = "Instrumentos(\(profile.instruments?.count ?? 0)):"
+        
+        instrumentsTableView.reloadData()
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return profile.instruments?.count ?? 0

@@ -72,9 +72,19 @@ class BandInfoViewController: UIViewController , UITableViewDataSource, UITableV
         return membersCell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "memberProfile" {
+            let destination = segue.destination as? MusicianProfileViewController
+            let index = membersTableView.indexPathForSelectedRow?.row
+            destination?.profile = band.members[index ?? 0]
+        }
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "memberProfile", sender: self)
     }
+    
+    
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent

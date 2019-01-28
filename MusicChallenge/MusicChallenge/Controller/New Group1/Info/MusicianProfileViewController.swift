@@ -18,7 +18,7 @@ class MusicianProfileViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet var instrumentsLabel: UILabel!
     @IBOutlet var instrumentsTableView: UITableView!
     
-    var profile = Musician(name: "Lucas Kestelmann", age: 57, instruments: [Instrument.Guitar, Instrument.Drums, Instrument.Singer], band: Band(), id: "asldmglwmrogw")
+    var profile: Musician?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +30,14 @@ class MusicianProfileViewController: UIViewController, UITableViewDelegate, UITa
         instrumentsTableView.register(tableXib, forCellReuseIdentifier: "instrumentCell")
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        memberAge.text = "\(profile?.age ?? 0) Anos"
+        memberName.text = profile?.name
+        instrumentsLabel.text = "Instrumentos(\(profile?.instruments?.count ?? 0)):"
+        
+        instrumentsTableView.reloadData()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -48,15 +56,15 @@ class MusicianProfileViewController: UIViewController, UITableViewDelegate, UITa
     */
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return profile.instruments?.count ?? 0
+        return profile?.instruments?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellInstrument = tableView.dequeueReusableCell(withIdentifier: InstrumentsTableViewCell.identifier, for: indexPath) as! InstrumentsTableViewCell
         
-        cellInstrument.instrumentImage.image = profile.instruments?[indexPath.row].image
-        cellInstrument.instrumentName.text = profile.instruments?[indexPath.row].text
+        cellInstrument.instrumentImage.image = profile?.instruments?[indexPath.row].image
+        cellInstrument.instrumentName.text = profile?.instruments?[indexPath.row].text
         
         return cellInstrument
         
@@ -69,7 +77,7 @@ class MusicianProfileViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     @IBAction func removeButton(_ sender: Any) {
-        let deleteAlert = UIAlertController(title: nil, message: "Deseja realmente remover o membro \(profile.name) da banda?", preferredStyle: .alert)
+        let deleteAlert = UIAlertController(title: nil, message: "Deseja realmente remover o membro \(profile?.name ?? "ERROR") da banda?", preferredStyle: .alert)
         
         let deleteAction = UIAlertAction(title: "Remover", style: .destructive)
         let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
