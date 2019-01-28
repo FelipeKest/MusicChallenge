@@ -69,7 +69,15 @@ class MusicianProfileViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     @IBAction func removeButton(_ sender: Any) {
+        let deleteAlert = UIAlertController(title: nil, message: "Deseja realmente remover o membro \(profile.name) da banda?", preferredStyle: .alert)
         
+        let deleteAction = UIAlertAction(title: "Remover", style: .destructive)
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
+        
+        deleteAlert.addAction(deleteAction)
+        deleteAlert.addAction(cancelAction)
+        
+        self.present(deleteAlert, animated: true, completion: nil)
     }
     
 
