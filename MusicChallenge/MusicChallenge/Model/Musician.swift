@@ -43,13 +43,31 @@ class Musician:GenericProtocolClass {
         self.age = asDictionary["age"] as! Int
         print("banda do model", asDictionary["band"] as Any)
         super.init(id: asDictionary["id"] as? String)
-
+        
+        
         guard let musicianRecordName = asDictionary["musicianRecordName"] as? String else {return}
         
         DAOFacade.load(musician: self, from: asDictionary) { (error) in
             if error == nil {
                 Musician.allReferenced[musicianRecordName] = self
+
             }
+        }
+    }
+    
+    static func asynchronousCreation(from dict:[String:Any], completionHandler: @escaping(Musician?,Error?)->Void){
+        let musician = Musician()
+        
+        DAOFacade.load(musician: musician, from: dict) { (error) in
+            if error == nil {
+                let musicianRecordName = dict["musicianRecordName"] as? String
+                Musician.allReferenced[musicianRecordName!] = musician
+                completionHandler(musician,nil)
+            }
+            else {
+                completionHandler(nil,error)
+            }
+            completionHandler(nil,nil)
         }
     }
     

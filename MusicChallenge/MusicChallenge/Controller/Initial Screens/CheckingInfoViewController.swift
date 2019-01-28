@@ -34,12 +34,12 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
         
         // Do any additional setup after loading the view.
         SessionManager.getCurrentUser { (musician, error) in
-            
+
             if error != nil {
                 print(error?.localizedDescription as Any)
                 return
             }
-            
+
             if let _ = musician {
                 print("tem musico")
                 if let _ = musician?.band {
@@ -51,13 +51,15 @@ class CheckingInfoViewController: UIViewController, UIPickerViewDelegate, UIPick
                         self.present(destinationViewController, animated: true, completion: nil)
                     }
                     return
+                } else {
+                    //tem musico sem banda
+                    let bandStoryboard = UIStoryboard(name: "JoinBand", bundle: Bundle.main)
+                    guard let destinationViewController = bandStoryboard.instantiateViewController(withIdentifier: "JoinBand") as? JoinBandViewController else {return}
+                    DispatchQueue.main.async {
+                        self.present(destinationViewController, animated: true, completion: nil)
+                    }
                 }
-                //tem musico sem banda
-                let bandStoryboard = UIStoryboard(name: "JoinBand", bundle: Bundle.main)
-                guard let destinationViewController = bandStoryboard.instantiateViewController(withIdentifier: "JoinBand") as? JoinBandViewController else {return}
-                self.present(destinationViewController, animated: true, completion: nil)
             }
-            
         }
     }
     

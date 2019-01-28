@@ -24,7 +24,7 @@ class dao {
     var userHasLogged: Bool?
     
     static let instance = dao()
-    public var currentUserObserver: CurrentUserObserver?    
+    public var currentUserObserver: CurrentUserObserver?
     private var database:CKDatabase?
     private let container = CKContainer(identifier: "iCloud.FelipeKestelman.MusicChallenge")
     
@@ -393,12 +393,12 @@ class dao {
     
     
     //MARK: QueryAll Functions
-    func queryAllSongs(from band:Band, songsReferences: Any, completionHandler: @escaping(Error?)->Void){
+    func queryAllSongs(from band:Band, songsReferences: Any = [], completionHandler: @escaping(Error?)->Void){
         let allSongsID = songsReferences as! [CKRecord.Reference]
         var bandSongs = allSongsID
         for i in 0..<allSongsID.count {
             //Ve se os membros estao no allReferenced
-            print("name do record do member:",allSongsID[i].recordID.recordName)
+            print("Songs ->name do record do song:",allSongsID[i].recordID.recordName)
             print("dicionario de bandas")
             for (key,value) in Band.allReferenced {
                 print("\tkey: \(key) \n\tvalue: \(value)")
@@ -439,12 +439,12 @@ class dao {
         }
     }
     
-    func queryAllSetlists(from band:Band, with setlistsReference: Any, completionHandler: @escaping(Error?)->Void){
+    func queryAllSetlists(from band:Band, with setlistsReference: Any = [], completionHandler: @escaping(Error?)->Void){
         let allSetlistsID = setlistsReference as! [CKRecord.Reference]
         var bandSetlists = allSetlistsID
         for i in 0..<allSetlistsID.count {
             //Ve se os membros estao no allReferenced
-            print("name do record do member:",allSetlistsID[i].recordID.recordName)
+            print("Setlists -> name do record do setlist:",allSetlistsID[i].recordID.recordName)
             print("dicionario de bandas")
             for (key,value) in Band.allReferenced {
                 print("\tkey: \(key) \n\tvalue: \(value)")
@@ -486,13 +486,13 @@ class dao {
     }
     
     
-    func queryAllMusicians(from band:Band, with membersReferences: Any, completionHandler: @escaping(Error?)->Void){
+    func queryAllMusicians(from band:Band, with membersReferences: Any = [], completionHandler: @escaping(Error?)->Void){
         //O vetor de members
         let allMembersID = membersReferences as! [CKRecord.Reference]
         var bandMembers = allMembersID
         for i in 0..<allMembersID.count {
             //Ve se os membros estao no allReferenced
-            print("name do record do member:",allMembersID[i].recordID.recordName)
+            print("Musicians -> name do record do member:",allMembersID[i].recordID.recordName)
             print("dicionario de bandas")
             for (key,value) in Band.allReferenced {
                  print("\tkey: \(key) \n\tvalue: \(value)")
@@ -517,6 +517,7 @@ class dao {
         //os que sobraram
         let query = CKQuery(recordType: "Musician", predicate: NSPredicate(format: "band == %@", CKRecord.ID(recordName: band.id!)))
         //pega do icloud/dando erro/sendo chamada duas vezes
+        print("indo ate aqui")
         DAO.database?.perform(query, inZoneWith: nil, completionHandler: { (results, error) in
             if error != nil {
                 print("deu erro")
@@ -525,67 +526,67 @@ class dao {
             } else {
                 guard let results = results else {return}
                 for musician in results {
-                    guard let bandReference = musician["band"] as? CKRecord.Reference else {return}
-                    let bandID = bandReference.recordID.recordName
-                    guard let wantedID = band.id else {return}
-                    if bandID == wantedID {
                         // e um elemento de um nsarray
-                        let member = musician.asMusician
-                        band.members.append(member)
-                    }
-                }
+                        Musician.asynchronousCreation(from: musician.asDictionary, completionHandler: { (fetchedMusician, error) in
+                            if error != nil {
+                                completionHandler(nil)
+                            }
+                            guard let member = fetchedMusician else {return}
+                            band.members.append(member)
+                        })
                 completionHandler(nil)
+                }
             }
             return
         })
     }
-    
-    func queryAllEvents(from band: Band, with eventsReferences: Any, completionHandler: @escaping (Error?)->Void){
-        //O vetor de members
-        let allEventsID = eventsReferences as! [CKRecord.Reference]
-        var bandEvents = allEventsID
-        for i in 0..<allEventsID.count {
-            //Ve se os membros estao no allReferenced
-            print("name do record do member:",allEventsID[i].recordID.recordName)
-            print("dicionario de bandas")
-            for (key,value) in Band.allReferenced {
-                print("\tkey: \(key) \n\tvalue: \(value)")
-            }
-            print("dicionario de musicos")
-            for (key,value) in Musician.allReferenced {
-                print("\tkey: \(key) \n\tvalue: \(value)")
-            }
-            //            Se sim
-            if let event = Event.allReferenced[allEventsID[i].recordID.recordName] {
-                //adiciona na banda
-                band.events.append(event)
-                print("nome do member \(event.name)")
-                //retira do vetor
-                bandEvents.remove(at: i)
-            }
-        }
-        if bandEvents.count == 0 {
-            completionHandler(nil)
-            return
-        }
-        //os que sobraram
-        guard let bandID = band.id else {return}
-        
-        DAO.queryBand(id: bandID) { (result, error) in
-            if error != nil {
-                print(error?.localizedDescription as Any)
-                completionHandler(error)
-                return
-            }
-            guard let bandRecord = result else {return}
-            let bandEvents = bandRecord.value(forKey: "events") as? [CKRecord.Reference]
-            for eventReference in bandEvents! {
-                let event = Event(asDictionary: eventReference.asDictionary)
-                band.events.append(event)
-            }
-            completionHandler(nil)
-        }
-    }
+//
+//    func queryAllEvents(from band: Band, with eventsReferences: Any, completionHandler: @escaping (Error?)->Void){
+//        //O vetor de members
+//        let allEventsID = eventsReferences as! [CKRecord.Reference]
+//        var bandEvents = allEventsID
+//        for i in 0..<allEventsID.count {
+//            //Ve se os membros estao no allReferenced
+//            print("name do record do member:",allEventsID[i].recordID.recordName)
+//            print("dicionario de bandas")
+//            for (key,value) in Band.allReferenced {
+//                print("\tkey: \(key) \n\tvalue: \(value)")
+//            }
+//            print("dicionario de musicos")
+//            for (key,value) in Musician.allReferenced {
+//                print("\tkey: \(key) \n\tvalue: \(value)")
+//            }
+//            //            Se sim
+//            if let event = Event.allReferenced[allEventsID[i].recordID.recordName] {
+//                //adiciona na banda
+//                band.events.append(event)
+//                print("nome do member \(event.name)")
+//                //retira do vetor
+//                bandEvents.remove(at: i)
+//            }
+//        }
+//        if bandEvents.count == 0 {
+//            completionHandler(nil)
+//            return
+//        }
+//        //os que sobraram
+//        guard let bandID = band.id else {return}
+//
+//        DAO.queryBand(id: bandID) { (result, error) in
+//            if error != nil {
+//                print(error?.localizedDescription as Any)
+//                completionHandler(error)
+//                return
+//            }
+//            guard let bandRecord = result else {return}
+//            let bandEvents = bandRecord.value(forKey: "events") as? [CKRecord.Reference]
+//            for eventReference in bandEvents! {
+//                let event = Event(asDictionary: eventReference.asDictionary)
+//                band.events.append(event)
+//            }
+//            completionHandler(nil)
+//        }
+//    }
     
     
     
@@ -686,10 +687,13 @@ class dao {
                                     guard let band = band else {return}
                                     let musician = Musician(name: userName, age: userAge, instruments: userInstruments, band: band, id: userID, musicianRecordName: userRecordName)
                                     SessionManager.currentUser = musician
+                                    SessionManager.currentBand = band
                                     self!.userHasLogged = true
                                     completionHandler(musician,nil)
-                                    
                                 }
+                            } else {
+                                let musician = Musician(name: userName, age: userAge, instruments: userInstruments, band: nil, id: userID,  musicianRecordName: userRecordName)
+                                completionHandler(musician,nil)
                             }
                         }
                     }
@@ -819,22 +823,26 @@ class dao {
         })
     }
     
-    func fetchBand2(with id:String, completionHandler: @escaping(Band?,Error?)-> Void){
+    //SENDO RECHAMADA VARIAS VEZES
+    func fetchBand2(with id:String, completionHandler: @escaping (Band?,Error?)-> Void){
         print("fetching band")
-        let query = CKQuery(recordType: "Band", predicate: NSPredicate(format: "recordName == %@", id))
-        print(query.predicate)
-//        DAO.database?.perform(query, inZoneWith: nil, completionHandler: { (results, error) in
-        DAO.database?.fetch(withRecordID: CKRecord.ID(recordName: id), completionHandler: { (record, error) in
+        let query = CKQuery(recordType: "Band", predicate: NSPredicate(format: "id == %@", id))
+        DAO.database?.perform(query, inZoneWith: nil, completionHandler: { (records, error) in
             if error != nil {
                 completionHandler(nil,error)
                 return
             }
-            guard let bandRecord = record else {
+            
+//            guard let bandRecord = record else {
+//                completionHandler(nil,nil)
+//                return
+//            }`
+            guard let records = records else {
                 completionHandler(nil,nil)
                 return
             }
             
-//            let bandRecord = bandRecords[0]
+            let bandRecord = records[0]
             
             let dict = bandRecord.asDictionary
             
@@ -842,68 +850,66 @@ class dao {
             
             if let name = dict["name"] as? String {
                 band.name = name
+                print(band.name)
             }
             
             band.id = dict["id"] as? String
-            var hasMembers = false, hasSongs = false, hasSetlists = false
-            if dict["members"] != nil {hasMembers = true}
-            if dict["repertoire"] != nil {hasSongs = true}
-            if dict["setlists"] != nil {hasSetlists = true}
-            if hasMembers {
-                DAO.queryAllMusicians(from: band, with: dict["members"]!, completionHandler: { (membersError) in
-                    if membersError != nil {
-                        print(membersError?.localizedDescription as Any)
-                        completionHandler(nil,membersError)
-                        return
-                    }
-                    if hasSongs {
-                        DAO.queryAllSongs(from: band, songsReferences: dict["repertoire"]!, completionHandler: { (songsError) in
-                            if songsError != nil {
-                                print(songsError?.localizedDescription as Any)
-                                completionHandler(nil,songsError)
-                                return
-                            }
-                            if hasSetlists {
-                                DAO.queryAllSetlists(from: band, with: dict["setlists"]!, completionHandler: { (setlistsError) in
-                                    if setlistsError != nil {
-                                        print(setlistsError?.localizedDescription as Any)
-                                        completionHandler(nil,setlistsError)
-                                        return
-                                    }
-                                    completionHandler(band,nil)
-                                })
-                            } else {
-                                band.setlists = []
-                                completionHandler(band,nil)
-                                return
-                            }
-                        })
-                    } else {
-                        band.repertoire = []
-                        if hasSetlists {
-                            DAO.queryAllSetlists(from: band, with: dict["setlists"]!, completionHandler: { (setlistsError) in
-                                if setlistsError != nil {
-                                    print(setlistsError?.localizedDescription as Any)
-                                    completionHandler(nil,setlistsError)
-                                    return
-                                }
-                                completionHandler(band,nil)
-                                return
-                            })
-                        } else {
-                            band.setlists = []
-                            completionHandler(band,nil)
-                        }
-                    }
-                })
-            }
-            completionHandler(nil,nil)
+            
+            completionHandler(band,nil)
         })
-        
-//        })
-//        DAO.database?.fetch(withRecordID: recordID, completionHandler: { (result, error) in
-        
     }
+//            var hasMembers = false, hasSongs = false, hasSetlists = false
+//            if dict["members"] != nil {hasMembers = true}
+//            if dict["repertoire"] != nil {hasSongs = true}
+//            if dict["setlists"] != nil {hasSetlists = true}
+            
+//            if hasMembers {
+//                DAO.queryAllMusicians(from: band, with: dict["members"]!, completionHandler: { (membersError) in
+//                    if membersError != nil {
+//                        print(membersError?.localizedDescription as Any)
+//                        completionHandler(nil,membersError)
+//                        return
+//                    }
+//                    if hasSongs {
+//                        DAO.queryAllSongs(from: band, songsReferences: dict["repertoire"]!, completionHandler: { (songsError) in
+//                            if songsError != nil {
+//                                print(songsError?.localizedDescription as Any)
+//                                completionHandler(nil,songsError)
+//                                return
+//                            }
+//                            if hasSetlists {
+//                                DAO.queryAllSetlists(from: band, with: dict["setlists"]!, completionHandler: { (setlistsError) in
+//                                    if setlistsError != nil {
+//                                        print(setlistsError?.localizedDescription as Any)
+//                                        completionHandler(nil,setlistsError)
+//                                        return
+//                                    }
+//                                    completionHandler(band,nil)
+//                                })
+//                            } else {
+//                                band.setlists = []
+//                                completionHandler(band,nil)
+//                            }
+//                        })
+//                    } else {
+//                        band.repertoire = []
+//                        if hasSetlists {
+//                            DAO.queryAllSetlists(from: band, with: dict["setlists"]!, completionHandler: { (setlistsError) in
+//                                if setlistsError != nil {
+//                                    print(setlistsError?.localizedDescription as Any)
+//                                    completionHandler(nil,setlistsError)
+//                                    return
+//                                }
+//                                completionHandler(band,nil)
+//                                return
+//                            })
+//                        } else {
+//                            band.setlists = []
+//                            completionHandler(band,nil)
+//                        }
+//                    }
+//                })
+          
     
 //    func fetchBand(for userID: String,completionHandler: @escaping(CKRecord?,Error?)-> Void){
 //        DAO.queryBand(id: userRecord["bandID"]!, completionHandler: { (bandRecord, error) in

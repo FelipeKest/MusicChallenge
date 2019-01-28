@@ -50,14 +50,17 @@ class Band:GenericProtocolClass {
         }
     }
 
-//    func bandAsynchtonousInit(from dict:[String:Any], with completionHandler: @escaping(Band?,Error?)->Void){
-//        let name = dict["name"]
-//        let id = dict["id"]
-//        var band: Band
-//        DAOFacade.load(band: self, from: dict) { (error) in
-//
-//        }
-//    }
+    static func asynchtonousCreation(from dict:[String:Any], with completionHandler: @escaping(Band?,Error?)->Void){
+        let band = Band()
+        DAOFacade.load(band: band, from: dict) { (error) in
+            if error != nil {
+                completionHandler(nil,error)
+            }
+            let bandID = dict["id"] as? String
+            Band.allReferenced[bandID!] = band
+            completionHandler(band,nil)
+        }
+    }
     
     convenience init() {
         self.init(name: "Convieniece", members: [], id: "")

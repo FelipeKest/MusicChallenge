@@ -9,7 +9,7 @@
 import UIKit
 
 class SetlistsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    
+
     @IBOutlet var setlistsCollectionView: UICollectionView!
     //@IBOutlet var segmentedControl: UISegmentedControl!
     //@IBOutlet var addSetlistButton: UIBarButtonItem!
@@ -64,6 +64,21 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
         // Do any additional setup after loading the view.
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        guard let band = SessionManager.currentBand else {return}
+        DAO.queryAllSetlists(from: band) { (error) in
+            if error != nil {
+                //TODO: Display Alert Controller
+            }
+            self.setlists = band.setlists
+            print("tem",band.setlists.count,"setlists")
+        }
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+
+    
 
     /*
     // MARK: - Navigation
@@ -101,8 +116,5 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = true
-    }
-
+  
 }

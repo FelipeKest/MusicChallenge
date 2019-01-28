@@ -36,22 +36,13 @@ class daofacade {
                             completionHandler(songsError)
                             return
                         }
-                        if let eventsID = dict["events"] {
-                            DAO.queryAllEvents(from: band, with: eventsID, completionHandler: { (eventsError) in
-                                if eventsError != nil {
-                                    print(eventsError?.localizedDescription as Any)
-                                    completionHandler(songsError)
-                                    return
-                                }
-                                if let setlistsID = dict["setlists"] {
-                                    DAO.queryAllSetlists(from: band, with: setlistsID, completionHandler: { (setlistsError) in
-                                        print(setlistsError?.localizedDescription as Any)
-                                        completionHandler(setlistsError)
-                                        return
-                                    })
-                                    completionHandler(nil)
-                                }
+                        if let setlistsID = dict["setlists"] {
+                            DAO.queryAllSetlists(from: band, with: setlistsID,completionHandler: { (setlistsError) in
+                                print(setlistsError?.localizedDescription as Any)
+                                completionHandler(setlistsError)
+                                return
                             })
+                            completionHandler(nil)
                         }
                     })
                 }
@@ -59,7 +50,7 @@ class daofacade {
         }
     }
     
-    func load(musician: Musician, from dict: [String:Any], completionHandler: @escaping(Error?)->Void){
+    func load(musician: Musician, from dict: [String:Any], band: Band? = nil, completionHandler: @escaping(Error?)->Void){
         musician.name = dict["name"] as! String
         musician.age = dict["age"] as! Int
         guard let instrumentsString = dict["instruments"] as? [String] else {return}
@@ -71,13 +62,17 @@ class daofacade {
         musician.id = dict["id"] as? String
         guard let musicianRecordName = dict["musicianRecordName"] as? String else {return}
         musician.musicianRecordName = musicianRecordName
-        if let bandReference = dict["band"] as? CKRecord.Reference {
-            DAO.fetchBand2(with: bandReference.recordID.recordName) { (bandRecord, error) in
-                if error != nil {
-                    print(error?.localizedDescription as Any)
-                    completionHandler(error)
+        if band == nil {
+            if let bandReference = dict["band"] as? CKRecord.Reference {
+                DAO.fetchBand2(with: bandReference.recordID.recordName) { (bandRecord, error) in
+                    if error != nil {
+                        print(error?.localizedDescription as Any)
+                        completionHandler(error)
+                    }
                 }
             }
         }
+        musician.band = band
+        completionHandler(nil)
     }
 }

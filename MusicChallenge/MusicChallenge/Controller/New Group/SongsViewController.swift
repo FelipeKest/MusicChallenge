@@ -11,6 +11,8 @@ import UIKit
 class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate, CurrentUserObserver{
     
     
+    
+    
     @IBOutlet var setlistsCollectionView: UICollectionView!
     @IBOutlet var repertoireTableView: UITableView!
     @IBOutlet var addSetlistButton: UIBarButtonItem!
@@ -45,15 +47,6 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
         return viewController
     }()
     
-    // MARK: GRAPH ViewController
-    
-    //    lazy var vc3: VC3 = {
-    //
-    //        var viewController = storyboard?.instantiateViewController(withIdentifier: "VC3") as! VC3
-    //        //self.addViewControllerAsChildViewController(childViewController: viewController)
-    //        return viewController
-    //    }()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,14 +58,9 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
         arrVC.append(vc1)
         arrVC.append(vc2)
         //    arrVC.append(vc3)
-        
-        
-        
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        DAO.currentUserObserver = self
         
         
         
@@ -103,10 +91,7 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
         segmentedControl.addTarget(self, action: #selector(onChangeOfSegment(_:)), for: .valueChanged)
         
         self.view.addSubview(segmentedControl)
-        
-        
-        
-        
+
     }
     
     
@@ -161,7 +146,6 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
         var index = indexofviewController(viewController: viewController)
-        print("index: ", index)
         if(index != -1) {
             index = index - 1
         }

@@ -47,6 +47,14 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
         if let index = self.repertoireTableView.indexPathForSelectedRow{
             self.repertoireTableView.deselectRow(at: index, animated: true)
         }
+        
+        guard let band = SessionManager.currentBand else {return}
+        DAO.queryAllSongs(from: band) { (error) in
+            if error != nil {
+                //TODO: Display Alert Controller
+            }
+            self.songs = band.repertoire
+        }
     }
     
     
