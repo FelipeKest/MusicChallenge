@@ -11,25 +11,37 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="instrumentCell" rowHeight="48" id="KF9-0d-P9A" customClass="InstrumentsTableViewCell" customModule="MusicChallenge" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="343" height="48"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="instrumentCell" rowHeight="53" id="KF9-0d-P9A" customClass="InstrumentsTableViewCell" customModule="MusicChallenge" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="53"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KF9-0d-P9A" id="v87-UL-nfB">
-                <rect key="frame" x="0.0" y="0.0" width="343" height="47.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="343" height="52.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XS6-0s-CsL">
-                        <rect key="frame" x="15" y="5" width="36" height="36"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XS6-0s-CsL">
+                        <rect key="frame" x="16" y="8" width="36" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="36" id="9RN-ZU-neK"/>
+                            <constraint firstAttribute="height" constant="36" id="ufF-Fn-Cpi"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Guitarra" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vuk-Oq-7O5">
-                        <rect key="frame" x="59" y="13" width="268" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guitarra" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vuk-Oq-7O5">
+                        <rect key="frame" x="59" y="16" width="162" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="MQm-tj-Ue2"/>
+                            <constraint firstAttribute="width" constant="162" id="Y03-Z8-juC"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="Vuk-Oq-7O5" firstAttribute="leading" secondItem="XS6-0s-CsL" secondAttribute="trailing" constant="7" id="Fjr-Ky-qMZ"/>
+                    <constraint firstItem="Vuk-Oq-7O5" firstAttribute="top" secondItem="v87-UL-nfB" secondAttribute="top" constant="16" id="J0M-Lz-5uN"/>
+                    <constraint firstItem="XS6-0s-CsL" firstAttribute="top" secondItem="v87-UL-nfB" secondAttribute="top" constant="8" id="UJf-bc-Edd"/>
+                    <constraint firstItem="XS6-0s-CsL" firstAttribute="leading" secondItem="v87-UL-nfB" secondAttribute="leading" constant="16" id="org-f9-TUD"/>
+                </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
@@ -37,7 +49,7 @@
                 <outlet property="instrumentImage" destination="XS6-0s-CsL" id="g8u-Me-kUt"/>
                 <outlet property="instrumentName" destination="Vuk-Oq-7O5" id="gTD-7B-wSq"/>
             </connections>
-            <point key="canvasLocation" x="55.200000000000003" y="48.575712143928037"/>
+            <point key="canvasLocation" x="55.200000000000003" y="50.824587706146929"/>
         </tableViewCell>
     </objects>
 </document>

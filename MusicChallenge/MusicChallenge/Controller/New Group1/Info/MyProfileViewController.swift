@@ -59,6 +59,10 @@ class MyProfileViewController: UIViewController ,UITableViewDelegate, UITableVie
         
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     
     /*
     // MARK: - Navigation
