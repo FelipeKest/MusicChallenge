@@ -26,8 +26,8 @@ class SelectMusicianPopUpViewController: UIViewController , UIPickerViewDelegate
     
     let band = Band(name: "Developers of Sound", members: [
         Musician(name: "Guilherme Vassallo", age: 21, instruments: [Instrument.Guitar, Instrument.Singer, Instrument.Others], band: Band(), id: "aaaaa"),
-        Musician(name: "Guilherme Vassallo", age: 21, instruments: [Instrument.Bass, Instrument.Singer], band: Band(), id: "aaaaa"),
-        Musician(name: "Guilherme Vassallo", age: 21, instruments: [Instrument.Drums, Instrument.Singer], band: Band(), id: "aaaaa"),
+        Musician(name: "Felipe Kestelmann", age: 21, instruments: [Instrument.Bass, Instrument.Singer], band: Band(), id: "aaaaa"),
+        Musician(name: "Lucas Gouveia", age: 21, instruments: [Instrument.Drums, Instrument.Singer], band: Band(), id: "aaaaa"),
         Musician(name: "Andrew Costa", age: 21, instruments: [Instrument.Others], band: Band(), id: "aaaaa")
         ],
         id: "adjgiajigiajiga")
@@ -39,6 +39,8 @@ class SelectMusicianPopUpViewController: UIViewController , UIPickerViewDelegate
         musicianPicker.dataSource = self
         
         musicianPicker.reloadAllComponents()
+        
+        selectedMusician = band.members[0]
         // Do any additional setup after loading the view.
     }
     
@@ -55,7 +57,13 @@ class SelectMusicianPopUpViewController: UIViewController , UIPickerViewDelegate
         if component == 0 {
             return band.members.count
         } else {
-            return selectedMusician.instruments?.count ?? 0
+            print(selectedMusician.instruments?.count ?? "NO INSTRUMENTS")
+            if (selectedMusician.instruments?.count)! > 0 {
+                return (selectedMusician.instruments?.count)!
+            }
+            else {
+                return 0
+            }
         }
     }
     
@@ -71,6 +79,7 @@ class SelectMusicianPopUpViewController: UIViewController , UIPickerViewDelegate
         if component == 0 {
             selectedMusician = band.members[row]
         } else {
+            print(row)
             selectedInstrument = selectedMusician.instruments?[row] ?? Instrument.Bass
         }
         pickerView.reloadAllComponents()
@@ -86,6 +95,8 @@ class SelectMusicianPopUpViewController: UIViewController , UIPickerViewDelegate
     */
     @IBAction func confirmButton(_ sender: Any) {
         delegate?.getMusician(musician: selectedMusician, instrument: selectedInstrument)
+        print(selectedInstrument)
+        print(selectedMusician.name)
         dismiss(animated: false, completion: nil)
     }
     
