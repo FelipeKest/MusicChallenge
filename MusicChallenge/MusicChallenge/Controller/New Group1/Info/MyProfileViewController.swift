@@ -10,24 +10,55 @@
 
 import UIKit
 
-class MyProfileViewController: UIViewController {
+class MyProfileViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource{
+    
 
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var ageLabel: UILabel!
     @IBOutlet var instrumentsLabel: UILabel!
     
-    @IBOutlet var musiciansTableView: UITableView!
+    @IBOutlet var instrumentsTableView: UITableView!
     
+    var profile = Musician(name: "Felipe Gouveia", age: 75, instruments: [Instrument.Guitar, Instrument.Bass, Instrument.Others], band: Band(), id: "asldmglwmrogw")
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.instrumentsTableView.dataSource = self
+        self.instrumentsTableView.delegate = self
+        
+        let tableXib = UINib(nibName: "InstrumentsTableViewCell", bundle: nil)
+        instrumentsTableView.register(tableXib, forCellReuseIdentifier: "instrumentCell")
 
         // Do any additional setup after loading the view.
     }
     
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return profile.instruments?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cellInstrument = tableView.dequeueReusableCell(withIdentifier: InstrumentsTableViewCell.identifier, for: indexPath) as! InstrumentsTableViewCell
+        
+        cellInstrument.instrumentImage.image = profile.instruments?[indexPath.row].image
+        cellInstrument.instrumentName.text = profile.instruments?[indexPath.row].text
+        
+        return cellInstrument
+        
+    }
+    
+    
+    
     @IBAction func backButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func editButton(_ sender: Any) {
+        
+    }
+    
     
     /*
     // MARK: - Navigation

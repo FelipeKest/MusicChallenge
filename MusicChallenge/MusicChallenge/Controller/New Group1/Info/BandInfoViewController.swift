@@ -20,7 +20,7 @@ class BandInfoViewController: UIViewController , UITableViewDataSource, UITableV
         
         Musician(name: "Guilherme Vassallo", age: 21, instruments: [Instrument.Guitar, Instrument.Singer], band: Band(), id: "Agjsdigiwhiwdisg"),
         Musician(name: "Felipe Kestelmann", age: 19, instruments: [Instrument.Bass], band: Band(), id: "asfakgoakga"),
-        Musician(name: "Lucas Gouveia", age: 22, instruments: [Instrument.Drums], band: Band(), id: "asfakgoakga")
+        Musician(name: "Lucas Gouveia", age: 22, instruments: [Instrument.Drums], band: Band(), id: "asfakgoakga"),
 ],
                     
         id: "agjagiadjgiadg")

@@ -24,39 +24,18 @@
                                     <constraint firstAttribute="height" constant="227" id="jDn-dB-72A"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guilherme Vassallo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scw-p2-tO9">
-                                <rect key="frame" x="98.5" y="303.5" width="178" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lucas Kestelmann" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scw-p2-tO9">
+                                <rect key="frame" x="102" y="303.5" width="171" height="30"/>
                                 <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
                                 <color key="textColor" red="0.80000000000000004" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instrumentos:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41F-1J-T9w">
-                                <rect key="frame" x="128.5" y="328.5" width="118" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21 Anos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41F-1J-T9w">
+                                <rect key="frame" x="154" y="328.5" width="67" height="24"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vocals" translatesAutoresizingMaskIntoConstraints="NO" id="wlC-8T-5A5">
-                                <rect key="frame" x="93" y="362" width="57" height="53"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="57" id="0a6-RS-tEO"/>
-                                    <constraint firstAttribute="height" constant="53" id="E3D-oP-V3A"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Guitar" translatesAutoresizingMaskIntoConstraints="NO" id="RTy-d9-AQl">
-                                <rect key="frame" x="159" y="362" width="57" height="53"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="53" id="P8x-Ji-KbW"/>
-                                    <constraint firstAttribute="width" constant="57" id="ooX-iU-r2Y"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AcousticGuitar" translatesAutoresizingMaskIntoConstraints="NO" id="iJ2-8i-kAt">
-                                <rect key="frame" x="225" y="362" width="57" height="53"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="57" id="b6s-aZ-I2t"/>
-                                    <constraint firstAttribute="height" constant="53" id="cNI-ab-a0Z"/>
-                                </constraints>
-                            </imageView>
                             <navigationBar contentMode="scaleToFill" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="c9P-da-iDb">
                                 <rect key="frame" x="0.0" y="21" width="375" height="44"/>
                                 <color key="tintColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -67,43 +46,63 @@
                                                 <action selector="backButton:" destination="8bG-Jt-NUT" id="484-pK-eW7"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Remover" id="hdU-8D-ynj">
+                                            <connections>
+                                                <action selector="removeButton:" destination="8bG-Jt-NUT" id="UqJ-9W-gBX"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1h-iB-3t7">
-                                <rect key="frame" x="119" y="600" width="141" height="34"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WLx-o8-740">
+                                <rect key="frame" x="16" y="417" width="343" height="230"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Expulsar Membro">
-                                    <color key="titleColor" red="0.8922216892" green="0.16046175360000001" blue="0.17606648799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="instrumentCell" rowHeight="48" id="O66-Po-rAj">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="48"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O66-Po-rAj" id="tWg-1F-mLS">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="47.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instrumentos(2):" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MgV-Su-fRy">
+                                <rect key="frame" x="118" y="385" width="138" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.14115631579999999" green="0.1411880553" blue="0.1411542892" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="iJ2-8i-kAt" firstAttribute="top" secondItem="RTy-d9-AQl" secondAttribute="bottom" constant="-53" id="3mm-0Y-bDZ"/>
                             <constraint firstItem="c9P-da-iDb" firstAttribute="leading" secondItem="C0e-Gy-689" secondAttribute="leading" id="6DF-i3-edI"/>
                             <constraint firstItem="c9P-da-iDb" firstAttribute="top" secondItem="C0e-Gy-689" secondAttribute="top" constant="1" id="8Uc-lb-4rf"/>
                             <constraint firstItem="J2q-Ts-n3b" firstAttribute="top" secondItem="c9P-da-iDb" secondAttribute="bottom" id="B5D-GB-RlL"/>
                             <constraint firstItem="J2q-Ts-n3b" firstAttribute="top" secondItem="C0e-Gy-689" secondAttribute="top" constant="45" id="InC-if-CV0"/>
                             <constraint firstItem="C0e-Gy-689" firstAttribute="trailing" secondItem="J2q-Ts-n3b" secondAttribute="trailing" id="OZU-0D-DON"/>
-                            <constraint firstItem="wlC-8T-5A5" firstAttribute="top" secondItem="RTy-d9-AQl" secondAttribute="bottom" constant="-53" id="Ogm-VB-s5l"/>
                             <constraint firstItem="C0e-Gy-689" firstAttribute="trailing" secondItem="c9P-da-iDb" secondAttribute="trailing" id="QX4-k5-fea"/>
                             <constraint firstItem="scw-p2-tO9" firstAttribute="top" secondItem="J2q-Ts-n3b" secondAttribute="bottom" constant="11.5" id="Uwr-op-o77"/>
                             <constraint firstItem="41F-1J-T9w" firstAttribute="centerX" secondItem="qkc-eL-dKZ" secondAttribute="centerX" id="Z6K-hG-jhJ"/>
-                            <constraint firstItem="iJ2-8i-kAt" firstAttribute="leading" secondItem="RTy-d9-AQl" secondAttribute="trailing" constant="9" id="bOa-Cl-1zh"/>
-                            <constraint firstItem="RTy-d9-AQl" firstAttribute="leading" secondItem="wlC-8T-5A5" secondAttribute="trailing" constant="9" id="dV8-DO-fhi"/>
                             <constraint firstItem="J2q-Ts-n3b" firstAttribute="top" secondItem="c9P-da-iDb" secondAttribute="bottom" id="eza-Nj-PzB"/>
                             <constraint firstItem="J2q-Ts-n3b" firstAttribute="leading" secondItem="C0e-Gy-689" secondAttribute="leading" id="k5y-Lf-dcs"/>
                             <constraint firstItem="scw-p2-tO9" firstAttribute="centerX" secondItem="qkc-eL-dKZ" secondAttribute="centerX" id="nH1-JG-xJB"/>
                             <constraint firstItem="41F-1J-T9w" firstAttribute="top" secondItem="scw-p2-tO9" secondAttribute="bottom" constant="-5" id="pbT-qi-AeM"/>
-                            <constraint firstItem="RTy-d9-AQl" firstAttribute="top" secondItem="41F-1J-T9w" secondAttribute="bottom" constant="9.5" id="sZ9-1x-vFZ"/>
-                            <constraint firstItem="RTy-d9-AQl" firstAttribute="centerX" secondItem="qkc-eL-dKZ" secondAttribute="centerX" id="ynr-AC-hvR"/>
                             <constraint firstItem="J2q-Ts-n3b" firstAttribute="centerX" secondItem="qkc-eL-dKZ" secondAttribute="centerX" id="zrh-5z-s5T"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="C0e-Gy-689"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="V7e-3k-o7K"/>
+                    <connections>
+                        <outlet property="instrumentsLabel" destination="MgV-Su-fRy" id="FMh-nI-JBf"/>
+                        <outlet property="instrumentsTableView" destination="WLx-o8-740" id="zvL-dN-D27"/>
+                        <outlet property="memberAge" destination="41F-1J-T9w" id="RgA-iE-Pl2"/>
+                        <outlet property="memberName" destination="scw-p2-tO9" id="oT4-1K-GRh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bSc-IC-pTh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,9 +110,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AcousticGuitar" width="512" height="512"/>
-        <image name="Guitar" width="545" height="546"/>
-        <image name="Vocals" width="512" height="512"/>
         <image name="yuan-thirdy-583227-unsplash" width="5184" height="3456"/>
     </resources>
 </document>
