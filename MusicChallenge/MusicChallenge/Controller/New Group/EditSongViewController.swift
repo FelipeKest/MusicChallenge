@@ -8,7 +8,8 @@
 
 import UIKit
 
-class EditSongViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class EditSongViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SelectMusicianInstrumentProtocol{
+    
     
     
     @IBOutlet var nameField: UITextField!
@@ -36,6 +37,10 @@ class EditSongViewController: UIViewController, UITableViewDataSource, UITableVi
         // Do any additional setup after loading the view.
     }
     
+    func getMusician(musician: Musician, instrument: Instrument) {
+        //fazer algo com o músico e instrumentos recebidos do popup
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return song?.musicians.count ?? 0
@@ -57,27 +62,13 @@ class EditSongViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     @IBAction func addInstrumentButton(_ sender: Any) {
+        let sb = UIStoryboard(name: "SelectMusiciansPopUp", bundle: Bundle.main)
         
-        let message = "\n\n\n\n\n\n"
+        let vc = sb.instantiateViewController(withIdentifier: SelectMusicianPopUpViewController.identifier) as! SelectMusicianPopUpViewController
         
-        let alert = UIAlertController(title: "Selecione um músico e um instrumento que ele toca", message: message, preferredStyle: UIAlertController.Style.actionSheet)
-        alert.isModalInPopover = true
+        vc.delegate = self
+        self.present(vc, animated: false, completion: nil)
         
-        let pickerFrame = UIPickerView(frame: CGRect(x: 5, y: 20, width: UIScreen.main.bounds.width - 20, height: 140))
-        pickerFrame.tag = 555
-        pickerFrame.delegate = self as! UIPickerViewDelegate
-        
-        alert.view.addSubview(pickerFrame)
-        
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: {action in
-            
-            
-            
-        })
-        alert.addAction(okAction)
-        let cancelAction = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
-        alert.addAction(cancelAction)
-        self.present(alert, animated: true, completion: nil)
     }
     
     /*

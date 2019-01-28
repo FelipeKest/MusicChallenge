@@ -14,7 +14,8 @@ protocol NewSongProtocol {
     func getSong (newSong: Song)
 }
 
-class CreateSongViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
+class CreateSongViewController: UIViewController , UITableViewDelegate, UITableViewDataSource, SelectMusicianInstrumentProtocol{
+    
     
     @IBOutlet var musiciansTableView: UITableView!
     @IBOutlet var nameField: UITextField!
@@ -41,6 +42,13 @@ class CreateSongViewController: UIViewController , UITableViewDelegate, UITableV
     }
     
     
+    
+    func getMusician(musician: Musician, instrument: Instrument) {
+        //fazer algo com o músico e instrumentos recebidos do popup
+    }
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return newSong?.musicians.count ?? 0
     }
@@ -61,7 +69,12 @@ class CreateSongViewController: UIViewController , UITableViewDelegate, UITableV
     }
     
     @IBAction func addInstrumentButton(_ sender: Any) {
+        let sb = UIStoryboard(name: "SelectMusiciansPopUp", bundle: Bundle.main)
         
+        let vc = sb.instantiateViewController(withIdentifier: SelectMusicianPopUpViewController.identifier) as! SelectMusicianPopUpViewController
+        
+        vc.delegate = self
+        self.present(vc, animated: false, completion: nil)
     }
     
     @IBAction func doneButton(_ sender: Any) {

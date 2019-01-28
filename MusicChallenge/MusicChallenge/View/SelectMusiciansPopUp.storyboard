@@ -13,7 +13,7 @@
         <!--Select Musician Pop Up View Controller-->
         <scene sceneID="3yI-Mu-5fg">
             <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="FhQ-aG-Xd2" customClass="SelectMusicianPopUpViewController" customModule="MusicChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="selectMusiciansPopUp" modalPresentationStyle="overCurrentContext" id="FhQ-aG-Xd2" customClass="SelectMusicianPopUpViewController" customModule="MusicChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hWT-Z7-Xaz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,7 +60,7 @@
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.604773773006135" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="bpa-dX-iEp"/>
                     </view>
                     <connections>
