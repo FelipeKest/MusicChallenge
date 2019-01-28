@@ -18,18 +18,32 @@
                 <rect key="frame" x="0.0" y="0.0" width="343" height="47.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XS6-0s-CsL">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XS6-0s-CsL">
                         <rect key="frame" x="15" y="5" width="36" height="36"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="36" id="9RN-ZU-neK"/>
+                            <constraint firstAttribute="height" constant="36" id="ufF-Fn-Cpi"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Guitarra" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vuk-Oq-7O5">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guitarra" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vuk-Oq-7O5">
                         <rect key="frame" x="59" y="13" width="268" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="268" id="LpX-Xg-7bu"/>
+                            <constraint firstAttribute="height" constant="21" id="MQm-tj-Ue2"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Vuk-Oq-7O5" secondAttribute="bottom" constant="13.5" id="E2H-tX-ZHV"/>
+                    <constraint firstItem="Vuk-Oq-7O5" firstAttribute="leading" secondItem="XS6-0s-CsL" secondAttribute="trailing" constant="8" id="Fjr-Ky-qMZ"/>
+                    <constraint firstItem="Vuk-Oq-7O5" firstAttribute="top" secondItem="v87-UL-nfB" secondAttribute="top" constant="13" id="J0M-Lz-5uN"/>
+                    <constraint firstItem="XS6-0s-CsL" firstAttribute="top" secondItem="v87-UL-nfB" secondAttribute="top" constant="5" id="UJf-bc-Edd"/>
+                    <constraint firstAttribute="bottom" secondItem="XS6-0s-CsL" secondAttribute="bottom" constant="6.5" id="lDg-vh-xFJ"/>
+                    <constraint firstItem="XS6-0s-CsL" firstAttribute="leading" secondItem="v87-UL-nfB" secondAttribute="leading" constant="15" id="org-f9-TUD"/>
+                </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
