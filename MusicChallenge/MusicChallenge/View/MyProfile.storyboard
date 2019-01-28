@@ -22,6 +22,7 @@
                                 <rect key="frame" x="0.0" y="65" width="375" height="227"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="227" id="Xy0-xf-0UJ"/>
+                                    <constraint firstAttribute="width" constant="375" id="rbj-Jk-hCF"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guilherme Vassallo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOm-TE-n8e">

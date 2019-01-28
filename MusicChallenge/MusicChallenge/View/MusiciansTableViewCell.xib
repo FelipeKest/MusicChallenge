@@ -25,10 +25,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Guitar" translatesAutoresizingMaskIntoConstraints="NO" id="w8F-ZP-DrG">
-                        <rect key="frame" x="262" y="7" width="28" height="29.5"/>
+                        <rect key="frame" x="260" y="7" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="29.5" id="82r-zH-dka"/>
-                            <constraint firstAttribute="width" constant="28" id="xJ8-fN-XdN"/>
+                            <constraint firstAttribute="width" constant="30" id="xJ8-fN-XdN"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nakori Shimaro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="VPk-fX-wmi">
