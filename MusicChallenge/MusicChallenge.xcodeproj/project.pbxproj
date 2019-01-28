@@ -86,6 +86,7 @@
 		D092381921C84BF000D092BE /* Setlists.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D092381821C84BF000D092BE /* Setlists.storyboard */; };
 		D092381B21C84C0900D092BE /* Repertoire.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D092381A21C84C0900D092BE /* Repertoire.storyboard */; };
 		D0A9CB5B21C18D7E00E83D9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A9CB5A21C18D7E00E83D9D /* Main.storyboard */; };
+		D0DD675B21FFA80C00A19892 /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0DD675A21FFA80C00A19892 /* EditProfile.storyboard */; };
 		D0EE7DFD21CD6B2C00DDA7C9 /* CreateSetlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE7DFC21CD6B2C00DDA7C9 /* CreateSetlistViewController.swift */; };
 		D0FF458621EF8A4D004393CA /* EditBandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF458521EF8A4D004393CA /* EditBandViewController.swift */; };
 /* End PBXBuildFile section */
@@ -172,6 +173,7 @@
 		D092381821C84BF000D092BE /* Setlists.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setlists.storyboard; sourceTree = "<group>"; };
 		D092381A21C84C0900D092BE /* Repertoire.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Repertoire.storyboard; sourceTree = "<group>"; };
 		D0A9CB5A21C18D7E00E83D9D /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D0DD675A21FFA80C00A19892 /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		D0EE7DFC21CD6B2C00DDA7C9 /* CreateSetlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSetlistViewController.swift; sourceTree = "<group>"; };
 		D0FF458521EF8A4D004393CA /* EditBandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBandViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -357,6 +359,7 @@
 				67BFA08E21FB757C000D22C0 /* MusiciansTableViewCell.xib */,
 				67FB941621FA5DCA006EB7E2 /* MemberProfile.storyboard */,
 				D054FB7F21E68C87004D3132 /* EditBand.storyboard */,
+				D0DD675A21FFA80C00A19892 /* EditProfile.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				D02F2D0F21BEE4530090043A /* Band.storyboard in Resources */,
 				915E102921BB7A7300158899 /* LaunchScreen.storyboard in Resources */,
 				D04607CB21CC2706006A4B88 /* NewSetlist.storyboard in Resources */,
+				D0DD675B21FFA80C00A19892 /* EditProfile.storyboard in Resources */,
 				D02F2D0D21BEE2240090043A /* Roadmap.storyboard in Resources */,
 				D054FB7E21E68C5E004D3132 /* MyProfile.storyboard in Resources */,
 				D054FB8021E68C87004D3132 /* EditBand.storyboard in Resources */,
