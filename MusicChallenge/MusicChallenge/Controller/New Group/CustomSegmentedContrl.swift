@@ -55,14 +55,14 @@ class CustomSegmentedContrl: UIControl {
     }
     
     
-    @IBInspectable var selectorColor: UIColor = .red {
+    @IBInspectable var selectorColor = UIColor(red: 204/255, green: 32/255, blue: 49/255, alpha: 1) {
         
         didSet {
             updateView()
         }
     }
     
-    @IBInspectable var selectorTextColor: UIColor = .red {
+    @IBInspectable var selectorTextColor = UIColor(red: 204/255, green: 32/255, blue: 49/255, alpha: 1) {
         
         didSet {
             updateView()
@@ -88,13 +88,12 @@ class CustomSegmentedContrl: UIControl {
         }
         
         
-        
-        
         let buttonTitles = commaSeperatedButtonTitles.components(separatedBy: ",")
         
         for buttonTitle in buttonTitles {
             
             let button = UIButton.init(type: .system)
+            button.titleLabel?.font =  UIFont(name: "DIN Condensed", size: 23)
             button.setTitle(buttonTitle, for: .normal)
             button.setTitleColor(textColor, for: .normal)
             button.addTarget(self, action: #selector(buttonTapped(button:)), for: .touchUpInside)
