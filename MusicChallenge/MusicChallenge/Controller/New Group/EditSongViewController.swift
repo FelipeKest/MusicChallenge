@@ -38,7 +38,7 @@ class EditSongViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func getMusician(musician: Musician, instrument: Instrument) {
-        
+        //fazer algo com o músico e instrumentos recebidos do popup
     }
     
     
