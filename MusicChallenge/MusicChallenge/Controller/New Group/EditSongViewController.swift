@@ -16,6 +16,8 @@ class EditSongViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet var bpmField: UITextField!
     @IBOutlet var musiciansTableView: UITableView!
     
+    var band = Band()
+    
     var song: Song?
     
     override func viewDidLoad() {
@@ -56,6 +58,26 @@ class EditSongViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBAction func addInstrumentButton(_ sender: Any) {
         
+        let message = "\n\n\n\n\n\n"
+        
+        let alert = UIAlertController(title: "Selecione um músico e um instrumento que ele toca", message: message, preferredStyle: UIAlertController.Style.actionSheet)
+        alert.isModalInPopover = true
+        
+        let pickerFrame = UIPickerView(frame: CGRect(x: 5, y: 20, width: UIScreen.main.bounds.width - 20, height: 140))
+        pickerFrame.tag = 555
+        pickerFrame.delegate = self as! UIPickerViewDelegate
+        
+        alert.view.addSubview(pickerFrame)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: {action in
+            
+            
+            
+        })
+        alert.addAction(okAction)
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
     }
     
     /*
