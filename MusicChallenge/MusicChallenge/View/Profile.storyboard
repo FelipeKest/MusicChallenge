@@ -30,9 +30,8 @@
                                 <color key="textColor" red="0.80000000000000004" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="21 Anos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSf-bS-ifm">
-                                <rect key="frame" x="154" y="332" width="67" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21 Anos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSf-bS-ifm">
+                                <rect key="frame" x="154" y="337" width="67" height="24"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -81,7 +80,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instrumentos(2):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1K-nS-iKb">
-                                <rect key="frame" x="118.5" y="385" width="138" height="24"/>
+                                <rect key="frame" x="118.5" y="380" width="138" height="24"/>
                                 <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -95,13 +94,15 @@
                             <constraint firstItem="IOm-TE-n8e" firstAttribute="top" secondItem="F7a-j5-b14" secondAttribute="bottom" constant="11.5" id="Gbb-cR-hxV"/>
                             <constraint firstItem="VcB-UW-Z0w" firstAttribute="trailing" secondItem="pCn-tK-yNM" secondAttribute="trailing" id="Igz-Qa-ujF"/>
                             <constraint firstItem="f1K-nS-iKb" firstAttribute="centerX" secondItem="Pfh-i1-rPO" secondAttribute="centerX" id="TpK-LX-o3A"/>
+                            <constraint firstItem="VSf-bS-ifm" firstAttribute="top" secondItem="IOm-TE-n8e" secondAttribute="bottom" constant="3.5" id="V2X-0o-cDP"/>
                             <constraint firstItem="F7a-j5-b14" firstAttribute="top" secondItem="pCn-tK-yNM" secondAttribute="bottom" id="WOi-UI-RaC"/>
-                            <constraint firstItem="f1K-nS-iKb" firstAttribute="top" secondItem="IOm-TE-n8e" secondAttribute="bottom" constant="51.5" id="XD8-fW-4im"/>
+                            <constraint firstItem="f1K-nS-iKb" firstAttribute="top" secondItem="IOm-TE-n8e" secondAttribute="bottom" constant="46.5" id="XD8-fW-4im"/>
                             <constraint firstItem="F7a-j5-b14" firstAttribute="centerX" secondItem="Pfh-i1-rPO" secondAttribute="centerX" id="Xwb-CC-wn0"/>
                             <constraint firstItem="IOm-TE-n8e" firstAttribute="centerX" secondItem="Pfh-i1-rPO" secondAttribute="centerX" id="hiW-y6-8ti"/>
                             <constraint firstItem="F7a-j5-b14" firstAttribute="top" secondItem="VcB-UW-Z0w" secondAttribute="top" constant="45" id="kVh-OK-dh5"/>
                             <constraint firstItem="pCn-tK-yNM" firstAttribute="top" secondItem="VcB-UW-Z0w" secondAttribute="top" constant="1" id="qxw-cI-wU9"/>
                             <constraint firstItem="F7a-j5-b14" firstAttribute="top" secondItem="pCn-tK-yNM" secondAttribute="bottom" id="sg9-Qo-5iH"/>
+                            <constraint firstItem="VSf-bS-ifm" firstAttribute="leading" secondItem="IOm-TE-n8e" secondAttribute="trailing" constant="-122.5" id="w5x-rX-1bi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VcB-UW-Z0w"/>
                     </view>

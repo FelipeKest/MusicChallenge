@@ -227,7 +227,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hYg-xa-DJw"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Band" image="band_icon2" landscapeImage="band_icon2" largeContentSizeImage="band_icon2" id="8SH-Bl-Puf"/>
+                    <tabBarItem key="tabBarItem" title="Band" image="icone-band" landscapeImage="icone-band" largeContentSizeImage="icone-band" id="8SH-Bl-Puf"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
@@ -258,7 +258,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="band_icon2" width="31" height="31"/>
+        <image name="icone-band" width="25" height="25"/>
         <image name="musical-instruments" width="1439" height="1367"/>
         <image name="user_rock" width="595" height="583"/>
     </resources>
