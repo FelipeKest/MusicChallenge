@@ -119,11 +119,20 @@
                         <outlet property="instrumentsLabel" destination="f1K-nS-iKb" id="62K-bp-M8e"/>
                         <outlet property="instrumentsTableView" destination="H5J-gd-gFr" id="dU5-yG-NVn"/>
                         <outlet property="nameLabel" destination="IOm-TE-n8e" id="WlP-Ce-1mq"/>
+                        <segue destination="MVe-A1-noT" kind="show" identifier="editProfile" id="bJO-VT-4co"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RjP-X8-cCA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1055" y="214"/>
+        </scene>
+        <!--EditProfile-->
+        <scene sceneID="57x-RS-rOH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EditProfile" id="MVe-A1-noT" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8hK-6P-D2V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-54" y="213"/>
         </scene>
     </scenes>
     <resources>

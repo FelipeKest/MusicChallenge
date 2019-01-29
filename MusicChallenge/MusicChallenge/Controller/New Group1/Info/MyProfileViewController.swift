@@ -64,7 +64,7 @@ class MyProfileViewController: UIViewController ,UITableViewDelegate, UITableVie
     }
     
     @IBAction func editButton(_ sender: Any) {
-        
+        performSegue(withIdentifier: "editProfile", sender: self)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

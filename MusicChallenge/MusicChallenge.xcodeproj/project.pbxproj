@@ -55,6 +55,7 @@
 		67D5BB1C21C168B10058BCC7 /* SetlistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BB1B21C168B10058BCC7 /* SetlistsViewController.swift */; };
 		67D5BB1E21C16C570058BCC7 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BB1D21C16C570058BCC7 /* FeedViewController.swift */; };
 		67D5BB2021C173D40058BCC7 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D5BB1F21C173D40058BCC7 /* PostViewController.swift */; };
+		67D802AF2200CEBF0057E90F /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67D802AE2200CEBF0057E90F /* EditProfileViewController.swift */; };
 		67F4079B21E92B53009F85C3 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F4079A21E92B53009F85C3 /* NewEventViewController.swift */; };
 		67F4269921ED11CA002E2BB9 /* SetlistCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67F4269821ED11CA002E2BB9 /* SetlistCollectionViewCell.xib */; };
 		67F4269D21ED19DA002E2BB9 /* ChooseSetlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F4269C21ED19DA002E2BB9 /* ChooseSetlistViewController.swift */; };
@@ -139,6 +140,7 @@
 		67D5BB1B21C168B10058BCC7 /* SetlistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetlistsViewController.swift; sourceTree = "<group>"; };
 		67D5BB1D21C16C570058BCC7 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		67D5BB1F21C173D40058BCC7 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		67D802AE2200CEBF0057E90F /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		67F4079721E92B1D009F85C3 /* NewEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewEvent.storyboard; sourceTree = "<group>"; };
 		67F4079A21E92B53009F85C3 /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		67F4269821ED11CA002E2BB9 /* SetlistCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetlistCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				676CEE8221C843D700961015 /* MusicianProfileViewController.swift */,
 				67BFA09221FB8CD0000D22C0 /* InstrumentsTableViewCell.swift */,
 				676CEE8421C843E300961015 /* MyProfileViewController.swift */,
+				67D802AE2200CEBF0057E90F /* EditProfileViewController.swift */,
 			);
 			path = Info;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 				676CEE7421C82DE300961015 /* JoinBandViewController.swift in Sources */,
 				67B9229D21F657B500879007 /* UIExtensions.swift in Sources */,
 				6754220B21F1105B0027FE6C /* SessionManager.swift in Sources */,
+				67D802AF2200CEBF0057E90F /* EditProfileViewController.swift in Sources */,
 				6754220F21F110680027FE6C /* GenericProtocolClassCloud.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
