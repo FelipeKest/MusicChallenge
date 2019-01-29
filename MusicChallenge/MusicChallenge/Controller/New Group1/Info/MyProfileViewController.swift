@@ -42,6 +42,7 @@ class MyProfileViewController: UIViewController ,UITableViewDelegate, UITableVie
     }
     
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return profile.instruments?.count ?? 0
     }
@@ -56,6 +57,15 @@ class MyProfileViewController: UIViewController ,UITableViewDelegate, UITableVie
         return cellInstrument
         
     }
+    
+//        if let index = self.repertoireTableView.indexPathForSelectedRow{
+//            self.repertoireTableView.deselectRow(at: index, animated: true)
+//        }
+//
+//        repertoireTableView.reloadData()
+//    }
+    
+ 
     
     
     
@@ -83,3 +93,5 @@ class MyProfileViewController: UIViewController ,UITableViewDelegate, UITableVie
     */
 
 }
+
+
