@@ -19,6 +19,8 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
     
     var songs: [Song] = [Song(name: "Watermelon Man"), Song(name: "Stairway To Heaven"), Song(name: "Hit The Road, Jack"), Song(name: "Pinball Wizard", instruments: [SongMusician.init(musician: Musician(), instrument: Instrument.Drums), SongMusician.init(musician: Musician(), instrument: Instrument.Guitar)], creator: Musician(), id: "aaaaaaaaaaaaa")]
     
+    var refreshControl: UIRefreshControl?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +33,8 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
         //self.songSearchBar.returnKeyType = UIReturnKeyType.done
         //reload()
         
+        addRefreshControl()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -40,6 +44,20 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         
         repertoireTableView.reloadData()
+    }
+    
+    func addRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl?.tintColor = UIColor.red
+        refreshControl?.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
+        repertoireTableView.addSubview(refreshControl!)
+    }
+    
+    
+    @objc func refreshTable() {
+        //songs.append(Song(name: "ATUALIZOU?"))
+        repertoireTableView.reloadData()
+        refreshControl?.endRefreshing()
     }
     
     

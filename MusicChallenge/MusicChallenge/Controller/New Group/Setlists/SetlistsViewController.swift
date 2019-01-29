@@ -22,7 +22,7 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
             Song(name: "Hit The Road, Jack", instruments: [SongMusician()], creator: Musician(), id: "aaaaaaaaaaaaa"), Song(name: "Watermelon Man", instruments: [SongMusician()], creator: Musician(), id: "aasfasasfasf")])
     ]
     
-    
+    var refreshControl: UIRefreshControl?
     
     override func viewDidLoad() {
         
@@ -35,6 +35,8 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
 //        shape.UIColor
 //        shape.addSubview(self.view)
         // Do any additional setup after loading the view.
+        
+        addRefreshControl()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,7 +45,19 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
         setlistsCollectionView.reloadData()
     }
 
+    func addRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl?.tintColor = UIColor.red
+        refreshControl?.addTarget(self, action: #selector(refreshCollection), for: .valueChanged)
+        setlistsCollectionView.addSubview(refreshControl!)
+    }
     
+    
+    @objc func refreshCollection() {
+        //setlists.append(Setlist(name: "ATUALIZASTES???", songs: []))
+        setlistsCollectionView.reloadData()
+        refreshControl?.endRefreshing()
+    }
     
     /*
     // MARK: - Navigation
