@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r1B-J7-NRj">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -29,9 +29,6 @@
                                     <navigationItem title="Editar Perfil" id="irl-aB-d65">
                                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="s1M-dj-IxT">
                                             <color key="tintColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <connections>
-                                                <action selector="cancelButton:" destination="r1B-J7-NRj" id="jf3-dY-Hds"/>
-                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Pronto" id="e9m-Xe-aTe">
                                             <color key="tintColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -46,7 +43,7 @@
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="musiciansCell" id="ceL-T2-8Qw" customClass="MusiciansTableViewCell" customModule="MusicChallenge" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="instrumentsCell" id="ceL-T2-8Qw" customClass="MusiciansTableViewCell" customModule="MusicChallenge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ceL-T2-8Qw" id="PTR-P2-zln">
@@ -84,17 +81,6 @@
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTC-9p-cUV">
-                                <rect key="frame" x="97.5" y="213" width="180" height="23"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="N1q-U1-sg0"/>
-                                    <constraint firstAttribute="height" constant="23" id="XuE-fh-tW2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="23"/>
-                                <state key="normal" title="Editar foto de capa">
-                                    <color key="titleColor" red="0.80000000000000004" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v3Y-7q-S3B">
                                 <rect key="frame" x="82" y="300" width="91" height="30"/>
                                 <constraints>
@@ -115,8 +101,8 @@
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instrumentos/Músicos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhM-tP-UbP">
-                                <rect key="frame" x="16" y="349" width="173" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instrumentos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhM-tP-UbP">
+                                <rect key="frame" x="16" y="349" width="102.5" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="Ksq-np-C3j"/>
                                 </constraints>
@@ -131,40 +117,44 @@
                                     <constraint firstAttribute="width" constant="22" id="cb2-ZI-UN3"/>
                                 </constraints>
                                 <color key="tintColor" red="0.8922216892" green="0.16046175360000001" blue="0.17606648799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="addInstrumentButton:" destination="r1B-J7-NRj" eventType="touchUpInside" id="4WO-fI-4j7"/>
-                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTC-9p-cUV">
+                                <rect key="frame" x="93" y="217" width="189" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="189" id="N1q-U1-sg0"/>
+                                    <constraint firstAttribute="height" constant="23" id="XuE-fh-tW2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="23"/>
+                                <state key="normal" title="Editar foto de perfil">
+                                    <color key="titleColor" red="0.80000000000000004" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="dTC-9p-cUV" firstAttribute="top" secondItem="Ppf-Y5-KIK" secondAttribute="bottom" constant="4" id="0pV-vQ-fR6"/>
+                            <constraint firstItem="dTC-9p-cUV" firstAttribute="top" secondItem="Ppf-Y5-KIK" secondAttribute="bottom" constant="8" id="0pV-vQ-fR6"/>
                             <constraint firstItem="dDb-0m-3lH" firstAttribute="top" secondItem="7G9-ak-hWM" secondAttribute="bottom" constant="27" id="1FZ-vb-7GS"/>
                             <constraint firstItem="IhM-tP-UbP" firstAttribute="leading" secondItem="dDb-0m-3lH" secondAttribute="trailing" constant="-58" id="8s8-GC-iIe"/>
                             <constraint firstItem="hcb-2L-kcr" firstAttribute="bottom" secondItem="soM-zq-TkA" secondAttribute="bottom" id="9pj-za-nac"/>
                             <constraint firstItem="Ppf-Y5-KIK" firstAttribute="centerX" secondItem="2D4-O0-5G6" secondAttribute="centerX" id="C9L-jP-xgR"/>
                             <constraint firstItem="hcb-2L-kcr" firstAttribute="trailing" secondItem="soM-zq-TkA" secondAttribute="trailing" id="EfU-Hj-EFw"/>
                             <constraint firstItem="hcb-2L-kcr" firstAttribute="top" secondItem="IhM-tP-UbP" secondAttribute="bottom" constant="4" id="I3z-Ty-BUn"/>
-                            <constraint firstItem="7G9-ak-hWM" firstAttribute="top" secondItem="dTC-9p-cUV" secondAttribute="bottom" constant="16" id="La2-As-iYU"/>
+                            <constraint firstItem="7G9-ak-hWM" firstAttribute="top" secondItem="dTC-9p-cUV" secondAttribute="bottom" constant="12" id="La2-As-iYU"/>
                             <constraint firstItem="hcb-2L-kcr" firstAttribute="leading" secondItem="soM-zq-TkA" secondAttribute="leading" id="Yyb-7i-Nu3"/>
                             <constraint firstItem="cwK-gB-t8X" firstAttribute="leading" secondItem="v3Y-7q-S3B" secondAttribute="trailing" constant="-91" id="aTn-5P-Izu"/>
                             <constraint firstItem="hcb-2L-kcr" firstAttribute="top" secondItem="YDz-3M-D4O" secondAttribute="bottom" constant="6" id="aqa-TK-oKw"/>
                             <constraint firstItem="dTC-9p-cUV" firstAttribute="centerX" secondItem="2D4-O0-5G6" secondAttribute="centerX" id="dvs-Cr-EJh"/>
-                            <constraint firstItem="cwK-gB-t8X" firstAttribute="top" secondItem="dTC-9p-cUV" secondAttribute="bottom" constant="13" id="fjD-Cb-78z"/>
+                            <constraint firstItem="cwK-gB-t8X" firstAttribute="top" secondItem="dTC-9p-cUV" secondAttribute="bottom" constant="9" id="fjD-Cb-78z"/>
                             <constraint firstItem="v3Y-7q-S3B" firstAttribute="leading" secondItem="dDb-0m-3lH" secondAttribute="trailing" constant="8" id="g7e-yi-nqZ"/>
                             <constraint firstItem="YDz-3M-D4O" firstAttribute="leading" secondItem="hcb-2L-kcr" secondAttribute="trailing" constant="-38" id="kfe-1j-qRT"/>
                             <constraint firstItem="cwK-gB-t8X" firstAttribute="leading" secondItem="7G9-ak-hWM" secondAttribute="trailing" constant="8" id="nu8-hl-X3W"/>
                             <constraint firstItem="v3Y-7q-S3B" firstAttribute="top" secondItem="cwK-gB-t8X" secondAttribute="bottom" constant="21" id="pbL-Qw-LNv"/>
-                            <constraint firstItem="cwK-gB-t8X" firstAttribute="leading" secondItem="dTC-9p-cUV" secondAttribute="trailing" constant="-195.5" id="yJC-Dl-KkL"/>
+                            <constraint firstItem="cwK-gB-t8X" firstAttribute="leading" secondItem="dTC-9p-cUV" secondAttribute="trailing" constant="-200" id="yJC-Dl-KkL"/>
                             <constraint firstItem="IhM-tP-UbP" firstAttribute="top" secondItem="v3Y-7q-S3B" secondAttribute="bottom" constant="19" id="zdB-jF-w0M"/>
                             <constraint firstItem="Ppf-Y5-KIK" firstAttribute="top" secondItem="soM-zq-TkA" secondAttribute="top" constant="56" id="zdY-nZ-JOI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="soM-zq-TkA"/>
                     </view>
-                    <connections>
-                        <outlet property="bpmField" destination="v3Y-7q-S3B" id="ITW-lF-tcf"/>
-                        <outlet property="musiciansTableView" destination="hcb-2L-kcr" id="uSX-ZZ-gUV"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BAg-yu-0hp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
