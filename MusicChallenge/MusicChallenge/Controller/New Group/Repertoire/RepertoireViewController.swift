@@ -18,13 +18,13 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
     //@IBOutlet var songSearchBar: UISearchBar!
     
     var songs: [Song] = [
-                        Song(name: "Born To Be Wild"),
-                         
-                        Song(name: "MEGALOVANIA"),
-                         
-                        Song(name: "Love Of My Life (Acapella)"),
-        
-                        Song(name: "The Sound Of Silence")
+//                        Song(name: "Born To Be Wild"),
+//                         
+//                        Song(name: "MEGALOVANIA"),
+//                         
+//                        Song(name: "Love Of My Life (Acapella)"),
+//        
+//                        Song(name: "The Sound Of Silence")
         
     ]
     
@@ -49,11 +49,15 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         
         guard let band = SessionManager.currentBand else {return}
-        DAO.queryAllSongs(from: band) { (error) in
+        DAO.queryAllSongs(from: band, songsReferences: nil) { (error) in
             if error != nil {
                 //TODO: Display Alert Controller
+                print(error?.localizedDescription as Any)
+            } else {
+                self.songs = band.repertoire
+                self.repertoireTableView.reloadData()
+                print("tem",self.songs.count,"songs")
             }
-            self.songs = band.repertoire
         }
     }
     

@@ -9,8 +9,8 @@
 class Song:GenericProtocolClass {
     
     var name: String
-    var musicians: [SongMusician]
-    var creator: Musician
+    var musicians: [SongMusician] = []
+    var creator: Musician? = nil
     
     static var allReferenced:[String:Song] = [:]
 //    var band: Band
@@ -45,8 +45,8 @@ class Song:GenericProtocolClass {
     
     required init(asDictionary: [String : Any]) {
         self.name = asDictionary["name"] as! String
-        self.musicians = asDictionary["instruments"] as! [SongMusician]
-        self.creator = asDictionary["creatorID"] as! Musician
+        self.musicians = asDictionary["instruments"] as? [SongMusician] ?? []
+        self.creator = asDictionary["creatorID"] as? Musician
 //        self.setlists = asDictionary["setlists"] as! [Setlist]
 //        self.band = asDictionary["bandID"] as! Band
         super.init(id: asDictionary["id"] as? String)
@@ -60,6 +60,18 @@ class Song:GenericProtocolClass {
         fatalError("init(from:) has not been implemented")
     }
     
+    static func asynchronousCreation(from dict:[String:Any], completionHandler: @escaping(Song?,Error?)->Void){
+        let song = Song()
+        DAOFacade.load(song: song, from: dict) { (error) in
+            if error != nil {
+                print(error?.localizedDescription as Any)
+                completionHandler(nil,error)
+                return
+            } else {
+                completionHandler(song,error)
+            }
+        }
+    }
 }
 
 class SongMusician {

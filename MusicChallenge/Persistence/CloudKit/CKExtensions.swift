@@ -15,6 +15,7 @@ extension CKRecord {
         var result:[String:Any] = [:]
         for item in self.allKeys() {
             result[String(item)] = self.object(forKey: item)
+            print(self.object(forKey: item))
         }
         return result
     }
@@ -25,14 +26,6 @@ extension CKRecord {
     
     var asSong: Song {
         return Song(asDictionary: self.asDictionary)
-//        let song: Song
-//        let name = self.value(forKey: "name") as! String
-//        let instruments = self.value(forKey: "instruments") as! [Instrument]
-//        let creatorReference = self.value(forKey: "creator") as? CKRecord.Reference
-//        let creatorRecord = CKRecord(recordType: "Song", recordID: (creatorReference?.recordID)!)
-//        let id = self.value(forKey: "id") as! String
-//        song = Song(name: name, instruments: instruments, creator: creatorRecord.asMusician, id: id)
-//        return song
     }
     
     var asSetlist: Setlist {
@@ -47,13 +40,27 @@ extension CKRecord {
 
 
 //MARK: CKREferences Extension
-extension CKRecord.Reference {
-    var asDictionary: [String:Any] {
-        
-        let result = CKRecord(recordType: "",recordID: self.recordID)
-        return result.asDictionary
-    }
-}
+
+//extension CKRecord.Reference {
+//    var asMusicianDictionary: [String:Any] {
+//        let result = CKRecord(recordType: "Musician",recordID: self.recordID)
+//        return result.asDictionary
+//    }
+//    var asSongDictionary: [String:Any] {
+//        let result = CKRecord(recordType: "Song", recordID: self.recordID)
+//
+//        print(result.allKeys())
+//        return result.asDictionary
+//    }
+//    var asBandDictionary: [String:Any] {
+//        let result = CKRecord(recordType: "Band", recordID: self.recordID)
+//        return result.asDictionary
+//    }
+//    var asSetlistDictionary: [String:Any] {
+//        let result = CKRecord(recordType: "setlist", recordID: self.recordID)
+//        return result.asDictionary
+//    }
+//}
 
 //MARK: CKRecord Array Extension
 extension Array where Element == CKRecord {
