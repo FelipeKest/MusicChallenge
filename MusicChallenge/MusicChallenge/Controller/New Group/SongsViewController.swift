@@ -142,6 +142,10 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
         
         for svScroll in pageController.view.subviews as! [UIScrollView] {
             svScroll.delegate = self
+            svScroll.bounces = false
+//            svScroll.showsHorizontalScrollIndicator = true
+//            svScroll.alwaysBounceHorizontal = true
+            
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
