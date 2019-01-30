@@ -17,6 +17,7 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
     //@IBOutlet var segmentedControl: UISegmentedControl!
     //@IBOutlet var addSongButton: UIBarButtonItem!
     //@IBOutlet var songSearchBar: UISearchBar!
+    @IBOutlet var testImage: UIImageView!
     
     let documentsDirectoryPath:NSString = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
     var imageURL: URL!
@@ -50,8 +51,6 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
         //reload()
         
         let image = UIImage(named: "yuan-thirdy-583227-unsplash.png")
-        
-        publicDatabase = DAO.database
         
         saveImage(image)
         
@@ -101,11 +100,11 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
             self.imageURL = URL(fileURLWithPath: path)
             try? imageData.write(to: self.imageURL, options: [.atomic])
             
-            let File:CKAsset?  = CKAsset(fileURL: URL(fileURLWithPath: path))
-            newRecord.setObject(File, forKey: "Image")
+            let file: CKAsset?  = CKAsset(fileURL: URL(fileURLWithPath: path))
+            newRecord.setObject(file, forKey: "Image")
         }
         
-        if let database = self.publicDatabase {
+        if let database = DAO.database {
             
             database.save(newRecord, completionHandler: { (record:CKRecord?, error:Error?) in
                 
@@ -119,15 +118,39 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
                     
                 }
                 
-                
+                database.fetch(withRecordID: newRecord.recordID, completionHandler: { (record: CKRecord?, error: Error?) -> (Void) in
+                    guard let record = record else
+                    {
+                        if let error = error
+                        {
+                            DispatchQueue.main.async
+                                {
+                                    NSLog((error.localizedDescription))
+                            }
+                        }
+                        
+                        return
+                    }
+                    // Here is where the image is recovered
+                    if let asset = record["Image"] as? CKAsset, let data = try? Data(contentsOf: asset.fileURL)
+                    {
+                        DispatchQueue.main.async
+                            {
+                                let recoveredImage = UIImage(data: data)
+                                
+                                if recoveredImage != nil {
+                                self.testImage.image = recoveredImage
+                                }
+                                else {
+                                    print ("IMAGEM VAZIA")
+                                }
+                                
+                        }
+                    }
+                })
             })
-            
-            
         }
-        
-        
     }
-    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

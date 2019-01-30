@@ -36,6 +36,10 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jif-nb-bHe">
+                                <rect key="frame" x="0.0" y="184" width="375" height="213"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="2xG-a1-czw"/>
@@ -45,6 +49,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="repertoireTableView" destination="O6D-Wz-0rU" id="2Ix-3l-Rlx"/>
+                        <outlet property="testImage" destination="jif-nb-bHe" id="c7A-jg-I77"/>
                         <segue destination="8to-12-d0k" kind="show" identifier="showSong" id="lPq-TM-VAW"/>
                     </connections>
                 </viewController>
