@@ -11,13 +11,15 @@
 import UIKit
 
 
-class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NewEventProtocol {
+class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate,  NewEventProtocol {
     
     
     @IBOutlet var roadmapTableView: UITableView!
     //@IBOutlet var searchBar: UISearchBar!
     //@IBOutlet var monthSelector: ? (descobrir o tipo disso)
     
+    
+    var refreshControl: UIRefreshControl?
     
     var events: [Event] = [
         Event(name: "Festival de Rock", place: "Avenida Real Edinburgo", date: String("11/04/2019").toDate(dateFormat: "dd-MM-yyyy"), bandID: "asghhhhhhhh", id: "sfdfasfasfasfas", eventType: EventTypes.Show),
@@ -30,7 +32,7 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        addRefreshControl()
         // Do any additional setup after loading the view.
     }
     
@@ -52,6 +54,19 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
         roadmapTableView.reloadData()
     }
     
+    func addRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl?.tintColor = UIColor.red
+        refreshControl?.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
+        roadmapTableView.addSubview(refreshControl!)
+    }
+    
+    
+    @objc func refreshTable() {
+        //songs.append(Song(name: "ATUALIZOU?"))
+        roadmapTableView.reloadData()
+        refreshControl?.endRefreshing()
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
@@ -89,6 +104,21 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showEvent", sender: self)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("Delete Pressed")
+            let deleteAlert = UIAlertController(title: nil, message: "Deseja realmente excluir \(events[indexPath.row].name)?", preferredStyle: .alert)
+            
+            let deleteAction = UIAlertAction(title: "Excluir", style: .destructive)
+            let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
+            
+            deleteAlert.addAction(deleteAction)
+            deleteAlert.addAction(cancelAction)
+            
+            self.present(deleteAlert, animated: true, completion: nil)
+        }
     }
     
     // MARK: - Navigation

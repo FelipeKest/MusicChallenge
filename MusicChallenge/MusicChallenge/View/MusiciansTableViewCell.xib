@@ -14,7 +14,7 @@
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="musiciansCell" id="0Y8-UR-62N" customClass="MusiciansTableViewCell" customModule="MusicChallenge" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Y8-UR-62N" id="FC0-AQ-qks">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Y8-UR-62N" id="FC0-AQ-qks">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -34,8 +34,8 @@
                             <constraint firstAttribute="width" constant="30" id="xJ8-fN-XdN"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nakori Shimaro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPk-fX-wmi">
-                        <rect key="frame" x="52" y="11" width="181" height="23"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nakori Shimaro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPk-fX-wmi">
+                        <rect key="frame" x="35" y="10.5" width="200" height="23"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="200" id="vYG-SR-x0t"/>
                         </constraints>
@@ -44,7 +44,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_rock" translatesAutoresizingMaskIntoConstraints="NO" id="zpi-3O-AXK">
-                        <rect key="frame" x="16" y="8" width="24" height="26"/>
+                        <rect key="frame" x="6" y="8" width="24" height="26"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="26" id="fet-pa-WCh"/>
                             <constraint firstAttribute="width" constant="24" id="odt-lY-U14"/>
@@ -53,17 +53,21 @@
                 </subviews>
                 <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
-                    <constraint firstItem="zpi-3O-AXK" firstAttribute="leading" secondItem="FC0-AQ-qks" secondAttribute="leadingMargin" id="4RN-Qt-jck"/>
+                    <constraint firstItem="VPk-fX-wmi" firstAttribute="centerY" secondItem="FC0-AQ-qks" secondAttribute="centerY" id="3pn-MS-QLZ"/>
+                    <constraint firstItem="w8F-ZP-DrG" firstAttribute="centerY" secondItem="FC0-AQ-qks" secondAttribute="centerY" id="8Wm-Vo-65l"/>
                     <constraint firstItem="zpi-3O-AXK" firstAttribute="bottom" secondItem="w8F-ZP-DrG" secondAttribute="bottom" constant="-2.5" id="BS0-eS-UPA"/>
-                    <constraint firstItem="VPk-fX-wmi" firstAttribute="leading" secondItem="zpi-3O-AXK" secondAttribute="trailing" constant="12" id="E90-7w-EoC"/>
+                    <constraint firstItem="VPk-fX-wmi" firstAttribute="leading" secondItem="zpi-3O-AXK" secondAttribute="trailing" constant="5" id="E90-7w-EoC"/>
+                    <constraint firstItem="NWH-PI-dWj" firstAttribute="centerY" secondItem="FC0-AQ-qks" secondAttribute="centerY" id="Kzp-ba-uP3"/>
                     <constraint firstItem="NWH-PI-dWj" firstAttribute="leading" secondItem="w8F-ZP-DrG" secondAttribute="trailing" constant="8" symbolic="YES" id="Mk9-wB-d4f"/>
                     <constraint firstItem="w8F-ZP-DrG" firstAttribute="centerY" secondItem="FC0-AQ-qks" secondAttribute="centerY" id="Ni7-gw-TWI"/>
                     <constraint firstAttribute="trailing" secondItem="NWH-PI-dWj" secondAttribute="trailing" constant="8" id="Sh9-bd-qkW"/>
+                    <constraint firstItem="zpi-3O-AXK" firstAttribute="centerY" secondItem="FC0-AQ-qks" secondAttribute="centerY" id="Si5-QV-C3l"/>
                     <constraint firstItem="VPk-fX-wmi" firstAttribute="firstBaseline" secondItem="NWH-PI-dWj" secondAttribute="firstBaseline" id="Ti7-eq-KsZ"/>
                     <constraint firstItem="zpi-3O-AXK" firstAttribute="top" secondItem="FC0-AQ-qks" secondAttribute="topMargin" constant="-3" id="au5-SL-Oiq"/>
                     <constraint firstItem="zpi-3O-AXK" firstAttribute="top" secondItem="w8F-ZP-DrG" secondAttribute="top" constant="1" id="qfE-jm-tts"/>
                     <constraint firstItem="zpi-3O-AXK" firstAttribute="centerY" secondItem="VPk-fX-wmi" secondAttribute="centerY" constant="-1" id="qqQ-b7-L4Q"/>
                     <constraint firstItem="VPk-fX-wmi" firstAttribute="baseline" secondItem="NWH-PI-dWj" secondAttribute="baseline" id="uvc-Pp-4A6"/>
+                    <constraint firstItem="zpi-3O-AXK" firstAttribute="leading" secondItem="FC0-AQ-qks" secondAttribute="leading" constant="6" id="zvO-x6-tdJ"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
