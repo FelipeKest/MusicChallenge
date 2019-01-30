@@ -15,7 +15,6 @@ extension CKRecord {
         var result:[String:Any] = [:]
         for item in self.allKeys() {
             result[String(item)] = self.object(forKey: item)
-            print(self.object(forKey: item))
         }
         return result
     }

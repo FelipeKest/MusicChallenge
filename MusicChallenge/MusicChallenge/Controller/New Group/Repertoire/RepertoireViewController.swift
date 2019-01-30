@@ -10,7 +10,12 @@
 
 import UIKit
 
-class RepertoireViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class RepertoireViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate,AllSongsDelegate {
+    func getAllSongs(songs: [Song]) {
+        self.songs = songs
+        self.repertoireTableView.reloadData()
+    }
+    
     
     @IBOutlet var repertoireTableView: UITableView!
     //@IBOutlet var segmentedControl: UISegmentedControl!
@@ -50,15 +55,10 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
         
         guard let band = SessionManager.currentBand else {return}
         DAO.queryAllSongs(from: band, songsReferences: nil) { (error) in
-            if error != nil {
-                //TODO: Display Alert Controller
-                print(error?.localizedDescription as Any)
-            } else {
-                self.songs = band.repertoire
-                self.repertoireTableView.reloadData()
-                print("tem",self.songs.count,"songs")
-            }
+            print("vetor de musica",band.repertoire)
+            self.getAllSongs(songs: band.repertoire)
         }
+        
     }
     
     
@@ -86,7 +86,10 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
         let song = songs[indexPath.row]
         var iconArray = [cellRepertoire.instrument0, cellRepertoire.instrument1, cellRepertoire.instrument2, cellRepertoire.instrument3]
         
-        if song.musicians.count > 4{
+        if song.musicians.isEmpty {
+            iconArray = []
+            cellRepertoire.additionalInstruments.text = ""
+        } else if song.musicians.count > 4{
             for i in 0...3 {
                 if let instrument = song.musicians[i].instrument {
                     iconArray[i]?.image = instrument.image
@@ -94,8 +97,7 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
             }
             
             cellRepertoire.additionalInstruments.text = "+\(song.musicians.count - 4)"
-        }
-        else{
+        } else {
             for i in 0...song.musicians.count-1 {
                 if let instrument = song.musicians[i].instrument {
                     iconArray[i]?.image = instrument.image

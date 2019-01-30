@@ -61,8 +61,7 @@ class Song:GenericProtocolClass {
     }
     
     static func asynchronousCreation(from dict:[String:Any], completionHandler: @escaping(Song?,Error?)->Void){
-        let song = Song()
-        DAOFacade.load(song: song, from: dict) { (error) in
+        DAOFacade.load(from: dict) { (song, error) in
             if error != nil {
                 print(error?.localizedDescription as Any)
                 completionHandler(nil,error)

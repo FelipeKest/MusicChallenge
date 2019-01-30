@@ -28,11 +28,11 @@ class Band:GenericProtocolClass {
     init(name:String, members:[Musician], repertoire:[Song] = [], setlists:[Setlist] = [], events: [Event] = [], id: String){
         self.name = name
         self.members = members
-        self.repertoire = repertoire
         self.setlists = setlists
         self.events = events
         super.init(id: id)
         Band.allReferenced[id] = self
+        self.repertoire = repertoire
     }
     
     required init(asDictionary: [String : Any]) {
