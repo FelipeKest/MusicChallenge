@@ -82,6 +82,9 @@ class EditSongViewController: UIViewController, UITableViewDataSource, UITableVi
             dismiss(animated: true, completion: nil)
         }
     }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     /*
     // MARK: - Navigation
 
