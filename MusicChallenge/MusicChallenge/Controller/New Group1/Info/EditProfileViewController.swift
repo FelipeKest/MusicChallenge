@@ -9,6 +9,10 @@
 import UIKit
 
 class EditProfileViewController: UIViewController {
+    
+    
+ 
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +31,10 @@ class EditProfileViewController: UIViewController {
     }
     */
     @IBAction func cancelButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func doneButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
