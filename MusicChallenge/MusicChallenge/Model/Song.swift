@@ -77,17 +77,29 @@ class SongMusician {
     var musician: Musician?
     var instrument: Instrument?
     
-    init(from string: String){
-        let musicianTxt = string.split(separator: "|")[0]
+    init(musician: Musician, instrument: Instrument){
+        self.musician = musician
+        self.instrument = instrument
+    }
+    
+    static func asynchronousCreation(from string:String,completionHandler: @escaping(SongMusician?,Error?)->Void){
         let instrumentTxt = string.split(separator: "|")[1]
-        self.instrument = String(instrumentTxt).asInstrument
-        for musician in Musician.allReferenced {
-            if musician.key == musicianTxt {
-                self.musician = musician.value
+        let instrument = String(instrumentTxt).asInstrument
+        let musicianTxt = string.split(separator: "|")[0]
+        DAO.fetchMusician(id: String(musicianTxt)) { (musician, error) in
+            if error != nil {
+                print(error?.localizedDescription as Any)
+                completionHandler(nil,error)
+            } else {
+                guard let musician = musician else {return}
+                let songMusician = SongMusician(musician: musician, instrument: instrument)
+                completionHandler(songMusician,error)
             }
         }
     }
+    
+    
     convenience init(){
-        self.init(from: "DA0A1DE1-9654-4338-8C27-A3BE52B23C5E|Bass")
+        self.init(musician:Musician(),instrument:Instrument.Bass)
     }
 }

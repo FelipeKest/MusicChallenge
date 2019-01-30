@@ -238,7 +238,6 @@ class dao {
 //                print(error?.localizedDescription as Any)
 //                completionHandler(nil,error)
 //            } else {
-//                //TODO: Pegar e modificar as setlist no campo ["setlist"] do Record da Banda
 //                print("saved record")
 //                band.setlists.append(setlist)
 //                setlist.id = setlistRecord.recordID.recordName
@@ -264,63 +263,134 @@ class dao {
                         completionHandler(err)
                         return
                     }
+                    
                     guard let musicianRec = musicianRec else {return}
                     musicianRecord = musicianRec
+                    //Setting up songRecord
                     songRecord.setValue(song.name, forKey: "name")
                     let musicianReference = CKRecord.Reference(record: musicianRecord, action: .none)
                     songRecord.setValue(musicianReference, forKey: "creator")
-//                    guard var bandRepertoire = bandRecord["repertoire"] as? [CKRecord.Reference] else {
-//                        //repertoire vazio
-//                        return
-//                    }
-                    var bandRepertoire: [CKRecord.Reference]
-                    if let repertoire = bandRecord["repertoire"] as? [CKRecord.Reference] {
-                        //repertoire tem musicas
-                        bandRepertoire = repertoire
-                    } else {
-                        //repertoire nao tem musicas
-                        bandRepertoire = []
+                    var instruments: [Instrument] = []
+                    for instrument in song.musicians {
+                        instruments.append(instrument.instrument!)
                     }
-                    self.database?.save(songRecord, completionHandler: { (savedSongRecord, songError) in
-                        if songError != nil {
-                            print(songError?.localizedDescription as Any)
-                            completionHandler(songError)
-                            return
+                    songRecord.setValue(instruments, forKey: "instruments")
+                    var playersRecords: [CKRecord] = []
+                    let musiciansQuery = CKQuery(recordType: "Musician", predicate: NSPredicate(format: "band == %@", band.id!))
+                    DAO.database?.perform(musiciansQuery, inZoneWith: nil, completionHandler: { (bandMusiciansRecords, error) in
+                        if error != nil {
+                            print(error?.localizedDescription as Any)
+                            completionHandler(nil)
                         }
-                        guard let savedSongRecord = savedSongRecord else {return}
-                        bandRepertoire.append(CKRecord.Reference(record: savedSongRecord, action: .none))
-                        bandRecord.setValue(bandRepertoire, forKey: "repertoire")
-                        let modifierOperation = CKModifyRecordsOperation(recordsToSave: [bandRecord], recordIDsToDelete: [])
-                        modifierOperation.modifyRecordsCompletionBlock = { _,_,modifyError in
-                            guard modifyError == nil else {
-                                guard let cloudError = modifyError as? CKError else {
+                        guard let musicianRecords = bandMusiciansRecords else {return}
+                        for playerRecord in musicianRecords {
+                            for musician in song.musicians {
+                                if playerRecord.recordID.recordName == musician.musician?.musicianRecordName {
+                                    playersRecords.append(playerRecord)
+                                }
+                            }
+                        }
+                        songRecord.setValue(playersRecords, forKey: "players")
+                        //                        playersRecords = musicianRecords.filter({})
+                        
+                        var bandRepertoire: [CKRecord.Reference]
+                        if let repertoire = bandRecord["repertoire"] as? [CKRecord.Reference] {
+                            //repertoire tem musicas
+                            bandRepertoire = repertoire
+                        } else {
+                            //repertoire nao tem musicas
+                            bandRepertoire = []
+                        }
+                        self.database?.save(songRecord, completionHandler: { (savedSongRecord, songError) in
+                            if songError != nil {
+                                print(songError?.localizedDescription as Any)
+                                completionHandler(songError)
+                                return
+                            }
+                            guard let savedSongRecord = savedSongRecord else {return}
+                            bandRepertoire.append(CKRecord.Reference(record: savedSongRecord, action: .none))
+                            bandRecord.setValue(bandRepertoire, forKey: "repertoire")
+                            let modifierOperation = CKModifyRecordsOperation(recordsToSave: [bandRecord], recordIDsToDelete: [])
+                            modifierOperation.modifyRecordsCompletionBlock = { _,_,modifyError in
+                                guard modifyError == nil else {
+                                    guard let cloudError = modifyError as? CKError else {
+                                        completionHandler(error)
+                                        return
+                                    }
+                                    if cloudError.code == .partialFailure {
+                                        guard let errors = cloudError.partialErrorsByItemID else {
+                                            completionHandler(cloudError)
+                                            return
+                                        }
+                                        for (_, error) in errors {
+                                            if error is CKError {
+                                                return
+                                            }
+                                        }
+                                    }
                                     completionHandler(error)
                                     return
                                 }
-                                if cloudError.code == .partialFailure {
-                                    guard let errors = cloudError.partialErrorsByItemID else {
-                                        completionHandler(cloudError)
-                                        return
-                                    }
-                                    for (_, error) in errors {
-                                        if error is CKError {
-                                            return
-                                        }
-                                    }
-                                }
-                                completionHandler(error)
-                                return
+                                completionHandler(nil)
                             }
-                            completionHandler(nil)
-                        }
-                        self.database?.add(modifierOperation)
-
+                            self.database?.add(modifierOperation)
+                            
+                        })
                     })
                 }
-
             }
         }
     }
+        
+//
+//                    var bandRepertoire: [CKRecord.Reference]
+//                    if let repertoire = bandRecord["repertoire"] as? [CKRecord.Reference] {
+//                        //repertoire tem musicas
+//                        bandRepertoire = repertoire
+//                    } else {
+//                        //repertoire nao tem musicas
+//                        bandRepertoire = []
+//                    }
+//                    self.database?.save(songRecord, completionHandler: { (savedSongRecord, songError) in
+//                        if songError != nil {
+//                            print(songError?.localizedDescription as Any)
+//                            completionHandler(songError)
+//                            return
+//                        }
+//                        guard let savedSongRecord = savedSongRecord else {return}
+//                        bandRepertoire.append(CKRecord.Reference(record: savedSongRecord, action: .none))
+//                        bandRecord.setValue(bandRepertoire, forKey: "repertoire")
+//                        let modifierOperation = CKModifyRecordsOperation(recordsToSave: [bandRecord], recordIDsToDelete: [])
+//                        modifierOperation.modifyRecordsCompletionBlock = { _,_,modifyError in
+//                            guard modifyError == nil else {
+//                                guard let cloudError = modifyError as? CKError else {
+//                                    completionHandler(error)
+//                                    return
+//                                }
+//                                if cloudError.code == .partialFailure {
+//                                    guard let errors = cloudError.partialErrorsByItemID else {
+//                                        completionHandler(cloudError)
+//                                        return
+//                                    }
+//                                    for (_, error) in errors {
+//                                        if error is CKError {
+//                                            return
+//                                        }
+//                                    }
+//                                }
+//                                completionHandler(error)
+//                                return
+//                            }
+//                            completionHandler(nil)
+//                        }
+//                        self.database?.add(modifierOperation)
+//
+//                    })
+//                }
+//
+//            }
+//        }
+    
     
     
 
