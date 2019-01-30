@@ -9,6 +9,7 @@
 //ViewController da tela de repertório
 
 import UIKit
+import CloudKit
 
 class RepertoireViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
@@ -16,6 +17,12 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
     //@IBOutlet var segmentedControl: UISegmentedControl!
     //@IBOutlet var addSongButton: UIBarButtonItem!
     //@IBOutlet var songSearchBar: UISearchBar!
+    
+    let documentsDirectoryPath:NSString = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
+    var imageURL: URL!
+    let tempImageName = "yuan-thirdy-583227-unsplash.png"
+    
+   var publicDatabase: CKDatabase?
     
     var songs: [Song] = [
 //                        Song(name: "Born To Be Wild"),
@@ -28,6 +35,8 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
         
     ]
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,6 +48,12 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
         //self.songSearchBar.delegate = self
         //self.songSearchBar.returnKeyType = UIReturnKeyType.done
         //reload()
+        
+        let image = UIImage(named: "yuan-thirdy-583227-unsplash.png")
+        
+        publicDatabase = DAO.database
+        
+        saveImage(image)
         
         // Do any additional setup after loading the view.
     }
@@ -71,6 +86,49 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
      // Pass the selected object to the new view controller.
      }
      */
+    
+    //teste de salvamento CKAsset
+    func saveImage(_ image: UIImage?) {
+        
+        // Create a CKRecord
+        let newRecord:CKRecord = CKRecord(recordType: "GuilsRecord")
+        
+        if let image = image {
+            
+            let imageData:Data = image.pngData()!
+            let path:String = self.documentsDirectoryPath.appendingPathComponent(self.tempImageName)
+            try? image.pngData()!.write(to: URL(fileURLWithPath: path), options: [.atomic])
+            self.imageURL = URL(fileURLWithPath: path)
+            try? imageData.write(to: self.imageURL, options: [.atomic])
+            
+            let File:CKAsset?  = CKAsset(fileURL: URL(fileURLWithPath: path))
+            newRecord.setObject(File, forKey: "Image")
+        }
+        
+        if let database = self.publicDatabase {
+            
+            database.save(newRecord, completionHandler: { (record:CKRecord?, error:Error?) in
+                
+                // Check if there was an error
+                if error != nil {
+                    NSLog((error?.localizedDescription)!)
+                }
+                else if let record = record {
+                    
+                    print(record.description)
+                    
+                }
+                
+                
+            })
+            
+            
+        }
+        
+        
+    }
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return songs.count

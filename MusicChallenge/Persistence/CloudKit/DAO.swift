@@ -25,7 +25,7 @@ class dao {
     
     static let instance = dao()
     public var currentUserObserver: CurrentUserObserver?
-    private var database:CKDatabase?
+    public var database:CKDatabase?
     private let container = CKContainer(identifier: "iCloud.FelipeKestelman.MusicChallenge")
     
     private init(){
