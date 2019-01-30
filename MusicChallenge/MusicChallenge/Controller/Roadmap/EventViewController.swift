@@ -47,6 +47,11 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         eventTypeImage.image = event.eventType.image
         
         if event.associatedSetlist != nil {
+            
+            setlistSongQtd.isHidden = false
+            
+            goToSetlist.isHidden = false
+            
             eventSetlistName.text = "Setlist: \(event.associatedSetlist?.name ?? "nenhuma")"
             
             setlistSongQtd.text = "\(event.associatedSetlist?.songs.count ?? 0) músicas"

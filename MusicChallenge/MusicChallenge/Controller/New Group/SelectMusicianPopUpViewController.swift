@@ -40,6 +40,7 @@ class SelectMusicianPopUpViewController: UIViewController , UIPickerViewDelegate
         musicianPicker.delegate = self
         musicianPicker.dataSource = self
         
+         musicianPicker.setValue(UIColor.white, forKey: "textColor")
         
         musicianPicker.reloadAllComponents()
         
@@ -50,7 +51,7 @@ class SelectMusicianPopUpViewController: UIViewController , UIPickerViewDelegate
     override func viewWillAppear(_ animated: Bool) {
         musicianPicker.reloadAllComponents()
         
-        musicianPicker.setValue(UIColor.white, forKey: "textColor")
+       
     }
     
     

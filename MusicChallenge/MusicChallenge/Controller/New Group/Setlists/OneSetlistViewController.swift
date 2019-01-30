@@ -30,10 +30,9 @@ class OneSetlistViewController: UIViewController, UINavigationControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        addRefreshControl()
         // Do any additional setup after loading the view.
     }
-    
-    
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,7 +50,7 @@ class OneSetlistViewController: UIViewController, UINavigationControllerDelegate
         if let index = self.setlistSongsTableView.indexPathForSelectedRow{
             self.setlistSongsTableView.deselectRow(at: index, animated: true)
         }
-        addRefreshControl()
+        
     }
     
     func addRefreshControl() {
