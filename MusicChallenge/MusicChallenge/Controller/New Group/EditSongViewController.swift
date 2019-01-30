@@ -38,7 +38,10 @@ class EditSongViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func getMusician(musician: Musician, instrument: Instrument) {
-        //fazer algo com o músico e instrumentos recebidos do popup
+        
+        song?.musicians.append(SongMusician.init(musician: musician, instrument: instrument))
+        
+        musiciansTableView.reloadData()
     }
     
     
@@ -71,6 +74,14 @@ class EditSongViewController: UIViewController, UITableViewDataSource, UITableVi
         
     }
     
+    @IBAction func doneButton(_ sender: Any) {
+        
+        if (nameField.text?.isEmpty)! {
+            print("textfield vazia")
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
+    }
     /*
     // MARK: - Navigation
 
