@@ -23,8 +23,11 @@ class CreateSongViewController: UIViewController , UITableViewDelegate, UITableV
     @IBOutlet var bpmField: UITextField!
     
     var newSong: Song?
+    var selectedMusicians: [SongMusician] = []
     
     var delegate: NewSongProtocol?
+    
+    var refreshControl: UIRefreshControl?
     
     
     override func viewDidLoad() {
@@ -36,31 +39,73 @@ class CreateSongViewController: UIViewController , UITableViewDelegate, UITableV
         musiciansTableView.dataSource = self
         
         let tableXib = UINib(nibName: "MusiciansTableViewCell", bundle: nil)
-       musiciansTableView.register(tableXib, forCellReuseIdentifier: "musiciansCell")
-
+        musiciansTableView.register(tableXib, forCellReuseIdentifier: "musiciansCell")
+        
         // Do any additional setup after loading the view.
+        
+        addRefreshControl()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        musiciansTableView.reloadData()
+    }
+    
+    func getMusician(musician: Musician, instrument: Instrument) {
+        
+        selectedMusicians.append(SongMusician(musician: musician, instrument: instrument))
+        
+        if selectedMusicians.count > 0 {
+         for i in 0 ... selectedMusicians.count - 1 {
+         print(selectedMusicians[i].musician?.name ?? "NAO TEM MUSICO")
+         print(selectedMusicians[i].instrument?.text ?? "NAO TEM INSTRUMENTO")
+            }
+        }
+        self.musiciansTableView.reloadData()
+    }
+    
+    func addRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl?.tintColor = UIColor.red
+        refreshControl?.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
+        musiciansTableView.addSubview(refreshControl!)
     }
     
     
-    
-    func getMusician(musician: Musician, instrument: Instrument) {
-        //fazer algo com o músico e instrumentos recebidos do popup
+    @objc func refreshTable() {
+        //songs.append(Song(name: "ATUALIZOU?"))
+        musiciansTableView.reloadData()
+        refreshControl?.endRefreshing()
     }
     
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return newSong?.musicians.count ?? 0
+        return selectedMusicians.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let musiciansCell = tableView.dequeueReusableCell(withIdentifier: MusiciansTableViewCell.identifier, for: indexPath) as! MusiciansTableViewCell
         
-        musiciansCell.instrumentImage.image = newSong?.musicians[indexPath.row].instrument?.image
-        musiciansCell.instrumentName.text = newSong?.musicians[indexPath.row].instrument?.text
-        musiciansCell.musicianName.text = newSong?.musicians[indexPath.row].musician?.name
+        musiciansCell.instrumentImage.image = selectedMusicians[indexPath.row].instrument?.image
+        musiciansCell.instrumentName.text = selectedMusicians[indexPath.row].instrument?.text
+        musiciansCell.musicianName.text = selectedMusicians[indexPath.row].musician?.name
         
         return musiciansCell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("Delete Pressed")
+            let deleteAlert = UIAlertController(title: nil, message: "Deseja realmente excluir \(selectedMusicians[indexPath.row].musician?.name ?? "ERROR")?", preferredStyle: .alert)
+            
+            let deleteAction = UIAlertAction(title: "Excluir", style: .destructive)
+            let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
+            
+            deleteAlert.addAction(deleteAction)
+            deleteAlert.addAction(cancelAction)
+            
+            self.present(deleteAlert, animated: true, completion: nil)
+        }
     }
     
     
@@ -96,13 +141,13 @@ class CreateSongViewController: UIViewController , UITableViewDelegate, UITableV
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

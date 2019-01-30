@@ -32,11 +32,14 @@ class SelectMusicianPopUpViewController: UIViewController , UIPickerViewDelegate
         ],
         id: "adjgiajigiajiga")
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         musicianPicker.delegate = self
         musicianPicker.dataSource = self
+        
         
         musicianPicker.reloadAllComponents()
         
@@ -46,6 +49,8 @@ class SelectMusicianPopUpViewController: UIViewController , UIPickerViewDelegate
     
     override func viewWillAppear(_ animated: Bool) {
         musicianPicker.reloadAllComponents()
+        
+        musicianPicker.setValue(UIColor.white, forKey: "textColor")
     }
     
     
@@ -103,4 +108,9 @@ class SelectMusicianPopUpViewController: UIViewController , UIPickerViewDelegate
     @IBAction func cancelButton(_ sender: Any) {
         dismiss(animated: false, completion: nil)
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
 }

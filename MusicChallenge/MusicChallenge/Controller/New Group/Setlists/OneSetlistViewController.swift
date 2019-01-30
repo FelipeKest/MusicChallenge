@@ -10,7 +10,7 @@
 
 import UIKit
 
-class OneSetlistViewController: UIViewController, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, SelectFromRepertoireProtocol {
+class OneSetlistViewController: UIViewController, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UISearchBarDelegate, SelectFromRepertoireProtocol {
     
     @IBOutlet var setlistSongsTableView: UITableView!
     //@IBOutlet var setlistName: UILabel!
@@ -25,7 +25,7 @@ class OneSetlistViewController: UIViewController, UINavigationControllerDelegate
     
     var setlist: Setlist!
     
-    
+    var refreshControl: UIRefreshControl?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,9 +51,22 @@ class OneSetlistViewController: UIViewController, UINavigationControllerDelegate
         if let index = self.setlistSongsTableView.indexPathForSelectedRow{
             self.setlistSongsTableView.deselectRow(at: index, animated: true)
         }
-        setlistSongsTableView.reloadData()
+        addRefreshControl()
     }
     
+    func addRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl?.tintColor = UIColor.red
+        refreshControl?.addTarget(self, action: #selector(refreshTable), for: .valueChanged)
+        setlistSongsTableView.addSubview(refreshControl!)
+    }
+    
+    
+    @objc func refreshTable() {
+        //songs.append(Song(name: "ATUALIZOU?"))
+        setlistSongsTableView.reloadData()
+        refreshControl?.endRefreshing()
+    }
     
     
     func getSongs(selectedSongs: [Song]) {
