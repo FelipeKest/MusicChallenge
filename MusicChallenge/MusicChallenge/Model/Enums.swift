@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-enum Instrument{
+enum Instrument: CaseIterable{
     
     case Bass
     case Guitar

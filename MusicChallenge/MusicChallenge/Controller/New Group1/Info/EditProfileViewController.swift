@@ -8,7 +8,8 @@
 
 import UIKit
 
-class EditProfileViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
+class EditProfileViewController: UIViewController , UITableViewDelegate, UITableViewDataSource, SelectInstrumentProtocol{
+    
     
     
     @IBOutlet var instrumentsTableView: UITableView!
@@ -34,14 +35,28 @@ class EditProfileViewController: UIViewController , UITableViewDelegate, UITable
         
         selectedInstruments = profile.instruments ?? []
         
+        nameField.text = profile.name
+        ageField.text = "\(profile.age)"
+        
                 // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        instrumentsTableView.reloadData()
         
+        print(selectedInstruments.count)
     }
     
 
+    func getInstrument(instrument: Instrument) {
+        selectedInstruments.append(instrument)
+        
+        instrumentsTableView.reloadData()
+        
+        print(selectedInstruments.description)
+    }
+    
+    
     /*
     // MARK: - Navigation
 
@@ -75,4 +90,12 @@ class EditProfileViewController: UIViewController , UITableViewDelegate, UITable
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func addInstruments(_ sender: Any) {
+        let sb = UIStoryboard(name: "SelectInstrumentPopUp", bundle: Bundle.main)
+        
+        let vc = sb.instantiateViewController(withIdentifier: SelectInstrumentPopUpViewController.identifier) as! SelectInstrumentPopUpViewController
+        
+        vc.delegate = self
+        self.present(vc, animated: false, completion: nil)
+    }
 }

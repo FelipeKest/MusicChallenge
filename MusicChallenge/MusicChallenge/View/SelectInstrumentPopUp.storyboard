@@ -13,7 +13,7 @@
         <!--Select Instrument Pop Up View Controller-->
         <scene sceneID="Hhg-Da-psS">
             <objects>
-                <viewController storyboardIdentifier="selectInstrumentsPopUp" modalPresentationStyle="overCurrentContext" id="gGk-2c-bHM" customClass="SelectInstrumentPopUpViewController" customModule="MusicChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="selectInstrumentPopUp" modalPresentationStyle="overCurrentContext" id="gGk-2c-bHM" customClass="SelectInstrumentPopUpViewController" customModule="MusicChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rsk-d3-gc9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,6 +41,9 @@
                                         <state key="normal" title="Confirmar">
                                             <color key="titleColor" red="0.8922216892" green="0.16046175360000001" blue="0.17606648799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="doneButton:" destination="gGk-2c-bHM" eventType="touchUpInside" id="7ok-Hr-odA"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVO-2Z-iVg">
                                         <rect key="frame" x="15" y="189" width="74" height="36"/>
@@ -49,6 +52,9 @@
                                         <state key="normal" title="Cancelar">
                                             <color key="titleColor" red="0.8922216892" green="0.16046175360000001" blue="0.17606648799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cancelButton:" destination="gGk-2c-bHM" eventType="touchUpInside" id="XI5-EE-bwh"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
