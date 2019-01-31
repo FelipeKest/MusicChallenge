@@ -30,8 +30,13 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
     var song: Song!
     var songSetlist: Setlist?
     
+    var refreshControl: UIRefreshControl?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addRefreshControl()
+        
         //bpm.text
         
         /*musiciansTableView.delegate = self
@@ -65,8 +70,23 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
         }
         musiciansTableView.reloadData()
         songName.text = song.name
+        
+        musiciansTableView.reloadData()
     }
     
+    func addRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl?.tintColor = UIColor.red
+        refreshControl?.addTarget(self, action: #selector(refreshCollection), for: .valueChanged)
+       musiciansTableView.addSubview(refreshControl!)
+    }
+    
+    
+    @objc func refreshCollection() {
+        //setlists.append(Setlist(name: "ATUALIZASTES???", songs: []))
+        musiciansTableView.reloadData()
+        refreshControl?.endRefreshing()
+    }
     
     
     

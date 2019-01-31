@@ -25,6 +25,8 @@ class ImportFromRepertoireViewController: UIViewController , UITableViewDataSour
     var checked = [Bool]()
     var selectedSongs: [Song] = []
     
+    var refreshControl: UIRefreshControl?
+    
     var songs: [Song] = [Song(name: "Watermelon Man"), Song(name: "Stairway To Heaven"), Song(name: "Hit The Road, Jack"), Song(name: "Tempo Perdido"), Song(name: "Pinball Wizard", instruments: [SongMusician.init(musician: Musician(), instrument: Instrument.Drums), SongMusician.init(musician: Musician(), instrument: Instrument.Guitar)], creator: Musician(), id: "aaaaaaaaaaaaa")]
     
     override func viewDidLoad() {
@@ -39,9 +41,32 @@ class ImportFromRepertoireViewController: UIViewController , UITableViewDataSour
         let tableXib = UINib(nibName: "RepertoireTableViewCell", bundle: nil)
         repertoireTableView.register(tableXib, forCellReuseIdentifier: "repertoireCell")
 
+        
+        addRefreshControl()
+        
         // Do any additional setup after loading the view.
+    
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        repertoireTableView.reloadData()
+    }
+    
+    func addRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl?.tintColor = UIColor.red
+        refreshControl?.addTarget(self, action: #selector(refreshCollection), for: .valueChanged)
+        repertoireTableView.addSubview(refreshControl!)
+    }
+    
+    
+    @objc func refreshCollection() {
+        //setlists.append(Setlist(name: "ATUALIZASTES???", songs: []))
+        repertoireTableView.reloadData()
+        refreshControl?.endRefreshing()
+        
+    }
 
     /*
     // MARK: - Navigation
