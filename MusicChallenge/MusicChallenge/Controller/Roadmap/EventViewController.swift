@@ -24,8 +24,12 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     var event: Event!
     
+    var refreshControl: UIRefreshControl?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addRefreshControl()
         
         }
         
@@ -79,6 +83,21 @@ class EventViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         eventSetlistTableView.reloadData()
     }
+    
+    func addRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl?.tintColor = UIColor.red
+        refreshControl?.addTarget(self, action: #selector(refreshCollection), for: .valueChanged)
+        eventSetlistTableView.addSubview(refreshControl!)
+    }
+    
+    
+    @objc func refreshCollection() {
+        //setlists.append(Setlist(name: "ATUALIZASTES???", songs: []))
+        eventSetlistTableView.reloadData()
+        refreshControl?.endRefreshing()
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
