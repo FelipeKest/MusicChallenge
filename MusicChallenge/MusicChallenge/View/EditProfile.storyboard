@@ -107,8 +107,8 @@
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instrumentos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhM-tP-UbP">
-                                <rect key="frame" x="16" y="349" width="102.5" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instrumentos(2)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhM-tP-UbP">
+                                <rect key="frame" x="16" y="349" width="123" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="Ksq-np-C3j"/>
                                 </constraints>
@@ -161,6 +161,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="soM-zq-TkA"/>
                     </view>
+                    <connections>
+                        <outlet property="ageField" destination="v3Y-7q-S3B" id="awv-TF-bFp"/>
+                        <outlet property="instrumentsTableView" destination="hcb-2L-kcr" id="gjt-yz-egi"/>
+                        <outlet property="nameField" destination="cwK-gB-t8X" id="AIv-WA-IW1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BAg-yu-0hp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
