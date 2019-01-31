@@ -25,16 +25,7 @@ class Song:GenericProtocolClass {
 //        result["setlists"] = self.setlists
         return result
     }
-    
-//    init(name: String, instruments: [Instrument] = [], creator: Musician, setlists: [Setlist] = [],band: Band, id: String) {
-//        self.name = name
-//        self.instruments = instruments
-//        self.creator = creator
-//        self.band = band
-//        self.setlists = setlists
-//        super.init(id: id)
-//    }
-    
+     
     init(name: String, instruments: [SongMusician] = [SongMusician()], creator: Musician = Musician(), id: String = "") {
         self.name = name
         self.musicians = instruments
@@ -67,6 +58,8 @@ class Song:GenericProtocolClass {
                 completionHandler(nil,error)
                 return
             } else {
+                guard let id = dict["id"] as? String else {return}
+                Song.allReferenced[id] = song!
                 completionHandler(song,error)
             }
         }

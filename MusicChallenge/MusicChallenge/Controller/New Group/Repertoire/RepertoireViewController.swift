@@ -10,7 +10,12 @@
 
 import UIKit
 
-class RepertoireViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate,AllSongsDelegate {
+class RepertoireViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate,AllSongsDelegate,CurrentUserObserver {
+    func currentUserChanged() {
+        self.songs = SessionManager.currentBand?.repertoire ?? []
+        self.repertoireTableView.reloadData()
+    }
+    
     func getAllSongs(songs: [Song]) {
         self.songs = songs
         self.repertoireTableView.reloadData()
@@ -38,6 +43,7 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
         
         self.repertoireTableView.dataSource = self
         self.repertoireTableView.delegate = self
+    
         
         let tableXib = UINib(nibName: "RepertoireTableViewCell", bundle: nil)
         repertoireTableView.register(tableXib, forCellReuseIdentifier: "repertoireCell")
@@ -52,11 +58,10 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
         if let index = self.repertoireTableView.indexPathForSelectedRow{
             self.repertoireTableView.deselectRow(at: index, animated: true)
         }
-        
+        DAO.currentUserObserver = self
         guard let band = SessionManager.currentBand else {return}
         DAO.queryAllSongs(from: band, songsReferences: nil) { (error) in
             print("vetor de musica",band.repertoire)
-            self.getAllSongs(songs: band.repertoire)
         }
         
     }

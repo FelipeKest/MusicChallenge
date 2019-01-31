@@ -78,12 +78,28 @@ class daofacade {
     
     func load(from dict:[String:Any], completionHandler: @escaping(Song?,Error?)->Void){
         let name = dict["name"] as! String
-        var songMusicians:[SongMusician] = []
-        if let musicians = dict["musicians"] {
-            //adiciona nos songMusicians
-            songMusicians = (musicians as? [SongMusician])!
-        }
         guard let id = dict["id"] as? String else {return}
+        var songMusicians:[SongMusician] = []
+        if let musicians = dict["players"] as? [CKRecord.Reference] {
+            //adiciona nos songMusiciansx
+            //buscar musicos no iCloud
+            DAO.queryPlayers(from: id) { (players, error) in
+                if error != nil {
+                    print(error?.localizedDescription as Any)
+                    completionHandler(nil,error)
+                }
+                guard let players = players else {return}
+                songMusicians = players
+            }
+        }
+
+        var instruments: [Instrument] = []
+        if let instrumentsString = dict["instruments"] as? [String] {
+            for instrument in instrumentsString {
+                instruments.append(instrument.asInstrument)
+            }
+        }
+        
         if let creator = dict["creator"] as? CKRecord.Reference {
             print("******\nNO LOAD DA SONG \nrecordName do creator",creator.recordID.recordName)
             //pegar o id do icloud do cara

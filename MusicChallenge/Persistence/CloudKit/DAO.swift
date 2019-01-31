@@ -270,29 +270,21 @@ class dao {
                     songRecord.setValue(song.name, forKey: "name")
                     let musicianReference = CKRecord.Reference(record: musicianRecord, action: .none)
                     songRecord.setValue(musicianReference, forKey: "creator")
-                    var instruments: [Instrument] = []
+                    var instruments: [String] = []
                     for instrument in song.musicians {
-                        instruments.append(instrument.instrument!)
+                        instruments.append(instrument.instrument!.text)
                     }
-                    songRecord.setValue(instruments, forKey: "instruments")
-                    var playersRecords: [CKRecord] = []
-                    let musiciansQuery = CKQuery(recordType: "Musician", predicate: NSPredicate(format: "band == %@", band.id!))
-                    DAO.database?.perform(musiciansQuery, inZoneWith: nil, completionHandler: { (bandMusiciansRecords, error) in
-                        if error != nil {
-                            print(error?.localizedDescription as Any)
-                            completionHandler(nil)
+                    
+                    var playersReferences: [CKRecord.Reference] = []
+                    
+                    DAO.createPlayers(players: song.musicians, completionHandler: { (playersRecords, playersError) in
+                        for record in playersRecords! {
+                            let reference = CKRecord.Reference(record: record, action: .none)
+                            playersReferences.append(reference)
                         }
-                        guard let musicianRecords = bandMusiciansRecords else {return}
-                        for playerRecord in musicianRecords {
-                            for musician in song.musicians {
-                                if playerRecord.recordID.recordName == musician.musician?.musicianRecordName {
-                                    playersRecords.append(playerRecord)
-                                }
-                            }
-                        }
-                        songRecord.setValue(playersRecords, forKey: "players")
-                        //                        playersRecords = musicianRecords.filter({})
-                        
+                        songRecord.setValue(playersReferences, forKey: "players")
+                    })
+                     
                         var bandRepertoire: [CKRecord.Reference]
                         if let repertoire = bandRecord["repertoire"] as? [CKRecord.Reference] {
                             //repertoire tem musicas
@@ -308,6 +300,7 @@ class dao {
                                 return
                             }
                             guard let savedSongRecord = savedSongRecord else {return}
+                            savedSongRecord.setValue(savedSongRecord.recordID.recordName, forKey: "id")
                             bandRepertoire.append(CKRecord.Reference(record: savedSongRecord, action: .none))
                             bandRecord.setValue(bandRepertoire, forKey: "repertoire")
                             let modifierOperation = CKModifyRecordsOperation(recordsToSave: [bandRecord], recordIDsToDelete: [])
@@ -335,13 +328,53 @@ class dao {
                             }
                             self.database?.add(modifierOperation)
                             
-                        })
+//                        })
                     })
                 }
             }
         }
     }
+    
+    func createPlayer(player:SongMusician, completionHandler: @escaping(CKRecord?,Error?)->Void){
+        let playerRecord = CKRecord(recordType: "SongPlayer")
+        guard let musician = player.musician else {return}
+        guard let instrument = player.instrument else {return}
         
+        queryMusician(id: musician.id!) { (musicianRecord, error) in
+            if error != nil {
+                print(error?.localizedDescription as Any)
+                completionHandler(nil,error)
+            }
+            let musicianReference = CKRecord.Reference(record: musicianRecord!, action: .none)
+            playerRecord.setValue(musicianReference, forKey: "player")
+            playerRecord.setValue(instrument.text, forKey: "instrument")
+            DAO.database?.save(playerRecord, completionHandler: { (savedRecord, savingError) in
+                if savingError != nil {
+                    print(savingError?.localizedDescription as Any)
+                    completionHandler(nil,savingError)
+                }
+                completionHandler(savedRecord,savingError)
+            })
+        }
+    }
+  
+    func createPlayers(players:[SongMusician],completionHandler: @escaping([CKRecord]?,Error?)->Void){
+        var playersRecords: [CKRecord] = []
+        
+        for player in players {
+            let innerGroup = DispatchGroup()
+            
+            innerGroup.enter()
+            DAO.createPlayer(player: player) { (playerRecord, playerError) in
+                playersRecords.append(playerRecord!)
+                innerGroup.leave()
+            }
+            
+            innerGroup.wait()
+        }
+      
+        completionHandler(playersRecords,nil)
+    }
 //
 //                    var bandRepertoire: [CKRecord.Reference]
 //                    if let repertoire = bandRecord["repertoire"] as? [CKRecord.Reference] {
@@ -540,7 +573,7 @@ class dao {
                             band.repertoire.append(realSong)
                             print("************ realSong ***********")
                             print(realSong.name, realSong.id)
-
+                            self.currentUserObserver?.currentUserChanged()
                         })
                     }
                 })
@@ -754,6 +787,46 @@ class dao {
         })
     }
     
+    func queryPlayers(from songID: String,completionHandler: @escaping([SongMusician]?,Error?)->Void){
+        let query = CKQuery(recordType: "Song", predicate: NSPredicate(format: "id == %@", songID))
+        var players: [SongMusician] = []
+        DAO.database?.perform(query, inZoneWith: nil, completionHandler: { (songRecords, error) in
+            if error != nil {
+                print(error?.localizedDescription as Any)
+                completionHandler(nil,error)
+            } else {
+                guard let records = songRecords else {return}
+                let songRecord = records[0]
+                
+                guard let playersReferences = songRecord.value(forKey: "players") as? [CKRecord.Reference] else {return}
+                //transformar em players
+                for playerReference in playersReferences {
+                    DAO.database?.fetch(withRecordID: playerReference.recordID, completionHandler: { (playerRecord, playerError) in
+                        if playerError != nil {
+                            print(playerError?.localizedDescription as Any)
+                            completionHandler(nil,playerError)
+                        }
+                        guard let playerRecord = playerRecord else {return}
+                        let musicianRecord = playerRecord.value(forKey: "player") as? CKRecord.Reference
+                        guard let instrument = playerRecord.value(forKey: "instrument") as? String else {return}
+                        DAO.fetchMusician(id: musicianRecord!.recordID.recordName, completionHandler: { (musician, finalError) in
+                            if finalError != nil {
+                                print(finalError?.localizedDescription as Any)
+                                completionHandler(nil,finalError)
+                            }
+                            if let musician = musician {
+                                let player = SongMusician(musician: musician, instrument: instrument.asInstrument)
+                                print("##########\n\n\n\n\n\n",player.instrument?.text)
+                                players.append(player)
+                            }
+                        })
+                    })
+                }
+                completionHandler(players,nil)
+            }
+        })
+    }
+    
     //MARK: Fetch Functions
     func fetchCurrentUser(completionHandler: @escaping(Musician?,Error?)->Void){
         //se nao e a primeira vez logando pode persistir localmente esse id
@@ -836,7 +909,7 @@ class dao {
                     //                            var user: Musician
                     let userName = userDict["name"] as! String
                     let userAge = userDict["age"] as! Int
-                    let instrumentsString = userDict["instruments"] as! [String]
+                    let instrumentsString = userDict["instruments"] as? [String] ?? []
                     var instruments: [Instrument] = []
                     for instrument in instrumentsString {
                         instruments.append(instrument.asInstrument)

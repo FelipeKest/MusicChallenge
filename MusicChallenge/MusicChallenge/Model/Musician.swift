@@ -50,7 +50,6 @@ class Musician:GenericProtocolClass {
         DAOFacade.load(musician: self, from: asDictionary) { (error) in
             if error == nil {
                 Musician.allReferenced[musicianRecordName] = self
-
             }
         }
     }
