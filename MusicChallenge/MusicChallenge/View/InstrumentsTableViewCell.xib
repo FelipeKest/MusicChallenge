@@ -42,7 +42,7 @@
                     <constraint firstItem="Vuk-Oq-7O5" firstAttribute="centerY" secondItem="v87-UL-nfB" secondAttribute="centerY" id="cI9-82-kdH"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="imageView" destination="XS6-0s-CsL" id="YsZ-b5-huX"/>
                 <outlet property="instrumentImage" destination="XS6-0s-CsL" id="g8u-Me-kUt"/>

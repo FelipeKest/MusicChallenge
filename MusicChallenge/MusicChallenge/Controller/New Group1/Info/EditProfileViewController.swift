@@ -42,9 +42,12 @@ class EditProfileViewController: UIViewController , UITableViewDelegate, UITable
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         instrumentsTableView.reloadData()
         
-        print(selectedInstruments.count)
+        instrumentsTableView.allowsSelection = false
+        
+        //print(selectedInstruments.count)
     }
     
 
@@ -53,7 +56,7 @@ class EditProfileViewController: UIViewController , UITableViewDelegate, UITable
         
         instrumentsTableView.reloadData()
         
-        print(selectedInstruments.description)
+        //print(selectedInstruments.description)
     }
     
     
@@ -79,6 +82,22 @@ class EditProfileViewController: UIViewController , UITableViewDelegate, UITable
         cellInstrument.instrumentName.text = selectedInstruments[indexPath.row].text
         
         return cellInstrument
+    }
+    
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("Delete Pressed")
+            let deleteAlert = UIAlertController(title: nil, message: "Deseja realmente retirar o instrumento \(selectedInstruments[indexPath.row].text) do seu perfil?", preferredStyle: .alert)
+            
+            let deleteAction = UIAlertAction(title: "Retirar", style: .destructive)
+            let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
+            
+            deleteAlert.addAction(deleteAction)
+            deleteAlert.addAction(cancelAction)
+            
+            self.present(deleteAlert, animated: true, completion: nil)
+        }
     }
     
     

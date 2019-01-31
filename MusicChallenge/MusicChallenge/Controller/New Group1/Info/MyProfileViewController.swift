@@ -29,16 +29,19 @@ class MyProfileViewController: UIViewController ,UITableViewDelegate, UITableVie
         
         let tableXib = UINib(nibName: "InstrumentsTableViewCell", bundle: nil)
         instrumentsTableView.register(tableXib, forCellReuseIdentifier: "instrumentCell")
-
+        
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         ageLabel.text = "\(profile.age) Anos"
         nameLabel.text = profile.name
         instrumentsLabel.text = "Instrumentos(\(profile.instruments?.count ?? 0)):"
         
         instrumentsTableView.reloadData()
+        
+        instrumentsTableView.allowsSelection = false
     }
     
     
