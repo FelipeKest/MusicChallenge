@@ -16,8 +16,20 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
     //@IBOutlet var segmentedControl: UISegmentedControl!
     //@IBOutlet var addSongButton: UIBarButtonItem!
     //@IBOutlet var songSearchBar: UISearchBar!
+    @IBOutlet var noSongLabel1: UILabel!
+    @IBOutlet var noSongLabel2: UILabel!
     
-    var songs: [Song] = [Song(name: "Watermelon Man"), Song(name: "Stairway To Heaven"), Song(name: "Hit The Road, Jack"), Song(name: "Pinball Wizard", instruments: [SongMusician.init(musician: Musician(), instrument: Instrument.Drums), SongMusician.init(musician: Musician(), instrument: Instrument.Guitar)], creator: Musician(), id: "aaaaaaaaaaaaa")]
+    var songs: [Song] = [
+        
+        /*Song(name: "Watermelon Man"),
+        
+        Song(name: "Stairway To Heaven"),
+        
+        Song(name: "Hit The Road, Jack"),
+        
+        Song(name: "Pinball Wizard", instruments: [SongMusician.init(musician: Musician(), instrument: Instrument.Drums), SongMusician.init(musician: Musician(), instrument: Instrument.Guitar)], creator: Musician(), id: "aaaaaaaaaaaaa")*/
+     
+     ]
     
     var refreshControl: UIRefreshControl?
     
@@ -39,6 +51,19 @@ class RepertoireViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        if songs.count == 0 {
+            repertoireTableView.isHidden = true
+            noSongLabel1.isHidden = false
+            noSongLabel2.isHidden = false
+        }
+        else {
+            repertoireTableView.isHidden = false
+            noSongLabel2.isHidden = true
+            noSongLabel1.isHidden = true
+        }
+        
+        
         if let index = self.repertoireTableView.indexPathForSelectedRow{
             self.repertoireTableView.deselectRow(at: index, animated: true)
         }
