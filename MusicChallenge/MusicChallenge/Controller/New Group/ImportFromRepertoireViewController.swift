@@ -155,10 +155,23 @@ class ImportFromRepertoireViewController: UIViewController , UITableViewDataSour
             }
         }
         
+        
+        if  selectedSongs.count == 0 {
+            print("sem musica selecionada")
+            let noSongSelectedAlert = UIAlertController(title: nil, message: "Nenhuma música selecionada.", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default)
+            
+            noSongSelectedAlert.addAction(okAction)
+            
+            self.present(noSongSelectedAlert, animated: true, completion: nil)
+        }
+        
         if selectedSongs.count > 0 {
             delegate?.getSongs(selectedSongs: selectedSongs)
             dismiss(animated: true, completion: nil)
         }
+        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

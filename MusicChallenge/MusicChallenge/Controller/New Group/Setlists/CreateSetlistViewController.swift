@@ -37,6 +37,15 @@ class CreateSetlistViewController: UIViewController {
     @IBAction func doneButton(_ sender: Any) {
         if (nameField.text?.isEmpty)! {
             print("nameField vazia")
+            
+            let emptyTextfieldAlert = UIAlertController(title: nil, message: "Preencha todos os campos de texto.", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default)
+            
+            emptyTextfieldAlert.addAction(okAction)
+            
+            self.present(emptyTextfieldAlert, animated: true, completion: nil)
+            
         }
         else {
             newSetlist = Setlist(name: nameField?.text ?? "ERROR", songs: [])
