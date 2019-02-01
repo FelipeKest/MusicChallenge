@@ -1,5 +1,5 @@
 //
-//  SongsViewController.swift
+//  SetlistsViewController.swift
 //  MusicChallenge
 //
 //  Created by Guilherme Vassallo on 12/12/18.
@@ -13,13 +13,15 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet var setlistsCollectionView: UICollectionView!
     //@IBOutlet var segmentedControl: UISegmentedControl!
     //@IBOutlet var addSetlistButton: UIBarButtonItem!
+    @IBOutlet var noSetlistLabel1: UILabel!
+    @IBOutlet var noSetlistLabel2: UILabel!
     
     var setlists: [Setlist] = [
         
-        Setlist(name: "Rock Diversas", songs: [
+        /*Setlist(name: "Rock Diversas", songs: [
             Song(name: "Stairway to Heaven", instruments: [SongMusician()], creator: Musician(), id: "aaaaaaaaaaaaa")]),
         Setlist(name: "Jazz Em'Up", songs: [
-            Song(name: "Hit The Road, Jack", instruments: [SongMusician()], creator: Musician(), id: "aaaaaaaaaaaaa"), Song(name: "Watermelon Man", instruments: [SongMusician()], creator: Musician(), id: "aasfasasfasf")])
+            Song(name: "Hit The Road, Jack", instruments: [SongMusician()], creator: Musician(), id: "aaaaaaaaaaaaa"), Song(name: "Watermelon Man", instruments: [SongMusician()], creator: Musician(), id: "aasfasasfasf")])*/
     ]
     
     var refreshControl: UIRefreshControl?
@@ -41,6 +43,17 @@ class SetlistsViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
+        
+        if setlists.count == 0 {
+            setlistsCollectionView.isHidden = true
+            noSetlistLabel1.isHidden = false
+            noSetlistLabel2.isHidden = false
+        }
+        else {
+            setlistsCollectionView.isHidden = false
+            noSetlistLabel2.isHidden = true
+            noSetlistLabel1.isHidden = true
+        }
         
         setlistsCollectionView.reloadData()
     }

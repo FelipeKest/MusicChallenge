@@ -18,15 +18,17 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
     //@IBOutlet var searchBar: UISearchBar!
     //@IBOutlet var monthSelector: ? (descobrir o tipo disso)
     
+    @IBOutlet var noEventLabel1: UILabel!
+    @IBOutlet var noEventLabel2: UILabel!
     
     var refreshControl: UIRefreshControl?
     
     var events: [Event] = [
-        Event(name: "Festival de Rock", place: "Avenida Real Edinburgo", date: String("11/04/2019").toDate(dateFormat: "dd-MM-yyyy"), bandID: "asghhhhhhhh", id: "sfdfasfasfasfas", eventType: EventTypes.Show),
+        /*Event(name: "Festival de Rock", place: "Avenida Real Edinburgo", date: String("11/04/2019").toDate(dateFormat: "dd-MM-yyyy"), bandID: "asghhhhhhhh", id: "sfdfasfasfasfas", eventType: EventTypes.Show),
         Event(name: "Jam Soul", place: "Casa da Gleidi", date: String("10/10/2019").toDate(dateFormat: "dd-MM-yyyy"), setlist: Setlist(name: "Jazz Em'Up", songs: [
             Song(name: "Hit The Road, Jack", instruments: [SongMusician()], creator: Musician(), id: "aaaaaaaaaaaaa"),
             Song(name: "Watermelon Man", instruments: [SongMusician()], creator: Musician(), id: "aasfasasfasf")]),
-            bandID: "333333333", id: "4444444444", eventType: EventTypes.Rehearsal)
+            bandID: "333333333", id: "4444444444", eventType: EventTypes.Rehearsal)*/
     ]
     
     override func viewDidLoad() {
@@ -46,6 +48,17 @@ class RoadmapViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         self.roadmapTableView.dataSource = self
         self.roadmapTableView.delegate = self
+        
+        if events.count == 0 {
+            roadmapTableView.isHidden = true
+            noEventLabel1.isHidden = false
+            noEventLabel2.isHidden = false
+        }
+        else {
+            roadmapTableView.isHidden = false
+            noEventLabel2.isHidden = true
+            noEventLabel1.isHidden = true
+        }
         
         if let index = self.roadmapTableView.indexPathForSelectedRow{
             self.roadmapTableView.deselectRow(at: index, animated: true)
