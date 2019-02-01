@@ -78,6 +78,15 @@ class EditSongViewController: UIViewController, UITableViewDataSource, UITableVi
         
         if (nameField.text?.isEmpty)! {
             print("textfield vazia")
+            
+                let emptyTextfieldAlert = UIAlertController(title: nil, message: "Preencha todos os campos de texto.", preferredStyle: .alert)
+                
+                let okAction = UIAlertAction(title: "OK", style: .default)
+                
+                emptyTextfieldAlert.addAction(okAction)
+                
+                self.present(emptyTextfieldAlert, animated: true, completion: nil)
+            
         } else {
             dismiss(animated: true, completion: nil)
         }
