@@ -49,6 +49,8 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
         musiciansTableView.delegate = self
         musiciansTableView.dataSource = self
         
+        musiciansTableView.allowsSelection = false
+        
         let tableXib = UINib(nibName: "MusiciansTableViewCell", bundle: nil)
         musiciansTableView.register(tableXib, forCellReuseIdentifier: "musiciansCell")
         
