@@ -147,7 +147,15 @@ class NewEventViewController: UIViewController , SelectSetlistProtocol{
     @IBAction func doneButton(_ sender: Any) {
             if (nameField.text?.isEmpty)! || (locationField.text?.isEmpty)! {
               print("textfields vazias")
-            }
+                    let emptyTextfieldAlert = UIAlertController(title: nil, message: "Preencha todos os campos de texto.", preferredStyle: .alert)
+                    
+                    let okAction = UIAlertAction(title: "OK", style: .default)
+                    
+                    emptyTextfieldAlert.addAction(okAction)
+                    
+                    self.present(emptyTextfieldAlert, animated: true, completion: nil)
+                }
+                
             else {
             
             newEvent = Event(name: nameField.text ?? "ERROR", place: locationField.text ?? "ERROR", date: datePicker.date, bandID: "aaasfssavv", id: "156264773")
