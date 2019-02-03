@@ -24,6 +24,9 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet var instrument5: UIImageView!
     @IBOutlet var instrument6: UIImageView!
     
+    @IBOutlet var noMusicianLabel1: UILabel!
+    @IBOutlet var noMusicianLabel2: UILabel!
+    
     @IBOutlet var key: UILabel!
     @IBOutlet var bpm: UILabel!
     
@@ -50,6 +53,17 @@ class OneSongViewController: UIViewController, UITableViewDataSource, UITableVie
         musiciansTableView.dataSource = self
         
         musiciansTableView.allowsSelection = false
+        
+        if song.musicians.count == 0 {
+            musiciansTableView.isHidden = true
+            noMusicianLabel1.isHidden = false
+            noMusicianLabel2.isHidden = false
+        }
+        else {
+            musiciansTableView.isHidden = false
+            noMusicianLabel2.isHidden = true
+            noMusicianLabel1.isHidden = true
+        }
         
         let tableXib = UINib(nibName: "MusiciansTableViewCell", bundle: nil)
         musiciansTableView.register(tableXib, forCellReuseIdentifier: "musiciansCell")

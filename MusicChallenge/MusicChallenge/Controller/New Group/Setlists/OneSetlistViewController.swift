@@ -19,6 +19,8 @@ class OneSetlistViewController: UIViewController, UINavigationControllerDelegate
     @IBOutlet var setlistCreator: UILabel!
     @IBOutlet weak var setlistImage: UIImageView!
     
+    @IBOutlet var noSongLabel1: UILabel!
+    @IBOutlet var noSongLabel2: UILabel!
     
     //@IBOutlet var bpm: UILabel!
     //@IBOutlet var key: UILabel!
@@ -29,6 +31,12 @@ class OneSetlistViewController: UIViewController, UINavigationControllerDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.setlistSongsTableView.delegate = self
+        self.setlistSongsTableView.dataSource = self
+        
+        let tableXib = UINib(nibName: "RepertoireTableViewCell", bundle: nil)
+        setlistSongsTableView.register(tableXib, forCellReuseIdentifier: "repertoireCell")
 
         addRefreshControl()
         // Do any additional setup after loading the view.
@@ -37,11 +45,19 @@ class OneSetlistViewController: UIViewController, UINavigationControllerDelegate
     
     override func viewWillAppear(_ animated: Bool) {
         
-        self.setlistSongsTableView.delegate = self
-        self.setlistSongsTableView.dataSource = self
         
-        let tableXib = UINib(nibName: "RepertoireTableViewCell", bundle: nil)
-        setlistSongsTableView.register(tableXib, forCellReuseIdentifier: "repertoireCell")
+        if setlist.songs.count == 0 {
+            setlistSongsTableView.isHidden = true
+            noSongLabel1.isHidden = false
+            noSongLabel2.isHidden = false
+        }
+        else {
+            setlistSongsTableView.isHidden = false
+            noSongLabel2.isHidden = true
+            noSongLabel1.isHidden = true
+        }
+        
+        
         
         self.setlistCreator.text = "Criada por \(setlist.creator.name) em \(Date().toString(dateFormat: "dd-MM-yyyy"))"
         self.statusBar.title = setlist.name
@@ -50,6 +66,8 @@ class OneSetlistViewController: UIViewController, UINavigationControllerDelegate
         if let index = self.setlistSongsTableView.indexPathForSelectedRow{
             self.setlistSongsTableView.deselectRow(at: index, animated: true)
         }
+        
+        setlistSongsTableView.reloadData()
         
     }
     
