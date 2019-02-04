@@ -41,6 +41,15 @@ class EditEventViewController: UIViewController, SelectSetlistProtocol{
         nameField.text = event.name
         datePicker.date = event.date
         
+        print(event?.eventType ?? "NO EVENT")
+        
+        if event?.eventType == EventTypes.Show {
+            eventTypeSelector.selectedSegmentIndex = 0
+        }
+        else if event?.eventType == EventTypes.Rehearsal{
+            eventTypeSelector.selectedSegmentIndex = 1
+        }
+        
         if event.associatedSetlist != nil && selectedSetlist == nil {
             selectedSetlist = event.associatedSetlist
         }
@@ -143,7 +152,7 @@ class EditEventViewController: UIViewController, SelectSetlistProtocol{
             event.location = locationField.text ?? "ERROR"
             event.date = datePicker.date
             
-            if eventTypeSelector.isEnabledForSegment(at: 0) {
+            if eventTypeSelector.selectedSegmentIndex == 0 {
                 event?.eventType = EventTypes.Show
             }
             else{
