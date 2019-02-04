@@ -36,6 +36,20 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Turn it up!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQN-1b-0aK">
+                                <rect key="frame" x="16" y="0.0" width="287" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DINCondensed-Bold" family="DIN Condensed" pointSize="30"/>
+                                <color key="textColor" red="0.8922216892" green="0.16046175360000001" blue="0.17606648799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Adicione uma música ao repertório clicando no &quot;+&quot; ali em cima e selecionando &quot;Nova Música&quot;!" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNP-FX-xCM">
+                                <rect key="frame" x="16" y="54" width="324" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -50,6 +64,8 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="MRD-iA-lgW"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="noSongLabel1" destination="iQN-1b-0aK" id="WcZ-M1-xaW"/>
+                        <outlet property="noSongLabel2" destination="GNP-FX-xCM" id="dw6-8E-UZi"/>
                         <outlet property="repertoireTableView" destination="O6D-Wz-0rU" id="2Ix-3l-Rlx"/>
                         <segue destination="8to-12-d0k" kind="show" identifier="showSong" id="lPq-TM-VAW"/>
                     </connections>

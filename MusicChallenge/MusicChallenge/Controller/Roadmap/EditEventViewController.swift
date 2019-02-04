@@ -129,6 +129,13 @@ class EditEventViewController: UIViewController, SelectSetlistProtocol{
         
         if (nameField.text?.isEmpty)! || (locationField.text?.isEmpty)! {
             print("textfields vazias")
+            let emptyTextfieldAlert = UIAlertController(title: nil, message: "Preencha todos os campos de texto.", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default)
+            
+            emptyTextfieldAlert.addAction(okAction)
+            
+            self.present(emptyTextfieldAlert, animated: true, completion: nil)
         }
         else {
             
@@ -148,6 +155,8 @@ class EditEventViewController: UIViewController, SelectSetlistProtocol{
         
         dismiss(animated: true, completion: nil)
     }
+    
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }

@@ -268,7 +268,7 @@ class SongsViewController: UIViewController, UIPageViewControllerDataSource, UIP
     @IBAction func addClick(_ sender: Any) {
         let optionMenu = UIAlertController(title: nil, message: "O que deseja criar?", preferredStyle: .actionSheet)
         
-        let createSongAction = UIAlertAction(title: "Nova música", style: .default) { action in
+        let createSongAction = UIAlertAction(title: "Nova Música", style: .default) { action in
             let sb = UIStoryboard(name: "NewSong", bundle: Bundle.main)
             
             let vc = sb.instantiateViewController(withIdentifier: "CreateSongViewController") as! CreateSongViewController
