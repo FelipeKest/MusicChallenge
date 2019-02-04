@@ -124,6 +124,27 @@ class CheckingInfoViewController: UIViewController, UITableViewDelegate, UITable
         self.present(vc, animated: false, completion: nil)
     }
     
+    @IBAction func concludeButton(_ sender: Any) {
+        if (txtName.text?.isEmpty)! || (txtAge.text?.isEmpty)! {
+            print("textfields vazias")
+            let emptyTextfieldAlert = UIAlertController(title: nil, message: "Preencha todos os campos de texto.", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default)
+            
+            emptyTextfieldAlert.addAction(okAction)
+            
+            self.present(emptyTextfieldAlert, animated: true, completion: nil)
+        }
+        
+    }
+    
+}
+
+
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 
@@ -133,5 +154,3 @@ class CheckingInfoViewController: UIViewController, UITableViewDelegate, UITable
         // Pass the selected object to the new view controller.
     }
     */
-
-}

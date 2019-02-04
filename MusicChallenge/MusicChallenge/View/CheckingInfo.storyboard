@@ -67,6 +67,7 @@
                                     <color key="titleColor" red="0.79862037929999996" green="0.1450980392" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="concludeButton:" destination="6sS-cB-ZBP" eventType="touchUpInside" id="6JD-8q-lsU"/>
                                     <action selector="register:" destination="6sS-cB-ZBP" eventType="touchUpInside" id="ClW-ss-IUe"/>
                                     <segue destination="aRz-JP-7HH" kind="show" id="WhZ-Mu-b8x"/>
                                 </connections>
@@ -104,6 +105,8 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gdD-CE-dI8">
                                 <rect key="frame" x="29" y="417.5" width="318" height="176.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" red="0.23928892609999999" green="0.2352953851" blue="0.23521471020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="separatorInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="instrumentCell" id="NLn-8o-2AR">
                                         <rect key="frame" x="0.0" y="28" width="318" height="44"/>
