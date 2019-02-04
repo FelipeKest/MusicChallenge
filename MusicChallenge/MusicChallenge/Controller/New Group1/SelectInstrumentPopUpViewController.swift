@@ -45,14 +45,21 @@ class SelectInstrumentPopUpViewController: UIViewController, UIPickerViewDelegat
         return instruments.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    /*func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return instruments[row].text
-    }
+    }*/
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
        instrumentPicker.reloadAllComponents()
         
         selectedinstrument = instruments[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let titleData = instruments[row].text
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        
+        return myTitle
     }
     
 

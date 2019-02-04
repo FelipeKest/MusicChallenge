@@ -45,6 +45,7 @@ class SelectMusicianPopUpViewController: UIViewController , UIPickerViewDelegate
         musicianPicker.reloadAllComponents()
         
         selectedMusician = band.members[0]
+        selectedInstrument = selectedMusician.instruments?[0] ?? Instrument.Bass
         // Do any additional setup after loading the view.
     }
     
@@ -90,6 +91,23 @@ class SelectMusicianPopUpViewController: UIViewController , UIPickerViewDelegate
         }
         pickerView.reloadAllComponents()
     }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        if component == 0 {
+            let titleData = band.members[row].name
+            let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        
+            return myTitle
+        } else {
+            let titleData = selectedMusician.instruments?[row].text
+            let myTitle = NSAttributedString(string: titleData ?? "", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+            
+            return myTitle
+        }
+    }
+    
+    
     /*
     // MARK: - Navigation
 
