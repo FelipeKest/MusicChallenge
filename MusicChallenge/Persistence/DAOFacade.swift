@@ -80,7 +80,7 @@ class daofacade {
         let name = dict["name"] as! String
         guard let id = dict["id"] as? String else {return}
         var songMusicians:[SongMusician] = []
-        if let musicians = dict["players"] as? [CKRecord.Reference] {
+        if (dict["players"] as? [CKRecord.Reference]) != nil {
             //adiciona nos songMusiciansx
             //buscar musicos no iCloud
             DAO.queryPlayers(from: id) { (players, error) in
