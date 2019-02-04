@@ -108,14 +108,43 @@
                                 <color key="separatorColor" red="0.23928892609999999" green="0.2352953851" blue="0.23521471020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="instrumentCell" id="NLn-8o-2AR">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="instrumentCell" id="NLn-8o-2AR" customClass="InstrumentsTableViewCell" customModule="MusicChallenge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="318" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NLn-8o-2AR" id="Ffl-ux-XvM">
                                             <rect key="frame" x="0.0" y="0.0" width="318" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guitarra" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAG-Ch-c1Q">
+                                                    <rect key="frame" x="125" y="10" width="68.5" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="68.5" id="jhh-s6-0BU"/>
+                                                        <constraint firstAttribute="height" constant="24" id="yZZ-ct-wbV"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OG2-mx-pzQ">
+                                                    <rect key="frame" x="89" y="8" width="28" height="28"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="28" id="4LK-nG-zDz"/>
+                                                        <constraint firstAttribute="width" constant="28" id="bri-I4-SnD"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xAG-Ch-c1Q" firstAttribute="centerX" secondItem="Ffl-ux-XvM" secondAttribute="centerX" id="JOq-dM-hdV"/>
+                                                <constraint firstItem="xAG-Ch-c1Q" firstAttribute="leading" secondItem="OG2-mx-pzQ" secondAttribute="trailing" constant="8" id="efc-q6-2NT"/>
+                                                <constraint firstItem="xAG-Ch-c1Q" firstAttribute="centerY" secondItem="Ffl-ux-XvM" secondAttribute="centerY" id="pN4-Vg-kB7"/>
+                                                <constraint firstItem="OG2-mx-pzQ" firstAttribute="centerY" secondItem="Ffl-ux-XvM" secondAttribute="centerY" id="s17-Px-gBa"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="instrumentImage" destination="OG2-mx-pzQ" id="Zqd-EV-AuC"/>
+                                            <outlet property="instrumentName" destination="xAG-Ch-c1Q" id="Kds-mn-vaL"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

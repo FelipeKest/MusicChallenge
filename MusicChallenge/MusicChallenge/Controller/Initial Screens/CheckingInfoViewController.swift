@@ -37,8 +37,8 @@ class CheckingInfoViewController: UIViewController, UITableViewDelegate, UITable
         instrumentsTableView.dataSource = self
         instrumentsTableView.delegate = self
         
-        let tableXib = UINib(nibName: "InstrumentsTableViewCell", bundle: nil)
-        instrumentsTableView.register(tableXib, forCellReuseIdentifier: "instrumentCell")
+//        let tableXib = UINib(nibName: "InstrumentsTableViewCell", bundle: nil)
+//        instrumentsTableView.register(tableXib, forCellReuseIdentifier: "instrumentCell")
         
         instrumentsTableView.allowsSelection = false
         

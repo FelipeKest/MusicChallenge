@@ -67,14 +67,43 @@
                                 <rect key="frame" x="0.0" y="417" width="375" height="250"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="instrumentCell" rowHeight="48" id="bYL-WD-r63">
+                                    <tableViewCell clipsSubviews="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="instrumentCell" rowHeight="48" id="bYL-WD-r63" customClass="InstrumentsTableViewCell" customModule="MusicChallenge" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bYL-WD-r63" id="Fpl-qJ-wXp">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Be2-vj-WHw">
+                                                    <rect key="frame" x="117.5" y="10" width="28" height="28"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="28" id="XUw-qH-1qM"/>
+                                                        <constraint firstAttribute="width" constant="28" id="h1C-OP-nZ6"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guitarra" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DjS-cx-PKR">
+                                                    <rect key="frame" x="153.5" y="12" width="68.5" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="Gst-HD-AI5"/>
+                                                        <constraint firstAttribute="width" constant="68.5" id="P0d-I9-QXl"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="DjS-cx-PKR" firstAttribute="leading" secondItem="Be2-vj-WHw" secondAttribute="trailing" constant="8" id="ClU-AX-l9A"/>
+                                                <constraint firstItem="DjS-cx-PKR" firstAttribute="centerY" secondItem="Fpl-qJ-wXp" secondAttribute="centerY" id="i8Q-tx-61w"/>
+                                                <constraint firstItem="Be2-vj-WHw" firstAttribute="centerY" secondItem="Fpl-qJ-wXp" secondAttribute="centerY" id="qCj-Xb-0JF"/>
+                                                <constraint firstItem="DjS-cx-PKR" firstAttribute="centerX" secondItem="Fpl-qJ-wXp" secondAttribute="centerX" id="ts8-Yx-76N"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="instrumentImage" destination="Be2-vj-WHw" id="UXr-sL-9tP"/>
+                                            <outlet property="instrumentName" destination="DjS-cx-PKR" id="uon-Vm-s7m"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

@@ -19,6 +19,8 @@ class MyProfileViewController: UIViewController ,UITableViewDelegate, UITableVie
     
     @IBOutlet var instrumentsTableView: UITableView!
     
+    
+    
     var profile = Musician(name: "Felipe Gouveia", age: 75, instruments: [Instrument.Guitar, Instrument.Bass, Instrument.Others], band: Band(), id: "asldmglwmrogw")
     
     override func viewDidLoad() {
@@ -27,8 +29,8 @@ class MyProfileViewController: UIViewController ,UITableViewDelegate, UITableVie
         self.instrumentsTableView.dataSource = self
         self.instrumentsTableView.delegate = self
         
-        let tableXib = UINib(nibName: "InstrumentsTableViewCell", bundle: nil)
-        instrumentsTableView.register(tableXib, forCellReuseIdentifier: "instrumentCell")
+//        let tableXib = UINib(nibName: "InstrumentsTableViewCell", bundle: nil)
+//        instrumentsTableView.register(tableXib, forCellReuseIdentifier: "instrumentCell")
         
         // Do any additional setup after loading the view.
     }

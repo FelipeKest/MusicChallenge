@@ -19,17 +19,15 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XS6-0s-CsL">
-                        <rect key="frame" x="16" y="8" width="37" height="37"/>
+                        <rect key="frame" x="157.5" y="12.5" width="28" height="28"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="37" id="3yt-Jq-1TE"/>
-                            <constraint firstAttribute="height" constant="37" id="WHV-ka-kEu"/>
+                            <constraint firstAttribute="height" constant="28" id="AXv-Ck-TaP"/>
+                            <constraint firstAttribute="width" constant="28" id="kHM-qT-hQJ"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guitarra" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vuk-Oq-7O5">
-                        <rect key="frame" x="137.5" y="14.5" width="68.5" height="24"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="24" id="xVM-O6-8dZ"/>
-                        </constraints>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Guitarra" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vuk-Oq-7O5">
+                        <rect key="frame" x="72" y="14" width="68.5" height="24"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -37,10 +35,8 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="XS6-0s-CsL" firstAttribute="leading" secondItem="v87-UL-nfB" secondAttribute="leading" constant="16" id="LSE-LP-YiA"/>
-                    <constraint firstItem="Vuk-Oq-7O5" firstAttribute="centerX" secondItem="v87-UL-nfB" secondAttribute="centerX" id="MsB-dz-Cgq"/>
-                    <constraint firstItem="Vuk-Oq-7O5" firstAttribute="centerY" secondItem="v87-UL-nfB" secondAttribute="centerY" id="rXn-9q-4FK"/>
-                    <constraint firstItem="XS6-0s-CsL" firstAttribute="centerY" secondItem="v87-UL-nfB" secondAttribute="centerY" id="teG-qg-ipL"/>
+                    <constraint firstItem="XS6-0s-CsL" firstAttribute="centerX" secondItem="v87-UL-nfB" secondAttribute="centerX" id="SlP-CB-J9S"/>
+                    <constraint firstItem="XS6-0s-CsL" firstAttribute="centerY" secondItem="v87-UL-nfB" secondAttribute="centerY" id="Yrl-f5-3QY"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
